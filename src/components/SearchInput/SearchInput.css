@@ -1,0 +1,21 @@
+.searchInputContainer{
+    border-radius: 5px;
+    height: 50px;
+    display: flex;
+    background: #fff;;
+    margin: 10px;
+    outline-color: rgba(40, 170, 170, 0.356);
+    
+}
+.searchInput{
+    border: none;
+    outline: none;
+    padding-left: 10px;
+}
+.iconContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    font-size: 20px
+}

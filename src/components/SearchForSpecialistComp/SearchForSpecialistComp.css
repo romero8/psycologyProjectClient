@@ -1,0 +1,38 @@
+.SearchForSpecialistContainer{
+background-color: #eaf5fa;
+padding: 20px;
+min-height: 500px;
+}
+
+.SearchForSpecialistBody{
+    display: grid;
+    grid-template-columns: repeat(5,auto);
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+.advencedFilter{
+   text-align: left;
+   padding-left: 10px;
+}
+
+.accordionBtn{
+    cursor: pointer;
+    height: 50px;
+    width: 110px;
+    font-weight: bold;
+    background-color: #eaf5fa;
+}
+
+.accordionBtn:hover{
+    color: aqua;
+}
+
+.accordionBtnNone{
+    display: none;
+}
+.accordion{
+    justify-content: center;
+    align-items: center;
+}
+
