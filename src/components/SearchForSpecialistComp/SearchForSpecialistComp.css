@@ -1,7 +1,7 @@
 .SearchForSpecialistContainer{
 background-color: #eaf5fa;
 padding: 20px;
-min-height: 500px;
+min-height: 230px;
 }
 
 .SearchForSpecialistBody{
@@ -19,7 +19,7 @@ min-height: 500px;
 .accordionBtn{
     cursor: pointer;
     height: 50px;
-    width: 110px;
+    width: 150px;
     font-weight: bold;
     background-color: #eaf5fa;
 }
