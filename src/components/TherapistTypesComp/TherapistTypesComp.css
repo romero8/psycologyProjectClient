@@ -9,8 +9,8 @@
 
 .therapistTypesBody {
   display: grid;
-  grid-template-columns: repeat(4, auto);
-  gap: 70px 160px;
+  grid-template-columns: repeat(3, auto);
+  gap: 70px 140px;
   justify-content: center;
   align-items: center;
 }
