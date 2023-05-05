@@ -1,38 +1,40 @@
-.SearchForSpecialistContainer{
-background-color: #eaf5fa;
-padding: 20px;
-min-height: 230px;
+.SearchForSpecialistContainer {
+  background-color: #eaf5fa;
+  padding: 20px;
+  height: 260px;
 }
 
-.SearchForSpecialistBody{
-    display: grid;
-    grid-template-columns: repeat(5,auto);
-    gap: 15px;
-    justify-content: center;
-    align-items: center;
-}
-.advencedFilter{
-   text-align: left;
-   padding-left: 10px;
+.accordion {
+  display: flex;
+  flex-direction: column;
 }
 
-.accordionBtn{
-    cursor: pointer;
-    height: 50px;
-    width: 150px;
-    font-weight: bold;
-    background-color: #eaf5fa;
+.SearchForSpecialistBody {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  gap: 30px;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
-.accordionBtn:hover{
-    color: aqua;
+.advencedFilter {
+  text-align: left;
+  padding-left: 10px;
 }
 
-.accordionBtnNone{
-    display: none;
-}
-.accordion{
-    justify-content: center;
-    align-items: center;
+.accordionBtn {
+  cursor: pointer;
+  height: 50px;
+  width: 150px;
+  font-weight: bold;
+  background-color: #eaf5fa;
 }
 
+.accordionBtn:hover {
+  color: aqua;
+}
+
+.accordionBtnNone {
+  display: none;
+}

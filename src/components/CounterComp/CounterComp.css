@@ -1,0 +1,13 @@
+.counterCompContainer{
+    margin: 50px;
+}
+.counters{
+    background: #eaf5fa;
+    margin: 30px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+.counter{
+
+}

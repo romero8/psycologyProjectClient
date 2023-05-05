@@ -1,21 +1,28 @@
+
 .searchInputContainer{
-    border-radius: 5px;
     height: 50px;
+    border-radius: 5px;
     display: flex;
+    /* justify-content: space-between; */
     background: #fff;;
     margin: 10px;
     outline-color: rgba(40, 170, 170, 0.356);
-    
 }
 .searchInput{
     border: none;
     outline: none;
     padding-left: 10px;
 }
+.short{
+    width: 105px;
+}
+.long{
+    width: 210px;
+}
 .iconContainer{
+    margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px;
     font-size: 20px
 }

@@ -1,11 +1,13 @@
+import { CounterComp } from "../components/CounterComp/CounterComp";
 import { SearchForSpecialistComp } from "../components/SearchForSpecialistComp/SearchForSpecialistComp";
-import {PsychologyTypesComp} from '../components/PsychologyTypesComp/PsychologyTypesCompo'
+import {TherapistTypesComp} from '../components/TherapistTypesComp/TherapistTypesComp'
 
 export function Home(){
     return(
         <>
         <SearchForSpecialistComp/>
-        <PsychologyTypesComp/>
+        <TherapistTypesComp/>
+        <CounterComp/>
         </>
         
     )

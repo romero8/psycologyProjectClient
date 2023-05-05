@@ -1,0 +1,38 @@
+.therapistTypesContainer {
+  background: #ffffffdc;
+  padding: 10px;
+}
+
+.therapistTitle {
+  padding: 40px;
+}
+
+.therapistTypesBody {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 70px 160px;
+  justify-content: center;
+  align-items: center;
+}
+
+.therapistTypeBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.therapistTypeBox:hover{
+    color: #4bc6ff;
+}
+
+.therapistTypeSpan {
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+}

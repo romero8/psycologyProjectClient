@@ -9,9 +9,7 @@ export async function getData(data) {
   return info;
 }
 
-getData("psychologiesTypes").then((data) => {
-  console.log(data)
-});
+
 
 
 
