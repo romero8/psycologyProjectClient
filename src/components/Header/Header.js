@@ -7,8 +7,9 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { getData } from "../../helpers/fetchHelper";
+import {data} from '../../helpers/data'
 
-export function Header() {
+export function Header(props) {
   // const [data, setData] = useState([]);
   // useEffect(() => {
   //   getData("therapistTypes").then((info) => {
@@ -16,30 +17,9 @@ export function Header() {
   //   });
   // }, []);
 
-  const therapistTypes = [
-    "Psychology",
-    "Social Worker",
-    "Criminologiest",
-    "Creative Arts Therapist",
-    "Psychodrama Therapist",
-    "Bibliotherapist",
-    "Occupational Therapist",
-    "Speach Therapist",
-    "psycho Therapist",
-    "CBT Therapist",
-    "DBT Therapist",
-    "NLP Therapist",
-    "EMDR Therapist",
-    "Coacher",
-    "Animal-Assisted Therapist",
-    "neurofeedback",
-    "psychoanaliest",
-    "Psychiatrist",
-    "Family Therapist",
-    "Caple Therapist",
-    "Dance Therapist",
-  ];
+  const type = props.type;
 
+  const therapistTypes = data
   return (
     <Navbar bg="light" expand="lg">
       <Container className="headerContainer">
@@ -51,7 +31,7 @@ export function Header() {
               {therapistTypes.map((therapist) => {
                 return (
                   <NavDropdown.Item href="#action/3.1">
-                    {therapist}
+                    {therapist.typeName}
                   </NavDropdown.Item>
                 );
               })}
@@ -60,6 +40,16 @@ export function Header() {
                 Separated link
               </NavDropdown.Item>
             </NavDropdown>
+            {type === "client" ? (
+              <Nav.Link href="#link">Favorites</Nav.Link>
+            ) : (
+              ""
+            )}
+            {type === "therapist" ? (
+              <Nav.Link href="#link">Inquiries</Nav.Link>
+            ) : (
+              ""
+            )}
             <Nav.Link href="#link">
               <FontAwesomeIcon
                 icon={faMagnifyingGlass}

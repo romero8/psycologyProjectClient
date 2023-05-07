@@ -1,12 +1,12 @@
 import { CounterComp } from "../components/CounterComp/CounterComp";
-import { Header } from "../components/Header/Header";
 import { SearchForSpecialistComp } from "../components/SearchForSpecialistComp/SearchForSpecialistComp";
 import {TherapistTypesComp} from '../components/TherapistTypesComp/TherapistTypesComp'
+import { Header } from "../components/Header/Header";
 
-export function Home(){
+export function Client(){
     return(
         <>
-        <Header/>
+        <Header type='client'/>
         <SearchForSpecialistComp/>
         <TherapistTypesComp/>
         <CounterComp/>
