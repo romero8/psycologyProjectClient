@@ -26,3 +26,14 @@ font-weight:400
     font-size: 25px;
     font-weight: 100;
 }
+
+@media(max-width:692px){
+    .countersBox{
+        display: flex;
+        flex-direction: column;
+    }
+    .counterBox{
+        margin: 15px;
+        padding: 20px;
+    }
+  }

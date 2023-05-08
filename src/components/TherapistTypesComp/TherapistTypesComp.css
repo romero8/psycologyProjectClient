@@ -36,3 +36,9 @@
   width: 70px;
   height: 70px;
 }
+
+@media(max-width:692px){
+  .therapistTypesBody{
+    grid-template-columns: repeat(1, auto);
+  }
+}

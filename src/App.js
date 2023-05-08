@@ -5,6 +5,7 @@ import { SearchForSpecialistComp } from './components/SearchForSpecialistComp/Se
 import { Home } from './pages/Home';
 import { Client } from './pages/Client';
 import { Therapist } from './pages/Therapist';
+import { Specialties } from './pages/Specialties/Specialties';
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
 
 
@@ -17,7 +18,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/client' element={<Client/>}/>
-          <Route path='therapist' element = {<Therapist/>}/>
+          <Route path='/therapist' element = {<Therapist/>}/>
+          <Route path='/specialties' element = {<Specialties/>}/>
         </Routes>
       </Router>
       <Footer/>
