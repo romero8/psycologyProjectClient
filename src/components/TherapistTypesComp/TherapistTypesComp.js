@@ -4,7 +4,8 @@ import { MainBtn } from "../MainBtn/MainBtn";
 import logo from "../../icons/AnimatedLogo.png";
 import "../TherapistTypesComp/TherapistTypesComp.css";
 import Carousel from "react-bootstrap/Carousel";
-import {data} from '../../helpers/data'
+import {therapistTypesData} from '../../helpers/data'
+import { Link } from "react-router-dom";
 
 export function TherapistTypesComp() {
   // const [data, setData] = useState([]);
@@ -15,7 +16,7 @@ export function TherapistTypesComp() {
   //   });
   // }, []);
 
-  const therapistTypes = data
+  const therapistTypes = therapistTypesData
   
 
   return (
@@ -28,10 +29,15 @@ export function TherapistTypesComp() {
             {therapistTypes.slice(0, 6).map((therapist, index) => {
               return (
                 <div className="therapistTypeBox">
+                  <div className="therapistTypeBox">
+                    
+                  </div>
+                  <Link className="therapistTypeBox" to={`/specialties/${therapist.typeName}`}>
                   <img src={logo} className="logo" />
                   <span className="therapistTypeSpan">
                     {therapist.typeName}
                   </span>
+                  </Link>
                 </div>
               );
             })}
@@ -42,10 +48,12 @@ export function TherapistTypesComp() {
             {therapistTypes.slice(7, 13).map((therapist, index) => {
               return (
                 <div className="therapistTypeBox">
+                  <Link className="therapistTypeBox" to={`/specialties/${therapist.typeName}`}>
                   <img src={logo} className="logo" />
                   <span className="therapistTypeSpan">
                     {therapist.typeName}
                   </span>
+                  </Link>
                 </div>
               );
             })}
@@ -55,11 +63,13 @@ export function TherapistTypesComp() {
           <div className="therapistTypesBody">
             {therapistTypes.slice(14, 20).map((therapist, index) => {
               return (
-                <div className="therapistTypeBox">
+                <div className="therapistTypeBox" >
+                  <Link className="therapistTypeBox" to={`/specialties/${therapist.typeName}`}>
                   <img src={logo} className="logo" />
                   <span className="therapistTypeSpan">
                     {therapist.typeName}
                   </span>
+                  </Link>
                 </div>
               );
             })}

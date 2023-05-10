@@ -7,7 +7,8 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { getData } from "../../helpers/fetchHelper";
-import {data} from '../../helpers/data'
+import { therapistTypesData } from "../../helpers/data";
+import { Link } from "react-router-dom";
 
 export function Header(props) {
   // const [data, setData] = useState([]);
@@ -19,18 +20,18 @@ export function Header(props) {
 
   const type = props.type;
 
-  const therapistTypes = data
+  const therapistTypes = therapistTypesData;
   return (
     <Navbar bg="light" expand="lg">
       <Container className="headerContainer">
-        <Navbar.Brand href="#home">EzPsy</Navbar.Brand>
+        <Navbar.Brand href="/">EzPsy</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <NavDropdown title="Specialties" id="basic-nav-dropdown">
               {therapistTypes.map((therapist) => {
                 return (
-                  <NavDropdown.Item href="#action/3.1">
+                  <NavDropdown.Item href={`/specialties/${therapist.typeName}`}>
                     {therapist.typeName}
                   </NavDropdown.Item>
                 );
