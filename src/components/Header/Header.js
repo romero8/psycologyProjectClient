@@ -8,9 +8,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { getData } from "../../helpers/fetchHelper";
 import { therapistTypesData } from "../../helpers/data";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-export function Header(props) {
+export function Header() {
   // const [data, setData] = useState([]);
   // useEffect(() => {
   //   getData("therapistTypes").then((info) => {
@@ -18,7 +18,12 @@ export function Header(props) {
   //   });
   // }, []);
 
-  const type = props.type;
+  let {clientName} = useParams()
+  let {therapistName} = useParams()
+
+  
+
+  
 
   const therapistTypes = therapistTypesData;
   return (
@@ -41,12 +46,12 @@ export function Header(props) {
                 Separated link
               </NavDropdown.Item>
             </NavDropdown>
-            {type === "client" ? (
+            {window.location.pathname === `/client/${clientName}` ? (
               <Nav.Link href="#link">Favorites</Nav.Link>
             ) : (
               ""
             )}
-            {type === "therapist" ? (
+            {window.location.pathname === `/therapist/${therapistName}` ? (
               <Nav.Link href="#link">Inquiries</Nav.Link>
             ) : (
               ""

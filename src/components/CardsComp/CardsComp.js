@@ -4,6 +4,7 @@ import { MainBtn } from "../MainBtn/MainBtn";
 import { faLocationDot, faVideo } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { therapistTypesData } from "../../helpers/data";
+import { Link } from "react-router-dom";
 
 export function CardsComp(props) {
   const therapistTypes = therapistTypesData;
@@ -23,7 +24,7 @@ export function CardsComp(props) {
                   <img className="img" src={logo} />
                 </div>
                 <div className="cardInfo">
-                  <h3 className="specalistName">{user.name}</h3>
+                  <Link className="specalistName" to={`/specialties/${specialty}/${user.name}`}><h3>{user.name}</h3></Link>
                   <span className="specalistAbility">{specialty}</span>
                   <span className="specalistAbout">{`Best ${specialty} Ever`}</span>
                   <div className="specalistAvailabilityBox">

@@ -6,7 +6,6 @@ import { Header } from "../components/Header/Header";
 export function Client(){
     return(
         <>
-        <Header type='client'/>
         <SearchForSpecialistComp/>
         <TherapistTypesComp/>
         <CounterComp/>

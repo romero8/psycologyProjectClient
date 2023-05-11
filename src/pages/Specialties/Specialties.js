@@ -10,7 +10,6 @@ export function Specialties() {
   let {specialty} = useParams()
   return (
     <>
-      <Header />
       <CardsComp specialty={specialty}/>
     </>
   );

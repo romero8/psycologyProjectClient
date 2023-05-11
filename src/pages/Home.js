@@ -6,7 +6,6 @@ import {TherapistTypesComp} from '../components/TherapistTypesComp/TherapistType
 export function Home(){
     return(
         <>
-        <Header/>
         <SearchForSpecialistComp/>
         <TherapistTypesComp/>
         <CounterComp/>
