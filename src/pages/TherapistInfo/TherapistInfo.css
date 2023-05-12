@@ -1,34 +1,52 @@
 .therapistInfoContainer {
-  background-color: #f5f5f5;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background-color: #fff;
+  
 }
 
-.cardInformation{
-width: 70%;
-min-height: 250px;
+
+
+.cardInformation {
+  margin: 0;
+  width: 100%;
+  min-height: 250px;
+  background-color: #505764;
+  color: #fff;
+  padding: 20px 10%;
+  border-radius: 0;
 }
 
-.cardPhotoBoxInformation{
+.cardPhotoBoxInformation {
+  width: 15%;
+  padding: 50px;
+}
+
+.imgInformation {
+  width: 150px;
+  height: 150px;
+}
+
+
+.therapistAbout {
+  font-size: 20px;
+}
+
+.cardActionInformation{
+    background: #fff;
+    padding: 40px;
     width: 20%;
-    padding: 50px;
+    border-radius: 5px;
 }
 
-.imgInformation{
-    width: 150px;
-    height: 150px;
-}
 
-.aboutContainer{
+.aboutContainer {
+    
+  }
+
+  .about{
     max-width: 50%;
-    background: #eaf5fa;
-    border: 1px solid #aae4ff;
-    margin: 20px;
-    padding: 20px;
-}
-
-.therapistAbout{
-    font-size: 20px;
-}
+    background: #f9f9f9;
+    border: 1px solid #dedfe0;
+    margin: 40px;
+    padding: 50px;
+    border-radius: 5px;
+  }

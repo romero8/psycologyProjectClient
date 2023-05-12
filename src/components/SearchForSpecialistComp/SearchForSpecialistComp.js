@@ -20,6 +20,9 @@ import Accordion from "react-bootstrap/Accordion";
 import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import AccordionBody from "react-bootstrap/AccordionBody";
 import AccordionButton from "react-bootstrap/AccordionButton";
+import { therapistTypesData } from "../../helpers/data";
+
+const therapistTypes = therapistTypesData
 
 export function SearchForSpecialistComp({ eventKey }) {
   const [noneState, setNoneState] = useState(false);
@@ -53,7 +56,7 @@ export function SearchForSpecialistComp({ eventKey }) {
       placeHolder: "Price Range",
       icon: <FontAwesomeIcon icon={faSackDollar} />,
       type: "number",
-      searchType: "input",
+      searchType: "range",
       inputSize: "long"
     },
   ];
@@ -108,7 +111,7 @@ export function SearchForSpecialistComp({ eventKey }) {
 
   return (
     <div className="SearchForSpecialistContainer">
-      <Accordion as="div" className="accordion">
+      <Accordion as="form" className="accordion">
         <AccordionBody as="div" className="SearchForSpecialistBody">
           {specialistUserAdvencedSearch.map((user) => {
             return (

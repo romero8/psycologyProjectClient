@@ -48,16 +48,19 @@ export function TherapistInfo() {
             <p className="specalistAvailability">Video Call</p>
           </div>
         </div>
-        <div className="cardActions">
+        <div className="cardActions cardActionInformation">
           <MainBtn value="Call" />
           <MainBtn value="Appointment" />
         </div>
       </div>
+
       <div className="aboutContainer">
+        <div className="about">
         <h3>About Myself</h3>
         <p className="therapistAbout">
           {`My name is ${therapistData.name} but u can call me ${therapistData.username}, I live in ${therapistData.address.city}. My phone number is ${therapistData.phone}, But u can also visit my website ${therapistData.website}, or send me a mail ${therapistData.email}.`}
         </p>
+        </div>
       </div>
     </div>
   );

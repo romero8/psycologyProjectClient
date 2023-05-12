@@ -1,5 +1,7 @@
 import "../SearchInput/SearchInput.css";
 import Form from "react-bootstrap/Form";
+import MultiRangeSlider from "multi-range-slider-react";
+import React,{useState} from "react";
 
 export function SearchInput(props) {
   const placeHolder = props.placeHolder;
@@ -9,6 +11,16 @@ export function SearchInput(props) {
   const options = props.options;
   const inputSize = props.inputSize;
 
+  
+
+  const [minValue, set_minValue] = useState(25);
+  const [maxValue, set_maxValue] = useState(75);
+  const handleInput = (e) => {
+    set_minValue(e.minValue);
+    set_maxValue(e.maxValue);
+  };
+
+ 
   {
     if (searchType === "input") {
       return (
@@ -36,6 +48,30 @@ export function SearchInput(props) {
               return <option>{option}</option>;
             })}
           </select>
+          <div className="iconContainer">{icon}</div>
+        </div>
+      );
+    }
+    if (searchType === "range") {
+      return (
+        <div className="searchInputContainer range long">
+          <div>
+            <label>{placeHolder}</label>
+          <MultiRangeSlider
+            min={0}
+            max={500}
+            step={5}
+            minValue={minValue}
+            maxValue={maxValue}
+            ruler = {false}
+            label = {false}
+            onInput={(e) => {
+              handleInput(e);
+            }}
+            className="searchInput long"
+          />
+          </div>
+          
           <div className="iconContainer">{icon}</div>
         </div>
       );
