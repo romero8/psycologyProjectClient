@@ -22,42 +22,70 @@ import AccordionBody from "react-bootstrap/AccordionBody";
 import AccordionButton from "react-bootstrap/AccordionButton";
 import { therapistTypesData } from "../../helpers/data";
 
-const therapistTypes = therapistTypesData
+
 
 export function SearchForSpecialistComp({ eventKey }) {
   const [noneState, setNoneState] = useState(false);
 
-  const decoratedOnClick = useAccordionButton(eventKey, () =>
-    console.log("totally custom!")
-  );
+  const therapistTypes = therapistTypesData;
+
+  const [nameSearch,setNameSearch] = useState('')
+  const [professionSearch,setProfessionSearch] = useState('')
+  const [citySearch,setCitySearch] = useState('')
+  const [priceRangeSearch,setPriceRangeSearch] = useState('')
+  const [languageSearch,setLanguageSearch] = useState('')
+  const [experienceSearch,setExperienceSearch] = useState('')
+  const [genderSearch,setGenderSearch] = useState('')
+  const [lgbtqSearch,setLGBTQSearch] = useState('')
+
+  
+  function searchForTherapist(){
+    
+  }
+
+
+
+  // const therapistData = findSpecialty.users.find((therapist) => {
+  //   return therapist.name === therapistName;
+  // });
+  
+
+  // const decoratedOnClick = useAccordionButton(eventKey, () =>
+  //   console.log("totally custom!")
+  // );
+
   const specialistUserSearch = [
     {
       placeHolder: "Name",
       icon: <FontAwesomeIcon icon={faPerson} />,
       type: "text",
       searchType: "input",
-      inputSize: "short"
+      inputSize: "short",
+      specialistUserSearchType: 'name',
     },
     {
       placeHolder: "Profession",
       icon: <FontAwesomeIcon icon={faUserTie} />,
       type: "text",
       searchType: "input",
-      inputSize: "short"
+      inputSize: "short",
+      specialistUserSearchType: 'typeName'
     },
     {
       placeHolder: "City",
       icon: <FontAwesomeIcon icon={faTreeCity} />,
       type: "text",
       searchType: "input",
-      inputSize: "short"
+      inputSize: "short",
+      specialistUserSearchType: 'address.city'
     },
     {
       placeHolder: "Price Range",
       icon: <FontAwesomeIcon icon={faSackDollar} />,
       type: "number",
       searchType: "range",
-      inputSize: "long"
+      inputSize: "long",
+      specialistUserSearchType: 'price'
     },
   ];
 
@@ -68,6 +96,7 @@ export function SearchForSpecialistComp({ eventKey }) {
       type: "text",
       searchType: "input",
       inputSize: "short",
+      specialistUserSearchType: 'language'
     },
     {
       placeHolder: "Experience",
@@ -75,6 +104,7 @@ export function SearchForSpecialistComp({ eventKey }) {
       type: "number",
       searchType: "input",
       inputSize: "short",
+      specialistUserSearchType: 'experience'
     },
     {
       placeHolder: "Experties",
@@ -82,6 +112,7 @@ export function SearchForSpecialistComp({ eventKey }) {
       type: "text",
       searchType: "select",
       options: ["blablabla", "blablabla", "blablabla", "blablabla"],
+      specialistUserSearchType: ''
     },
     
     {
@@ -90,7 +121,8 @@ export function SearchForSpecialistComp({ eventKey }) {
       type: "text",
       searchType: "select",
       options: ["Male", "Female", "Other"],
-      inputSize: "short"
+      inputSize: "short",
+      specialistUserSearchType: 'gender'
     },
 
     {
@@ -99,8 +131,10 @@ export function SearchForSpecialistComp({ eventKey }) {
       type: "number",
       searchType: "checkBox",
       options: ["yes", "no"],
+      specialistUserSearchType: 'LGBTQ'
     },
   ];
+  
   function none() {
     if (noneState) {
       return "None";
@@ -108,6 +142,8 @@ export function SearchForSpecialistComp({ eventKey }) {
       return "";
     }
   }
+  
+  
 
   return (
     <div className="SearchForSpecialistContainer">
@@ -122,11 +158,21 @@ export function SearchForSpecialistComp({ eventKey }) {
                 searchType={user.searchType}
                 options={user.options}
                 inputSize={user.inputSize}
+                setSearch={{
+                  setNameSearch,
+                  setProfessionSearch,
+                  setCitySearch,
+                  setPriceRangeSearch,
+                  setLanguageSearch,
+                  setExperienceSearch,
+                  setGenderSearch,
+                  setLGBTQSearch,
+                }}
               />
             );
           })}
         </AccordionBody>
-
+       
         <div className="SearchForSpecialistBody">
           {specialistUserSearch.map((user) => {
             return (
@@ -137,6 +183,16 @@ export function SearchForSpecialistComp({ eventKey }) {
                 searchType={user.searchType}
                 options={user.options}
                 inputSize={user.inputSize}
+                setSearch={{
+                  setNameSearch,
+                  setProfessionSearch,
+                  setCitySearch,
+                  setPriceRangeSearch,
+                  setLanguageSearch,
+                  setExperienceSearch,
+                  setGenderSearch,
+                  setLGBTQSearch,
+                }}
               />
             );
           })}
@@ -154,4 +210,4 @@ export function SearchForSpecialistComp({ eventKey }) {
   );
 }
 
-<div className="advencedFilter"></div>;
+

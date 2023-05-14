@@ -1,7 +1,7 @@
 import "../SearchInput/SearchInput.css";
 import Form from "react-bootstrap/Form";
 import MultiRangeSlider from "multi-range-slider-react";
-import React,{useState} from "react";
+import React, { useState } from "react";
 
 export function SearchInput(props) {
   const placeHolder = props.placeHolder;
@@ -10,7 +10,7 @@ export function SearchInput(props) {
   const searchType = props.searchType;
   const options = props.options;
   const inputSize = props.inputSize;
-
+  const setSearch = props.setSearch;
   
 
   const [minValue, set_minValue] = useState(25);
@@ -20,7 +20,35 @@ export function SearchInput(props) {
     set_maxValue(e.maxValue);
   };
 
- 
+  
+
+  function handleChange(e) {
+    let value = e.target.value;
+    if(placeHolder==='Name'){
+      setSearch.setNameSearch(value)
+    }
+    if(placeHolder==='Profession'){
+      setSearch.setProfessionSearch(value)
+    }
+    // if(placeHolder==='Price Range'){
+    //   setSearch.setCitySearch(value)
+    // }
+    if(placeHolder==='Language'){
+      setSearch.setLanguageSearch(value)
+    }
+    if(placeHolder==='Experienc'){
+      setSearch.setExperiencSearch(value)
+    }
+    if(placeHolder==='Gender'){
+      setSearch.setGenderSearch(value)
+    }
+    if(placeHolder==='LGBTQ friendly'){
+      setSearch.setCitySearch(value)
+    }
+  }
+
+  
+
   {
     if (searchType === "input") {
       return (
@@ -29,6 +57,7 @@ export function SearchInput(props) {
             type={type}
             className={inputSize ? `searchInput ${inputSize}` : "searchInput"}
             placeholder={placeHolder}
+            onChange={(e) => handleChange(e)}
           ></input>
           <div className="iconContainer">{icon}</div>
         </div>
@@ -57,21 +86,25 @@ export function SearchInput(props) {
         <div className="searchInputContainer range long">
           <div>
             <label>{placeHolder}</label>
-          <MultiRangeSlider
-            min={0}
-            max={500}
-            step={5}
-            minValue={minValue}
-            maxValue={maxValue}
-            ruler = {false}
-            label = {false}
-            onInput={(e) => {
-              handleInput(e);
-            }}
-            className="searchInput long"
-          />
+            <MultiRangeSlider
+              min={0}
+              max={500}
+              step={5}
+              minValue={minValue}
+              maxValue={maxValue}
+              ruler={false}
+              label={true}
+              style={{ border: "none", boxShadow: "none", height: "5px" }}
+              onInput={(e) => {
+                handleInput(e);
+              }}
+              barInnerColor="#fff"
+              thumbLeftColor="#fff"
+              thumbRightColor="#eaf5fa"
+              className="rangeInput long"
+            />
           </div>
-          
+
           <div className="iconContainer">{icon}</div>
         </div>
       );

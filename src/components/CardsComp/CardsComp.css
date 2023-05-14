@@ -78,3 +78,37 @@
 }
 
 
+@media(max-width:950px){
+  .cardContainer{
+    flex-direction: column;
+    width: 38%;
+  }
+
+  .cardPhotoBox{
+    width: 60%;
+  }
+
+  .cardActions {
+    width: 25%;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: center;
+  }
+}
+
+
+@media(max-width:500px){
+.cardContainer{
+  flex-direction: column;
+  width: 75%;
+}
+.cardPhotoBox{
+  width: 60%;
+}
+.cardActions {
+  width: 25%;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: center;
+}
+}

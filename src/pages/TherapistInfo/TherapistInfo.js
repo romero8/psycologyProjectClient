@@ -21,7 +21,7 @@ export function TherapistInfo() {
     return therapist.name === therapistName;
   });
 
-  console.log(therapistData);
+ 
 
   return (
     <div className="therapistInfoContainer">
