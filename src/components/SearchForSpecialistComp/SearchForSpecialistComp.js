@@ -39,8 +39,9 @@ export function SearchForSpecialistComp({ eventKey }) {
   const [lgbtqSearch,setLGBTQSearch] = useState('')
 
   
-  function searchForTherapist(){
-    
+  function searchForTherapist(e){
+    e.preventDefault()
+    alert(nameSearch)
   }
 
 
@@ -147,7 +148,7 @@ export function SearchForSpecialistComp({ eventKey }) {
 
   return (
     <div className="SearchForSpecialistContainer">
-      <Accordion as="form" className="accordion">
+      <Accordion as="form" className="accordion" onSubmit={(e)=>searchForTherapist(e)}>
         <AccordionBody as="div" className="SearchForSpecialistBody">
           {specialistUserAdvencedSearch.map((user) => {
             return (
@@ -158,6 +159,7 @@ export function SearchForSpecialistComp({ eventKey }) {
                 searchType={user.searchType}
                 options={user.options}
                 inputSize={user.inputSize}
+                specialistUserSearchType={user.specialistUserSearchType}
                 setSearch={{
                   setNameSearch,
                   setProfessionSearch,
@@ -183,6 +185,7 @@ export function SearchForSpecialistComp({ eventKey }) {
                 searchType={user.searchType}
                 options={user.options}
                 inputSize={user.inputSize}
+                specialistUserSearchType={user.specialistUserSearchType}
                 setSearch={{
                   setNameSearch,
                   setProfessionSearch,

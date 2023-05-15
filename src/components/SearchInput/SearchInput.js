@@ -2,6 +2,8 @@ import "../SearchInput/SearchInput.css";
 import Form from "react-bootstrap/Form";
 import MultiRangeSlider from "multi-range-slider-react";
 import React, { useState } from "react";
+import { therapistTypesData } from "../../helpers/data";
+import { Autocomplete, TextField } from "@mui/material";
 
 export function SearchInput(props) {
   const placeHolder = props.placeHolder;
@@ -11,7 +13,7 @@ export function SearchInput(props) {
   const options = props.options;
   const inputSize = props.inputSize;
   const setSearch = props.setSearch;
-  
+  const specialistUserSearchType = props.specialistUserSearchType;
 
   const [minValue, set_minValue] = useState(25);
   const [maxValue, set_maxValue] = useState(75);
@@ -20,39 +22,50 @@ export function SearchInput(props) {
     set_maxValue(e.maxValue);
   };
 
-  
-
   function handleChange(e) {
     let value = e.target.value;
-    if(placeHolder==='Name'){
-      setSearch.setNameSearch(value)
+    if (placeHolder === "Name") {
+      setSearch.setNameSearch(value);
     }
-    if(placeHolder==='Profession'){
-      setSearch.setProfessionSearch(value)
+    if (placeHolder === "Profession") {
+      setSearch.setProfessionSearch(value);
+    }
+    if (placeHolder === "City") {
+      setSearch.setCitySearch(value);
     }
     // if(placeHolder==='Price Range'){
     //   setSearch.setCitySearch(value)
     // }
-    if(placeHolder==='Language'){
-      setSearch.setLanguageSearch(value)
+    if (placeHolder === "Language") {
+      setSearch.setLanguageSearch(value);
     }
-    if(placeHolder==='Experienc'){
-      setSearch.setExperiencSearch(value)
+    if (placeHolder === "Experienc") {
+      setSearch.setExperiencSearch(value);
     }
-    if(placeHolder==='Gender'){
-      setSearch.setGenderSearch(value)
+    if (placeHolder === "Gender") {
+      setSearch.setGenderSearch(value);
     }
-    if(placeHolder==='LGBTQ friendly'){
-      setSearch.setCitySearch(value)
+    if (placeHolder === "LGBTQ friendly") {
+      setSearch.setCitySearch(value);
     }
   }
-
-  
 
   {
     if (searchType === "input") {
       return (
+       
         <div className="searchInputContainer">
+         <Autocomplete
+  disablePortal
+  id="combo-box-demo"
+  options={therapistTypesData.map((therapistType)=>{
+    return therapistType.users.map((user)=>{
+      return user.name
+    })
+  })}
+  sx={{ width: 300 }}
+  renderInput={(params) => <TextField {...params} label="Movie" />}
+/>
           <input
             type={type}
             className={inputSize ? `searchInput ${inputSize}` : "searchInput"}
@@ -60,6 +73,18 @@ export function SearchInput(props) {
             onChange={(e) => handleChange(e)}
           ></input>
           <div className="iconContainer">{icon}</div>
+          
+          {/* <div className="dropDown">
+            {therapistTypesData.map((dropDownRow) => {
+              return dropDownRow.users.map((user) => {
+                if(placeHolder === 'Name'){
+                  return(
+                    <div>{user.name}</div>
+                  )
+                }
+              });
+            })}
+          </div> */}
         </div>
       );
     }

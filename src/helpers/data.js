@@ -1,5 +1,7 @@
 export const therapistTypesData = [
-    { typeName: "Psychology", users: [
+  {
+    typeName: "Psychology",
+    users: [
       {
         id: 1,
         name: "Leanne Graham",
@@ -9,9 +11,9 @@ export const therapistTypesData = [
           city: "Tel-Aviv",
         },
         phone: "1-770-736-8031 x56442",
-        price:200,
-        gender:'female',
-        language:['hebrew','english','russian','arabic'],
+        price: 200,
+        gender: "female",
+        language: ["hebrew", "english", "russian", "arabic"],
         experience: 5,
         LGBTQ: true,
       },
@@ -24,9 +26,9 @@ export const therapistTypesData = [
           city: "Ramat-Gan",
         },
         phone: "010-692-6593 x09125",
-        price:250,
-        gender:'male',
-        language:['hebrew'],
+        price: 250,
+        gender: "male",
+        language: ["hebrew"],
         experience: 1,
         LGBTQ: true,
       },
@@ -39,9 +41,9 @@ export const therapistTypesData = [
           city: "Ashkelon",
         },
         phone: "1-463-123-4447",
-        price:100,
-        gender:'female',
-        language:['hebrew','english'],
+        price: 100,
+        gender: "female",
+        language: ["hebrew", "english"],
         experience: 3,
         LGBTQ: true,
       },
@@ -54,9 +56,9 @@ export const therapistTypesData = [
           city: "Haifa",
         },
         phone: "493-170-9623 x156",
-        price:50,
-        gender:'female',
-        language:['english','russian'],
+        price: 50,
+        gender: "female",
+        language: ["english", "russian"],
         experience: 10,
         LGBTQ: false,
       },
@@ -69,9 +71,9 @@ export const therapistTypesData = [
           city: "Ashdod",
         },
         phone: "(254)954-1289",
-        price:400,
-        gender:'male',
-        language:['hebrew','russian'],
+        price: 400,
+        gender: "male",
+        language: ["hebrew", "russian"],
         experience: 15,
         LGBTQ: false,
       },
@@ -84,9 +86,9 @@ export const therapistTypesData = [
           city: "Raanana",
         },
         phone: "1-477-935-8478 x6430",
-        price:450,
-        gender:'female',
-        language:['english'],
+        price: 450,
+        gender: "female",
+        language: ["english"],
         experience: 20,
         LGBTQ: true,
       },
@@ -99,9 +101,9 @@ export const therapistTypesData = [
           city: "Rehovot",
         },
         phone: "210.067.6132",
-        price:400,
-        gender:'male',
-        language:['hebrew','arabic'],
+        price: 400,
+        gender: "male",
+        language: ["hebrew", "arabic"],
         experience: 25,
         LGBTQ: false,
       },
@@ -114,9 +116,9 @@ export const therapistTypesData = [
           city: "Nahariya",
         },
         phone: "586.493.6943 x140",
-        price:300,
-        gender:'male',
-        language:['arabic'],
+        price: 300,
+        gender: "male",
+        language: ["arabic"],
         experience: 15,
         LGBTQ: true,
       },
@@ -130,9 +132,9 @@ export const therapistTypesData = [
           city: "Kiryat-Shmona",
         },
         phone: "(775)976-6794 x41206",
-        price:220,
-        gender:'female',
-        language:['hebrew'],
+        price: 220,
+        gender: "female",
+        language: ["hebrew"],
         experience: 7,
         LGBTQ: false,
       },
@@ -145,14 +147,17 @@ export const therapistTypesData = [
           city: "Eilat",
         },
         phone: "024-648-3804",
-        price:250,
-        gender:'male',
-        language:['hebrew','english','russian'],
+        price: 250,
+        gender: "male",
+        language: ["hebrew", "english", "russian"],
         experience: 8,
         LGBTQ: true,
-      }
-    ] },
-    { typeName: "Social Worker" ,users: [
+      },
+    ],
+  },
+  {
+    typeName: "Social Worker",
+    users: [
       {
         id: 1,
         name: "Leanne Graham",
@@ -164,17 +169,17 @@ export const therapistTypesData = [
           city: "Gwenborough",
           zipcode: "92998-3874",
           geo: {
-            "lat": "-37.3159",
-            "lng": "81.1496"
-          }
+            lat: "-37.3159",
+            lng: "81.1496",
+          },
         },
         phone: "1-770-736-8031 x56442",
         website: "hildegard.org",
         company: {
           name: "Romaguera-Crona",
           catchPhrase: "Multi-layered client-server neural-net",
-          bs: "harness real-time e-markets"
-        }
+          bs: "harness real-time e-markets",
+        },
       },
       {
         id: 2,
@@ -188,16 +193,16 @@ export const therapistTypesData = [
           zipcode: "90566-7771",
           geo: {
             lat: "-43.9509",
-            lng: "-34.4618"
-          }
+            lng: "-34.4618",
+          },
         },
         phone: "010-692-6593 x09125",
         website: "anastasia.net",
         company: {
           name: "Deckow-Crist",
           catchPhrase: "Proactive didactic contingency",
-          bs: "synergize scalable supply-chains"
-        }
+          bs: "synergize scalable supply-chains",
+        },
       },
       {
         id: 3,
@@ -211,16 +216,16 @@ export const therapistTypesData = [
           zipcode: "59590-4157",
           geo: {
             lat: "-68.6102",
-            lng: "-47.0653"
-          }
+            lng: "-47.0653",
+          },
         },
         phone: "1-463-123-4447",
         website: "ramiro.info",
         company: {
           name: "Romaguera-Jacobson",
           catchPhrase: "Face to face bifurcated interface",
-          bs: "e-enable strategic applications"
-        }
+          bs: "e-enable strategic applications",
+        },
       },
       {
         id: 4,
@@ -234,16 +239,16 @@ export const therapistTypesData = [
           zipcode: "53919-4257",
           geo: {
             lat: "29.4572",
-            lng: "-164.2990"
-          }
+            lng: "-164.2990",
+          },
         },
         phone: "493-170-9623 x156",
         website: "kale.biz",
         company: {
           name: "Robel-Corkery",
           catchPhrase: "Multi-tiered zero tolerance productivity",
-          bs: "transition cutting-edge web services"
-        }
+          bs: "transition cutting-edge web services",
+        },
       },
       {
         id: 5,
@@ -257,16 +262,16 @@ export const therapistTypesData = [
           zipcode: "33263",
           geo: {
             lat: "-31.8129",
-            lng: "62.5342"
-          }
+            lng: "62.5342",
+          },
         },
         phone: "(254)954-1289",
         website: "demarco.info",
         company: {
           name: "Keebler LLC",
           catchPhrase: "User-centric fault-tolerant solution",
-          bs: "revolutionize end-to-end systems"
-        }
+          bs: "revolutionize end-to-end systems",
+        },
       },
       {
         id: 6,
@@ -280,16 +285,16 @@ export const therapistTypesData = [
           zipcode: "23505-1337",
           geo: {
             lat: "-71.4197",
-            lng: "71.7478"
-          }
+            lng: "71.7478",
+          },
         },
         phone: "1-477-935-8478 x6430",
         website: "ola.org",
         company: {
           name: "Considine-Lockman",
           catchPhrase: "Synchronised bottom-line interface",
-          bs: "e-enable innovative applications"
-        }
+          bs: "e-enable innovative applications",
+        },
       },
       {
         id: 7,
@@ -303,16 +308,16 @@ export const therapistTypesData = [
           zipcode: "58804-1099",
           geo: {
             lat: "24.8918",
-            lng: "21.8984"
-          }
+            lng: "21.8984",
+          },
         },
         phone: "210.067.6132",
         website: "elvis.io",
         company: {
           name: "Johns Group",
           catchPhrase: "Configurable multimedia task-force",
-          bs: "generate enterprise e-tailers"
-        }
+          bs: "generate enterprise e-tailers",
+        },
       },
       {
         id: 8,
@@ -326,16 +331,16 @@ export const therapistTypesData = [
           zipcode: "45169",
           geo: {
             lat: "-14.3990",
-            lng: "-120.7677"
-          }
+            lng: "-120.7677",
+          },
         },
         phone: "586.493.6943 x140",
         website: "jacynthe.com",
         company: {
           name: "Abernathy Group",
           catchPhrase: "Implemented secondary concept",
-          bs: "e-enable extensible e-tailers"
-        }
+          bs: "e-enable extensible e-tailers",
+        },
       },
       {
         id: 9,
@@ -349,16 +354,16 @@ export const therapistTypesData = [
           zipcode: "76495-3109",
           geo: {
             lat: "24.6463",
-            lng: "-168.8889"
-          }
+            lng: "-168.8889",
+          },
         },
         phone: "(775)976-6794 x41206",
         website: "conrad.com",
         company: {
           name: "Yost and Sons",
           catchPhrase: "Switchable contextually-based project",
-          bs: "aggregate real-time technologies"
-        }
+          bs: "aggregate real-time technologies",
+        },
       },
       {
         id: 10,
@@ -372,19 +377,22 @@ export const therapistTypesData = [
           zipcode: "31428-2261",
           geo: {
             lat: "-38.2386",
-            lng: "57.2232"
-          }
+            lng: "57.2232",
+          },
         },
         phone: "024-648-3804",
         website: "ambrose.net",
         company: {
           name: "Hoeger LLC",
           catchPhrase: "Centralized empowering task-force",
-          bs: "target end-to-end models"
-        }
-      }
-    ]},
-    { typeName: "Criminologiest" ,users: [
+          bs: "target end-to-end models",
+        },
+      },
+    ],
+  },
+  {
+    typeName: "Criminologiest",
+    users: [
       {
         id: 1,
         name: "Leanne Graham",
@@ -396,17 +404,17 @@ export const therapistTypesData = [
           city: "Gwenborough",
           zipcode: "92998-3874",
           geo: {
-            "lat": "-37.3159",
-            "lng": "81.1496"
-          }
+            lat: "-37.3159",
+            lng: "81.1496",
+          },
         },
         phone: "1-770-736-8031 x56442",
         website: "hildegard.org",
         company: {
           name: "Romaguera-Crona",
           catchPhrase: "Multi-layered client-server neural-net",
-          bs: "harness real-time e-markets"
-        }
+          bs: "harness real-time e-markets",
+        },
       },
       {
         id: 2,
@@ -420,16 +428,16 @@ export const therapistTypesData = [
           zipcode: "90566-7771",
           geo: {
             lat: "-43.9509",
-            lng: "-34.4618"
-          }
+            lng: "-34.4618",
+          },
         },
         phone: "010-692-6593 x09125",
         website: "anastasia.net",
         company: {
           name: "Deckow-Crist",
           catchPhrase: "Proactive didactic contingency",
-          bs: "synergize scalable supply-chains"
-        }
+          bs: "synergize scalable supply-chains",
+        },
       },
       {
         id: 3,
@@ -443,16 +451,16 @@ export const therapistTypesData = [
           zipcode: "59590-4157",
           geo: {
             lat: "-68.6102",
-            lng: "-47.0653"
-          }
+            lng: "-47.0653",
+          },
         },
         phone: "1-463-123-4447",
         website: "ramiro.info",
         company: {
           name: "Romaguera-Jacobson",
           catchPhrase: "Face to face bifurcated interface",
-          bs: "e-enable strategic applications"
-        }
+          bs: "e-enable strategic applications",
+        },
       },
       {
         id: 4,
@@ -466,16 +474,16 @@ export const therapistTypesData = [
           zipcode: "53919-4257",
           geo: {
             lat: "29.4572",
-            lng: "-164.2990"
-          }
+            lng: "-164.2990",
+          },
         },
         phone: "493-170-9623 x156",
         website: "kale.biz",
         company: {
           name: "Robel-Corkery",
           catchPhrase: "Multi-tiered zero tolerance productivity",
-          bs: "transition cutting-edge web services"
-        }
+          bs: "transition cutting-edge web services",
+        },
       },
       {
         id: 5,
@@ -489,16 +497,16 @@ export const therapistTypesData = [
           zipcode: "33263",
           geo: {
             lat: "-31.8129",
-            lng: "62.5342"
-          }
+            lng: "62.5342",
+          },
         },
         phone: "(254)954-1289",
         website: "demarco.info",
         company: {
           name: "Keebler LLC",
           catchPhrase: "User-centric fault-tolerant solution",
-          bs: "revolutionize end-to-end systems"
-        }
+          bs: "revolutionize end-to-end systems",
+        },
       },
       {
         id: 6,
@@ -512,16 +520,16 @@ export const therapistTypesData = [
           zipcode: "23505-1337",
           geo: {
             lat: "-71.4197",
-            lng: "71.7478"
-          }
+            lng: "71.7478",
+          },
         },
         phone: "1-477-935-8478 x6430",
         website: "ola.org",
         company: {
           name: "Considine-Lockman",
           catchPhrase: "Synchronised bottom-line interface",
-          bs: "e-enable innovative applications"
-        }
+          bs: "e-enable innovative applications",
+        },
       },
       {
         id: 7,
@@ -535,16 +543,16 @@ export const therapistTypesData = [
           zipcode: "58804-1099",
           geo: {
             lat: "24.8918",
-            lng: "21.8984"
-          }
+            lng: "21.8984",
+          },
         },
         phone: "210.067.6132",
         website: "elvis.io",
         company: {
           name: "Johns Group",
           catchPhrase: "Configurable multimedia task-force",
-          bs: "generate enterprise e-tailers"
-        }
+          bs: "generate enterprise e-tailers",
+        },
       },
       {
         id: 8,
@@ -558,16 +566,16 @@ export const therapistTypesData = [
           zipcode: "45169",
           geo: {
             lat: "-14.3990",
-            lng: "-120.7677"
-          }
+            lng: "-120.7677",
+          },
         },
         phone: "586.493.6943 x140",
         website: "jacynthe.com",
         company: {
           name: "Abernathy Group",
           catchPhrase: "Implemented secondary concept",
-          bs: "e-enable extensible e-tailers"
-        }
+          bs: "e-enable extensible e-tailers",
+        },
       },
       {
         id: 9,
@@ -581,16 +589,16 @@ export const therapistTypesData = [
           zipcode: "76495-3109",
           geo: {
             lat: "24.6463",
-            lng: "-168.8889"
-          }
+            lng: "-168.8889",
+          },
         },
         phone: "(775)976-6794 x41206",
         website: "conrad.com",
         company: {
           name: "Yost and Sons",
           catchPhrase: "Switchable contextually-based project",
-          bs: "aggregate real-time technologies"
-        }
+          bs: "aggregate real-time technologies",
+        },
       },
       {
         id: 10,
@@ -604,19 +612,22 @@ export const therapistTypesData = [
           zipcode: "31428-2261",
           geo: {
             lat: "-38.2386",
-            lng: "57.2232"
-          }
+            lng: "57.2232",
+          },
         },
         phone: "024-648-3804",
         website: "ambrose.net",
         company: {
           name: "Hoeger LLC",
           catchPhrase: "Centralized empowering task-force",
-          bs: "target end-to-end models"
-        }
-      }
-    ]},
-    { typeName: "Creative Arts Therapist" ,users: [
+          bs: "target end-to-end models",
+        },
+      },
+    ],
+  },
+  {
+    typeName: "Creative Arts Therapist",
+    users: [
       {
         id: 1,
         name: "Leanne Graham",
@@ -628,17 +639,17 @@ export const therapistTypesData = [
           city: "Gwenborough",
           zipcode: "92998-3874",
           geo: {
-            "lat": "-37.3159",
-            "lng": "81.1496"
-          }
+            lat: "-37.3159",
+            lng: "81.1496",
+          },
         },
         phone: "1-770-736-8031 x56442",
         website: "hildegard.org",
         company: {
           name: "Romaguera-Crona",
           catchPhrase: "Multi-layered client-server neural-net",
-          bs: "harness real-time e-markets"
-        }
+          bs: "harness real-time e-markets",
+        },
       },
       {
         id: 2,
@@ -652,16 +663,16 @@ export const therapistTypesData = [
           zipcode: "90566-7771",
           geo: {
             lat: "-43.9509",
-            lng: "-34.4618"
-          }
+            lng: "-34.4618",
+          },
         },
         phone: "010-692-6593 x09125",
         website: "anastasia.net",
         company: {
           name: "Deckow-Crist",
           catchPhrase: "Proactive didactic contingency",
-          bs: "synergize scalable supply-chains"
-        }
+          bs: "synergize scalable supply-chains",
+        },
       },
       {
         id: 3,
@@ -675,16 +686,16 @@ export const therapistTypesData = [
           zipcode: "59590-4157",
           geo: {
             lat: "-68.6102",
-            lng: "-47.0653"
-          }
+            lng: "-47.0653",
+          },
         },
         phone: "1-463-123-4447",
         website: "ramiro.info",
         company: {
           name: "Romaguera-Jacobson",
           catchPhrase: "Face to face bifurcated interface",
-          bs: "e-enable strategic applications"
-        }
+          bs: "e-enable strategic applications",
+        },
       },
       {
         id: 4,
@@ -698,16 +709,16 @@ export const therapistTypesData = [
           zipcode: "53919-4257",
           geo: {
             lat: "29.4572",
-            lng: "-164.2990"
-          }
+            lng: "-164.2990",
+          },
         },
         phone: "493-170-9623 x156",
         website: "kale.biz",
         company: {
           name: "Robel-Corkery",
           catchPhrase: "Multi-tiered zero tolerance productivity",
-          bs: "transition cutting-edge web services"
-        }
+          bs: "transition cutting-edge web services",
+        },
       },
       {
         id: 5,
@@ -721,16 +732,16 @@ export const therapistTypesData = [
           zipcode: "33263",
           geo: {
             lat: "-31.8129",
-            lng: "62.5342"
-          }
+            lng: "62.5342",
+          },
         },
         phone: "(254)954-1289",
         website: "demarco.info",
         company: {
           name: "Keebler LLC",
           catchPhrase: "User-centric fault-tolerant solution",
-          bs: "revolutionize end-to-end systems"
-        }
+          bs: "revolutionize end-to-end systems",
+        },
       },
       {
         id: 6,
@@ -744,16 +755,16 @@ export const therapistTypesData = [
           zipcode: "23505-1337",
           geo: {
             lat: "-71.4197",
-            lng: "71.7478"
-          }
+            lng: "71.7478",
+          },
         },
         phone: "1-477-935-8478 x6430",
         website: "ola.org",
         company: {
           name: "Considine-Lockman",
           catchPhrase: "Synchronised bottom-line interface",
-          bs: "e-enable innovative applications"
-        }
+          bs: "e-enable innovative applications",
+        },
       },
       {
         id: 7,
@@ -767,16 +778,16 @@ export const therapistTypesData = [
           zipcode: "58804-1099",
           geo: {
             lat: "24.8918",
-            lng: "21.8984"
-          }
+            lng: "21.8984",
+          },
         },
         phone: "210.067.6132",
         website: "elvis.io",
         company: {
           name: "Johns Group",
           catchPhrase: "Configurable multimedia task-force",
-          bs: "generate enterprise e-tailers"
-        }
+          bs: "generate enterprise e-tailers",
+        },
       },
       {
         id: 8,
@@ -790,16 +801,16 @@ export const therapistTypesData = [
           zipcode: "45169",
           geo: {
             lat: "-14.3990",
-            lng: "-120.7677"
-          }
+            lng: "-120.7677",
+          },
         },
         phone: "586.493.6943 x140",
         website: "jacynthe.com",
         company: {
           name: "Abernathy Group",
           catchPhrase: "Implemented secondary concept",
-          bs: "e-enable extensible e-tailers"
-        }
+          bs: "e-enable extensible e-tailers",
+        },
       },
       {
         id: 9,
@@ -813,16 +824,16 @@ export const therapistTypesData = [
           zipcode: "76495-3109",
           geo: {
             lat: "24.6463",
-            lng: "-168.8889"
-          }
+            lng: "-168.8889",
+          },
         },
         phone: "(775)976-6794 x41206",
         website: "conrad.com",
         company: {
           name: "Yost and Sons",
           catchPhrase: "Switchable contextually-based project",
-          bs: "aggregate real-time technologies"
-        }
+          bs: "aggregate real-time technologies",
+        },
       },
       {
         id: 10,
@@ -836,19 +847,22 @@ export const therapistTypesData = [
           zipcode: "31428-2261",
           geo: {
             lat: "-38.2386",
-            lng: "57.2232"
-          }
+            lng: "57.2232",
+          },
         },
         phone: "024-648-3804",
         website: "ambrose.net",
         company: {
           name: "Hoeger LLC",
           catchPhrase: "Centralized empowering task-force",
-          bs: "target end-to-end models"
-        }
-      }
-    ]},
-    { typeName: "Psychodrama Therapist" ,users: [
+          bs: "target end-to-end models",
+        },
+      },
+    ],
+  },
+  {
+    typeName: "Psychodrama Therapist",
+    users: [
       {
         id: 1,
         name: "Leanne Graham",
@@ -860,17 +874,17 @@ export const therapistTypesData = [
           city: "Gwenborough",
           zipcode: "92998-3874",
           geo: {
-            "lat": "-37.3159",
-            "lng": "81.1496"
-          }
+            lat: "-37.3159",
+            lng: "81.1496",
+          },
         },
         phone: "1-770-736-8031 x56442",
         website: "hildegard.org",
         company: {
           name: "Romaguera-Crona",
           catchPhrase: "Multi-layered client-server neural-net",
-          bs: "harness real-time e-markets"
-        }
+          bs: "harness real-time e-markets",
+        },
       },
       {
         id: 2,
@@ -884,16 +898,16 @@ export const therapistTypesData = [
           zipcode: "90566-7771",
           geo: {
             lat: "-43.9509",
-            lng: "-34.4618"
-          }
+            lng: "-34.4618",
+          },
         },
         phone: "010-692-6593 x09125",
         website: "anastasia.net",
         company: {
           name: "Deckow-Crist",
           catchPhrase: "Proactive didactic contingency",
-          bs: "synergize scalable supply-chains"
-        }
+          bs: "synergize scalable supply-chains",
+        },
       },
       {
         id: 3,
@@ -907,16 +921,16 @@ export const therapistTypesData = [
           zipcode: "59590-4157",
           geo: {
             lat: "-68.6102",
-            lng: "-47.0653"
-          }
+            lng: "-47.0653",
+          },
         },
         phone: "1-463-123-4447",
         website: "ramiro.info",
         company: {
           name: "Romaguera-Jacobson",
           catchPhrase: "Face to face bifurcated interface",
-          bs: "e-enable strategic applications"
-        }
+          bs: "e-enable strategic applications",
+        },
       },
       {
         id: 4,
@@ -930,16 +944,16 @@ export const therapistTypesData = [
           zipcode: "53919-4257",
           geo: {
             lat: "29.4572",
-            lng: "-164.2990"
-          }
+            lng: "-164.2990",
+          },
         },
         phone: "493-170-9623 x156",
         website: "kale.biz",
         company: {
           name: "Robel-Corkery",
           catchPhrase: "Multi-tiered zero tolerance productivity",
-          bs: "transition cutting-edge web services"
-        }
+          bs: "transition cutting-edge web services",
+        },
       },
       {
         id: 5,
@@ -953,16 +967,16 @@ export const therapistTypesData = [
           zipcode: "33263",
           geo: {
             lat: "-31.8129",
-            lng: "62.5342"
-          }
+            lng: "62.5342",
+          },
         },
         phone: "(254)954-1289",
         website: "demarco.info",
         company: {
           name: "Keebler LLC",
           catchPhrase: "User-centric fault-tolerant solution",
-          bs: "revolutionize end-to-end systems"
-        }
+          bs: "revolutionize end-to-end systems",
+        },
       },
       {
         id: 6,
@@ -976,16 +990,16 @@ export const therapistTypesData = [
           zipcode: "23505-1337",
           geo: {
             lat: "-71.4197",
-            lng: "71.7478"
-          }
+            lng: "71.7478",
+          },
         },
         phone: "1-477-935-8478 x6430",
         website: "ola.org",
         company: {
           name: "Considine-Lockman",
           catchPhrase: "Synchronised bottom-line interface",
-          bs: "e-enable innovative applications"
-        }
+          bs: "e-enable innovative applications",
+        },
       },
       {
         id: 7,
@@ -999,16 +1013,16 @@ export const therapistTypesData = [
           zipcode: "58804-1099",
           geo: {
             lat: "24.8918",
-            lng: "21.8984"
-          }
+            lng: "21.8984",
+          },
         },
         phone: "210.067.6132",
         website: "elvis.io",
         company: {
           name: "Johns Group",
           catchPhrase: "Configurable multimedia task-force",
-          bs: "generate enterprise e-tailers"
-        }
+          bs: "generate enterprise e-tailers",
+        },
       },
       {
         id: 8,
@@ -1022,16 +1036,16 @@ export const therapistTypesData = [
           zipcode: "45169",
           geo: {
             lat: "-14.3990",
-            lng: "-120.7677"
-          }
+            lng: "-120.7677",
+          },
         },
         phone: "586.493.6943 x140",
         website: "jacynthe.com",
         company: {
           name: "Abernathy Group",
           catchPhrase: "Implemented secondary concept",
-          bs: "e-enable extensible e-tailers"
-        }
+          bs: "e-enable extensible e-tailers",
+        },
       },
       {
         id: 9,
@@ -1045,16 +1059,16 @@ export const therapistTypesData = [
           zipcode: "76495-3109",
           geo: {
             lat: "24.6463",
-            lng: "-168.8889"
-          }
+            lng: "-168.8889",
+          },
         },
         phone: "(775)976-6794 x41206",
         website: "conrad.com",
         company: {
           name: "Yost and Sons",
           catchPhrase: "Switchable contextually-based project",
-          bs: "aggregate real-time technologies"
-        }
+          bs: "aggregate real-time technologies",
+        },
       },
       {
         id: 10,
@@ -1068,19 +1082,22 @@ export const therapistTypesData = [
           zipcode: "31428-2261",
           geo: {
             lat: "-38.2386",
-            lng: "57.2232"
-          }
+            lng: "57.2232",
+          },
         },
         phone: "024-648-3804",
         website: "ambrose.net",
         company: {
           name: "Hoeger LLC",
           catchPhrase: "Centralized empowering task-force",
-          bs: "target end-to-end models"
-        }
-      }
-    ]},
-    { typeName: "Bibliotherapist" ,users: [
+          bs: "target end-to-end models",
+        },
+      },
+    ],
+  },
+  {
+    typeName: "Bibliotherapist",
+    users: [
       {
         id: 1,
         name: "Leanne Graham",
@@ -1092,17 +1109,17 @@ export const therapistTypesData = [
           city: "Gwenborough",
           zipcode: "92998-3874",
           geo: {
-            "lat": "-37.3159",
-            "lng": "81.1496"
-          }
+            lat: "-37.3159",
+            lng: "81.1496",
+          },
         },
         phone: "1-770-736-8031 x56442",
         website: "hildegard.org",
         company: {
           name: "Romaguera-Crona",
           catchPhrase: "Multi-layered client-server neural-net",
-          bs: "harness real-time e-markets"
-        }
+          bs: "harness real-time e-markets",
+        },
       },
       {
         id: 2,
@@ -1116,16 +1133,16 @@ export const therapistTypesData = [
           zipcode: "90566-7771",
           geo: {
             lat: "-43.9509",
-            lng: "-34.4618"
-          }
+            lng: "-34.4618",
+          },
         },
         phone: "010-692-6593 x09125",
         website: "anastasia.net",
         company: {
           name: "Deckow-Crist",
           catchPhrase: "Proactive didactic contingency",
-          bs: "synergize scalable supply-chains"
-        }
+          bs: "synergize scalable supply-chains",
+        },
       },
       {
         id: 3,
@@ -1139,16 +1156,16 @@ export const therapistTypesData = [
           zipcode: "59590-4157",
           geo: {
             lat: "-68.6102",
-            lng: "-47.0653"
-          }
+            lng: "-47.0653",
+          },
         },
         phone: "1-463-123-4447",
         website: "ramiro.info",
         company: {
           name: "Romaguera-Jacobson",
           catchPhrase: "Face to face bifurcated interface",
-          bs: "e-enable strategic applications"
-        }
+          bs: "e-enable strategic applications",
+        },
       },
       {
         id: 4,
@@ -1162,16 +1179,16 @@ export const therapistTypesData = [
           zipcode: "53919-4257",
           geo: {
             lat: "29.4572",
-            lng: "-164.2990"
-          }
+            lng: "-164.2990",
+          },
         },
         phone: "493-170-9623 x156",
         website: "kale.biz",
         company: {
           name: "Robel-Corkery",
           catchPhrase: "Multi-tiered zero tolerance productivity",
-          bs: "transition cutting-edge web services"
-        }
+          bs: "transition cutting-edge web services",
+        },
       },
       {
         id: 5,
@@ -1185,16 +1202,16 @@ export const therapistTypesData = [
           zipcode: "33263",
           geo: {
             lat: "-31.8129",
-            lng: "62.5342"
-          }
+            lng: "62.5342",
+          },
         },
         phone: "(254)954-1289",
         website: "demarco.info",
         company: {
           name: "Keebler LLC",
           catchPhrase: "User-centric fault-tolerant solution",
-          bs: "revolutionize end-to-end systems"
-        }
+          bs: "revolutionize end-to-end systems",
+        },
       },
       {
         id: 6,
@@ -1208,16 +1225,16 @@ export const therapistTypesData = [
           zipcode: "23505-1337",
           geo: {
             lat: "-71.4197",
-            lng: "71.7478"
-          }
+            lng: "71.7478",
+          },
         },
         phone: "1-477-935-8478 x6430",
         website: "ola.org",
         company: {
           name: "Considine-Lockman",
           catchPhrase: "Synchronised bottom-line interface",
-          bs: "e-enable innovative applications"
-        }
+          bs: "e-enable innovative applications",
+        },
       },
       {
         id: 7,
@@ -1231,16 +1248,16 @@ export const therapistTypesData = [
           zipcode: "58804-1099",
           geo: {
             lat: "24.8918",
-            lng: "21.8984"
-          }
+            lng: "21.8984",
+          },
         },
         phone: "210.067.6132",
         website: "elvis.io",
         company: {
           name: "Johns Group",
           catchPhrase: "Configurable multimedia task-force",
-          bs: "generate enterprise e-tailers"
-        }
+          bs: "generate enterprise e-tailers",
+        },
       },
       {
         id: 8,
@@ -1254,16 +1271,16 @@ export const therapistTypesData = [
           zipcode: "45169",
           geo: {
             lat: "-14.3990",
-            lng: "-120.7677"
-          }
+            lng: "-120.7677",
+          },
         },
         phone: "586.493.6943 x140",
         website: "jacynthe.com",
         company: {
           name: "Abernathy Group",
           catchPhrase: "Implemented secondary concept",
-          bs: "e-enable extensible e-tailers"
-        }
+          bs: "e-enable extensible e-tailers",
+        },
       },
       {
         id: 9,
@@ -1277,16 +1294,16 @@ export const therapistTypesData = [
           zipcode: "76495-3109",
           geo: {
             lat: "24.6463",
-            lng: "-168.8889"
-          }
+            lng: "-168.8889",
+          },
         },
         phone: "(775)976-6794 x41206",
         website: "conrad.com",
         company: {
           name: "Yost and Sons",
           catchPhrase: "Switchable contextually-based project",
-          bs: "aggregate real-time technologies"
-        }
+          bs: "aggregate real-time technologies",
+        },
       },
       {
         id: 10,
@@ -1300,19 +1317,22 @@ export const therapistTypesData = [
           zipcode: "31428-2261",
           geo: {
             lat: "-38.2386",
-            lng: "57.2232"
-          }
+            lng: "57.2232",
+          },
         },
         phone: "024-648-3804",
         website: "ambrose.net",
         company: {
           name: "Hoeger LLC",
           catchPhrase: "Centralized empowering task-force",
-          bs: "target end-to-end models"
-        }
-      }
-    ]},
-    { typeName: "Occupational Therapist" ,users: [
+          bs: "target end-to-end models",
+        },
+      },
+    ],
+  },
+  {
+    typeName: "Occupational Therapist",
+    users: [
       {
         id: 1,
         name: "Leanne Graham",
@@ -1324,17 +1344,17 @@ export const therapistTypesData = [
           city: "Gwenborough",
           zipcode: "92998-3874",
           geo: {
-            "lat": "-37.3159",
-            "lng": "81.1496"
-          }
+            lat: "-37.3159",
+            lng: "81.1496",
+          },
         },
         phone: "1-770-736-8031 x56442",
         website: "hildegard.org",
         company: {
           name: "Romaguera-Crona",
           catchPhrase: "Multi-layered client-server neural-net",
-          bs: "harness real-time e-markets"
-        }
+          bs: "harness real-time e-markets",
+        },
       },
       {
         id: 2,
@@ -1348,16 +1368,16 @@ export const therapistTypesData = [
           zipcode: "90566-7771",
           geo: {
             lat: "-43.9509",
-            lng: "-34.4618"
-          }
+            lng: "-34.4618",
+          },
         },
         phone: "010-692-6593 x09125",
         website: "anastasia.net",
         company: {
           name: "Deckow-Crist",
           catchPhrase: "Proactive didactic contingency",
-          bs: "synergize scalable supply-chains"
-        }
+          bs: "synergize scalable supply-chains",
+        },
       },
       {
         id: 3,
@@ -1371,16 +1391,16 @@ export const therapistTypesData = [
           zipcode: "59590-4157",
           geo: {
             lat: "-68.6102",
-            lng: "-47.0653"
-          }
+            lng: "-47.0653",
+          },
         },
         phone: "1-463-123-4447",
         website: "ramiro.info",
         company: {
           name: "Romaguera-Jacobson",
           catchPhrase: "Face to face bifurcated interface",
-          bs: "e-enable strategic applications"
-        }
+          bs: "e-enable strategic applications",
+        },
       },
       {
         id: 4,
@@ -1394,16 +1414,16 @@ export const therapistTypesData = [
           zipcode: "53919-4257",
           geo: {
             lat: "29.4572",
-            lng: "-164.2990"
-          }
+            lng: "-164.2990",
+          },
         },
         phone: "493-170-9623 x156",
         website: "kale.biz",
         company: {
           name: "Robel-Corkery",
           catchPhrase: "Multi-tiered zero tolerance productivity",
-          bs: "transition cutting-edge web services"
-        }
+          bs: "transition cutting-edge web services",
+        },
       },
       {
         id: 5,
@@ -1417,16 +1437,16 @@ export const therapistTypesData = [
           zipcode: "33263",
           geo: {
             lat: "-31.8129",
-            lng: "62.5342"
-          }
+            lng: "62.5342",
+          },
         },
         phone: "(254)954-1289",
         website: "demarco.info",
         company: {
           name: "Keebler LLC",
           catchPhrase: "User-centric fault-tolerant solution",
-          bs: "revolutionize end-to-end systems"
-        }
+          bs: "revolutionize end-to-end systems",
+        },
       },
       {
         id: 6,
@@ -1440,16 +1460,16 @@ export const therapistTypesData = [
           zipcode: "23505-1337",
           geo: {
             lat: "-71.4197",
-            lng: "71.7478"
-          }
+            lng: "71.7478",
+          },
         },
         phone: "1-477-935-8478 x6430",
         website: "ola.org",
         company: {
           name: "Considine-Lockman",
           catchPhrase: "Synchronised bottom-line interface",
-          bs: "e-enable innovative applications"
-        }
+          bs: "e-enable innovative applications",
+        },
       },
       {
         id: 7,
@@ -1463,16 +1483,16 @@ export const therapistTypesData = [
           zipcode: "58804-1099",
           geo: {
             lat: "24.8918",
-            lng: "21.8984"
-          }
+            lng: "21.8984",
+          },
         },
         phone: "210.067.6132",
         website: "elvis.io",
         company: {
           name: "Johns Group",
           catchPhrase: "Configurable multimedia task-force",
-          bs: "generate enterprise e-tailers"
-        }
+          bs: "generate enterprise e-tailers",
+        },
       },
       {
         id: 8,
@@ -1486,16 +1506,16 @@ export const therapistTypesData = [
           zipcode: "45169",
           geo: {
             lat: "-14.3990",
-            lng: "-120.7677"
-          }
+            lng: "-120.7677",
+          },
         },
         phone: "586.493.6943 x140",
         website: "jacynthe.com",
         company: {
           name: "Abernathy Group",
           catchPhrase: "Implemented secondary concept",
-          bs: "e-enable extensible e-tailers"
-        }
+          bs: "e-enable extensible e-tailers",
+        },
       },
       {
         id: 9,
@@ -1509,16 +1529,16 @@ export const therapistTypesData = [
           zipcode: "76495-3109",
           geo: {
             lat: "24.6463",
-            lng: "-168.8889"
-          }
+            lng: "-168.8889",
+          },
         },
         phone: "(775)976-6794 x41206",
         website: "conrad.com",
         company: {
           name: "Yost and Sons",
           catchPhrase: "Switchable contextually-based project",
-          bs: "aggregate real-time technologies"
-        }
+          bs: "aggregate real-time technologies",
+        },
       },
       {
         id: 10,
@@ -1532,19 +1552,22 @@ export const therapistTypesData = [
           zipcode: "31428-2261",
           geo: {
             lat: "-38.2386",
-            lng: "57.2232"
-          }
+            lng: "57.2232",
+          },
         },
         phone: "024-648-3804",
         website: "ambrose.net",
         company: {
           name: "Hoeger LLC",
           catchPhrase: "Centralized empowering task-force",
-          bs: "target end-to-end models"
-        }
-      }
-    ]},
-    { typeName: "Speach Therapist" ,users: [
+          bs: "target end-to-end models",
+        },
+      },
+    ],
+  },
+  {
+    typeName: "Speach Therapist",
+    users: [
       {
         id: 1,
         name: "Leanne Graham",
@@ -1556,17 +1579,17 @@ export const therapistTypesData = [
           city: "Gwenborough",
           zipcode: "92998-3874",
           geo: {
-            "lat": "-37.3159",
-            "lng": "81.1496"
-          }
+            lat: "-37.3159",
+            lng: "81.1496",
+          },
         },
         phone: "1-770-736-8031 x56442",
         website: "hildegard.org",
         company: {
           name: "Romaguera-Crona",
           catchPhrase: "Multi-layered client-server neural-net",
-          bs: "harness real-time e-markets"
-        }
+          bs: "harness real-time e-markets",
+        },
       },
       {
         id: 2,
@@ -1580,16 +1603,16 @@ export const therapistTypesData = [
           zipcode: "90566-7771",
           geo: {
             lat: "-43.9509",
-            lng: "-34.4618"
-          }
+            lng: "-34.4618",
+          },
         },
         phone: "010-692-6593 x09125",
         website: "anastasia.net",
         company: {
           name: "Deckow-Crist",
           catchPhrase: "Proactive didactic contingency",
-          bs: "synergize scalable supply-chains"
-        }
+          bs: "synergize scalable supply-chains",
+        },
       },
       {
         id: 3,
@@ -1603,16 +1626,16 @@ export const therapistTypesData = [
           zipcode: "59590-4157",
           geo: {
             lat: "-68.6102",
-            lng: "-47.0653"
-          }
+            lng: "-47.0653",
+          },
         },
         phone: "1-463-123-4447",
         website: "ramiro.info",
         company: {
           name: "Romaguera-Jacobson",
           catchPhrase: "Face to face bifurcated interface",
-          bs: "e-enable strategic applications"
-        }
+          bs: "e-enable strategic applications",
+        },
       },
       {
         id: 4,
@@ -1626,16 +1649,16 @@ export const therapistTypesData = [
           zipcode: "53919-4257",
           geo: {
             lat: "29.4572",
-            lng: "-164.2990"
-          }
+            lng: "-164.2990",
+          },
         },
         phone: "493-170-9623 x156",
         website: "kale.biz",
         company: {
           name: "Robel-Corkery",
           catchPhrase: "Multi-tiered zero tolerance productivity",
-          bs: "transition cutting-edge web services"
-        }
+          bs: "transition cutting-edge web services",
+        },
       },
       {
         id: 5,
@@ -1649,16 +1672,16 @@ export const therapistTypesData = [
           zipcode: "33263",
           geo: {
             lat: "-31.8129",
-            lng: "62.5342"
-          }
+            lng: "62.5342",
+          },
         },
         phone: "(254)954-1289",
         website: "demarco.info",
         company: {
           name: "Keebler LLC",
           catchPhrase: "User-centric fault-tolerant solution",
-          bs: "revolutionize end-to-end systems"
-        }
+          bs: "revolutionize end-to-end systems",
+        },
       },
       {
         id: 6,
@@ -1672,16 +1695,16 @@ export const therapistTypesData = [
           zipcode: "23505-1337",
           geo: {
             lat: "-71.4197",
-            lng: "71.7478"
-          }
+            lng: "71.7478",
+          },
         },
         phone: "1-477-935-8478 x6430",
         website: "ola.org",
         company: {
           name: "Considine-Lockman",
           catchPhrase: "Synchronised bottom-line interface",
-          bs: "e-enable innovative applications"
-        }
+          bs: "e-enable innovative applications",
+        },
       },
       {
         id: 7,
@@ -1695,16 +1718,16 @@ export const therapistTypesData = [
           zipcode: "58804-1099",
           geo: {
             lat: "24.8918",
-            lng: "21.8984"
-          }
+            lng: "21.8984",
+          },
         },
         phone: "210.067.6132",
         website: "elvis.io",
         company: {
           name: "Johns Group",
           catchPhrase: "Configurable multimedia task-force",
-          bs: "generate enterprise e-tailers"
-        }
+          bs: "generate enterprise e-tailers",
+        },
       },
       {
         id: 8,
@@ -1718,16 +1741,16 @@ export const therapistTypesData = [
           zipcode: "45169",
           geo: {
             lat: "-14.3990",
-            lng: "-120.7677"
-          }
+            lng: "-120.7677",
+          },
         },
         phone: "586.493.6943 x140",
         website: "jacynthe.com",
         company: {
           name: "Abernathy Group",
           catchPhrase: "Implemented secondary concept",
-          bs: "e-enable extensible e-tailers"
-        }
+          bs: "e-enable extensible e-tailers",
+        },
       },
       {
         id: 9,
@@ -1741,16 +1764,16 @@ export const therapistTypesData = [
           zipcode: "76495-3109",
           geo: {
             lat: "24.6463",
-            lng: "-168.8889"
-          }
+            lng: "-168.8889",
+          },
         },
         phone: "(775)976-6794 x41206",
         website: "conrad.com",
         company: {
           name: "Yost and Sons",
           catchPhrase: "Switchable contextually-based project",
-          bs: "aggregate real-time technologies"
-        }
+          bs: "aggregate real-time technologies",
+        },
       },
       {
         id: 10,
@@ -1764,19 +1787,22 @@ export const therapistTypesData = [
           zipcode: "31428-2261",
           geo: {
             lat: "-38.2386",
-            lng: "57.2232"
-          }
+            lng: "57.2232",
+          },
         },
         phone: "024-648-3804",
         website: "ambrose.net",
         company: {
           name: "Hoeger LLC",
           catchPhrase: "Centralized empowering task-force",
-          bs: "target end-to-end models"
-        }
-      }
-    ]},
-    { typeName: "Psycho Therapist" ,users: [
+          bs: "target end-to-end models",
+        },
+      },
+    ],
+  },
+  {
+    typeName: "Psycho Therapist",
+    users: [
       {
         id: 1,
         name: "Leanne Graham",
@@ -1788,17 +1814,17 @@ export const therapistTypesData = [
           city: "Gwenborough",
           zipcode: "92998-3874",
           geo: {
-            "lat": "-37.3159",
-            "lng": "81.1496"
-          }
+            lat: "-37.3159",
+            lng: "81.1496",
+          },
         },
         phone: "1-770-736-8031 x56442",
         website: "hildegard.org",
         company: {
           name: "Romaguera-Crona",
           catchPhrase: "Multi-layered client-server neural-net",
-          bs: "harness real-time e-markets"
-        }
+          bs: "harness real-time e-markets",
+        },
       },
       {
         id: 2,
@@ -1812,16 +1838,16 @@ export const therapistTypesData = [
           zipcode: "90566-7771",
           geo: {
             lat: "-43.9509",
-            lng: "-34.4618"
-          }
+            lng: "-34.4618",
+          },
         },
         phone: "010-692-6593 x09125",
         website: "anastasia.net",
         company: {
           name: "Deckow-Crist",
           catchPhrase: "Proactive didactic contingency",
-          bs: "synergize scalable supply-chains"
-        }
+          bs: "synergize scalable supply-chains",
+        },
       },
       {
         id: 3,
@@ -1835,16 +1861,16 @@ export const therapistTypesData = [
           zipcode: "59590-4157",
           geo: {
             lat: "-68.6102",
-            lng: "-47.0653"
-          }
+            lng: "-47.0653",
+          },
         },
         phone: "1-463-123-4447",
         website: "ramiro.info",
         company: {
           name: "Romaguera-Jacobson",
           catchPhrase: "Face to face bifurcated interface",
-          bs: "e-enable strategic applications"
-        }
+          bs: "e-enable strategic applications",
+        },
       },
       {
         id: 4,
@@ -1858,16 +1884,16 @@ export const therapistTypesData = [
           zipcode: "53919-4257",
           geo: {
             lat: "29.4572",
-            lng: "-164.2990"
-          }
+            lng: "-164.2990",
+          },
         },
         phone: "493-170-9623 x156",
         website: "kale.biz",
         company: {
           name: "Robel-Corkery",
           catchPhrase: "Multi-tiered zero tolerance productivity",
-          bs: "transition cutting-edge web services"
-        }
+          bs: "transition cutting-edge web services",
+        },
       },
       {
         id: 5,
@@ -1881,16 +1907,16 @@ export const therapistTypesData = [
           zipcode: "33263",
           geo: {
             lat: "-31.8129",
-            lng: "62.5342"
-          }
+            lng: "62.5342",
+          },
         },
         phone: "(254)954-1289",
         website: "demarco.info",
         company: {
           name: "Keebler LLC",
           catchPhrase: "User-centric fault-tolerant solution",
-          bs: "revolutionize end-to-end systems"
-        }
+          bs: "revolutionize end-to-end systems",
+        },
       },
       {
         id: 6,
@@ -1904,16 +1930,16 @@ export const therapistTypesData = [
           zipcode: "23505-1337",
           geo: {
             lat: "-71.4197",
-            lng: "71.7478"
-          }
+            lng: "71.7478",
+          },
         },
         phone: "1-477-935-8478 x6430",
         website: "ola.org",
         company: {
           name: "Considine-Lockman",
           catchPhrase: "Synchronised bottom-line interface",
-          bs: "e-enable innovative applications"
-        }
+          bs: "e-enable innovative applications",
+        },
       },
       {
         id: 7,
@@ -1927,16 +1953,16 @@ export const therapistTypesData = [
           zipcode: "58804-1099",
           geo: {
             lat: "24.8918",
-            lng: "21.8984"
-          }
+            lng: "21.8984",
+          },
         },
         phone: "210.067.6132",
         website: "elvis.io",
         company: {
           name: "Johns Group",
           catchPhrase: "Configurable multimedia task-force",
-          bs: "generate enterprise e-tailers"
-        }
+          bs: "generate enterprise e-tailers",
+        },
       },
       {
         id: 8,
@@ -1950,16 +1976,16 @@ export const therapistTypesData = [
           zipcode: "45169",
           geo: {
             lat: "-14.3990",
-            lng: "-120.7677"
-          }
+            lng: "-120.7677",
+          },
         },
         phone: "586.493.6943 x140",
         website: "jacynthe.com",
         company: {
           name: "Abernathy Group",
           catchPhrase: "Implemented secondary concept",
-          bs: "e-enable extensible e-tailers"
-        }
+          bs: "e-enable extensible e-tailers",
+        },
       },
       {
         id: 9,
@@ -1973,16 +1999,16 @@ export const therapistTypesData = [
           zipcode: "76495-3109",
           geo: {
             lat: "24.6463",
-            lng: "-168.8889"
-          }
+            lng: "-168.8889",
+          },
         },
         phone: "(775)976-6794 x41206",
         website: "conrad.com",
         company: {
           name: "Yost and Sons",
           catchPhrase: "Switchable contextually-based project",
-          bs: "aggregate real-time technologies"
-        }
+          bs: "aggregate real-time technologies",
+        },
       },
       {
         id: 10,
@@ -1996,19 +2022,22 @@ export const therapistTypesData = [
           zipcode: "31428-2261",
           geo: {
             lat: "-38.2386",
-            lng: "57.2232"
-          }
+            lng: "57.2232",
+          },
         },
         phone: "024-648-3804",
         website: "ambrose.net",
         company: {
           name: "Hoeger LLC",
           catchPhrase: "Centralized empowering task-force",
-          bs: "target end-to-end models"
-        }
-      }
-    ]},
-    { typeName: "CBT Therapist" ,users: [
+          bs: "target end-to-end models",
+        },
+      },
+    ],
+  },
+  {
+    typeName: "CBT Therapist",
+    users: [
       {
         id: 1,
         name: "Leanne Graham",
@@ -2020,17 +2049,17 @@ export const therapistTypesData = [
           city: "Gwenborough",
           zipcode: "92998-3874",
           geo: {
-            "lat": "-37.3159",
-            "lng": "81.1496"
-          }
+            lat: "-37.3159",
+            lng: "81.1496",
+          },
         },
         phone: "1-770-736-8031 x56442",
         website: "hildegard.org",
         company: {
           name: "Romaguera-Crona",
           catchPhrase: "Multi-layered client-server neural-net",
-          bs: "harness real-time e-markets"
-        }
+          bs: "harness real-time e-markets",
+        },
       },
       {
         id: 2,
@@ -2044,16 +2073,16 @@ export const therapistTypesData = [
           zipcode: "90566-7771",
           geo: {
             lat: "-43.9509",
-            lng: "-34.4618"
-          }
+            lng: "-34.4618",
+          },
         },
         phone: "010-692-6593 x09125",
         website: "anastasia.net",
         company: {
           name: "Deckow-Crist",
           catchPhrase: "Proactive didactic contingency",
-          bs: "synergize scalable supply-chains"
-        }
+          bs: "synergize scalable supply-chains",
+        },
       },
       {
         id: 3,
@@ -2067,16 +2096,16 @@ export const therapistTypesData = [
           zipcode: "59590-4157",
           geo: {
             lat: "-68.6102",
-            lng: "-47.0653"
-          }
+            lng: "-47.0653",
+          },
         },
         phone: "1-463-123-4447",
         website: "ramiro.info",
         company: {
           name: "Romaguera-Jacobson",
           catchPhrase: "Face to face bifurcated interface",
-          bs: "e-enable strategic applications"
-        }
+          bs: "e-enable strategic applications",
+        },
       },
       {
         id: 4,
@@ -2090,16 +2119,16 @@ export const therapistTypesData = [
           zipcode: "53919-4257",
           geo: {
             lat: "29.4572",
-            lng: "-164.2990"
-          }
+            lng: "-164.2990",
+          },
         },
         phone: "493-170-9623 x156",
         website: "kale.biz",
         company: {
           name: "Robel-Corkery",
           catchPhrase: "Multi-tiered zero tolerance productivity",
-          bs: "transition cutting-edge web services"
-        }
+          bs: "transition cutting-edge web services",
+        },
       },
       {
         id: 5,
@@ -2113,16 +2142,16 @@ export const therapistTypesData = [
           zipcode: "33263",
           geo: {
             lat: "-31.8129",
-            lng: "62.5342"
-          }
+            lng: "62.5342",
+          },
         },
         phone: "(254)954-1289",
         website: "demarco.info",
         company: {
           name: "Keebler LLC",
           catchPhrase: "User-centric fault-tolerant solution",
-          bs: "revolutionize end-to-end systems"
-        }
+          bs: "revolutionize end-to-end systems",
+        },
       },
       {
         id: 6,
@@ -2136,16 +2165,16 @@ export const therapistTypesData = [
           zipcode: "23505-1337",
           geo: {
             lat: "-71.4197",
-            lng: "71.7478"
-          }
+            lng: "71.7478",
+          },
         },
         phone: "1-477-935-8478 x6430",
         website: "ola.org",
         company: {
           name: "Considine-Lockman",
           catchPhrase: "Synchronised bottom-line interface",
-          bs: "e-enable innovative applications"
-        }
+          bs: "e-enable innovative applications",
+        },
       },
       {
         id: 7,
@@ -2159,16 +2188,16 @@ export const therapistTypesData = [
           zipcode: "58804-1099",
           geo: {
             lat: "24.8918",
-            lng: "21.8984"
-          }
+            lng: "21.8984",
+          },
         },
         phone: "210.067.6132",
         website: "elvis.io",
         company: {
           name: "Johns Group",
           catchPhrase: "Configurable multimedia task-force",
-          bs: "generate enterprise e-tailers"
-        }
+          bs: "generate enterprise e-tailers",
+        },
       },
       {
         id: 8,
@@ -2182,16 +2211,16 @@ export const therapistTypesData = [
           zipcode: "45169",
           geo: {
             lat: "-14.3990",
-            lng: "-120.7677"
-          }
+            lng: "-120.7677",
+          },
         },
         phone: "586.493.6943 x140",
         website: "jacynthe.com",
         company: {
           name: "Abernathy Group",
           catchPhrase: "Implemented secondary concept",
-          bs: "e-enable extensible e-tailers"
-        }
+          bs: "e-enable extensible e-tailers",
+        },
       },
       {
         id: 9,
@@ -2205,16 +2234,16 @@ export const therapistTypesData = [
           zipcode: "76495-3109",
           geo: {
             lat: "24.6463",
-            lng: "-168.8889"
-          }
+            lng: "-168.8889",
+          },
         },
         phone: "(775)976-6794 x41206",
         website: "conrad.com",
         company: {
           name: "Yost and Sons",
           catchPhrase: "Switchable contextually-based project",
-          bs: "aggregate real-time technologies"
-        }
+          bs: "aggregate real-time technologies",
+        },
       },
       {
         id: 10,
@@ -2228,19 +2257,22 @@ export const therapistTypesData = [
           zipcode: "31428-2261",
           geo: {
             lat: "-38.2386",
-            lng: "57.2232"
-          }
+            lng: "57.2232",
+          },
         },
         phone: "024-648-3804",
         website: "ambrose.net",
         company: {
           name: "Hoeger LLC",
           catchPhrase: "Centralized empowering task-force",
-          bs: "target end-to-end models"
-        }
-      }
-    ]},
-    { typeName: "DBT Therapist" ,users: [
+          bs: "target end-to-end models",
+        },
+      },
+    ],
+  },
+  {
+    typeName: "DBT Therapist",
+    users: [
       {
         id: 1,
         name: "Leanne Graham",
@@ -2252,17 +2284,17 @@ export const therapistTypesData = [
           city: "Gwenborough",
           zipcode: "92998-3874",
           geo: {
-            "lat": "-37.3159",
-            "lng": "81.1496"
-          }
+            lat: "-37.3159",
+            lng: "81.1496",
+          },
         },
         phone: "1-770-736-8031 x56442",
         website: "hildegard.org",
         company: {
           name: "Romaguera-Crona",
           catchPhrase: "Multi-layered client-server neural-net",
-          bs: "harness real-time e-markets"
-        }
+          bs: "harness real-time e-markets",
+        },
       },
       {
         id: 2,
@@ -2276,16 +2308,16 @@ export const therapistTypesData = [
           zipcode: "90566-7771",
           geo: {
             lat: "-43.9509",
-            lng: "-34.4618"
-          }
+            lng: "-34.4618",
+          },
         },
         phone: "010-692-6593 x09125",
         website: "anastasia.net",
         company: {
           name: "Deckow-Crist",
           catchPhrase: "Proactive didactic contingency",
-          bs: "synergize scalable supply-chains"
-        }
+          bs: "synergize scalable supply-chains",
+        },
       },
       {
         id: 3,
@@ -2299,16 +2331,16 @@ export const therapistTypesData = [
           zipcode: "59590-4157",
           geo: {
             lat: "-68.6102",
-            lng: "-47.0653"
-          }
+            lng: "-47.0653",
+          },
         },
         phone: "1-463-123-4447",
         website: "ramiro.info",
         company: {
           name: "Romaguera-Jacobson",
           catchPhrase: "Face to face bifurcated interface",
-          bs: "e-enable strategic applications"
-        }
+          bs: "e-enable strategic applications",
+        },
       },
       {
         id: 4,
@@ -2322,16 +2354,16 @@ export const therapistTypesData = [
           zipcode: "53919-4257",
           geo: {
             lat: "29.4572",
-            lng: "-164.2990"
-          }
+            lng: "-164.2990",
+          },
         },
         phone: "493-170-9623 x156",
         website: "kale.biz",
         company: {
           name: "Robel-Corkery",
           catchPhrase: "Multi-tiered zero tolerance productivity",
-          bs: "transition cutting-edge web services"
-        }
+          bs: "transition cutting-edge web services",
+        },
       },
       {
         id: 5,
@@ -2345,16 +2377,16 @@ export const therapistTypesData = [
           zipcode: "33263",
           geo: {
             lat: "-31.8129",
-            lng: "62.5342"
-          }
+            lng: "62.5342",
+          },
         },
         phone: "(254)954-1289",
         website: "demarco.info",
         company: {
           name: "Keebler LLC",
           catchPhrase: "User-centric fault-tolerant solution",
-          bs: "revolutionize end-to-end systems"
-        }
+          bs: "revolutionize end-to-end systems",
+        },
       },
       {
         id: 6,
@@ -2368,16 +2400,16 @@ export const therapistTypesData = [
           zipcode: "23505-1337",
           geo: {
             lat: "-71.4197",
-            lng: "71.7478"
-          }
+            lng: "71.7478",
+          },
         },
         phone: "1-477-935-8478 x6430",
         website: "ola.org",
         company: {
           name: "Considine-Lockman",
           catchPhrase: "Synchronised bottom-line interface",
-          bs: "e-enable innovative applications"
-        }
+          bs: "e-enable innovative applications",
+        },
       },
       {
         id: 7,
@@ -2391,16 +2423,16 @@ export const therapistTypesData = [
           zipcode: "58804-1099",
           geo: {
             lat: "24.8918",
-            lng: "21.8984"
-          }
+            lng: "21.8984",
+          },
         },
         phone: "210.067.6132",
         website: "elvis.io",
         company: {
           name: "Johns Group",
           catchPhrase: "Configurable multimedia task-force",
-          bs: "generate enterprise e-tailers"
-        }
+          bs: "generate enterprise e-tailers",
+        },
       },
       {
         id: 8,
@@ -2414,16 +2446,16 @@ export const therapistTypesData = [
           zipcode: "45169",
           geo: {
             lat: "-14.3990",
-            lng: "-120.7677"
-          }
+            lng: "-120.7677",
+          },
         },
         phone: "586.493.6943 x140",
         website: "jacynthe.com",
         company: {
           name: "Abernathy Group",
           catchPhrase: "Implemented secondary concept",
-          bs: "e-enable extensible e-tailers"
-        }
+          bs: "e-enable extensible e-tailers",
+        },
       },
       {
         id: 9,
@@ -2437,16 +2469,16 @@ export const therapistTypesData = [
           zipcode: "76495-3109",
           geo: {
             lat: "24.6463",
-            lng: "-168.8889"
-          }
+            lng: "-168.8889",
+          },
         },
         phone: "(775)976-6794 x41206",
         website: "conrad.com",
         company: {
           name: "Yost and Sons",
           catchPhrase: "Switchable contextually-based project",
-          bs: "aggregate real-time technologies"
-        }
+          bs: "aggregate real-time technologies",
+        },
       },
       {
         id: 10,
@@ -2460,19 +2492,22 @@ export const therapistTypesData = [
           zipcode: "31428-2261",
           geo: {
             lat: "-38.2386",
-            lng: "57.2232"
-          }
+            lng: "57.2232",
+          },
         },
         phone: "024-648-3804",
         website: "ambrose.net",
         company: {
           name: "Hoeger LLC",
           catchPhrase: "Centralized empowering task-force",
-          bs: "target end-to-end models"
-        }
-      }
-    ]},
-    { typeName: "NLP Therapist" ,users: [
+          bs: "target end-to-end models",
+        },
+      },
+    ],
+  },
+  {
+    typeName: "NLP Therapist",
+    users: [
       {
         id: 1,
         name: "Leanne Graham",
@@ -2484,17 +2519,17 @@ export const therapistTypesData = [
           city: "Gwenborough",
           zipcode: "92998-3874",
           geo: {
-            "lat": "-37.3159",
-            "lng": "81.1496"
-          }
+            lat: "-37.3159",
+            lng: "81.1496",
+          },
         },
         phone: "1-770-736-8031 x56442",
         website: "hildegard.org",
         company: {
           name: "Romaguera-Crona",
           catchPhrase: "Multi-layered client-server neural-net",
-          bs: "harness real-time e-markets"
-        }
+          bs: "harness real-time e-markets",
+        },
       },
       {
         id: 2,
@@ -2508,16 +2543,16 @@ export const therapistTypesData = [
           zipcode: "90566-7771",
           geo: {
             lat: "-43.9509",
-            lng: "-34.4618"
-          }
+            lng: "-34.4618",
+          },
         },
         phone: "010-692-6593 x09125",
         website: "anastasia.net",
         company: {
           name: "Deckow-Crist",
           catchPhrase: "Proactive didactic contingency",
-          bs: "synergize scalable supply-chains"
-        }
+          bs: "synergize scalable supply-chains",
+        },
       },
       {
         id: 3,
@@ -2531,16 +2566,16 @@ export const therapistTypesData = [
           zipcode: "59590-4157",
           geo: {
             lat: "-68.6102",
-            lng: "-47.0653"
-          }
+            lng: "-47.0653",
+          },
         },
         phone: "1-463-123-4447",
         website: "ramiro.info",
         company: {
           name: "Romaguera-Jacobson",
           catchPhrase: "Face to face bifurcated interface",
-          bs: "e-enable strategic applications"
-        }
+          bs: "e-enable strategic applications",
+        },
       },
       {
         id: 4,
@@ -2554,16 +2589,16 @@ export const therapistTypesData = [
           zipcode: "53919-4257",
           geo: {
             lat: "29.4572",
-            lng: "-164.2990"
-          }
+            lng: "-164.2990",
+          },
         },
         phone: "493-170-9623 x156",
         website: "kale.biz",
         company: {
           name: "Robel-Corkery",
           catchPhrase: "Multi-tiered zero tolerance productivity",
-          bs: "transition cutting-edge web services"
-        }
+          bs: "transition cutting-edge web services",
+        },
       },
       {
         id: 5,
@@ -2577,16 +2612,16 @@ export const therapistTypesData = [
           zipcode: "33263",
           geo: {
             lat: "-31.8129",
-            lng: "62.5342"
-          }
+            lng: "62.5342",
+          },
         },
         phone: "(254)954-1289",
         website: "demarco.info",
         company: {
           name: "Keebler LLC",
           catchPhrase: "User-centric fault-tolerant solution",
-          bs: "revolutionize end-to-end systems"
-        }
+          bs: "revolutionize end-to-end systems",
+        },
       },
       {
         id: 6,
@@ -2600,16 +2635,16 @@ export const therapistTypesData = [
           zipcode: "23505-1337",
           geo: {
             lat: "-71.4197",
-            lng: "71.7478"
-          }
+            lng: "71.7478",
+          },
         },
         phone: "1-477-935-8478 x6430",
         website: "ola.org",
         company: {
           name: "Considine-Lockman",
           catchPhrase: "Synchronised bottom-line interface",
-          bs: "e-enable innovative applications"
-        }
+          bs: "e-enable innovative applications",
+        },
       },
       {
         id: 7,
@@ -2623,16 +2658,16 @@ export const therapistTypesData = [
           zipcode: "58804-1099",
           geo: {
             lat: "24.8918",
-            lng: "21.8984"
-          }
+            lng: "21.8984",
+          },
         },
         phone: "210.067.6132",
         website: "elvis.io",
         company: {
           name: "Johns Group",
           catchPhrase: "Configurable multimedia task-force",
-          bs: "generate enterprise e-tailers"
-        }
+          bs: "generate enterprise e-tailers",
+        },
       },
       {
         id: 8,
@@ -2646,16 +2681,16 @@ export const therapistTypesData = [
           zipcode: "45169",
           geo: {
             lat: "-14.3990",
-            lng: "-120.7677"
-          }
+            lng: "-120.7677",
+          },
         },
         phone: "586.493.6943 x140",
         website: "jacynthe.com",
         company: {
           name: "Abernathy Group",
           catchPhrase: "Implemented secondary concept",
-          bs: "e-enable extensible e-tailers"
-        }
+          bs: "e-enable extensible e-tailers",
+        },
       },
       {
         id: 9,
@@ -2669,16 +2704,16 @@ export const therapistTypesData = [
           zipcode: "76495-3109",
           geo: {
             lat: "24.6463",
-            lng: "-168.8889"
-          }
+            lng: "-168.8889",
+          },
         },
         phone: "(775)976-6794 x41206",
         website: "conrad.com",
         company: {
           name: "Yost and Sons",
           catchPhrase: "Switchable contextually-based project",
-          bs: "aggregate real-time technologies"
-        }
+          bs: "aggregate real-time technologies",
+        },
       },
       {
         id: 10,
@@ -2692,19 +2727,22 @@ export const therapistTypesData = [
           zipcode: "31428-2261",
           geo: {
             lat: "-38.2386",
-            lng: "57.2232"
-          }
+            lng: "57.2232",
+          },
         },
         phone: "024-648-3804",
         website: "ambrose.net",
         company: {
           name: "Hoeger LLC",
           catchPhrase: "Centralized empowering task-force",
-          bs: "target end-to-end models"
-        }
-      }
-    ]},
-    { typeName: "EMDR Therapist" ,users: [
+          bs: "target end-to-end models",
+        },
+      },
+    ],
+  },
+  {
+    typeName: "EMDR Therapist",
+    users: [
       {
         id: 1,
         name: "Leanne Graham",
@@ -2716,17 +2754,17 @@ export const therapistTypesData = [
           city: "Gwenborough",
           zipcode: "92998-3874",
           geo: {
-            "lat": "-37.3159",
-            "lng": "81.1496"
-          }
+            lat: "-37.3159",
+            lng: "81.1496",
+          },
         },
         phone: "1-770-736-8031 x56442",
         website: "hildegard.org",
         company: {
           name: "Romaguera-Crona",
           catchPhrase: "Multi-layered client-server neural-net",
-          bs: "harness real-time e-markets"
-        }
+          bs: "harness real-time e-markets",
+        },
       },
       {
         id: 2,
@@ -2740,16 +2778,16 @@ export const therapistTypesData = [
           zipcode: "90566-7771",
           geo: {
             lat: "-43.9509",
-            lng: "-34.4618"
-          }
+            lng: "-34.4618",
+          },
         },
         phone: "010-692-6593 x09125",
         website: "anastasia.net",
         company: {
           name: "Deckow-Crist",
           catchPhrase: "Proactive didactic contingency",
-          bs: "synergize scalable supply-chains"
-        }
+          bs: "synergize scalable supply-chains",
+        },
       },
       {
         id: 3,
@@ -2763,16 +2801,16 @@ export const therapistTypesData = [
           zipcode: "59590-4157",
           geo: {
             lat: "-68.6102",
-            lng: "-47.0653"
-          }
+            lng: "-47.0653",
+          },
         },
         phone: "1-463-123-4447",
         website: "ramiro.info",
         company: {
           name: "Romaguera-Jacobson",
           catchPhrase: "Face to face bifurcated interface",
-          bs: "e-enable strategic applications"
-        }
+          bs: "e-enable strategic applications",
+        },
       },
       {
         id: 4,
@@ -2786,16 +2824,16 @@ export const therapistTypesData = [
           zipcode: "53919-4257",
           geo: {
             lat: "29.4572",
-            lng: "-164.2990"
-          }
+            lng: "-164.2990",
+          },
         },
         phone: "493-170-9623 x156",
         website: "kale.biz",
         company: {
           name: "Robel-Corkery",
           catchPhrase: "Multi-tiered zero tolerance productivity",
-          bs: "transition cutting-edge web services"
-        }
+          bs: "transition cutting-edge web services",
+        },
       },
       {
         id: 5,
@@ -2809,16 +2847,16 @@ export const therapistTypesData = [
           zipcode: "33263",
           geo: {
             lat: "-31.8129",
-            lng: "62.5342"
-          }
+            lng: "62.5342",
+          },
         },
         phone: "(254)954-1289",
         website: "demarco.info",
         company: {
           name: "Keebler LLC",
           catchPhrase: "User-centric fault-tolerant solution",
-          bs: "revolutionize end-to-end systems"
-        }
+          bs: "revolutionize end-to-end systems",
+        },
       },
       {
         id: 6,
@@ -2832,16 +2870,16 @@ export const therapistTypesData = [
           zipcode: "23505-1337",
           geo: {
             lat: "-71.4197",
-            lng: "71.7478"
-          }
+            lng: "71.7478",
+          },
         },
         phone: "1-477-935-8478 x6430",
         website: "ola.org",
         company: {
           name: "Considine-Lockman",
           catchPhrase: "Synchronised bottom-line interface",
-          bs: "e-enable innovative applications"
-        }
+          bs: "e-enable innovative applications",
+        },
       },
       {
         id: 7,
@@ -2855,16 +2893,16 @@ export const therapistTypesData = [
           zipcode: "58804-1099",
           geo: {
             lat: "24.8918",
-            lng: "21.8984"
-          }
+            lng: "21.8984",
+          },
         },
         phone: "210.067.6132",
         website: "elvis.io",
         company: {
           name: "Johns Group",
           catchPhrase: "Configurable multimedia task-force",
-          bs: "generate enterprise e-tailers"
-        }
+          bs: "generate enterprise e-tailers",
+        },
       },
       {
         id: 8,
@@ -2878,16 +2916,16 @@ export const therapistTypesData = [
           zipcode: "45169",
           geo: {
             lat: "-14.3990",
-            lng: "-120.7677"
-          }
+            lng: "-120.7677",
+          },
         },
         phone: "586.493.6943 x140",
         website: "jacynthe.com",
         company: {
           name: "Abernathy Group",
           catchPhrase: "Implemented secondary concept",
-          bs: "e-enable extensible e-tailers"
-        }
+          bs: "e-enable extensible e-tailers",
+        },
       },
       {
         id: 9,
@@ -2901,16 +2939,16 @@ export const therapistTypesData = [
           zipcode: "76495-3109",
           geo: {
             lat: "24.6463",
-            lng: "-168.8889"
-          }
+            lng: "-168.8889",
+          },
         },
         phone: "(775)976-6794 x41206",
         website: "conrad.com",
         company: {
           name: "Yost and Sons",
           catchPhrase: "Switchable contextually-based project",
-          bs: "aggregate real-time technologies"
-        }
+          bs: "aggregate real-time technologies",
+        },
       },
       {
         id: 10,
@@ -2924,19 +2962,22 @@ export const therapistTypesData = [
           zipcode: "31428-2261",
           geo: {
             lat: "-38.2386",
-            lng: "57.2232"
-          }
+            lng: "57.2232",
+          },
         },
         phone: "024-648-3804",
         website: "ambrose.net",
         company: {
           name: "Hoeger LLC",
           catchPhrase: "Centralized empowering task-force",
-          bs: "target end-to-end models"
-        }
-      }
-    ]},
-    { typeName: "Animal-Assisted Therapist" ,users: [
+          bs: "target end-to-end models",
+        },
+      },
+    ],
+  },
+  {
+    typeName: "Animal-Assisted Therapist",
+    users: [
       {
         id: 1,
         name: "Leanne Graham",
@@ -2948,17 +2989,17 @@ export const therapistTypesData = [
           city: "Gwenborough",
           zipcode: "92998-3874",
           geo: {
-            "lat": "-37.3159",
-            "lng": "81.1496"
-          }
+            lat: "-37.3159",
+            lng: "81.1496",
+          },
         },
         phone: "1-770-736-8031 x56442",
         website: "hildegard.org",
         company: {
           name: "Romaguera-Crona",
           catchPhrase: "Multi-layered client-server neural-net",
-          bs: "harness real-time e-markets"
-        }
+          bs: "harness real-time e-markets",
+        },
       },
       {
         id: 2,
@@ -2972,16 +3013,16 @@ export const therapistTypesData = [
           zipcode: "90566-7771",
           geo: {
             lat: "-43.9509",
-            lng: "-34.4618"
-          }
+            lng: "-34.4618",
+          },
         },
         phone: "010-692-6593 x09125",
         website: "anastasia.net",
         company: {
           name: "Deckow-Crist",
           catchPhrase: "Proactive didactic contingency",
-          bs: "synergize scalable supply-chains"
-        }
+          bs: "synergize scalable supply-chains",
+        },
       },
       {
         id: 3,
@@ -2995,16 +3036,16 @@ export const therapistTypesData = [
           zipcode: "59590-4157",
           geo: {
             lat: "-68.6102",
-            lng: "-47.0653"
-          }
+            lng: "-47.0653",
+          },
         },
         phone: "1-463-123-4447",
         website: "ramiro.info",
         company: {
           name: "Romaguera-Jacobson",
           catchPhrase: "Face to face bifurcated interface",
-          bs: "e-enable strategic applications"
-        }
+          bs: "e-enable strategic applications",
+        },
       },
       {
         id: 4,
@@ -3018,16 +3059,16 @@ export const therapistTypesData = [
           zipcode: "53919-4257",
           geo: {
             lat: "29.4572",
-            lng: "-164.2990"
-          }
+            lng: "-164.2990",
+          },
         },
         phone: "493-170-9623 x156",
         website: "kale.biz",
         company: {
           name: "Robel-Corkery",
           catchPhrase: "Multi-tiered zero tolerance productivity",
-          bs: "transition cutting-edge web services"
-        }
+          bs: "transition cutting-edge web services",
+        },
       },
       {
         id: 5,
@@ -3041,16 +3082,16 @@ export const therapistTypesData = [
           zipcode: "33263",
           geo: {
             lat: "-31.8129",
-            lng: "62.5342"
-          }
+            lng: "62.5342",
+          },
         },
         phone: "(254)954-1289",
         website: "demarco.info",
         company: {
           name: "Keebler LLC",
           catchPhrase: "User-centric fault-tolerant solution",
-          bs: "revolutionize end-to-end systems"
-        }
+          bs: "revolutionize end-to-end systems",
+        },
       },
       {
         id: 6,
@@ -3064,16 +3105,16 @@ export const therapistTypesData = [
           zipcode: "23505-1337",
           geo: {
             lat: "-71.4197",
-            lng: "71.7478"
-          }
+            lng: "71.7478",
+          },
         },
         phone: "1-477-935-8478 x6430",
         website: "ola.org",
         company: {
           name: "Considine-Lockman",
           catchPhrase: "Synchronised bottom-line interface",
-          bs: "e-enable innovative applications"
-        }
+          bs: "e-enable innovative applications",
+        },
       },
       {
         id: 7,
@@ -3087,16 +3128,16 @@ export const therapistTypesData = [
           zipcode: "58804-1099",
           geo: {
             lat: "24.8918",
-            lng: "21.8984"
-          }
+            lng: "21.8984",
+          },
         },
         phone: "210.067.6132",
         website: "elvis.io",
         company: {
           name: "Johns Group",
           catchPhrase: "Configurable multimedia task-force",
-          bs: "generate enterprise e-tailers"
-        }
+          bs: "generate enterprise e-tailers",
+        },
       },
       {
         id: 8,
@@ -3110,16 +3151,16 @@ export const therapistTypesData = [
           zipcode: "45169",
           geo: {
             lat: "-14.3990",
-            lng: "-120.7677"
-          }
+            lng: "-120.7677",
+          },
         },
         phone: "586.493.6943 x140",
         website: "jacynthe.com",
         company: {
           name: "Abernathy Group",
           catchPhrase: "Implemented secondary concept",
-          bs: "e-enable extensible e-tailers"
-        }
+          bs: "e-enable extensible e-tailers",
+        },
       },
       {
         id: 9,
@@ -3133,16 +3174,16 @@ export const therapistTypesData = [
           zipcode: "76495-3109",
           geo: {
             lat: "24.6463",
-            lng: "-168.8889"
-          }
+            lng: "-168.8889",
+          },
         },
         phone: "(775)976-6794 x41206",
         website: "conrad.com",
         company: {
           name: "Yost and Sons",
           catchPhrase: "Switchable contextually-based project",
-          bs: "aggregate real-time technologies"
-        }
+          bs: "aggregate real-time technologies",
+        },
       },
       {
         id: 10,
@@ -3156,19 +3197,22 @@ export const therapistTypesData = [
           zipcode: "31428-2261",
           geo: {
             lat: "-38.2386",
-            lng: "57.2232"
-          }
+            lng: "57.2232",
+          },
         },
         phone: "024-648-3804",
         website: "ambrose.net",
         company: {
           name: "Hoeger LLC",
           catchPhrase: "Centralized empowering task-force",
-          bs: "target end-to-end models"
-        }
-      }
-    ]},
-    { typeName: "Neurofeedback" ,users: [
+          bs: "target end-to-end models",
+        },
+      },
+    ],
+  },
+  {
+    typeName: "Neurofeedback",
+    users: [
       {
         id: 1,
         name: "Leanne Graham",
@@ -3180,17 +3224,17 @@ export const therapistTypesData = [
           city: "Gwenborough",
           zipcode: "92998-3874",
           geo: {
-            "lat": "-37.3159",
-            "lng": "81.1496"
-          }
+            lat: "-37.3159",
+            lng: "81.1496",
+          },
         },
         phone: "1-770-736-8031 x56442",
         website: "hildegard.org",
         company: {
           name: "Romaguera-Crona",
           catchPhrase: "Multi-layered client-server neural-net",
-          bs: "harness real-time e-markets"
-        }
+          bs: "harness real-time e-markets",
+        },
       },
       {
         id: 2,
@@ -3204,16 +3248,16 @@ export const therapistTypesData = [
           zipcode: "90566-7771",
           geo: {
             lat: "-43.9509",
-            lng: "-34.4618"
-          }
+            lng: "-34.4618",
+          },
         },
         phone: "010-692-6593 x09125",
         website: "anastasia.net",
         company: {
           name: "Deckow-Crist",
           catchPhrase: "Proactive didactic contingency",
-          bs: "synergize scalable supply-chains"
-        }
+          bs: "synergize scalable supply-chains",
+        },
       },
       {
         id: 3,
@@ -3227,16 +3271,16 @@ export const therapistTypesData = [
           zipcode: "59590-4157",
           geo: {
             lat: "-68.6102",
-            lng: "-47.0653"
-          }
+            lng: "-47.0653",
+          },
         },
         phone: "1-463-123-4447",
         website: "ramiro.info",
         company: {
           name: "Romaguera-Jacobson",
           catchPhrase: "Face to face bifurcated interface",
-          bs: "e-enable strategic applications"
-        }
+          bs: "e-enable strategic applications",
+        },
       },
       {
         id: 4,
@@ -3250,16 +3294,16 @@ export const therapistTypesData = [
           zipcode: "53919-4257",
           geo: {
             lat: "29.4572",
-            lng: "-164.2990"
-          }
+            lng: "-164.2990",
+          },
         },
         phone: "493-170-9623 x156",
         website: "kale.biz",
         company: {
           name: "Robel-Corkery",
           catchPhrase: "Multi-tiered zero tolerance productivity",
-          bs: "transition cutting-edge web services"
-        }
+          bs: "transition cutting-edge web services",
+        },
       },
       {
         id: 5,
@@ -3273,16 +3317,16 @@ export const therapistTypesData = [
           zipcode: "33263",
           geo: {
             lat: "-31.8129",
-            lng: "62.5342"
-          }
+            lng: "62.5342",
+          },
         },
         phone: "(254)954-1289",
         website: "demarco.info",
         company: {
           name: "Keebler LLC",
           catchPhrase: "User-centric fault-tolerant solution",
-          bs: "revolutionize end-to-end systems"
-        }
+          bs: "revolutionize end-to-end systems",
+        },
       },
       {
         id: 6,
@@ -3296,16 +3340,16 @@ export const therapistTypesData = [
           zipcode: "23505-1337",
           geo: {
             lat: "-71.4197",
-            lng: "71.7478"
-          }
+            lng: "71.7478",
+          },
         },
         phone: "1-477-935-8478 x6430",
         website: "ola.org",
         company: {
           name: "Considine-Lockman",
           catchPhrase: "Synchronised bottom-line interface",
-          bs: "e-enable innovative applications"
-        }
+          bs: "e-enable innovative applications",
+        },
       },
       {
         id: 7,
@@ -3319,16 +3363,16 @@ export const therapistTypesData = [
           zipcode: "58804-1099",
           geo: {
             lat: "24.8918",
-            lng: "21.8984"
-          }
+            lng: "21.8984",
+          },
         },
         phone: "210.067.6132",
         website: "elvis.io",
         company: {
           name: "Johns Group",
           catchPhrase: "Configurable multimedia task-force",
-          bs: "generate enterprise e-tailers"
-        }
+          bs: "generate enterprise e-tailers",
+        },
       },
       {
         id: 8,
@@ -3342,16 +3386,16 @@ export const therapistTypesData = [
           zipcode: "45169",
           geo: {
             lat: "-14.3990",
-            lng: "-120.7677"
-          }
+            lng: "-120.7677",
+          },
         },
         phone: "586.493.6943 x140",
         website: "jacynthe.com",
         company: {
           name: "Abernathy Group",
           catchPhrase: "Implemented secondary concept",
-          bs: "e-enable extensible e-tailers"
-        }
+          bs: "e-enable extensible e-tailers",
+        },
       },
       {
         id: 9,
@@ -3365,16 +3409,16 @@ export const therapistTypesData = [
           zipcode: "76495-3109",
           geo: {
             lat: "24.6463",
-            lng: "-168.8889"
-          }
+            lng: "-168.8889",
+          },
         },
         phone: "(775)976-6794 x41206",
         website: "conrad.com",
         company: {
           name: "Yost and Sons",
           catchPhrase: "Switchable contextually-based project",
-          bs: "aggregate real-time technologies"
-        }
+          bs: "aggregate real-time technologies",
+        },
       },
       {
         id: 10,
@@ -3388,19 +3432,22 @@ export const therapistTypesData = [
           zipcode: "31428-2261",
           geo: {
             lat: "-38.2386",
-            lng: "57.2232"
-          }
+            lng: "57.2232",
+          },
         },
         phone: "024-648-3804",
         website: "ambrose.net",
         company: {
           name: "Hoeger LLC",
           catchPhrase: "Centralized empowering task-force",
-          bs: "target end-to-end models"
-        }
-      }
-    ]},
-    { typeName: "Psychoanaliest" ,users: [
+          bs: "target end-to-end models",
+        },
+      },
+    ],
+  },
+  {
+    typeName: "Psychoanaliest",
+    users: [
       {
         id: 1,
         name: "Leanne Graham",
@@ -3412,17 +3459,17 @@ export const therapistTypesData = [
           city: "Gwenborough",
           zipcode: "92998-3874",
           geo: {
-            "lat": "-37.3159",
-            "lng": "81.1496"
-          }
+            lat: "-37.3159",
+            lng: "81.1496",
+          },
         },
         phone: "1-770-736-8031 x56442",
         website: "hildegard.org",
         company: {
           name: "Romaguera-Crona",
           catchPhrase: "Multi-layered client-server neural-net",
-          bs: "harness real-time e-markets"
-        }
+          bs: "harness real-time e-markets",
+        },
       },
       {
         id: 2,
@@ -3436,16 +3483,16 @@ export const therapistTypesData = [
           zipcode: "90566-7771",
           geo: {
             lat: "-43.9509",
-            lng: "-34.4618"
-          }
+            lng: "-34.4618",
+          },
         },
         phone: "010-692-6593 x09125",
         website: "anastasia.net",
         company: {
           name: "Deckow-Crist",
           catchPhrase: "Proactive didactic contingency",
-          bs: "synergize scalable supply-chains"
-        }
+          bs: "synergize scalable supply-chains",
+        },
       },
       {
         id: 3,
@@ -3459,16 +3506,16 @@ export const therapistTypesData = [
           zipcode: "59590-4157",
           geo: {
             lat: "-68.6102",
-            lng: "-47.0653"
-          }
+            lng: "-47.0653",
+          },
         },
         phone: "1-463-123-4447",
         website: "ramiro.info",
         company: {
           name: "Romaguera-Jacobson",
           catchPhrase: "Face to face bifurcated interface",
-          bs: "e-enable strategic applications"
-        }
+          bs: "e-enable strategic applications",
+        },
       },
       {
         id: 4,
@@ -3482,16 +3529,16 @@ export const therapistTypesData = [
           zipcode: "53919-4257",
           geo: {
             lat: "29.4572",
-            lng: "-164.2990"
-          }
+            lng: "-164.2990",
+          },
         },
         phone: "493-170-9623 x156",
         website: "kale.biz",
         company: {
           name: "Robel-Corkery",
           catchPhrase: "Multi-tiered zero tolerance productivity",
-          bs: "transition cutting-edge web services"
-        }
+          bs: "transition cutting-edge web services",
+        },
       },
       {
         id: 5,
@@ -3505,16 +3552,16 @@ export const therapistTypesData = [
           zipcode: "33263",
           geo: {
             lat: "-31.8129",
-            lng: "62.5342"
-          }
+            lng: "62.5342",
+          },
         },
         phone: "(254)954-1289",
         website: "demarco.info",
         company: {
           name: "Keebler LLC",
           catchPhrase: "User-centric fault-tolerant solution",
-          bs: "revolutionize end-to-end systems"
-        }
+          bs: "revolutionize end-to-end systems",
+        },
       },
       {
         id: 6,
@@ -3528,16 +3575,16 @@ export const therapistTypesData = [
           zipcode: "23505-1337",
           geo: {
             lat: "-71.4197",
-            lng: "71.7478"
-          }
+            lng: "71.7478",
+          },
         },
         phone: "1-477-935-8478 x6430",
         website: "ola.org",
         company: {
           name: "Considine-Lockman",
           catchPhrase: "Synchronised bottom-line interface",
-          bs: "e-enable innovative applications"
-        }
+          bs: "e-enable innovative applications",
+        },
       },
       {
         id: 7,
@@ -3551,16 +3598,16 @@ export const therapistTypesData = [
           zipcode: "58804-1099",
           geo: {
             lat: "24.8918",
-            lng: "21.8984"
-          }
+            lng: "21.8984",
+          },
         },
         phone: "210.067.6132",
         website: "elvis.io",
         company: {
           name: "Johns Group",
           catchPhrase: "Configurable multimedia task-force",
-          bs: "generate enterprise e-tailers"
-        }
+          bs: "generate enterprise e-tailers",
+        },
       },
       {
         id: 8,
@@ -3574,16 +3621,16 @@ export const therapistTypesData = [
           zipcode: "45169",
           geo: {
             lat: "-14.3990",
-            lng: "-120.7677"
-          }
+            lng: "-120.7677",
+          },
         },
         phone: "586.493.6943 x140",
         website: "jacynthe.com",
         company: {
           name: "Abernathy Group",
           catchPhrase: "Implemented secondary concept",
-          bs: "e-enable extensible e-tailers"
-        }
+          bs: "e-enable extensible e-tailers",
+        },
       },
       {
         id: 9,
@@ -3597,16 +3644,16 @@ export const therapistTypesData = [
           zipcode: "76495-3109",
           geo: {
             lat: "24.6463",
-            lng: "-168.8889"
-          }
+            lng: "-168.8889",
+          },
         },
         phone: "(775)976-6794 x41206",
         website: "conrad.com",
         company: {
           name: "Yost and Sons",
           catchPhrase: "Switchable contextually-based project",
-          bs: "aggregate real-time technologies"
-        }
+          bs: "aggregate real-time technologies",
+        },
       },
       {
         id: 10,
@@ -3620,19 +3667,22 @@ export const therapistTypesData = [
           zipcode: "31428-2261",
           geo: {
             lat: "-38.2386",
-            lng: "57.2232"
-          }
+            lng: "57.2232",
+          },
         },
         phone: "024-648-3804",
         website: "ambrose.net",
         company: {
           name: "Hoeger LLC",
           catchPhrase: "Centralized empowering task-force",
-          bs: "target end-to-end models"
-        }
-      }
-    ]},
-    { typeName: "Psychiatrist" ,users: [
+          bs: "target end-to-end models",
+        },
+      },
+    ],
+  },
+  {
+    typeName: "Psychiatrist",
+    users: [
       {
         id: 1,
         name: "Leanne Graham",
@@ -3644,17 +3694,17 @@ export const therapistTypesData = [
           city: "Gwenborough",
           zipcode: "92998-3874",
           geo: {
-            "lat": "-37.3159",
-            "lng": "81.1496"
-          }
+            lat: "-37.3159",
+            lng: "81.1496",
+          },
         },
         phone: "1-770-736-8031 x56442",
         website: "hildegard.org",
         company: {
           name: "Romaguera-Crona",
           catchPhrase: "Multi-layered client-server neural-net",
-          bs: "harness real-time e-markets"
-        }
+          bs: "harness real-time e-markets",
+        },
       },
       {
         id: 2,
@@ -3668,16 +3718,16 @@ export const therapistTypesData = [
           zipcode: "90566-7771",
           geo: {
             lat: "-43.9509",
-            lng: "-34.4618"
-          }
+            lng: "-34.4618",
+          },
         },
         phone: "010-692-6593 x09125",
         website: "anastasia.net",
         company: {
           name: "Deckow-Crist",
           catchPhrase: "Proactive didactic contingency",
-          bs: "synergize scalable supply-chains"
-        }
+          bs: "synergize scalable supply-chains",
+        },
       },
       {
         id: 3,
@@ -3691,16 +3741,16 @@ export const therapistTypesData = [
           zipcode: "59590-4157",
           geo: {
             lat: "-68.6102",
-            lng: "-47.0653"
-          }
+            lng: "-47.0653",
+          },
         },
         phone: "1-463-123-4447",
         website: "ramiro.info",
         company: {
           name: "Romaguera-Jacobson",
           catchPhrase: "Face to face bifurcated interface",
-          bs: "e-enable strategic applications"
-        }
+          bs: "e-enable strategic applications",
+        },
       },
       {
         id: 4,
@@ -3714,16 +3764,16 @@ export const therapistTypesData = [
           zipcode: "53919-4257",
           geo: {
             lat: "29.4572",
-            lng: "-164.2990"
-          }
+            lng: "-164.2990",
+          },
         },
         phone: "493-170-9623 x156",
         website: "kale.biz",
         company: {
           name: "Robel-Corkery",
           catchPhrase: "Multi-tiered zero tolerance productivity",
-          bs: "transition cutting-edge web services"
-        }
+          bs: "transition cutting-edge web services",
+        },
       },
       {
         id: 5,
@@ -3737,16 +3787,16 @@ export const therapistTypesData = [
           zipcode: "33263",
           geo: {
             lat: "-31.8129",
-            lng: "62.5342"
-          }
+            lng: "62.5342",
+          },
         },
         phone: "(254)954-1289",
         website: "demarco.info",
         company: {
           name: "Keebler LLC",
           catchPhrase: "User-centric fault-tolerant solution",
-          bs: "revolutionize end-to-end systems"
-        }
+          bs: "revolutionize end-to-end systems",
+        },
       },
       {
         id: 6,
@@ -3760,16 +3810,16 @@ export const therapistTypesData = [
           zipcode: "23505-1337",
           geo: {
             lat: "-71.4197",
-            lng: "71.7478"
-          }
+            lng: "71.7478",
+          },
         },
         phone: "1-477-935-8478 x6430",
         website: "ola.org",
         company: {
           name: "Considine-Lockman",
           catchPhrase: "Synchronised bottom-line interface",
-          bs: "e-enable innovative applications"
-        }
+          bs: "e-enable innovative applications",
+        },
       },
       {
         id: 7,
@@ -3783,16 +3833,16 @@ export const therapistTypesData = [
           zipcode: "58804-1099",
           geo: {
             lat: "24.8918",
-            lng: "21.8984"
-          }
+            lng: "21.8984",
+          },
         },
         phone: "210.067.6132",
         website: "elvis.io",
         company: {
           name: "Johns Group",
           catchPhrase: "Configurable multimedia task-force",
-          bs: "generate enterprise e-tailers"
-        }
+          bs: "generate enterprise e-tailers",
+        },
       },
       {
         id: 8,
@@ -3806,16 +3856,16 @@ export const therapistTypesData = [
           zipcode: "45169",
           geo: {
             lat: "-14.3990",
-            lng: "-120.7677"
-          }
+            lng: "-120.7677",
+          },
         },
         phone: "586.493.6943 x140",
         website: "jacynthe.com",
         company: {
           name: "Abernathy Group",
           catchPhrase: "Implemented secondary concept",
-          bs: "e-enable extensible e-tailers"
-        }
+          bs: "e-enable extensible e-tailers",
+        },
       },
       {
         id: 9,
@@ -3829,16 +3879,16 @@ export const therapistTypesData = [
           zipcode: "76495-3109",
           geo: {
             lat: "24.6463",
-            lng: "-168.8889"
-          }
+            lng: "-168.8889",
+          },
         },
         phone: "(775)976-6794 x41206",
         website: "conrad.com",
         company: {
           name: "Yost and Sons",
           catchPhrase: "Switchable contextually-based project",
-          bs: "aggregate real-time technologies"
-        }
+          bs: "aggregate real-time technologies",
+        },
       },
       {
         id: 10,
@@ -3852,19 +3902,22 @@ export const therapistTypesData = [
           zipcode: "31428-2261",
           geo: {
             lat: "-38.2386",
-            lng: "57.2232"
-          }
+            lng: "57.2232",
+          },
         },
         phone: "024-648-3804",
         website: "ambrose.net",
         company: {
           name: "Hoeger LLC",
           catchPhrase: "Centralized empowering task-force",
-          bs: "target end-to-end models"
-        }
-      }
-    ]},
-    { typeName: "Family Therapist" ,users: [
+          bs: "target end-to-end models",
+        },
+      },
+    ],
+  },
+  {
+    typeName: "Family Therapist",
+    users: [
       {
         id: 1,
         name: "Leanne Graham",
@@ -3876,17 +3929,17 @@ export const therapistTypesData = [
           city: "Gwenborough",
           zipcode: "92998-3874",
           geo: {
-            "lat": "-37.3159",
-            "lng": "81.1496"
-          }
+            lat: "-37.3159",
+            lng: "81.1496",
+          },
         },
         phone: "1-770-736-8031 x56442",
         website: "hildegard.org",
         company: {
           name: "Romaguera-Crona",
           catchPhrase: "Multi-layered client-server neural-net",
-          bs: "harness real-time e-markets"
-        }
+          bs: "harness real-time e-markets",
+        },
       },
       {
         id: 2,
@@ -3900,16 +3953,16 @@ export const therapistTypesData = [
           zipcode: "90566-7771",
           geo: {
             lat: "-43.9509",
-            lng: "-34.4618"
-          }
+            lng: "-34.4618",
+          },
         },
         phone: "010-692-6593 x09125",
         website: "anastasia.net",
         company: {
           name: "Deckow-Crist",
           catchPhrase: "Proactive didactic contingency",
-          bs: "synergize scalable supply-chains"
-        }
+          bs: "synergize scalable supply-chains",
+        },
       },
       {
         id: 3,
@@ -3923,16 +3976,16 @@ export const therapistTypesData = [
           zipcode: "59590-4157",
           geo: {
             lat: "-68.6102",
-            lng: "-47.0653"
-          }
+            lng: "-47.0653",
+          },
         },
         phone: "1-463-123-4447",
         website: "ramiro.info",
         company: {
           name: "Romaguera-Jacobson",
           catchPhrase: "Face to face bifurcated interface",
-          bs: "e-enable strategic applications"
-        }
+          bs: "e-enable strategic applications",
+        },
       },
       {
         id: 4,
@@ -3946,16 +3999,16 @@ export const therapistTypesData = [
           zipcode: "53919-4257",
           geo: {
             lat: "29.4572",
-            lng: "-164.2990"
-          }
+            lng: "-164.2990",
+          },
         },
         phone: "493-170-9623 x156",
         website: "kale.biz",
         company: {
           name: "Robel-Corkery",
           catchPhrase: "Multi-tiered zero tolerance productivity",
-          bs: "transition cutting-edge web services"
-        }
+          bs: "transition cutting-edge web services",
+        },
       },
       {
         id: 5,
@@ -3969,16 +4022,16 @@ export const therapistTypesData = [
           zipcode: "33263",
           geo: {
             lat: "-31.8129",
-            lng: "62.5342"
-          }
+            lng: "62.5342",
+          },
         },
         phone: "(254)954-1289",
         website: "demarco.info",
         company: {
           name: "Keebler LLC",
           catchPhrase: "User-centric fault-tolerant solution",
-          bs: "revolutionize end-to-end systems"
-        }
+          bs: "revolutionize end-to-end systems",
+        },
       },
       {
         id: 6,
@@ -3992,16 +4045,16 @@ export const therapistTypesData = [
           zipcode: "23505-1337",
           geo: {
             lat: "-71.4197",
-            lng: "71.7478"
-          }
+            lng: "71.7478",
+          },
         },
         phone: "1-477-935-8478 x6430",
         website: "ola.org",
         company: {
           name: "Considine-Lockman",
           catchPhrase: "Synchronised bottom-line interface",
-          bs: "e-enable innovative applications"
-        }
+          bs: "e-enable innovative applications",
+        },
       },
       {
         id: 7,
@@ -4015,16 +4068,16 @@ export const therapistTypesData = [
           zipcode: "58804-1099",
           geo: {
             lat: "24.8918",
-            lng: "21.8984"
-          }
+            lng: "21.8984",
+          },
         },
         phone: "210.067.6132",
         website: "elvis.io",
         company: {
           name: "Johns Group",
           catchPhrase: "Configurable multimedia task-force",
-          bs: "generate enterprise e-tailers"
-        }
+          bs: "generate enterprise e-tailers",
+        },
       },
       {
         id: 8,
@@ -4038,16 +4091,16 @@ export const therapistTypesData = [
           zipcode: "45169",
           geo: {
             lat: "-14.3990",
-            lng: "-120.7677"
-          }
+            lng: "-120.7677",
+          },
         },
         phone: "586.493.6943 x140",
         website: "jacynthe.com",
         company: {
           name: "Abernathy Group",
           catchPhrase: "Implemented secondary concept",
-          bs: "e-enable extensible e-tailers"
-        }
+          bs: "e-enable extensible e-tailers",
+        },
       },
       {
         id: 9,
@@ -4061,16 +4114,16 @@ export const therapistTypesData = [
           zipcode: "76495-3109",
           geo: {
             lat: "24.6463",
-            lng: "-168.8889"
-          }
+            lng: "-168.8889",
+          },
         },
         phone: "(775)976-6794 x41206",
         website: "conrad.com",
         company: {
           name: "Yost and Sons",
           catchPhrase: "Switchable contextually-based project",
-          bs: "aggregate real-time technologies"
-        }
+          bs: "aggregate real-time technologies",
+        },
       },
       {
         id: 10,
@@ -4084,19 +4137,22 @@ export const therapistTypesData = [
           zipcode: "31428-2261",
           geo: {
             lat: "-38.2386",
-            lng: "57.2232"
-          }
+            lng: "57.2232",
+          },
         },
         phone: "024-648-3804",
         website: "ambrose.net",
         company: {
           name: "Hoeger LLC",
           catchPhrase: "Centralized empowering task-force",
-          bs: "target end-to-end models"
-        }
-      }
-    ]},
-    { typeName: "Caple Therapist" ,users: [
+          bs: "target end-to-end models",
+        },
+      },
+    ],
+  },
+  {
+    typeName: "Caple Therapist",
+    users: [
       {
         id: 1,
         name: "Leanne Graham",
@@ -4108,17 +4164,17 @@ export const therapistTypesData = [
           city: "Gwenborough",
           zipcode: "92998-3874",
           geo: {
-            "lat": "-37.3159",
-            "lng": "81.1496"
-          }
+            lat: "-37.3159",
+            lng: "81.1496",
+          },
         },
         phone: "1-770-736-8031 x56442",
         website: "hildegard.org",
         company: {
           name: "Romaguera-Crona",
           catchPhrase: "Multi-layered client-server neural-net",
-          bs: "harness real-time e-markets"
-        }
+          bs: "harness real-time e-markets",
+        },
       },
       {
         id: 2,
@@ -4132,16 +4188,16 @@ export const therapistTypesData = [
           zipcode: "90566-7771",
           geo: {
             lat: "-43.9509",
-            lng: "-34.4618"
-          }
+            lng: "-34.4618",
+          },
         },
         phone: "010-692-6593 x09125",
         website: "anastasia.net",
         company: {
           name: "Deckow-Crist",
           catchPhrase: "Proactive didactic contingency",
-          bs: "synergize scalable supply-chains"
-        }
+          bs: "synergize scalable supply-chains",
+        },
       },
       {
         id: 3,
@@ -4155,16 +4211,16 @@ export const therapistTypesData = [
           zipcode: "59590-4157",
           geo: {
             lat: "-68.6102",
-            lng: "-47.0653"
-          }
+            lng: "-47.0653",
+          },
         },
         phone: "1-463-123-4447",
         website: "ramiro.info",
         company: {
           name: "Romaguera-Jacobson",
           catchPhrase: "Face to face bifurcated interface",
-          bs: "e-enable strategic applications"
-        }
+          bs: "e-enable strategic applications",
+        },
       },
       {
         id: 4,
@@ -4178,16 +4234,16 @@ export const therapistTypesData = [
           zipcode: "53919-4257",
           geo: {
             lat: "29.4572",
-            lng: "-164.2990"
-          }
+            lng: "-164.2990",
+          },
         },
         phone: "493-170-9623 x156",
         website: "kale.biz",
         company: {
           name: "Robel-Corkery",
           catchPhrase: "Multi-tiered zero tolerance productivity",
-          bs: "transition cutting-edge web services"
-        }
+          bs: "transition cutting-edge web services",
+        },
       },
       {
         id: 5,
@@ -4201,16 +4257,16 @@ export const therapistTypesData = [
           zipcode: "33263",
           geo: {
             lat: "-31.8129",
-            lng: "62.5342"
-          }
+            lng: "62.5342",
+          },
         },
         phone: "(254)954-1289",
         website: "demarco.info",
         company: {
           name: "Keebler LLC",
           catchPhrase: "User-centric fault-tolerant solution",
-          bs: "revolutionize end-to-end systems"
-        }
+          bs: "revolutionize end-to-end systems",
+        },
       },
       {
         id: 6,
@@ -4224,16 +4280,16 @@ export const therapistTypesData = [
           zipcode: "23505-1337",
           geo: {
             lat: "-71.4197",
-            lng: "71.7478"
-          }
+            lng: "71.7478",
+          },
         },
         phone: "1-477-935-8478 x6430",
         website: "ola.org",
         company: {
           name: "Considine-Lockman",
           catchPhrase: "Synchronised bottom-line interface",
-          bs: "e-enable innovative applications"
-        }
+          bs: "e-enable innovative applications",
+        },
       },
       {
         id: 7,
@@ -4247,16 +4303,16 @@ export const therapistTypesData = [
           zipcode: "58804-1099",
           geo: {
             lat: "24.8918",
-            lng: "21.8984"
-          }
+            lng: "21.8984",
+          },
         },
         phone: "210.067.6132",
         website: "elvis.io",
         company: {
           name: "Johns Group",
           catchPhrase: "Configurable multimedia task-force",
-          bs: "generate enterprise e-tailers"
-        }
+          bs: "generate enterprise e-tailers",
+        },
       },
       {
         id: 8,
@@ -4270,16 +4326,16 @@ export const therapistTypesData = [
           zipcode: "45169",
           geo: {
             lat: "-14.3990",
-            lng: "-120.7677"
-          }
+            lng: "-120.7677",
+          },
         },
         phone: "586.493.6943 x140",
         website: "jacynthe.com",
         company: {
           name: "Abernathy Group",
           catchPhrase: "Implemented secondary concept",
-          bs: "e-enable extensible e-tailers"
-        }
+          bs: "e-enable extensible e-tailers",
+        },
       },
       {
         id: 9,
@@ -4293,16 +4349,16 @@ export const therapistTypesData = [
           zipcode: "76495-3109",
           geo: {
             lat: "24.6463",
-            lng: "-168.8889"
-          }
+            lng: "-168.8889",
+          },
         },
         phone: "(775)976-6794 x41206",
         website: "conrad.com",
         company: {
           name: "Yost and Sons",
           catchPhrase: "Switchable contextually-based project",
-          bs: "aggregate real-time technologies"
-        }
+          bs: "aggregate real-time technologies",
+        },
       },
       {
         id: 10,
@@ -4316,19 +4372,22 @@ export const therapistTypesData = [
           zipcode: "31428-2261",
           geo: {
             lat: "-38.2386",
-            lng: "57.2232"
-          }
+            lng: "57.2232",
+          },
         },
         phone: "024-648-3804",
         website: "ambrose.net",
         company: {
           name: "Hoeger LLC",
           catchPhrase: "Centralized empowering task-force",
-          bs: "target end-to-end models"
-        }
-      }
-    ]},
-    { typeName: "Dance Therapisty" ,users: [
+          bs: "target end-to-end models",
+        },
+      },
+    ],
+  },
+  {
+    typeName: "Dance Therapisty",
+    users: [
       {
         id: 1,
         name: "Leanne Graham",
@@ -4340,17 +4399,17 @@ export const therapistTypesData = [
           city: "Gwenborough",
           zipcode: "92998-3874",
           geo: {
-            "lat": "-37.3159",
-            "lng": "81.1496"
-          }
+            lat: "-37.3159",
+            lng: "81.1496",
+          },
         },
         phone: "1-770-736-8031 x56442",
         website: "hildegard.org",
         company: {
           name: "Romaguera-Crona",
           catchPhrase: "Multi-layered client-server neural-net",
-          bs: "harness real-time e-markets"
-        }
+          bs: "harness real-time e-markets",
+        },
       },
       {
         id: 2,
@@ -4364,16 +4423,16 @@ export const therapistTypesData = [
           zipcode: "90566-7771",
           geo: {
             lat: "-43.9509",
-            lng: "-34.4618"
-          }
+            lng: "-34.4618",
+          },
         },
         phone: "010-692-6593 x09125",
         website: "anastasia.net",
         company: {
           name: "Deckow-Crist",
           catchPhrase: "Proactive didactic contingency",
-          bs: "synergize scalable supply-chains"
-        }
+          bs: "synergize scalable supply-chains",
+        },
       },
       {
         id: 3,
@@ -4387,16 +4446,16 @@ export const therapistTypesData = [
           zipcode: "59590-4157",
           geo: {
             lat: "-68.6102",
-            lng: "-47.0653"
-          }
+            lng: "-47.0653",
+          },
         },
         phone: "1-463-123-4447",
         website: "ramiro.info",
         company: {
           name: "Romaguera-Jacobson",
           catchPhrase: "Face to face bifurcated interface",
-          bs: "e-enable strategic applications"
-        }
+          bs: "e-enable strategic applications",
+        },
       },
       {
         id: 4,
@@ -4410,16 +4469,16 @@ export const therapistTypesData = [
           zipcode: "53919-4257",
           geo: {
             lat: "29.4572",
-            lng: "-164.2990"
-          }
+            lng: "-164.2990",
+          },
         },
         phone: "493-170-9623 x156",
         website: "kale.biz",
         company: {
           name: "Robel-Corkery",
           catchPhrase: "Multi-tiered zero tolerance productivity",
-          bs: "transition cutting-edge web services"
-        }
+          bs: "transition cutting-edge web services",
+        },
       },
       {
         id: 5,
@@ -4433,16 +4492,16 @@ export const therapistTypesData = [
           zipcode: "33263",
           geo: {
             lat: "-31.8129",
-            lng: "62.5342"
-          }
+            lng: "62.5342",
+          },
         },
         phone: "(254)954-1289",
         website: "demarco.info",
         company: {
           name: "Keebler LLC",
           catchPhrase: "User-centric fault-tolerant solution",
-          bs: "revolutionize end-to-end systems"
-        }
+          bs: "revolutionize end-to-end systems",
+        },
       },
       {
         id: 6,
@@ -4456,16 +4515,16 @@ export const therapistTypesData = [
           zipcode: "23505-1337",
           geo: {
             lat: "-71.4197",
-            lng: "71.7478"
-          }
+            lng: "71.7478",
+          },
         },
         phone: "1-477-935-8478 x6430",
         website: "ola.org",
         company: {
           name: "Considine-Lockman",
           catchPhrase: "Synchronised bottom-line interface",
-          bs: "e-enable innovative applications"
-        }
+          bs: "e-enable innovative applications",
+        },
       },
       {
         id: 7,
@@ -4479,16 +4538,16 @@ export const therapistTypesData = [
           zipcode: "58804-1099",
           geo: {
             lat: "24.8918",
-            lng: "21.8984"
-          }
+            lng: "21.8984",
+          },
         },
         phone: "210.067.6132",
         website: "elvis.io",
         company: {
           name: "Johns Group",
           catchPhrase: "Configurable multimedia task-force",
-          bs: "generate enterprise e-tailers"
-        }
+          bs: "generate enterprise e-tailers",
+        },
       },
       {
         id: 8,
@@ -4502,16 +4561,16 @@ export const therapistTypesData = [
           zipcode: "45169",
           geo: {
             lat: "-14.3990",
-            lng: "-120.7677"
-          }
+            lng: "-120.7677",
+          },
         },
         phone: "586.493.6943 x140",
         website: "jacynthe.com",
         company: {
           name: "Abernathy Group",
           catchPhrase: "Implemented secondary concept",
-          bs: "e-enable extensible e-tailers"
-        }
+          bs: "e-enable extensible e-tailers",
+        },
       },
       {
         id: 9,
@@ -4525,16 +4584,16 @@ export const therapistTypesData = [
           zipcode: "76495-3109",
           geo: {
             lat: "24.6463",
-            lng: "-168.8889"
-          }
+            lng: "-168.8889",
+          },
         },
         phone: "(775)976-6794 x41206",
         website: "conrad.com",
         company: {
           name: "Yost and Sons",
           catchPhrase: "Switchable contextually-based project",
-          bs: "aggregate real-time technologies"
-        }
+          bs: "aggregate real-time technologies",
+        },
       },
       {
         id: 10,
@@ -4548,16 +4607,26 @@ export const therapistTypesData = [
           zipcode: "31428-2261",
           geo: {
             lat: "-38.2386",
-            lng: "57.2232"
-          }
+            lng: "57.2232",
+          },
         },
         phone: "024-648-3804",
         website: "ambrose.net",
         company: {
           name: "Hoeger LLC",
           catchPhrase: "Centralized empowering task-force",
-          bs: "target end-to-end models"
-        }
-      }
-    ]},
-  ];
+          bs: "target end-to-end models",
+        },
+      },
+    ],
+  },
+];
+
+// const allUsers = therapistTypesData.map((therapistType) => {
+  
+//   let users = therapistType.users
+//   for(let i = 0; i < users.length; i++)
+  
+// });
+
+
