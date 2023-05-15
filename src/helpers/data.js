@@ -4622,11 +4622,15 @@ export const therapistTypesData = [
   },
 ];
 
-// const allUsers = therapistTypesData.map((therapistType) => {
-  
-//   let users = therapistType.users
-//   for(let i = 0; i < users.length; i++)
-  
-// });
+const allUsers = []
+therapistTypesData.map((therapistType) => {
+  let users = therapistType.users;
+  users.map((user)=>{
+    allUsers.push(user)
+  });
+});
+
+export {allUsers}
+
 
 

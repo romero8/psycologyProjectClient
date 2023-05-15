@@ -2,7 +2,7 @@ import "../SearchInput/SearchInput.css";
 import Form from "react-bootstrap/Form";
 import MultiRangeSlider from "multi-range-slider-react";
 import React, { useState } from "react";
-import { therapistTypesData } from "../../helpers/data";
+import { allUsers, therapistTypesData } from "../../helpers/data";
 import { Autocomplete, TextField } from "@mui/material";
 
 export function SearchInput(props) {
@@ -53,27 +53,39 @@ export function SearchInput(props) {
   {
     if (searchType === "input") {
       return (
-       
         <div className="searchInputContainer">
-         <Autocomplete
-  disablePortal
-  id="combo-box-demo"
-  options={therapistTypesData.map((therapistType)=>{
-    return therapistType.users.map((user)=>{
-      return user.name
-    })
-  })}
-  sx={{ width: 300 }}
-  renderInput={(params) => <TextField {...params} label="Movie" />}
-/>
-          <input
-            type={type}
+          <Autocomplete
             className={inputSize ? `searchInput ${inputSize}` : "searchInput"}
-            placeholder={placeHolder}
-            onChange={(e) => handleChange(e)}
-          ></input>
+            disablePortal
+            id="combo-box-demo"
+            options={allUsers.map((user) => {
+              if (placeHolder === "Name") {
+                return user.name;
+              }
+              if (placeHolder === "Profession") {
+                return therapistTypesData.map((type) => type.typeName);
+              }
+              if (placeHolder === "City") {
+                return user.address.city;
+              }
+              if (placeHolder === "Language") {
+                return user.language ? user.language : '';
+              }
+              if (placeHolder === "Name") {
+                return user.name;
+              }
+              if (placeHolder === "Experience") {
+                return user.experience;
+              }
+            })}
+            sx={{ width: 300 ,border: "none", boxShadow: "none" }}
+            style={{ border: "none", boxShadow: "none"}}
+            renderInput={(params) => (
+              <TextField {...params} label={placeHolder} />
+            )}
+          />
           <div className="iconContainer">{icon}</div>
-          
+
           {/* <div className="dropDown">
             {therapistTypesData.map((dropDownRow) => {
               return dropDownRow.users.map((user) => {
