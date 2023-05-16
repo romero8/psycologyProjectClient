@@ -41,7 +41,7 @@ export function SearchForSpecialistComp({ eventKey }) {
   
   function searchForTherapist(e){
     e.preventDefault()
-    alert(nameSearch)
+    alert('עוד מעט יעבוד')
   }
 
 
@@ -113,7 +113,7 @@ export function SearchForSpecialistComp({ eventKey }) {
       type: "text",
       searchType: "select",
       options: ["blablabla", "blablabla", "blablabla", "blablabla"],
-      specialistUserSearchType: ''
+      specialistUserSearchType: 'experties'
     },
     
     {

@@ -3,7 +3,14 @@ import Form from "react-bootstrap/Form";
 import MultiRangeSlider from "multi-range-slider-react";
 import React, { useState } from "react";
 import { allUsers, therapistTypesData } from "../../helpers/data";
-import { Autocomplete, TextField } from "@mui/material";
+import {
+  Autocomplete,
+  InputLabel,
+  MenuItem,
+  Select,
+  TextField,
+  FormControl,
+} from "@mui/material";
 
 export function SearchInput(props) {
   const placeHolder = props.placeHolder;
@@ -17,10 +24,21 @@ export function SearchInput(props) {
 
   const [minValue, set_minValue] = useState(25);
   const [maxValue, set_maxValue] = useState(75);
+
+  const [genderSelected, setGenderSelected] = useState("");
+  const [expertiesSelected, setExpertiesSelected] = useState("");
+
   const handleInput = (e) => {
     set_minValue(e.minValue);
     set_maxValue(e.maxValue);
   };
+
+  function handleGenderSelected(e) {
+    setGenderSelected(e.target.value);
+  }
+  function handleExpertiesSelected(e) {
+    setExpertiesSelected(e.target.value);
+  }
 
   function handleChange(e) {
     let value = e.target.value;
@@ -51,73 +69,199 @@ export function SearchInput(props) {
   }
 
   {
-    if (searchType === "input") {
+    if (specialistUserSearchType === "name") {
+      let usersParam = allUsers.map((user) => user.name);
+      let newUsersName = [...new Set(usersParam)];
       return (
         <div className="searchInputContainer">
           <Autocomplete
-            className={inputSize ? `searchInput ${inputSize}` : "searchInput"}
             disablePortal
             id="combo-box-demo"
-            options={allUsers.map((user) => {
-              if (placeHolder === "Name") {
-                return user.name;
-              }
-              if (placeHolder === "Profession") {
-                return therapistTypesData.map((type) => type.typeName);
-              }
-              if (placeHolder === "City") {
-                return user.address.city;
-              }
-              if (placeHolder === "Language") {
-                return user.language ? user.language : '';
-              }
-              if (placeHolder === "Name") {
-                return user.name;
-              }
-              if (placeHolder === "Experience") {
-                return user.experience;
-              }
-            })}
-            sx={{ width: 300 ,border: "none", boxShadow: "none" }}
-            style={{ border: "none", boxShadow: "none"}}
+            options={newUsersName.map((user) => user)}
+            sx={{ width: 300 }}
             renderInput={(params) => (
-              <TextField {...params} label={placeHolder} />
+              <TextField {...params} label={placeHolder} variant="standard" />
             )}
           />
           <div className="iconContainer">{icon}</div>
-
-          {/* <div className="dropDown">
-            {therapistTypesData.map((dropDownRow) => {
-              return dropDownRow.users.map((user) => {
-                if(placeHolder === 'Name'){
-                  return(
-                    <div>{user.name}</div>
-                  )
-                }
-              });
-            })}
-          </div> */}
         </div>
       );
     }
-
-    if (searchType === "select") {
+    if (specialistUserSearchType === "typeName") {
+      let usersParam = allUsers.map((user) => user.typeName);
+      let newUsersName = [...new Set(usersParam)];
       return (
         <div className="searchInputContainer">
-          <select
-            className={inputSize ? `searchInput ${inputSize}` : "searchInput"}
-          >
-            <option selected disabled>
-              {placeHolder}
-            </option>
-            {options.map((option) => {
-              return <option>{option}</option>;
-            })}
-          </select>
+          <Autocomplete
+            disablePortal
+            id="combo-box-demo"
+            options={newUsersName.map((user) => user)}
+            sx={{ width: 300 }}
+            renderInput={(params) => (
+              <TextField {...params} label={placeHolder} variant="standard" />
+            )}
+          />
           <div className="iconContainer">{icon}</div>
         </div>
       );
     }
+    if (specialistUserSearchType === "address.city") {
+      let usersParam = allUsers.map((user) => user.address.city);
+      let newUsersName = [...new Set(usersParam)];
+      return (
+        <div className="searchInputContainer">
+          <Autocomplete
+            disablePortal
+            id="combo-box-demo"
+            options={newUsersName.map((user) => user)}
+            sx={{ width: 300 }}
+            renderInput={(params) => (
+              <TextField {...params} label={placeHolder} variant="standard" />
+            )}
+          />
+          <div className="iconContainer">{icon}</div>
+        </div>
+      );
+    }
+    if (specialistUserSearchType === "language") {
+      let arr = []
+      let usersParam = allUsers.map((user) => user.language);
+      let newUsersName = [...new Set(usersParam)];
+      newUsersName.map((user)=>{
+        return user.map((language)=>{
+          arr.push(language)
+        })
+      })
+
+      let newArr = [...new Set(arr)]
+
+      console.log(newArr)
+      return (
+        <div className="searchInputContainer">
+          <Autocomplete
+            disablePortal
+            id="combo-box-demo"
+            options={newArr.map((user) => user)}
+            sx={{ width: 300 }}
+            renderInput={(params) => (
+              <TextField {...params} label={placeHolder} variant="standard" />
+            )}
+          />
+          <div className="iconContainer">{icon}</div>
+        </div>
+      );
+    }
+    if (specialistUserSearchType === "experience") {
+      let usersParam = allUsers.map((user) => user.experience);
+      let newUsersName = [...new Set(usersParam)];
+      return (
+        <div className="searchInputContainer">
+          <Autocomplete
+            style={{ border: "none", boxShadow: "none" }}
+            disablePortal
+            id="country"
+            options={newUsersName.map((user) => user)}
+            sx={{ width: 300 }}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                label={placeHolder}
+                style={{ border: "none", boxShadow: "none" }}
+                variant="standard"
+              />
+            )}
+          />
+          <div className="iconContainer">{icon}</div>
+        </div>
+      );
+    }
+
+    // if (searchType === "select") {
+    //   return (
+    //     <div className="searchInputContainer">
+    //       <select
+    //         className={inputSize ? `searchInput ${inputSize}` : "searchInput"}
+    //       >
+    //         <option selected disabled>
+    //           {placeHolder}
+    //         </option>
+    //         {options.map((option) => {
+    //           return <option>{option}</option>;
+    //         })}
+    //       </select>
+    //       <div className="iconContainer">{icon}</div>
+    //     </div>
+    //   );
+    // }
+
+    
+    
+    if (specialistUserSearchType === "gender") {
+      return (
+        <div className="searchInputContainer long">
+          <FormControl fullWidth className="searchInputContainer">
+            <InputLabel>{placeHolder}</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              label={placeHolder}
+              value={genderSelected}
+              onChange={handleGenderSelected}
+            >
+              <MenuItem value="">
+                <em>None</em>
+              </MenuItem>
+              {options.map((option) => {
+                return <MenuItem value={option}>{option}</MenuItem>;
+              })}
+            </Select>
+          </FormControl>
+          <div className="iconContainer">{icon}</div>
+        </div>
+      );
+    }
+    if (specialistUserSearchType === "experties") {
+      return (
+        <div className="searchInputContainer long">
+          <FormControl fullWidth className="searchInputContainer">
+            <InputLabel>{placeHolder}</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              label={placeHolder}
+              value={expertiesSelected}
+              onChange={handleExpertiesSelected}
+            >
+              <MenuItem value="">
+                <em>None</em>
+              </MenuItem>
+              {options.map((option) => {
+                return <MenuItem value={option}>{option}</MenuItem>;
+              })}
+            </Select>
+          </FormControl>
+          <div className="iconContainer">{icon}</div>
+        </div>
+      );
+    }
+    // if (searchType === "select") {
+    //   return (
+    //     <div className="searchInputContainer">
+    //       <Select
+    //         labelId="demo-simple-select-label"
+    //         id="demo-simple-select"
+    //         label={placeHolder}
+    //         variant="standard"
+    //         onChange={handleSelected}
+    //       >
+    //         {options.map((option) => {
+    //           return <MenuItem>{option}</MenuItem>;
+    //         })}
+    //       </Select>
+    //       <div className="iconContainer">{icon}</div>
+    //     </div>
+    //   );
+    // }
     if (searchType === "range") {
       return (
         <div className="searchInputContainer range long">
@@ -213,3 +357,86 @@ export function SearchInput(props) {
 
   //   );
 }
+
+// if (searchType === "input") {
+//   return (
+//     <div className="searchInputContainer">
+//       <Autocomplete
+//         className={inputSize ? `searchInput ${inputSize}` : "searchInput"}
+//         disablePortal
+//         id="combo-box-demo"
+//         options={allUsers.map((user) => {
+//           if (placeHolder === "Name") {
+//             console.log(user.specialistUserSearchType);
+//             return user.name;
+//           }
+
+//           if (placeHolder === "Profession") {
+//             return user.typeName;
+//           }
+//           if (placeHolder === "City") {
+//             return user.address.city;
+//           }
+//           if (placeHolder === "Language") {
+//             return user.language ? user.language : null;
+//           }
+//           if (placeHolder === "Name") {
+//             return user.name;
+//           }
+//           if (placeHolder === "Experience") {
+//             return user.experience;
+//           }
+//         })}
+//         sx={{ width: 300, border: "none", boxShadow: "none" }}
+//         style={{ border: "none", boxShadow: "none" }}
+//         renderInput={(params) => (
+//           <TextField {...params} label={placeHolder} />
+//         )}
+//       />
+
+//       <div className="iconContainer">{icon}</div>
+
+//       {/* <div className="dropDown">
+//         {therapistTypesData.map((dropDownRow) => {
+//           return dropDownRow.users.map((user) => {
+//             if(placeHolder === 'Name'){
+//               return(
+//                 <div>{user.name}</div>
+//               )
+//             }
+//           });
+//         })}
+//       </div> */}
+//     </div>
+//   );
+// }
+
+
+// if (searchType === "range") {
+//   return (
+//     <div className="searchInputContainer range long">
+//       <div>
+//         <label>{placeHolder}</label>
+//         <MultiRangeSlider
+//           min={0}
+//           max={500}
+//           step={5}
+//           minValue={minValue}
+//           maxValue={maxValue}
+//           ruler={false}
+//           label={true}
+//           style={{ border: "none", boxShadow: "none", height: "5px" }}
+//           onInput={(e) => {
+//             handleInput(e);
+//           }}
+//           barInnerColor="#fff"
+//           thumbLeftColor="#fff"
+//           thumbRightColor="#eaf5fa"
+//           className="rangeInput long"
+//         />
+//       </div>
+
+//       <div className="iconContainer">{icon}</div>
+//     </div>
+//   );
+// }

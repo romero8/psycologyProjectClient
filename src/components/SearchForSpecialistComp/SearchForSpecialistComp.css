@@ -12,7 +12,7 @@
 .SearchForSpecialistBody {
   display: grid;
   grid-template-columns: repeat(5, auto);
-  gap: 30px;
+  gap: 35px;
   margin: 10px;
   justify-content: center;
   align-items: center;
@@ -32,7 +32,7 @@
 }
 
 .accordionBtn:hover {
-  color: aqua;
+  color: rgb(55, 0, 255);
 }
 
 .accordionBtnNone {
