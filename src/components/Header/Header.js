@@ -36,7 +36,7 @@ export function Header() {
             <NavDropdown title="Specialties" id="basic-nav-dropdown">
               {therapistTypes.map((therapist) => {
                 return (
-                  <NavDropdown.Item href={`/specialties/${therapist.typeName}`}>
+                  <NavDropdown.Item href={`/searchBySpecialties/${therapist.typeName}`}>
                     {therapist.typeName}
                   </NavDropdown.Item>
                 );

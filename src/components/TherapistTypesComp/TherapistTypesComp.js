@@ -32,7 +32,7 @@ export function TherapistTypesComp() {
                   <div className="therapistTypeBox">
                     
                   </div>
-                  <Link className="therapistTypeBox" to={`/specialties/${therapist.typeName}`}>
+                  <Link className="therapistTypeBox" to={`/searchBySpecialties/${therapist.typeName}`}>
                   <img src={logo} className="logo" />
                   <span className="therapistTypeSpan">
                     {therapist.typeName}
@@ -48,7 +48,7 @@ export function TherapistTypesComp() {
             {therapistTypes.slice(7, 13).map((therapist, index) => {
               return (
                 <div className="therapistTypeBox">
-                  <Link className="therapistTypeBox" to={`/specialties/${therapist.typeName}`}>
+                  <Link className="therapistTypeBox" to={`/searchBySpecialties/${therapist.typeName}`}>
                   <img src={logo} className="logo" />
                   <span className="therapistTypeSpan">
                     {therapist.typeName}
@@ -64,7 +64,7 @@ export function TherapistTypesComp() {
             {therapistTypes.slice(14, 20).map((therapist, index) => {
               return (
                 <div className="therapistTypeBox" >
-                  <Link className="therapistTypeBox" to={`/specialties/${therapist.typeName}`}>
+                  <Link className="therapistTypeBox" to={`/searchBySpecialties/${therapist.typeName}`}>
                   <img src={logo} className="logo" />
                   <span className="therapistTypeSpan">
                     {therapist.typeName}

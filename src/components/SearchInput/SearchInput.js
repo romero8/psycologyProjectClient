@@ -41,30 +41,30 @@ export function SearchInput(props) {
   }
 
   function handleChange(e) {
-    let value = e.target.value;
+    let innerHTML = e.target.innerHTML;
     if (placeHolder === "Name") {
-      setSearch.setNameSearch(value);
+      setSearch.setNameSearch(innerHTML);
     }
     if (placeHolder === "Profession") {
-      setSearch.setProfessionSearch(value);
+      setSearch.setProfessionSearch(innerHTML);
     }
     if (placeHolder === "City") {
-      setSearch.setCitySearch(value);
+      setSearch.setCitySearch(innerHTML);
     }
     // if(placeHolder==='Price Range'){
     //   setSearch.setCitySearch(value)
     // }
     if (placeHolder === "Language") {
-      setSearch.setLanguageSearch(value);
+      setSearch.setLanguageSearch(innerHTML);
     }
     if (placeHolder === "Experienc") {
-      setSearch.setExperiencSearch(value);
+      setSearch.setExperiencSearch(innerHTML);
     }
     if (placeHolder === "Gender") {
-      setSearch.setGenderSearch(value);
+      setSearch.setGenderSearch(innerHTML);
     }
     if (placeHolder === "LGBTQ friendly") {
-      setSearch.setCitySearch(value);
+      setSearch.setCitySearch(innerHTML);
     }
   }
 
@@ -73,15 +73,18 @@ export function SearchInput(props) {
       let usersParam = allUsers.map((user) => user.name);
       let newUsersName = [...new Set(usersParam)];
       return (
-        <div className="searchInputContainer">
+        <div className="searchInputContainer short">
           <Autocomplete
+          onChange={handleChange}
             disablePortal
             id="combo-box-demo"
             options={newUsersName.map((user) => user)}
             sx={{ width: 300 }}
             renderInput={(params) => (
               <TextField {...params} label={placeHolder} variant="standard" />
+              
             )}
+            // onChange={(e)=>handleChange(e)}
           />
           <div className="iconContainer">{icon}</div>
         </div>
@@ -91,8 +94,9 @@ export function SearchInput(props) {
       let usersParam = allUsers.map((user) => user.typeName);
       let newUsersName = [...new Set(usersParam)];
       return (
-        <div className="searchInputContainer">
+        <div className="searchInputContainer short">
           <Autocomplete
+          onChange={handleChange}
             disablePortal
             id="combo-box-demo"
             options={newUsersName.map((user) => user)}
@@ -109,8 +113,9 @@ export function SearchInput(props) {
       let usersParam = allUsers.map((user) => user.address.city);
       let newUsersName = [...new Set(usersParam)];
       return (
-        <div className="searchInputContainer">
+        <div className="searchInputContainer short">
           <Autocomplete
+          onChange={handleChange}
             disablePortal
             id="combo-box-demo"
             options={newUsersName.map((user) => user)}
@@ -135,10 +140,10 @@ export function SearchInput(props) {
 
       let newArr = [...new Set(arr)]
 
-      console.log(newArr)
       return (
-        <div className="searchInputContainer">
+        <div className="searchInputContainer short">
           <Autocomplete
+          onChange={handleChange}
             disablePortal
             id="combo-box-demo"
             options={newArr.map((user) => user)}
@@ -155,8 +160,9 @@ export function SearchInput(props) {
       let usersParam = allUsers.map((user) => user.experience);
       let newUsersName = [...new Set(usersParam)];
       return (
-        <div className="searchInputContainer">
+        <div className="searchInputContainer short">
           <Autocomplete
+          onChange={handleChange}
             style={{ border: "none", boxShadow: "none" }}
             disablePortal
             id="country"
@@ -198,7 +204,7 @@ export function SearchInput(props) {
     
     if (specialistUserSearchType === "gender") {
       return (
-        <div className="searchInputContainer long">
+        <div className="searchInputContainer short">
           <FormControl fullWidth className="searchInputContainer">
             <InputLabel>{placeHolder}</InputLabel>
             <Select
@@ -222,7 +228,7 @@ export function SearchInput(props) {
     }
     if (specialistUserSearchType === "experties") {
       return (
-        <div className="searchInputContainer long">
+        <div className="searchInputContainer short">
           <FormControl fullWidth className="searchInputContainer">
             <InputLabel>{placeHolder}</InputLabel>
             <Select
@@ -264,7 +270,7 @@ export function SearchInput(props) {
     // }
     if (searchType === "range") {
       return (
-        <div className="searchInputContainer range long">
+        <div className="searchInputContainer short">
           <div>
             <label>{placeHolder}</label>
             <MultiRangeSlider
@@ -293,7 +299,7 @@ export function SearchInput(props) {
 
     if (searchType === "checkBox") {
       return (
-        <div className="searchInputContainer">
+        <div className="searchInputContainer short">
           <Form>
             {["radio"].map((type) => (
               <div

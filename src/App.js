@@ -21,8 +21,18 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='/client/:clientName' element={<Client/>}/>
           <Route path='/therapist/:therapistName' element = {<Therapist/>}/>
-          <Route path='/specialties/:specialty' element = {<Specialties/>}/>
-          <Route path='/specialties/:specialty/:therapistName' element = {<TherapistInfo/>}/>
+          <Route path='/searchBySpecialties/:specialty' element = {<Specialties/>}/>
+          <Route path='/searchBySpecialties/:specialty/:therapistName' element = {<TherapistInfo/>}/>
+          <Route path='/searchByTherapist/:name' element = {<Specialties/>}/>
+          <Route path='/searchByTherapist/:name/:profession' element = {<Specialties/>}/>
+          <Route path='/searchByTherapist/:name/:profession' element = {<Specialties/>}/>
+          <Route path='/searchByTherapist/:name/:profession/:city' element = {<Specialties/>}/>
+          <Route path='/searchByTherapist/:name/:profession/:city/:priceRange' element = {<Specialties/>}/>
+          <Route path='/searchByTherapist/:name/:profession/:city/:priceRange/:language' element = {<Specialties/>}/>
+          <Route path='/searchByTherapist/:name/:profession/:city/:priceRange/:language/:experience' element = {<Specialties/>}/>
+          <Route path='/searchByTherapist/:name/:profession/:city/:priceRange/:language/:experience/:gender' element = {<Specialties/>}/>
+          <Route path='/searchByTherapist/:name/:profession/:city/:priceRange/:language/:experience/:gender/:lgbtq' element = {<Specialties/>}/>
+          
         </Routes>
       </Router>
       <Footer/>

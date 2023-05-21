@@ -21,6 +21,9 @@ import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import AccordionBody from "react-bootstrap/AccordionBody";
 import AccordionButton from "react-bootstrap/AccordionButton";
 import { therapistTypesData } from "../../helpers/data";
+import { useNavigate } from "react-router-dom";
+
+
 
 
 
@@ -38,10 +41,11 @@ export function SearchForSpecialistComp({ eventKey }) {
   const [genderSearch,setGenderSearch] = useState('')
   const [lgbtqSearch,setLGBTQSearch] = useState('')
 
-  
+  const navigate = useNavigate()
+
   function searchForTherapist(e){
     e.preventDefault()
-    alert('עוד מעט יעבוד')
+    navigate(`searchByTherapist/${nameSearch ? nameSearch : 'all'}/${professionSearch ? professionSearch : 'all'}/${citySearch ? citySearch : 'all'}/${priceRangeSearch ? priceRangeSearch : 'all'}/${languageSearch ? languageSearch : 'all'}/${experienceSearch ? experienceSearch : 'all'}/${genderSearch ? genderSearch : 'all'}/${lgbtqSearch ? lgbtqSearch : 'all'}`)
   }
 
 
