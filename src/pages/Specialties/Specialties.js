@@ -6,8 +6,10 @@ import { faLocationDot, faVideo } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { therapistTypesData, allUsers } from "../../helpers/data";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+var _ = require('lodash');
 
-export function Specialties(props) {
+export function Specialties() {
   const therapistTypes = therapistTypesData;
   let { specialty } = useParams();
   let { name } = useParams();
@@ -28,9 +30,66 @@ export function Specialties(props) {
     gender,
   ];
 
+  const therapistObj = {
+    name: name,
+    typeName: profession,
+    address: {
+      city: city,
+    },
+    gender: gender,
+    language: language,
+    experience: experience,
+  }
+
+  function newObj(obj){
+    const objKeys = Object.keys(obj)
+    for(let objLoop of objKeys)
+      
+    
+    if(obj.name === 'all'){
+      delete obj.name
+    } 
+    if(obj.typeName === 'all'){
+      delete obj.typeName
+    } 
+    if(obj.address.city === 'all'){
+      delete obj.address
+    } 
+    if(obj.language === 'all'){
+      delete obj.language
+    } 
+    if(obj.gender === 'all'){
+      delete obj.gender
+    } 
+    if(obj.experience === 'all'){
+      delete obj.experience
+    } 
+      
+      
+      return obj
+         
+      
+    
+  }
+
+  console.log(newObj(therapistObj))
+
+  const [newTherapistObj,setNewTherapistObj] = useState(therapistObj)
+
   
+  console.log(_.filter(allUsers,newObj(therapistObj) ))
+
+
 
   const checkArr = [];
+
+   const checkArrAll = therapistInfoArr.filter((arr)=>{
+    if(arr !== 'all'){
+      return arr
+    }
+  })
+
+  console.log(checkArrAll)
   
   for (let i = 0; i < therapistInfoArr.length; i++) {
     if (therapistInfoArr[i] === "all") {
@@ -40,8 +99,25 @@ export function Specialties(props) {
 
   const filterOneOptionUsers = allUsers.filter((user) => {
 
+    // function isEqual(obj1,obj2){
+    //   const obj1Keys = Object.keys(obj1)
+    //   const obj2Keys = Object.keys(obj2)
 
-    // console.log(therapistInfoArr)
+    //   for(let obj1Loop of obj1Keys)
+    //   for(let obj2Loop of obj2Keys)
+    //   if(obj1[obj2Loop]===obj2[obj2Loop]){
+    //     console.log(obj1)
+    //   }
+    //   }
+
+    //   isEqual(user,therapistObj)
+
+     
+
+
+
+
+    // console.log(therapistObj)
     // console.log(checkArr)
     if (checkArr.length === 5) {
       if (
@@ -56,7 +132,6 @@ export function Specialties(props) {
         return user;
       }
     }
-
     
     const therapistInfoObj = [
       { index: name, id: user.name },
@@ -67,61 +142,61 @@ export function Specialties(props) {
       { index: gender, id: user.gender },
     ];
 
-    // const confirmFilters = [
-    //   user.typeName,
-    //   user.name,
-    //   user.typeName,
-    //   user.address.city,
-    //   user.language,
-    //   user.experience,
-    //   user.gender,
-    // ];
+    let userKey = Object.keys(user)
+   
+
+    
+    
 
     if (checkArr.length !== 5) { 
-      for(let i = 0; i < therapistInfoObj.length; i++)
-      for(let t = 0; t < therapistInfoArr.length; t++)
-      if ( therapistInfoArr[t] && therapistInfoArr[t]  === therapistInfoObj[i].id) {
+      // for(let t = 0; t < checkArrAll.length; t++)
+      // for(let i = 0; i < therapistInfoObj.length; i++)
+      if(user){
         return user
-      }
+      }      
     }
   });
 
-  console.log(filterOneOptionUsers);
+ 
+  console.log(filterOneOptionUsers)
 
-  const checkArrAll = therapistInfoArr.filter((arr)=>{
-    if(arr !== 'all'){
-      return arr
-    }
-  })
+   
 
-  console.log(checkArrAll)
 
-  const filetered = filterOneOptionUsers.map((user)=>{
-    const confirmFilters = [
-      user.typeName,
-      user.name,
-      user.typeName,
-      user.address.city,
-      user.language,
-      user.experience,
-      user.gender,
-    ]; 
-    for(let i = 0; i< confirmFilters.length; i++)
-    for(let t = 0; t < therapistInfoArr.length; t++)
-   if(confirmFilters[i] === therapistInfoArr[t]) {
-    return user
-   }
-  })
+ 
+
+  
+
+  // const fileterd = filterOneOptionUsers.map((user)=>{
+  //   const confirmFilters = [
+  //     user.typeName,
+  //     user.name,
+  //     user.address.city,
+  //     user.language,
+  //     user.experience,
+  //     user.gender,
+  //   ]; 
+  //   for(let i = 0; i< confirmFilters.length; i++)
+  //   for(let t = 0; t < checkArrAll.length; t++)
+  //  if(confirmFilters[0 && 1 && 2 && 3 && 4 && 5] === checkArrAll[t]) {
+  //   return user
+  //  }
+
+  
+  // })
+
+  // console.log(fileterd)
+
+ 
+    
+  
+ 
+  
 
  
 
 
-  filterOneOptionUsers.map((user)=>{
-    for(let i = 0; i< checkArrAll.length; i++){
-      const checkkkk = user.includes(checkArrAll[i])
-      console.log(checkkkk)
-    }
-  })
+  
  
 
   
@@ -272,3 +347,16 @@ export function Specialties(props) {
 //     );
 //   });
 // }
+
+
+
+
+// const confirmFilters = [
+    //   user.typeName,
+    //   user.name,
+    //   user.typeName,
+    //   user.address.city,
+    //   user.language,
+    //   user.experience,
+    //   user.gender,
+    // ];
