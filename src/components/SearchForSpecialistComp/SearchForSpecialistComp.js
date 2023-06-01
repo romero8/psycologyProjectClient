@@ -10,7 +10,7 @@ import {
   faListOl,
   faPersonHalfDress,
   faBook,
-  faGlobe
+  faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../SearchForSpecialistComp/SearchForSpecialistComp.css";
@@ -23,37 +23,41 @@ import AccordionButton from "react-bootstrap/AccordionButton";
 import { therapistTypesData } from "../../helpers/data";
 import { useNavigate } from "react-router-dom";
 
-
-
-
-
 export function SearchForSpecialistComp({ eventKey }) {
   const [noneState, setNoneState] = useState(false);
 
   const therapistTypes = therapistTypesData;
 
-  const [nameSearch,setNameSearch] = useState('')
-  const [professionSearch,setProfessionSearch] = useState('')
-  const [citySearch,setCitySearch] = useState('')
-  const [priceRangeSearch,setPriceRangeSearch] = useState('')
-  const [languageSearch,setLanguageSearch] = useState('')
-  const [experienceSearch,setExperienceSearch] = useState('')
-  const [genderSearch,setGenderSearch] = useState('')
-  const [lgbtqSearch,setLGBTQSearch] = useState('')
+  const [nameSearch, setNameSearch] = useState("");
+  const [professionSearch, setProfessionSearch] = useState("");
+  const [citySearch, setCitySearch] = useState("");
+  const [priceRangeSearch, setPriceRangeSearch] = useState("");
+  const [languageSearch, setLanguageSearch] = useState("");
+  const [experienceSearch, setExperienceSearch] = useState("");
+  const [genderSearch, setGenderSearch] = useState("");
+  const [expertiesSearch, setExpertiesSearch] = useState("");
+  const [lgbtqSearch, setLGBTQSearch] = useState("");
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  function searchForTherapist(e){
-    e.preventDefault()
-    navigate(`searchByTherapist/${nameSearch ? nameSearch : 'all'}/${professionSearch ? professionSearch : 'all'}/${citySearch ? citySearch : 'all'}/${priceRangeSearch ? priceRangeSearch : 'all'}/${languageSearch ? languageSearch : 'all'}/${experienceSearch ? experienceSearch : 'all'}/${genderSearch ? genderSearch : 'all'}/${lgbtqSearch ? lgbtqSearch : 'all'}`)
+  function searchForTherapist(e) {
+    e.preventDefault();
+    navigate(
+      `searchByTherapist/${nameSearch ? nameSearch : "all"}/${
+        professionSearch ? professionSearch : "all"
+      }/${citySearch ? citySearch : "all"}/${
+        priceRangeSearch ? priceRangeSearch : "all"
+      }/${languageSearch ? languageSearch : "all"}/${
+        experienceSearch ? experienceSearch : "all"
+      }/${genderSearch ? genderSearch : "all"}/${
+        lgbtqSearch ? lgbtqSearch : "all"
+      }`
+    );
   }
-
-
 
   // const therapistData = findSpecialty.users.find((therapist) => {
   //   return therapist.name === therapistName;
   // });
-  
 
   // const decoratedOnClick = useAccordionButton(eventKey, () =>
   //   console.log("totally custom!")
@@ -66,7 +70,7 @@ export function SearchForSpecialistComp({ eventKey }) {
       type: "text",
       searchType: "input",
       inputSize: "short",
-      specialistUserSearchType: 'name',
+      specialistUserSearchType: "name",
     },
     {
       placeHolder: "Profession",
@@ -74,7 +78,7 @@ export function SearchForSpecialistComp({ eventKey }) {
       type: "text",
       searchType: "input",
       inputSize: "short",
-      specialistUserSearchType: 'typeName'
+      specialistUserSearchType: "typeName",
     },
     {
       placeHolder: "City",
@@ -82,7 +86,7 @@ export function SearchForSpecialistComp({ eventKey }) {
       type: "text",
       searchType: "input",
       inputSize: "short",
-      specialistUserSearchType: 'address.city'
+      specialistUserSearchType: "address.city",
     },
     {
       placeHolder: "Price Range",
@@ -90,7 +94,7 @@ export function SearchForSpecialistComp({ eventKey }) {
       type: "number",
       searchType: "range",
       inputSize: "long",
-      specialistUserSearchType: 'price'
+      specialistUserSearchType: "price",
     },
   ];
 
@@ -101,7 +105,7 @@ export function SearchForSpecialistComp({ eventKey }) {
       type: "text",
       searchType: "input",
       inputSize: "short",
-      specialistUserSearchType: 'language'
+      specialistUserSearchType: "language",
     },
     {
       placeHolder: "Experience",
@@ -109,7 +113,7 @@ export function SearchForSpecialistComp({ eventKey }) {
       type: "number",
       searchType: "input",
       inputSize: "short",
-      specialistUserSearchType: 'experience'
+      specialistUserSearchType: "experience",
     },
     {
       placeHolder: "Experties",
@@ -117,17 +121,17 @@ export function SearchForSpecialistComp({ eventKey }) {
       type: "text",
       searchType: "select",
       options: ["blablabla", "blablabla", "blablabla", "blablabla"],
-      specialistUserSearchType: 'experties'
+      specialistUserSearchType: "experties",
     },
-    
+
     {
       placeHolder: "Gender",
       icon: <FontAwesomeIcon icon={faTransgender} />,
       type: "text",
       searchType: "select",
-      options: ["Male", "Female", "Other"],
+      options: ["male", "female", "other"],
       inputSize: "short",
-      specialistUserSearchType: 'gender'
+      specialistUserSearchType: "gender",
     },
 
     {
@@ -136,10 +140,10 @@ export function SearchForSpecialistComp({ eventKey }) {
       type: "number",
       searchType: "checkBox",
       options: ["yes", "no"],
-      specialistUserSearchType: 'LGBTQ'
+      specialistUserSearchType: "LGBTQ",
     },
   ];
-  
+
   function none() {
     if (noneState) {
       return "None";
@@ -147,12 +151,14 @@ export function SearchForSpecialistComp({ eventKey }) {
       return "";
     }
   }
-  
-  
 
   return (
     <div className="SearchForSpecialistContainer">
-      <Accordion as="form" className="accordion" onSubmit={(e)=>searchForTherapist(e)}>
+      <Accordion
+        as="form"
+        className="accordion"
+        onSubmit={(e) => searchForTherapist(e)}
+      >
         <AccordionBody as="div" className="SearchForSpecialistBody">
           {specialistUserAdvencedSearch.map((user) => {
             return (
@@ -172,13 +178,15 @@ export function SearchForSpecialistComp({ eventKey }) {
                   setLanguageSearch,
                   setExperienceSearch,
                   setGenderSearch,
+                  setExpertiesSearch,
                   setLGBTQSearch,
                 }}
+                value={{ genderSearch, expertiesSearch }}
               />
             );
           })}
         </AccordionBody>
-       
+
         <div className="SearchForSpecialistBody">
           {specialistUserSearch.map((user) => {
             return (
@@ -198,8 +206,10 @@ export function SearchForSpecialistComp({ eventKey }) {
                   setLanguageSearch,
                   setExperienceSearch,
                   setGenderSearch,
+                  setExpertiesSearch,
                   setLGBTQSearch,
                 }}
+                value={{ genderSearch, expertiesSearch }}
               />
             );
           })}
@@ -216,5 +226,3 @@ export function SearchForSpecialistComp({ eventKey }) {
     </div>
   );
 }
-
-

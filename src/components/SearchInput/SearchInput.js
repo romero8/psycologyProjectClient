@@ -20,13 +20,13 @@ export function SearchInput(props) {
   const options = props.options;
   const inputSize = props.inputSize;
   const setSearch = props.setSearch;
+  const value = props.value
   const specialistUserSearchType = props.specialistUserSearchType;
 
   const [minValue, set_minValue] = useState(25);
   const [maxValue, set_maxValue] = useState(75);
 
-  const [genderSelected, setGenderSelected] = useState("");
-  const [expertiesSelected, setExpertiesSelected] = useState("");
+ 
 
   const handleInput = (e) => {
     set_minValue(e.minValue);
@@ -34,10 +34,10 @@ export function SearchInput(props) {
   };
 
   function handleGenderSelected(e) {
-    setGenderSelected(e.target.value);
+    setSearch.setGenderSearch(e.target.value)
   }
   function handleExpertiesSelected(e) {
-    setExpertiesSelected(e.target.value);
+    setSearch.setExpertiesSearch(e.target.value)
   }
 
   function handleChange(e) {
@@ -211,7 +211,7 @@ export function SearchInput(props) {
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               label={placeHolder}
-              value={genderSelected}
+              value={value.genderSearch}
               onChange={handleGenderSelected}
             >
               <MenuItem value="">
@@ -235,7 +235,7 @@ export function SearchInput(props) {
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               label={placeHolder}
-              value={expertiesSelected}
+              value={value.expertiesSearch}
               onChange={handleExpertiesSelected}
             >
               <MenuItem value="">
