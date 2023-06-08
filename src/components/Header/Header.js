@@ -64,8 +64,8 @@ export function Header() {
             </Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">Log-In</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
+            <Nav.Link href="/logIn">Log-In</Nav.Link>
+            <Nav.Link eventKey={2} href="signIn">
               Sign-In
             </Nav.Link>
           </Nav>

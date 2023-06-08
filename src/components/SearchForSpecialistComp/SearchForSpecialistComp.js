@@ -31,12 +31,13 @@ export function SearchForSpecialistComp({ eventKey }) {
   const [nameSearch, setNameSearch] = useState("");
   const [professionSearch, setProfessionSearch] = useState("");
   const [citySearch, setCitySearch] = useState("");
-  const [priceRangeSearch, setPriceRangeSearch] = useState("");
+  const [rangeSearch, setRangeSearch] = useState([20,37])
   const [languageSearch, setLanguageSearch] = useState("");
   const [experienceSearch, setExperienceSearch] = useState("");
   const [genderSearch, setGenderSearch] = useState("");
   const [expertiesSearch, setExpertiesSearch] = useState("");
   const [lgbtqSearch, setLGBTQSearch] = useState("");
+  
 
   const navigate = useNavigate();
 
@@ -46,7 +47,7 @@ export function SearchForSpecialistComp({ eventKey }) {
       `searchByTherapist/${nameSearch ? nameSearch : "all"}/${
         professionSearch ? professionSearch : "all"
       }/${citySearch ? citySearch : "all"}/${
-        priceRangeSearch ? priceRangeSearch : "all"
+        rangeSearch ? rangeSearch : "all"
       }/${languageSearch ? languageSearch : "all"}/${
         experienceSearch ? experienceSearch : "all"
       }/${genderSearch ? genderSearch : "all"}/${
@@ -174,14 +175,14 @@ export function SearchForSpecialistComp({ eventKey }) {
                   setNameSearch,
                   setProfessionSearch,
                   setCitySearch,
-                  setPriceRangeSearch,
+                  setRangeSearch,
                   setLanguageSearch,
                   setExperienceSearch,
                   setGenderSearch,
                   setExpertiesSearch,
                   setLGBTQSearch,
                 }}
-                value={{ genderSearch, expertiesSearch }}
+                value={{ genderSearch, expertiesSearch ,rangeSearch}}
               />
             );
           })}
@@ -202,18 +203,19 @@ export function SearchForSpecialistComp({ eventKey }) {
                   setNameSearch,
                   setProfessionSearch,
                   setCitySearch,
-                  setPriceRangeSearch,
+                  setRangeSearch,
                   setLanguageSearch,
                   setExperienceSearch,
                   setGenderSearch,
                   setExpertiesSearch,
                   setLGBTQSearch,
                 }}
-                value={{ genderSearch, expertiesSearch }}
+                value={{ genderSearch, expertiesSearch,rangeSearch }}
               />
             );
           })}
-          <MainBtn value="Search" color="outline-secondary" />
+          {/* <MainBtn value="Search" color="outline-secondary"/> */}
+          <button className="inputBtn">Search</button>
           <AccordionButton
             as="div"
             onClick={() => setNoneState(true)}

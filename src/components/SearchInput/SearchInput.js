@@ -10,9 +10,13 @@ import {
   Select,
   TextField,
   FormControl,
+  Slider,
 } from "@mui/material";
 
+
 export function SearchInput(props) {
+
+  
   const placeHolder = props.placeHolder;
   const icon = props.icon;
   const type = props.type;
@@ -26,6 +30,12 @@ export function SearchInput(props) {
   const [minValue, set_minValue] = useState(25);
   const [maxValue, set_maxValue] = useState(75);
 
+  const [range, setRange] = useState([20,37])
+
+  
+function handleRange(e){
+setSearch.setRangeSearch(e.target.value)
+}
  
 
   const handleInput = (e) => {
@@ -270,25 +280,15 @@ export function SearchInput(props) {
     // }
     if (searchType === "range") {
       return (
-        <div className="searchInputContainer short">
+        <div className="searchInputContainer">
           <div>
             <label>{placeHolder}</label>
-            <MultiRangeSlider
-              min={0}
-              max={500}
-              step={5}
-              minValue={minValue}
-              maxValue={maxValue}
-              ruler={false}
-              label={true}
-              style={{ border: "none", boxShadow: "none", height: "5px" }}
-              onInput={(e) => {
-                handleInput(e);
-              }}
-              barInnerColor="#fff"
-              thumbLeftColor="#fff"
-              thumbRightColor="#eaf5fa"
-              className="rangeInput long"
+            <Slider
+             getAriaLabel={() => 'Temperature range'}
+             value={value.rangeSearch}
+             onChange={handleRange}
+             valueLabelDisplay="auto"
+             sx={{ width: 200 }}
             />
           </div>
 
@@ -446,3 +446,24 @@ export function SearchInput(props) {
 //     </div>
 //   );
 // }
+
+
+
+
+{/* <MultiRangeSlider
+              min={0}
+              max={500}
+              step={5}
+              minValue={minValue}
+              maxValue={maxValue}
+              ruler={false}
+              label={true}
+              style={{ border: "none", boxShadow: "none", height: "5px" }}
+              onInput={(e) => {
+                handleInput(e);
+              }}
+              barInnerColor="#fff"
+              thumbLeftColor="#fff"
+              thumbRightColor="#eaf5fa"
+              className="rangeInput long"
+            /> */}

@@ -17,6 +17,7 @@ export function Specialties() {
   let { name } = useParams();
   let { profession } = useParams();
   let { city } = useParams();
+  let {range} = useParams();
   let { language } = useParams();
   let { experience } = useParams();
   let { gender } = useParams();
@@ -27,17 +28,20 @@ export function Specialties() {
     name,
     profession,
     city,
+    range,
     language,
     experience,
     gender,
   ];
 
+  console.log(range)
   const therapistObj = {
     name: name,
     typeName: profession,
     address: {
       city: city,
     },
+    // price : range,
     gender: gender,
     language: [language],
     experience: experience,
