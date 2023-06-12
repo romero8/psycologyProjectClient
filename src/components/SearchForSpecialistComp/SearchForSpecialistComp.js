@@ -31,7 +31,7 @@ export function SearchForSpecialistComp({ eventKey }) {
   const [nameSearch, setNameSearch] = useState("");
   const [professionSearch, setProfessionSearch] = useState("");
   const [citySearch, setCitySearch] = useState("");
-  const [rangeSearch, setRangeSearch] = useState([20,37])
+  const [rangeSearch, setRangeSearch] = useState([0,1000])
   const [languageSearch, setLanguageSearch] = useState("");
   const [experienceSearch, setExperienceSearch] = useState("");
   const [genderSearch, setGenderSearch] = useState("");

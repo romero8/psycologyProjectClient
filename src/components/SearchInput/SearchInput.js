@@ -284,7 +284,9 @@ setSearch.setRangeSearch(e.target.value)
           <div>
             <label>{placeHolder}</label>
             <Slider
-             getAriaLabel={() => 'Temperature range'}
+            min={0}
+            max={1000}
+             getAriaLabel={() => 'Price range'}
              value={value.rangeSearch}
              onChange={handleRange}
              valueLabelDisplay="auto"

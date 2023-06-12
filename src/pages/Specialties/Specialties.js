@@ -17,7 +17,7 @@ export function Specialties() {
   let { name } = useParams();
   let { profession } = useParams();
   let { city } = useParams();
-  let {range} = useParams();
+  let { range } = useParams();
   let { language } = useParams();
   let { experience } = useParams();
   let { gender } = useParams();
@@ -33,19 +33,44 @@ export function Specialties() {
     experience,
     gender,
   ];
+  
+  
+  let rangeSplit = range ? range.split(",") : ''
 
-  console.log(range)
+  
+
+  let rangeArr = [];
+
+  for (let x = rangeSplit[0]; x <= rangeSplit[1]; x++) {
+    rangeArr.push(x);
+  }
+
+ let rangePrice = rangeArr.map((arr)=>{
+  return arr
+ })
+
+ 
+
   const therapistObj = {
     name: name,
     typeName: profession,
     address: {
       city: city,
     },
-    // price : range,
     gender: gender,
     language: [language],
     experience: experience,
+   
   };
+
+  const filterUserPrice = allUsers.filter((user)=>{
+      if(user.price >= rangeArr[0] && user.price <= rangeArr[rangeArr.length-1]){
+        return user.price
+      }
+  })
+
+  
+
 
   function newObj(obj) {
     const objKeys = Object.keys(obj);
@@ -60,7 +85,13 @@ export function Specialties() {
     if (obj.address.city === "all") {
       delete obj.address.city;
     }
-
+    if(obj.price){
+    
+      if (obj.price === "all") {
+        delete obj.price;
+      }
+    }
+    
     if (obj.gender === "all") {
       delete obj.gender;
     }
@@ -77,7 +108,7 @@ export function Specialties() {
     return obj;
   }
 
-  const filterUsers = _.filter(allUsers, newObj(therapistObj));
+  const filterUsers = _.filter(filterUserPrice, newObj(therapistObj));
 
   console.log(filterUsers);
 
@@ -89,7 +120,7 @@ export function Specialties() {
     }
   });
 
-  console.log(checkArrAll);
+
 
   for (let i = 0; i < therapistInfoArr.length; i++) {
     if (therapistInfoArr[i] === "all") {
