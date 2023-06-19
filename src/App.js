@@ -8,7 +8,7 @@ import { Therapist } from './pages/Therapist';
 import { Specialties } from './pages/Specialties/Specialties';
 import {TherapistInfo} from './pages/TherapistInfo/TherapistInfo'
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
-import { SignIn } from './pages/SignIn/SignIn';
+import { SignUp } from './pages/SignUp/SignUp';
 import { LogIn } from './pages/LogIn/LogIn';
 
 
@@ -21,7 +21,7 @@ function App() {
       <Router>
         <Routes>
           <Route path='/' element={<Home/>}/>
-          <Route path='/signIn' element={<SignIn/>}/>
+          <Route path='/signUp' element={<SignUp/>}/>
           <Route path='/logIn' element={<LogIn/>}/>
           <Route path='/client/:clientName' element={<Client/>}/>
           <Route path='/therapist/:therapistName' element = {<Therapist/>}/>

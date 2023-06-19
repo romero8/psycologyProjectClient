@@ -284,6 +284,7 @@ setSearch.setRangeSearch(e.target.value)
           <div>
             <label>{placeHolder}</label>
             <Slider
+            step={10}
             min={0}
             max={1000}
              getAriaLabel={() => 'Price range'}

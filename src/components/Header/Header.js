@@ -65,8 +65,8 @@ export function Header() {
           </Nav>
           <Nav>
             <Nav.Link href="/logIn">Log-In</Nav.Link>
-            <Nav.Link eventKey={2} href="signIn">
-              Sign-In
+            <Nav.Link eventKey={2} href="signUp">
+              Sign-Up
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
