@@ -26,16 +26,8 @@ function App() {
           <Route path='/client/:clientName' element={<Client/>}/>
           <Route path='/therapist/:therapistName' element = {<Therapist/>}/>
           <Route path='/:searchBySpecialties/:specialty' element = {<Specialties/>}/>
-          <Route path='/:searchBySpecialties/:specialty/:therapistName' element = {<TherapistInfo/>}/>
-          <Route path='/:searchByTherapist/:name' element = {<Specialties/>}/>
-          <Route path='/:searchByTherapist/:name/:profession' element = {<Specialties/>}/>
-          <Route path='/:searchByTherapist/:name/:profession/:city' element = {<Specialties/>}/>
-          <Route path='/:searchByTherapist/:name/:profession/:city/:range' element = {<Specialties/>}/>
-          <Route path='/:searchByTherapist/:name/:profession/:city/:range/:language' element = {<Specialties/>}/>
-          <Route path='/:searchByTherapist/:name/:profession/:city/:range/:language/:experience' element = {<Specialties/>}/>
-          <Route path='/:searchByTherapist/:name/:profession/:city/:range/:language/:experience/:gender' element = {<Specialties/>}/>
+          <Route path='/:searchBySpecialties/:specialty/:therapistName' element = {<TherapistInfo/>}/>       
           <Route path='/:searchByTherapist/:name/:profession/:city/:range/:language/:experience/:gender/:lgbtq' element = {<Specialties/>}/>
-          
         </Routes>
       </Router>
       <Footer/>

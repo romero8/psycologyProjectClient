@@ -10,13 +10,31 @@ import { getData } from "../../helpers/fetchHelper";
 import { therapistTypesData } from "../../helpers/data";
 import { Link, useParams } from "react-router-dom";
 
+
 export function Header() {
-  // const [data, setData] = useState([]);
+  const [data, setData] = useState([]);
   // useEffect(() => {
-  //   getData("therapistTypes").then((info) => {
+  //   getData("users").then((info) => {
   //     setData(info);
   //   });
   // }, []);
+
+  // useEffect(() => {
+    
+  //   const dataFetch = async () => {
+  //     const data = await (
+  //       await fetch(
+  //         "/users"
+  //       )
+  //     ).json();
+
+  //     setData(data);
+  //   };
+
+  //   dataFetch();
+  // }, []);
+
+  // console.log(data)
 
   let {clientName} = useParams()
   let {therapistName} = useParams()

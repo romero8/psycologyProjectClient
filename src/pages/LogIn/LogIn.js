@@ -18,10 +18,7 @@ export function LogIn() {
   async function handle(e) {
     e.preventDefault();
     
-    
-    
-    console.log(inputData)
-    
+        
     try{
       const res = await fetch('/logIn',{
         method: 'POST',
@@ -31,17 +28,23 @@ export function LogIn() {
       const data = await res.json();
       console.log(data);
       if(data.user){
-        //navigate('/')
+        navigate('/')
       }
     }
     catch(err){
       console.log(err)
     }
     
+  
     
-    
-    
-    
+
+
+
+
+
+
+
+
     
     
     
