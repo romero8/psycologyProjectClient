@@ -10,23 +10,29 @@ import { getData } from "../../helpers/fetchHelper";
 import { therapistTypesData } from "../../helpers/data";
 import { Link, useParams } from "react-router-dom";
 
+import Cookies from "universal-cookie"
+import {jwt} from "jwt-decode"
 
-export function Header() {
+export function Header(props) {
   const [data, setData] = useState([]);
+  const userLoggedIn = props.userLoggedIn;
+
+  const cookies = new Cookies()
+
+
   // useEffect(() => {
   //   getData("users").then((info) => {
   //     setData(info);
   //   });
   // }, []);
 
+  let { userId } = useParams();
+
+  console.log(userLoggedIn);
+
   // useEffect(() => {
-    
   //   const dataFetch = async () => {
-  //     const data = await (
-  //       await fetch(
-  //         "/users"
-  //       )
-  //     ).json();
+  //     const data = await (await fetch(`user/${userId}`)).json();
 
   //     setData(data);
   //   };
@@ -34,14 +40,13 @@ export function Header() {
   //   dataFetch();
   // }, []);
 
-  // console.log(data)
+  let { clientName } = useParams();
+  let { therapistName } = useParams();
 
-  let {clientName} = useParams()
-  let {therapistName} = useParams()
+  function logOut(){
+cookies.remove('jwt')
 
-  
-
-  
+  }
 
   const therapistTypes = therapistTypesData;
   return (
@@ -54,7 +59,9 @@ export function Header() {
             <NavDropdown title="Specialties" id="basic-nav-dropdown">
               {therapistTypes.map((therapist) => {
                 return (
-                  <NavDropdown.Item href={`/searchBySpecialties/${therapist.typeName}`}>
+                  <NavDropdown.Item
+                    href={`/searchBySpecialties/${therapist.typeName}`}
+                  >
                     {therapist.typeName}
                   </NavDropdown.Item>
                 );
@@ -64,7 +71,7 @@ export function Header() {
                 Separated link
               </NavDropdown.Item>
             </NavDropdown>
-            {window.location.pathname === `/client/${clientName}` ? (
+            {/* {window.location.pathname === `/client/${clientName}` ? (
               <Nav.Link href="#link">Favorites</Nav.Link>
             ) : (
               ""
@@ -73,7 +80,9 @@ export function Header() {
               <Nav.Link href="#link">Inquiries</Nav.Link>
             ) : (
               ""
-            )}
+            )} */}
+            {userLoggedIn ? <Nav.Link href="#link">Inquiries</Nav.Link>: ""}
+            
             <Nav.Link href="#link">
               <FontAwesomeIcon
                 icon={faMagnifyingGlass}
@@ -82,7 +91,9 @@ export function Header() {
             </Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link href="/logIn">Log-In</Nav.Link>
+          {userLoggedIn ? <Navbar.Text>hello {userLoggedIn.email}</Navbar.Text>: ""}
+          {userLoggedIn ? <Nav.Link onClick={()=>logOut}>Log-Out</Nav.Link>: ""}
+          {!userLoggedIn ? <Nav.Link href="/logIn">Log-In</Nav.Link> : ''}
             <Nav.Link eventKey={2} href="signUp">
               Sign-Up
             </Nav.Link>
