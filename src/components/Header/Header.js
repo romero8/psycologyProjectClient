@@ -16,6 +16,7 @@ import {jwt} from "jwt-decode"
 export function Header(props) {
   const [data, setData] = useState([]);
   const userLoggedIn = props.userLoggedIn;
+  const setLoggedIn = props.setLoggedIn;
 
   const cookies = new Cookies()
 
@@ -44,8 +45,8 @@ export function Header(props) {
   let { therapistName } = useParams();
 
   function logOut(){
-cookies.remove('jwt')
-
+  setLoggedIn(null)
+  window.localStorage.removeItem("token");
   }
 
   const therapistTypes = therapistTypesData;
@@ -92,7 +93,7 @@ cookies.remove('jwt')
           </Nav>
           <Nav>
           {userLoggedIn ? <Navbar.Text>hello {userLoggedIn.email}</Navbar.Text>: ""}
-          {userLoggedIn ? <Nav.Link onClick={()=>logOut}>Log-Out</Nav.Link>: ""}
+          {userLoggedIn ? <Nav.Link onClick={()=>logOut()}>Log-Out</Nav.Link>: ""}
           {!userLoggedIn ? <Nav.Link href="/logIn">Log-In</Nav.Link> : ''}
             <Nav.Link eventKey={2} href="signUp">
               Sign-Up

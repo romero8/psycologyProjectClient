@@ -18,7 +18,7 @@ export function LogIn(props) {
     e.preventDefault();
 
     try {
-      const res = await fetch("/logIn", {
+      const res = await fetch("http://localhost:5000/logIn", {
         method: "POST",
         body: JSON.stringify(inputData),
         headers: { "Content-Type": "application/json" },
@@ -26,6 +26,8 @@ export function LogIn(props) {
       const data = await res.json();
       console.log(data);
       if (data.user) {
+        await window.localStorage.setItem("token", JSON.stringify(data.token))
+        await window.localStorage.setItem("user", JSON.stringify(data.user))
         setLoggedIn(data.user)
         navigate(`/`)
       }
