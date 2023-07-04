@@ -17,13 +17,39 @@ import {
   FormLabel,
   FormControlLabel,
   Radio,
-  RadioGroup
+  RadioGroup,
+  OutlinedInput,
 } from "@mui/material";
 import { multiply } from "lodash";
 
 export function SignUp() {
+  const professions = [
+    "Psychology",
+    "Social Worker",
+    "Occupational Therapist",
+    "Speach Therapist",
+  ];
+
+  const experties = [
+    "Creative Arts Therapy",
+    "Psychodrama Therapy",
+    "Bibliotherapist",
+    "Psycho Therapy",
+    "CBT Therapy",
+    "DBT",
+    "NLP",
+    "EMDR",
+    "Coacher",
+    "Animal-Assisted Therapy",
+    "Neurofeedback",
+    "Psychoanaliest",
+    "Family Therapy",
+    "Caple Therapy",
+  ];
+
   const navigate = useNavigate();
   const [citiesData, setCitiesData] = useState([]);
+
   useEffect(() => {
     // const fetchData = async () => {
     //    try {
@@ -45,14 +71,17 @@ export function SignUp() {
       .catch((err) => console.log(err));
   }, []);
 
+  const [expertiesSelect, setExpertiesSelect] = useState([]);
+  const [professionSelect, setProfessionSelect] = useState('');
+
   const [inputData, setInputData] = useState({
     email: "",
     password: "",
   });
-  async function handle(e) {
+
+  async function handleForm(e) {
     e.preventDefault();
     console.log(inputData);
-
     try {
       const res = await fetch("http://localhost:5000/signUp", {
         method: "POST",
@@ -67,43 +96,20 @@ export function SignUp() {
     } catch (err) {
       console.log(err);
     }
-
-    // fetch("/users", {
-    //   mode: "cors",
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type":"application/json",
-    //   },
-    //   body:JSON.stringify(inputData)
-    // }).then((response) => response.json())
-    //   .then((data) => {
-    //     console.log(data)
-    //     alert("Data Posted successfully!");
-
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
-
-    // const res = await fetch('/users', {
-    //   method: 'POST',
-    //   headers: {
-    //     "Accept": "application/json",
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify(inputData)
-    // })
-    // const data = await res.json()
-    // if(data.status === 422 || !data){
-    //   window.alert("Failed to register")
-    // }else{
-    //   window.alert("Registered successfully please signin")
-    //   navigate('/signIn')
-    // }
   }
+
+  function handleExperties(e) {
+    const value = e.target.value;
+    setExpertiesSelect(typeof value === "string" ? value.split(",") : value);
+  }
+  function handleProffesion(e) {
+    const value = e.target.value;
+    setProfessionSelect(value)
+  }
+
   return (
     <div className="signInContainer">
-      <Form className="signInForm" onSubmit={handle}>
+      <Form className="signInForm" onSubmit={handleForm}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control
@@ -141,20 +147,43 @@ export function SignUp() {
             />
           </Form.Group>
 
-          
-
           <InputGroup className="mb-3">
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">Profession</InputLabel>
               <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
-                value={"profession"}
+                value={professionSelect}
                 label="Profession"
+                input={<OutlinedInput label="Profession" />}
+                onChange={handleProffesion}
               >
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
+                {professions.map((profession) => (
+                  <MenuItem key={profession} value={profession}>
+                    {profession}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+          </InputGroup>
+
+          <InputGroup className="mb-3">
+            <FormControl fullWidth>
+              <InputLabel id="demo-simple-select-label">Experties</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={expertiesSelect}
+                label="Experties"
+                multiple
+                input={<OutlinedInput label="Experties" />}
+                onChange={handleExperties}
+              >
+                {experties.map((experty) => (
+                  <MenuItem key={experty} value={experty}>
+                    {experty}
+                  </MenuItem>
+                ))}
               </Select>
             </FormControl>
           </InputGroup>
@@ -185,9 +214,7 @@ export function SignUp() {
             </Box>
           </InputGroup>
 
-
-         
-           <InputGroup className="mb-3">
+          <InputGroup className="mb-3">
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">Language</InputLabel>
               <Select
@@ -195,7 +222,6 @@ export function SignUp() {
                 id="demo-simple-select"
                 value={"language"}
                 label="Language"
-                
               >
                 <MenuItem value={10}>Ten</MenuItem>
                 <MenuItem value={20}>Twenty</MenuItem>
@@ -203,11 +229,9 @@ export function SignUp() {
               </Select>
             </FormControl>
           </InputGroup>
-        
 
-          
           <InputGroup className="mb-3">
-          <FormControl>
+            <FormControl>
               <Autocomplete
                 // onChange={handleChange}
                 disablePortal
@@ -226,25 +250,37 @@ export function SignUp() {
           </InputGroup>
 
           <InputGroup className="mb-3">
-          <Box>
+            <Box>
               <Typography gutterBottom>Experience</Typography>
               <Slider />
             </Box>
           </InputGroup>
 
           <InputGroup>
-          <FormControl>
-  <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
-  <RadioGroup
-    aria-labelledby="demo-radio-buttons-group-label"
-    defaultValue="female"
-    name="radio-buttons-group"
-  >
-    <FormControlLabel value="female" control={<Radio />} label="Female" />
-    <FormControlLabel value="male" control={<Radio />} label="Male" />
-    <FormControlLabel value="other" control={<Radio />} label="Other" />
-  </RadioGroup>
-</FormControl>
+            <FormControl>
+              <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
+              <RadioGroup
+                aria-labelledby="demo-radio-buttons-group-label"
+                defaultValue="female"
+                name="radio-buttons-group"
+              >
+                <FormControlLabel
+                  value="female"
+                  control={<Radio />}
+                  label="Female"
+                />
+                <FormControlLabel
+                  value="male"
+                  control={<Radio />}
+                  label="Male"
+                />
+                <FormControlLabel
+                  value="other"
+                  control={<Radio />}
+                  label="Other"
+                />
+              </RadioGroup>
+            </FormControl>
           </InputGroup>
 
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
