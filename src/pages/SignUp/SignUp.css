@@ -8,3 +8,14 @@
 .signInForm{
 
 }
+
+.flex{
+    display: flex;
+    justify-content: center;
+   gap: 20px;
+}
+
+.checkBoxContainer{
+    justify-content: start;
+}
+

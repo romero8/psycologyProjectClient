@@ -29,6 +29,7 @@ export function SignUp() {
     "Occupational Therapist",
     "Speach Therapist",
   ];
+  const languages = ["Hebrew", "English", "Arabic", "Russian"];
 
   const experties = [
     "Creative Arts Therapy",
@@ -71,12 +72,25 @@ export function SignUp() {
       .catch((err) => console.log(err));
   }, []);
 
-  const [expertiesSelect, setExpertiesSelect] = useState([]);
-  const [professionSelect, setProfessionSelect] = useState('');
 
   const [inputData, setInputData] = useState({
     email: "",
     password: "",
+    name: "",
+    lastName: "",
+    profession: "",
+    experties:[],
+    address: {
+      street: "",
+      city: "",
+    },
+    phone: null,
+    price: null,
+    gender: "",
+    language: [],
+    experience: null,
+    LGBTQ: null,
+    about:''
   });
 
   async function handleForm(e) {
@@ -91,7 +105,7 @@ export function SignUp() {
       const data = await res.json();
       console.log(data);
       if (data.user) {
-        navigate("/");
+        navigate("/logIn");
       }
     } catch (err) {
       console.log(err);
@@ -100,52 +114,125 @@ export function SignUp() {
 
   function handleExperties(e) {
     const value = e.target.value;
-    setExpertiesSelect(typeof value === "string" ? value.split(",") : value);
+    setInputData({...inputData,experties:typeof value === "string" ? value.split(",") : value});
+  }
+  function handleLanguages(e) {
+    const value = e.target.value;
+    setInputData({...inputData,language:typeof value === "string" ? value.split(",") : value});
   }
   function handleProffesion(e) {
     const value = e.target.value;
-    setProfessionSelect(value)
+    setInputData({...inputData,profession:value});
   }
 
   return (
     <div className="signInContainer">
       <Form className="signInForm" onSubmit={handleForm}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
-            type="email"
-            placeholder="Enter email"
-            onChange={(e) =>
-              setInputData({ ...inputData, email: e.target.value })
-            }
-          />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Password"
-            onChange={(e) =>
-              setInputData({ ...inputData, password: e.target.value })
-            }
-          />
-        </Form.Group>
-
-        <>
-          <Form.Group className="mb-3" controlId="formBasicName">
-            <Form.Label>Name and Last-Name</Form.Label>
+        <div className="flex">
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Email address</Form.Label>
             <Form.Control
-              type="name"
-              placeholder="Enter name"
-              // onChange={(e) =>
-              //   setInputData({ ...inputData, email: e.target.value })
-              // }
+              type="email"
+              placeholder="Enter email"
+              onChange={(e) =>
+                setInputData({ ...inputData, email: e.target.value })
+              }
             />
           </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              onChange={(e) =>
+                setInputData({ ...inputData, password: e.target.value })
+              }
+            />
+          </Form.Group>
+        </div>
+
+        <>
+          <div className="flex">
+            <Form.Group className="mb-3" controlId="formBasicName">
+              <Form.Label>Name</Form.Label>
+              <Form.Control
+                type="name"
+                placeholder="First"
+                onChange={(e) =>
+                  setInputData({ ...inputData, name: e.target.value })
+                }
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicName">
+              <Form.Label>Last Name</Form.Label>
+              <Form.Control
+                type="name"
+                placeholder="Last"
+                onChange={(e) =>
+                  setInputData({ ...inputData, lastName: e.target.value })
+                }
+              />
+            </Form.Group>
+          </div>
+
+          <div className="flex">
+            {/* <InputGroup>
+            <FormControl>
+              <Autocomplete
+                // onChange={handleChange}
+                disablePortal
+                id="combo-box-demo"
+                options={citiesData.map((city) => city.english_name)}
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    label={"placeHolder"}
+                    variant="standard"
+                    sx={{ width: 600 }}
+                  />
+                )}
+              />
+            </FormControl>
+          </InputGroup> */}
+
+            <Form.Group className="mb-3" controlId="formBasicName">
+              <Form.Label>City</Form.Label>
+              <Form.Control
+                type="name"
+                placeholder="City Adress"
+                onChange={(e) =>
+                  setInputData({ ...inputData, address:{...inputData.address,city:e.target.value} })
+                }
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicName">
+              <Form.Label>Street</Form.Label>
+              <Form.Control
+                type="name"
+                placeholder="Street Adress"
+                onChange={(e) =>
+                  setInputData({ ...inputData, address:{...inputData.address,street:e.target.value} })
+                }
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicName">
+            <Form.Label>Phone Number</Form.Label>
+              <Form.Control
+                type="number"
+                placeholder="Phone"
+                onChange={(e) =>
+                  setInputData({ ...inputData, phone: e.target.value })
+                }
+              />
+            </Form.Group>
+          </div>
+
+          
+          <div className="flex">
+          
+          
 
           <InputGroup className="mb-3">
             <FormControl fullWidth>
@@ -153,7 +240,7 @@ export function SignUp() {
               <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
-                value={professionSelect}
+                value={inputData.profession}
                 label="Profession"
                 input={<OutlinedInput label="Profession" />}
                 onChange={handleProffesion}
@@ -173,7 +260,7 @@ export function SignUp() {
               <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
-                value={expertiesSelect}
+                value={inputData.experties}
                 label="Experties"
                 multiple
                 input={<OutlinedInput label="Experties" />}
@@ -188,31 +275,6 @@ export function SignUp() {
             </FormControl>
           </InputGroup>
 
-          <InputGroup>
-            <FormControl>
-              <Autocomplete
-                // onChange={handleChange}
-                disablePortal
-                id="combo-box-demo"
-                options={citiesData.map((city) => city.english_name)}
-                renderInput={(params) => (
-                  <TextField
-                    {...params}
-                    label={"placeHolder"}
-                    variant="standard"
-                    sx={{ width: 600 }}
-                  />
-                )}
-              />
-            </FormControl>
-          </InputGroup>
-
-          <InputGroup>
-            <Box>
-              <Typography gutterBottom>Price</Typography>
-              <Slider />
-            </Box>
-          </InputGroup>
 
           <InputGroup className="mb-3">
             <FormControl fullWidth>
@@ -220,44 +282,65 @@ export function SignUp() {
               <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
-                value={"language"}
-                label="Language"
+                value={inputData.language}
+                label="Experties"
+                multiple
+                input={<OutlinedInput label="Experties" />}
+                onChange={handleLanguages}
               >
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
+                {languages.map((language) => (
+                  <MenuItem key={language} value={language}>
+                    {language}
+                  </MenuItem>
+                ))}
               </Select>
             </FormControl>
           </InputGroup>
+          </div>
 
-          <InputGroup className="mb-3">
-            <FormControl>
-              <Autocomplete
-                // onChange={handleChange}
-                disablePortal
-                id="combo-box-demo"
-                options={citiesData.map((city) => city.english_name)}
-                renderInput={(params) => (
-                  <TextField
-                    {...params}
-                    label={"placeHolder"}
-                    variant="standard"
-                    sx={{ width: 600 }}
-                  />
-                )}
-              />
-            </FormControl>
-          </InputGroup>
+            
 
-          <InputGroup className="mb-3">
-            <Box>
-              <Typography gutterBottom>Experience</Typography>
-              <Slider />
-            </Box>
-          </InputGroup>
+          <div className="flex">
+          <InputGroup>
+              <Box>
+                <Typography gutterBottom>Price</Typography>
+                <Slider
+                  className="slider"
+                  defaultValue={200}
+                  valueLabelDisplay="auto"
+                  step={10}
+                  min={0}
+                  max={1000}
+                  sx={{ width: 200 }}
+                  onChange={(e) =>
+                    setInputData({ ...inputData, price: e.target.value })
+                  }
+                />
+              </Box>
+            </InputGroup>
+
+            <InputGroup className="mb-3">
+              <Box>
+                <Typography className="checkBoxContainer" gutterBottom>Experience</Typography>
+                <Slider
+                  className="slider"
+                  defaultValue={5}
+                  valueLabelDisplay="auto"
+                  step={1}
+                  min={0}
+                  max={50}
+                  sx={{ width: 200 }}
+                  onChange={(e) =>
+                    setInputData({ ...inputData, experience: e.target.value })
+                  }
+                />
+              </Box>
+            </InputGroup>
 
           <InputGroup>
-            <FormControl>
+            <FormControl onChange={(e) =>
+                  setInputData({ ...inputData, gender: e.target.value })
+                }>
               <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
               <RadioGroup
                 aria-labelledby="demo-radio-buttons-group-label"
@@ -283,13 +366,41 @@ export function SignUp() {
             </FormControl>
           </InputGroup>
 
+          <InputGroup>
+            <FormControl onChange={(e) =>
+                  setInputData({ ...inputData, LGBTQ: e.target.value })
+                }>
+              <FormLabel id="demo-radio-buttons-group-label">LGBTQ friendly</FormLabel>
+              <RadioGroup
+                aria-labelledby="demo-radio-buttons-group-label"
+                defaultValue="female"
+                name="radio-buttons-group"
+              >
+                <FormControlLabel
+                  value="yes"
+                  control={<Radio />}
+                  label="Yes"
+                />
+                <FormControlLabel
+                  value="no"
+                  control={<Radio />}
+                  label="No"
+                />
+              </RadioGroup>
+            </FormControl>
+          </InputGroup>
+
+           
+          </div>
+
+
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-            <Form.Label>Example textarea</Form.Label>
+            <Form.Label>About Yourself</Form.Label>
             <Form.Control
               as="textarea"
               rows={3}
               onChange={(e) =>
-                setInputData({ ...inputData, textArea: e.target.value })
+                setInputData({ ...inputData, about: e.target.value })
               }
             />
           </Form.Group>

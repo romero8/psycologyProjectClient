@@ -83,6 +83,7 @@ export function Header(props) {
               ""
             )} */}
             {userLoggedIn ? <Nav.Link href="#link">Inquiries</Nav.Link>: ""}
+            {userLoggedIn ? <Nav.Link href="#link">Profile</Nav.Link>: ""}
             
             <Nav.Link href="#link">
               <FontAwesomeIcon
@@ -92,7 +93,7 @@ export function Header(props) {
             </Nav.Link>
           </Nav>
           <Nav>
-          {userLoggedIn ? <Navbar.Text>hello {userLoggedIn.email}</Navbar.Text>: ""}
+          {userLoggedIn ? <Navbar.Text>Hello {userLoggedIn.name}</Navbar.Text>: ""}
           {userLoggedIn ? <Nav.Link onClick={()=>logOut()}>Log-Out</Nav.Link>: ""}
           {!userLoggedIn ? <Nav.Link href="/logIn">Log-In</Nav.Link> : ''}
             <Nav.Link eventKey={2} href="signUp">
