@@ -96,7 +96,7 @@ export function Header(props) {
           {userLoggedIn ? <Navbar.Text>Hello {userLoggedIn.name}</Navbar.Text>: ""}
           {userLoggedIn ? <Nav.Link onClick={()=>logOut()}>Log-Out</Nav.Link>: ""}
           {!userLoggedIn ? <Nav.Link href="/logIn">Log-In</Nav.Link> : ''}
-            <Nav.Link eventKey={2} href="signUp">
+            <Nav.Link eventKey={2} href="/signUp">
               Sign-Up
             </Nav.Link>
           </Nav>
