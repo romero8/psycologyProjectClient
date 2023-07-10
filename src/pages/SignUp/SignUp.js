@@ -91,14 +91,19 @@ export function SignUp() {
     gender: "",
     language: [],
     experience: null,
-    LGBTQ: null,
     about: "",
   });
+
+  function handleEmail(e) {
+    setErrors({});
+    setInputData({ ...inputData, email: e.target.value });
+  }
 
   async function handleForm(e) {
     e.preventDefault();
     console.log(inputData);
     const form = e.currentTarget;
+    setErrors({});
     try {
       const res = await fetch("http://localhost:5000/signUp", {
         method: "POST",
@@ -114,8 +119,8 @@ export function SignUp() {
     } catch (err) {
       console.log(err);
     }
-    console.log(errors)
-    setValidated(true)
+    console.log(errors);
+    setValidated(true);
   }
 
   function handleExperties(e) {
@@ -144,11 +149,10 @@ export function SignUp() {
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control
-              type="email"
+              required
+              isInvalid={errors.email}
               placeholder="Enter email"
-              onChange={(e) =>
-                setInputData({ ...inputData, email: e.target.value })
-              }
+              onChange={handleEmail}
             />
 
             {errors.email ? (
@@ -171,9 +175,9 @@ export function SignUp() {
                 setInputData({ ...inputData, password: e.target.value })
               }
               required
-              minLength={6}
+              isInvalid={errors.password}
             />
-              {errors.password ? (
+            {errors.password ? (
               <Form.Control.Feedback type="invalid">
                 {errors.password.message}
               </Form.Control.Feedback>
@@ -182,7 +186,6 @@ export function SignUp() {
                 Password is required
               </Form.Control.Feedback>
             )}
-           
           </Form.Group>
         </div>
 
@@ -198,36 +201,36 @@ export function SignUp() {
                 }
                 required
               />
-               {errors.name ? (
-              <Form.Control.Feedback type="invalid">
-                {errors.name.message}
-              </Form.Control.Feedback>
-            ) : (
-              <Form.Control.Feedback type="invalid">
-                Password is required
-              </Form.Control.Feedback>
-            )}
+              {errors.name ? (
+                <Form.Control.Feedback type="invalid">
+                  {errors.name.message}
+                </Form.Control.Feedback>
+              ) : (
+                <Form.Control.Feedback type="invalid">
+                  Password is required
+                </Form.Control.Feedback>
+              )}
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicName">
               <Form.Label>Last Name</Form.Label>
               <Form.Control
-              required
+                required
                 type="name"
                 placeholder="Last"
                 onChange={(e) =>
                   setInputData({ ...inputData, lastName: e.target.value })
                 }
               />
-               {errors.lastName ? (
-              <Form.Control.Feedback type="invalid">
-                {errors.lastName.message}
-              </Form.Control.Feedback>
-            ) : (
-              <Form.Control.Feedback type="invalid">
-                Last Name is required
-              </Form.Control.Feedback>
-            )}
+              {errors.lastName ? (
+                <Form.Control.Feedback type="invalid">
+                  {errors.lastName.message}
+                </Form.Control.Feedback>
+              ) : (
+                <Form.Control.Feedback type="invalid">
+                  Last Name is required
+                </Form.Control.Feedback>
+              )}
             </Form.Group>
           </div>
 
@@ -254,7 +257,7 @@ export function SignUp() {
             <Form.Group className="mb-3" controlId="formBasicName">
               <Form.Label>City</Form.Label>
               <Form.Control
-              required
+                required
                 type="name"
                 placeholder="City Adress"
                 onChange={(e) =>
@@ -264,22 +267,21 @@ export function SignUp() {
                   })
                 }
               />
-               {errors.city ? (
-              <Form.Control.Feedback type="invalid">
-                {errors.city.message}
-              </Form.Control.Feedback>
-            ) : (
-              <Form.Control.Feedback type="invalid">
-                City is required
-              </Form.Control.Feedback>
-            )}
+              {errors.city ? (
+                <Form.Control.Feedback type="invalid">
+                  {errors.city.message}
+                </Form.Control.Feedback>
+              ) : (
+                <Form.Control.Feedback type="invalid">
+                  City is required
+                </Form.Control.Feedback>
+              )}
             </Form.Group>
-
 
             <Form.Group className="mb-3" controlId="formBasicName">
               <Form.Label>Street</Form.Label>
               <Form.Control
-              required
+                required
                 type="name"
                 placeholder="Street Adress"
                 onChange={(e) =>
@@ -289,37 +291,36 @@ export function SignUp() {
                   })
                 }
               />
-               {errors.street ? (
-              <Form.Control.Feedback type="invalid">
-                {errors.street.message}
-              </Form.Control.Feedback>
-            ) : (
-              <Form.Control.Feedback type="invalid">
-                Street is required
-              </Form.Control.Feedback>
-            )}
+              {errors.street ? (
+                <Form.Control.Feedback type="invalid">
+                  {errors.street.message}
+                </Form.Control.Feedback>
+              ) : (
+                <Form.Control.Feedback type="invalid">
+                  Street is required
+                </Form.Control.Feedback>
+              )}
             </Form.Group>
-
 
             <Form.Group className="mb-3" controlId="formBasicName">
               <Form.Label>Phone Number</Form.Label>
               <Form.Control
-              required
+                required
                 type="number"
                 placeholder="Phone"
                 onChange={(e) =>
                   setInputData({ ...inputData, phone: e.target.value })
                 }
               />
-               {errors.phone ? (
-              <Form.Control.Feedback type="invalid">
-                {errors.phone.message}
-              </Form.Control.Feedback>
-            ) : (
-              <Form.Control.Feedback type="invalid">
-                Phone Number is required
-              </Form.Control.Feedback>
-            )}
+              {errors.phone ? (
+                <Form.Control.Feedback type="invalid">
+                  {errors.phone.message}
+                </Form.Control.Feedback>
+              ) : (
+                <Form.Control.Feedback type="invalid">
+                  Phone Number is required
+                </Form.Control.Feedback>
+              )}
             </Form.Group>
           </div>
 
@@ -345,14 +346,14 @@ export function SignUp() {
                 </Select>
               </FormControl>
               {errors.profession ? (
-              <Form.Control.Feedback type="invalid">
-                {errors.profession.message}
-              </Form.Control.Feedback>
-            ) : (
-              <Form.Control.Feedback type="invalid">
-                Profession is required
-              </Form.Control.Feedback>
-            )}
+                <Form.Control.Feedback type="invalid">
+                  {errors.profession.message}
+                </Form.Control.Feedback>
+              ) : (
+                <Form.Control.Feedback type="invalid">
+                  Profession is required
+                </Form.Control.Feedback>
+              )}
             </InputGroup>
 
             <InputGroup className="mb-3">
@@ -375,14 +376,14 @@ export function SignUp() {
                 </Select>
               </FormControl>
               {errors.experties ? (
-              <Form.Control.Feedback type="invalid">
-                {errors.experties.message}
-              </Form.Control.Feedback>
-            ) : (
-              <Form.Control.Feedback type="invalid">
-                Experties is required
-              </Form.Control.Feedback>
-            )}
+                <Form.Control.Feedback type="invalid">
+                  {errors.experties.message}
+                </Form.Control.Feedback>
+              ) : (
+                <Form.Control.Feedback type="invalid">
+                  Experties is required
+                </Form.Control.Feedback>
+              )}
             </InputGroup>
 
             <InputGroup className="mb-3">
@@ -405,57 +406,53 @@ export function SignUp() {
                 </Select>
               </FormControl>
               {errors.language ? (
-              <Form.Control.Feedback type="invalid">
-                {errors.language.message}
-              </Form.Control.Feedback>
-            ) : (
-              <Form.Control.Feedback type="invalid">
-                Language is required
-              </Form.Control.Feedback>
-            )}
+                <Form.Control.Feedback type="invalid">
+                  {errors.language.message}
+                </Form.Control.Feedback>
+              ) : (
+                <Form.Control.Feedback type="invalid">
+                  Language is required
+                </Form.Control.Feedback>
+              )}
             </InputGroup>
           </div>
 
           <div className="flex">
             <InputGroup>
-            <FormControl required>
-            <Box>
-                <Typography gutterBottom>Price</Typography>
-                <Slider
-                  className="slider"
-                  defaultValue={200}
-                  valueLabelDisplay="auto"
-                  step={10}
-                  min={0}
-                  max={1000}
-                  sx={{ width: 200 }}
-                  onChange={(e) =>
-                    setInputData({ ...inputData, price: e.target.value })
-                  }
-                />
-              </Box>
-              {errors.price ? (
-              <Form.Control.Feedback type="invalid">
-                {errors.price.message}
-              </Form.Control.Feedback>
-            ) : (
-              <Form.Control.Feedback type="invalid">
-                Price is required
-              </Form.Control.Feedback>
-            )}
-            </FormControl>
-              
+              <FormControl required>
+                <Box>
+                  <Typography gutterBottom>Price</Typography>
+                  <Slider
+                    className="slider"
+                    defaultValue={0}
+                    valueLabelDisplay="auto"
+                    step={10}
+                    min={0}
+                    max={1000}
+                    sx={{ width: 200 }}
+                    onChange={(e) =>
+                      setInputData({ ...inputData, price: e.target.value })
+                    }
+                  />
+                </Box>
+                {errors.price ? (
+                  <p className="errorMessage">Price is required</p>
+                ) : (
+                  <Form.Control.Feedback type="invalid">
+                    Price is required
+                  </Form.Control.Feedback>
+                )}
+              </FormControl>
             </InputGroup>
 
             <InputGroup className="mb-3">
               <FormControl required>
-              <Box>
                 <Typography className="checkBoxContainer" gutterBottom>
                   Experience
                 </Typography>
                 <Slider
                   className="slider"
-                  defaultValue={5}
+                  defaultValue={0}
                   valueLabelDisplay="auto"
                   step={1}
                   min={0}
@@ -465,24 +462,20 @@ export function SignUp() {
                     setInputData({ ...inputData, experience: e.target.value })
                   }
                 />
-              </Box>
-              {errors.experience ? (
-              <Form.Control.Feedback type="invalid">
-                {errors.experience.message}
-              </Form.Control.Feedback>
-            ) : (
-              <Form.Control.Feedback type="invalid">
-                Experience is required
-              </Form.Control.Feedback>
-            )}
+
+                {errors.experience ? (
+                  <p className="errorMessage">Experience is required</p>
+                ) : (
+                  <Form.Control.Feedback type="invalid">
+                    Experience is required
+                  </Form.Control.Feedback>
+                )}
               </FormControl>
-              
-              
             </InputGroup>
 
             <InputGroup>
               <FormControl
-              required
+                required
                 onChange={(e) =>
                   setInputData({ ...inputData, gender: e.target.value })
                 }
@@ -511,48 +504,13 @@ export function SignUp() {
                   />
                 </RadioGroup>
                 {errors.gender ? (
-              <Form.Control.Feedback type="invalid">
-                {errors.gender.message}
-              </Form.Control.Feedback>
-            ) : (
-              <Form.Control.Feedback type="invalid">
-                Gender is required
-              </Form.Control.Feedback>
-            )}
+                  <p className="errorMessage">Gender is required</p>
+                ) : (
+                  <Form.Control.Feedback type="invalid">
+                    Gender is required
+                  </Form.Control.Feedback>
+                )}
               </FormControl>
-            </InputGroup>
-
-            <InputGroup>
-              <FormControl
-              
-                onChange={(e) =>
-                  setInputData({ ...inputData, LGBTQ: e.target.value })
-                }
-              >
-                <FormLabel id="demo-radio-buttons-group-label">
-                  LGBTQ friendly
-                </FormLabel>
-                <RadioGroup
-                  aria-labelledby="demo-radio-buttons-group-label"
-                  name="radio-buttons-group"
-                >
-                  <FormControlLabel
-                    value="yes"
-                    control={<Radio />}
-                    label="Yes"
-                  />
-                  <FormControlLabel value="no" control={<Radio />} label="No" />
-                </RadioGroup>
-              </FormControl>
-              {errors.LGBTQ ? (
-              <Form.Control.Feedback type="invalid">
-                {errors.LGBTQ.message}
-              </Form.Control.Feedback>
-            ) : (
-              <Form.Control.Feedback type="invalid">
-                LGBTQ is required
-              </Form.Control.Feedback>
-            )}
             </InputGroup>
           </div>
 
@@ -565,7 +523,7 @@ export function SignUp() {
                 setInputData({ ...inputData, about: e.target.value })
               }
             />
-             {errors.password ? (
+            {errors.password ? (
               <Form.Control.Feedback type="invalid">
                 {errors.password.message}
               </Form.Control.Feedback>

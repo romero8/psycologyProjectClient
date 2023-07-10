@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export function LogIn(props) {
-
   const setLoggedIn = props.setLoggedIn;
   const navigate = useNavigate();
 
@@ -14,9 +13,12 @@ export function LogIn(props) {
     password: "",
   });
 
+  const [errors, setErrors] = useState({});
+  const [validated, setValidated] = useState(false);
+
   async function handle(e) {
     e.preventDefault();
-
+    setErrors({});
     try {
       const res = await fetch("http://localhost:5000/logIn", {
         method: "POST",
@@ -25,15 +27,19 @@ export function LogIn(props) {
       });
       const data = await res.json();
       console.log(data);
+      setErrors(data.errors);
       if (data.user) {
-        await window.localStorage.setItem("token", JSON.stringify(data.token))
-        await window.localStorage.setItem("user", JSON.stringify(data.user))
-        setLoggedIn(data.user)
-        navigate(`/`)
+        await window.localStorage.setItem("token", JSON.stringify(data.token));
+        await window.localStorage.setItem("user", JSON.stringify(data.user));
+        setLoggedIn(data.user);
+        navigate(`/`);
       }
     } catch (err) {
       console.log(err);
     }
+
+
+    
 
     // console.log(inputData)
     // fetch("/logIn", {
@@ -55,22 +61,33 @@ export function LogIn(props) {
     //     console.log(err);
     //   });
   }
- 
+
+  function handleEmail(e){
+    setErrors({})
+    setInputData({ ...inputData, email: e.target.value })
+  }
+
   return (
     <div className="signInContainer">
-      <Form className="signInForm" onSubmit={handle}>
+      <Form className="signInForm" onSubmit={handle} validated={validated}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control
-            type="email"
+            required
+            isInvalid={errors.email}
             placeholder="Enter email"
-            onChange={(e) =>
-              setInputData({ ...inputData, email: e.target.value })
-            }
+            onChange={handleEmail}
           />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
+
+          {errors.email ? (
+            <Form.Control.Feedback type="invalid">
+              {errors.email.message}
+            </Form.Control.Feedback>
+          ) : (
+            <Form.Control.Feedback type="invalid">
+              Email is required
+            </Form.Control.Feedback>
+          )}
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -81,7 +98,19 @@ export function LogIn(props) {
             onChange={(e) =>
               setInputData({ ...inputData, password: e.target.value })
             }
+            required
+            isInvalid={errors.password}
           />
+
+          {errors.password ? (
+            <Form.Control.Feedback type="invalid">
+              {errors.password.message}
+            </Form.Control.Feedback>
+          ) : (
+            <Form.Control.Feedback type="invalid">
+              Password is required
+            </Form.Control.Feedback>
+          )}
         </Form.Group>
         <Button variant="primary" type="submit">
           Submit
