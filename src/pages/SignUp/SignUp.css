@@ -1,27 +1,38 @@
-.signInContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+.signInContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
-.signInForm{
-
+.signUpContainer {
+  height: 700px;
+  display: flex;
+  justify-content: center;
 }
 
-.flex{
-    display: flex;
-    justify-content: center;
-   gap: 20px;
+.signUpBox {
+  display: flex;
+  gap: 100px;
+  margin-top: 50px;
 }
 
-.checkBoxContainer{
-    justify-content: start;
+.signUpOption {
+   
 }
 
-.errorMessage{
-    margin-top: .25rem;
-    font-size: .875em;
-    color: #dc3545;
+.flex {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
+.checkBoxContainer {
+  justify-content: start;
+}
+
+.errorMessage {
+  margin-top: 0.25rem;
+  font-size: 0.875em;
+  color: #dc3545;
+}

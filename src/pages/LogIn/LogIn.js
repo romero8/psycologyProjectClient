@@ -28,18 +28,21 @@ export function LogIn(props) {
       const data = await res.json();
       console.log(data);
       setErrors(data.errors);
-      if (data.user) {
+      if (data.therapist) {
         await window.localStorage.setItem("token", JSON.stringify(data.token));
         await window.localStorage.setItem("user", JSON.stringify(data.user));
-        setLoggedIn(data.user);
+        setLoggedIn(data.therapist);
+        navigate(`/`);
+      }
+      if (data.client) {
+        await window.localStorage.setItem("token", JSON.stringify(data.token));
+        await window.localStorage.setItem("user", JSON.stringify(data.user));
+        setLoggedIn(data.client);
         navigate(`/`);
       }
     } catch (err) {
       console.log(err);
     }
-
-
-    
 
     // console.log(inputData)
     // fetch("/logIn", {
@@ -62,9 +65,9 @@ export function LogIn(props) {
     //   });
   }
 
-  function handleEmail(e){
-    setErrors({})
-    setInputData({ ...inputData, email: e.target.value })
+  function handleEmail(e) {
+    setErrors({});
+    setInputData({ ...inputData, email: e.target.value });
   }
 
   return (
@@ -78,7 +81,6 @@ export function LogIn(props) {
             placeholder="Enter email"
             onChange={handleEmail}
           />
-
           {errors.email ? (
             <Form.Control.Feedback type="invalid">
               {errors.email.message}
@@ -101,14 +103,13 @@ export function LogIn(props) {
             required
             isInvalid={errors.password}
           />
-
           {errors.password ? (
             <Form.Control.Feedback type="invalid">
               {errors.password.message}
             </Form.Control.Feedback>
           ) : (
             <Form.Control.Feedback type="invalid">
-              Password is required
+              Email is required
             </Form.Control.Feedback>
           )}
         </Form.Group>

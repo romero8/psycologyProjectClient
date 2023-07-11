@@ -11,6 +11,8 @@ import { TherapistInfo } from "./pages/TherapistInfo/TherapistInfo";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { SignUp } from "./pages/SignUp/SignUp";
 import { LogIn } from "./pages/LogIn/LogIn";
+import { ClientRegistration } from "./pages/ClientRegistration/ClientRegistration";
+import { TherapistRegistration } from "./pages/TherapistRegistration/TherapistRegistration";
 
 function App() {
   console.log();
@@ -81,9 +83,9 @@ function App() {
     .catch(err => console.log(err))
 
     const token = JSON.parse(window.localStorage.getItem("token"));
-    const user = JSON.parse(window.localStorage.getItem("user"));
+    const therapist = JSON.parse(window.localStorage.getItem("therapist"));
     if (token) {
-      setLoggedIn(user);
+      setLoggedIn(therapist);
     }
   }, []);
 
@@ -97,6 +99,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/:userId" element={<Home />} />
           <Route path="/signUp" element={<SignUp />} />
+          <Route path="/signUp/clientRegistration" element={<ClientRegistration/>} />
+          <Route path="/signUp/therapistRegistration" element={<TherapistRegistration/>} />
           <Route path="/logIn" element={<LogIn userLoggedIn={userLoggedIn} setLoggedIn={setLoggedIn} />} />
           <Route path="/client/:clientName" element={<Client />} />
           <Route path="/therapist/:therapistName" element={<Therapist />} />
