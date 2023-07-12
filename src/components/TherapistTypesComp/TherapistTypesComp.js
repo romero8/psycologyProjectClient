@@ -4,19 +4,23 @@ import { MainBtn } from "../MainBtn/MainBtn";
 import logo from "../../icons/AnimatedLogo.png";
 import "../TherapistTypesComp/TherapistTypesComp.css";
 import Carousel from "react-bootstrap/Carousel";
-import {therapistTypesData} from '../../helpers/data'
+// import {therapistTypesData} from '../../helpers/data'
 import { Link } from "react-router-dom";
 
 export function TherapistTypesComp() {
-  // const [data, setData] = useState([]);
+ 
 
-  // useEffect(() => {
-  //   getData("therapistTypes").then((info) => {
-  //     setData(info);
-  //   });
-  // }, []);
+  const [allTherapists,setAllTherapists] = useState([])
 
-  const therapistTypes = therapistTypesData
+  useEffect(() => {
+   
+    fetch('http://localhost:5000/allTherapists')
+    .then(response => response.json())
+    .then(data => setAllTherapists(data.data))
+    .catch(err => console.log(err))
+  
+   
+  }, []);
   
 
   return (
@@ -26,7 +30,7 @@ export function TherapistTypesComp() {
       <Carousel variant="dark" indicators={false}>
         <Carousel.Item>
           <div className="therapistTypesBody">
-            {therapistTypes.slice(0, 6).map((therapist, index) => {
+            {allTherapists.slice(0, 6).map((therapist, index) => {
               return (
                 <div className="therapistTypeBox">
                   <div className="therapistTypeBox">
@@ -45,7 +49,7 @@ export function TherapistTypesComp() {
         </Carousel.Item>
         <Carousel.Item>
           <div className="therapistTypesBody">
-            {therapistTypes.slice(7, 13).map((therapist, index) => {
+            {allTherapists.slice(7, 13).map((therapist, index) => {
               return (
                 <div className="therapistTypeBox">
                   <Link className="therapistTypeBox" to={`/searchBySpecialties/${therapist.typeName}`}>
@@ -61,7 +65,7 @@ export function TherapistTypesComp() {
         </Carousel.Item>
         <Carousel.Item>
           <div className="therapistTypesBody">
-            {therapistTypes.slice(14, 20).map((therapist, index) => {
+            {allTherapists.slice(14, 20).map((therapist, index) => {
               return (
                 <div className="therapistTypeBox" >
                   <Link className="therapistTypeBox" to={`/searchBySpecialties/${therapist.typeName}`}>

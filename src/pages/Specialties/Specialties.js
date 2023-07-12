@@ -4,13 +4,12 @@ import logo from "../../icons/AnimatedLogo.png";
 import { MainBtn } from "../../components/MainBtn/MainBtn";
 import { faLocationDot, faVideo } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { therapistTypesData, allUsers } from "../../helpers/data";
+// import { therapistTypesData, allUsers } from "../../helpers/data";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 var _ = require("lodash");
 
 export function Specialties() {
-  const therapistTypes = therapistTypesData;
   let { searchBySpecialties } = useParams();
   let { searchByTherapist } = useParams();
   let { specialty } = useParams();
@@ -22,6 +21,19 @@ export function Specialties() {
   let { experience } = useParams();
   let { gender } = useParams();
   let { lgbtq } = useParams();
+
+  const [allTherapists,setAllTherapists] = useState([])
+
+  useEffect(() => {
+   
+    fetch('http://localhost:5000/allTherapists')
+    .then(response => response.json())
+    .then(data => setAllTherapists(data.data))
+    .catch(err => console.log(err))
+  
+   
+  }, []);
+
 
   const therapistInfoArr = [
     specialty,
@@ -63,7 +75,7 @@ export function Specialties() {
    
   };
 
-  const filterUserPrice = allUsers.filter((user)=>{
+  const filterUserPrice = allTherapists.filter((user)=>{
       if(user.price >= rangeArr[0] && user.price <= rangeArr[rangeArr.length-1]){
         return user.price
       }
@@ -142,8 +154,8 @@ export function Specialties() {
       </div>
 
       {searchBySpecialties
-        ? allUsers.map((user) => {
-            if (user.typeName === specialty) {
+        ? allTherapists.map((user) => {
+            if (user.profession === specialty) {
               return (
                 <div className="cardContainer">
                   <div className="cardPhotoBox">

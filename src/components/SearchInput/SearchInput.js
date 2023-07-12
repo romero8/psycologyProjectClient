@@ -1,8 +1,8 @@
 import "../SearchInput/SearchInput.css";
 import Form from "react-bootstrap/Form";
 import MultiRangeSlider from "multi-range-slider-react";
-import React, { useState } from "react";
-import { allUsers, therapistTypesData } from "../../helpers/data";
+import React, { useState,useEffect } from "react";
+// import { allUsers, therapistTypesData } from "../../helpers/data";
 import {
   Autocomplete,
   InputLabel,
@@ -16,6 +16,18 @@ import {
 
 export function SearchInput(props) {
 
+  const [allTherapists,setAllTherapists] = useState([])
+
+  useEffect(() => {
+   
+    fetch('http://localhost:5000/allTherapists')
+    .then(response => response.json())
+    .then(data => setAllTherapists(data.data))
+    .catch(err => console.log(err))
+  
+   
+  }, []);
+console.log(allTherapists)
   
   const placeHolder = props.placeHolder;
   const icon = props.icon;
@@ -80,7 +92,7 @@ setSearch.setRangeSearch(e.target.value)
 
   {
     if (specialistUserSearchType === "name") {
-      let usersParam = allUsers.map((user) => user.name);
+      let usersParam = allTherapists.map((user) => user.name);
       let newUsersName = [...new Set(usersParam)];
       return (
         <div className="searchInputContainer short">
@@ -101,7 +113,7 @@ setSearch.setRangeSearch(e.target.value)
       );
     }
     if (specialistUserSearchType === "typeName") {
-      let usersParam = allUsers.map((user) => user.typeName);
+      let usersParam = allTherapists.map((user) => user.profession);
       let newUsersName = [...new Set(usersParam)];
       return (
         <div className="searchInputContainer short">
@@ -120,7 +132,7 @@ setSearch.setRangeSearch(e.target.value)
       );
     }
     if (specialistUserSearchType === "address.city") {
-      let usersParam = allUsers.map((user) => user.address.city);
+      let usersParam = allTherapists.map((user) => user.address.city);
       let newUsersName = [...new Set(usersParam)];
       return (
         <div className="searchInputContainer short">
@@ -139,16 +151,18 @@ setSearch.setRangeSearch(e.target.value)
       );
     }
     if (specialistUserSearchType === "language") {
-      let arr = []
-      let usersParam = allUsers.map((user) => user.language);
-      let newUsersName = [...new Set(usersParam)];
-      newUsersName.map((user)=>{
-        return user.map((language)=>{
-          arr.push(language)
-        })
-      })
+      // let arr = []
+      // let usersParam = allTherapists.map((user) => user.language);
+      // let newUsersName = [...new Set(usersParam)];
+      // newUsersName.map((user)=>{
+      //   return user.map((language)=>{
+      //     arr.push(language)
+      //   })
+      // })
 
-      let newArr = [...new Set(arr)]
+      const languages = ['Hebrew','English','Arab','Russian']
+
+      // let newArr = [...new Set(arr)]
 
       return (
         <div className="searchInputContainer short">
@@ -156,7 +170,7 @@ setSearch.setRangeSearch(e.target.value)
           onChange={handleChange}
             disablePortal
             id="combo-box-demo"
-            options={newArr.map((user) => user)}
+            options={languages.map((user) => user)}
             sx={{ width: 300 }}
             renderInput={(params) => (
               <TextField {...params} label={placeHolder} variant="standard" />
@@ -167,7 +181,7 @@ setSearch.setRangeSearch(e.target.value)
       );
     }
     if (specialistUserSearchType === "experience") {
-      let usersParam = allUsers.map((user) => user.experience);
+      let usersParam = allTherapists.map((user) => user.experience);
       let newUsersName = [...new Set(usersParam)];
       return (
         <div className="searchInputContainer short">

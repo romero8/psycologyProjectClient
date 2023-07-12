@@ -113,7 +113,7 @@ export function ClientRegistration() {
       const data = await res.json();
       console.log(data.errors);
       setErrors(data.errors);
-      if (data.user) {
+      if (data.client) {
         navigate("/logIn");
       }
     } catch (err) {

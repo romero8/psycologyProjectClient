@@ -7,9 +7,9 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { getData } from "../../helpers/fetchHelper";
-import { therapistTypesData } from "../../helpers/data";
+// import { therapistTypesData } from "../../helpers/data";
 import { Link, useParams } from "react-router-dom";
-
+import { professions } from "../../helpers/data";
 import Cookies from "universal-cookie"
 import {jwt} from "jwt-decode"
 
@@ -49,7 +49,7 @@ export function Header(props) {
   window.localStorage.removeItem("token");
   }
 
-  const therapistTypes = therapistTypesData;
+
   return (
     <Navbar bg="light" expand="lg">
       <Container className="headerContainer">
@@ -57,13 +57,13 @@ export function Header(props) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <NavDropdown title="Specialties" id="basic-nav-dropdown">
-              {therapistTypes.map((therapist) => {
+            <NavDropdown title="Proffesions" id="basic-nav-dropdown">
+              {professions.map((profession) => {
                 return (
                   <NavDropdown.Item
-                    href={`/searchBySpecialties/${therapist.typeName}`}
+                    href={`/searchBySpecialties/${profession}`}
                   >
-                    {therapist.typeName}
+                    {profession}
                   </NavDropdown.Item>
                 );
               })}

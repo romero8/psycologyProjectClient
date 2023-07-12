@@ -20,62 +20,9 @@ function App() {
   const [data, setData] = useState({});
   const [userLoggedIn, setLoggedIn] = useState(null);
 
-
-  // useEffect(()=>{
-  //   async function fetch() {
-  //     const token = JSON.parse(window.localStorage.getItem("token"));
-  //     try {
-  //       const res = await fetch("/userLoggedIn", {
-  //         method: "GET",
-  //         body: JSON.stringify(token),
-  //         headers: { "Content-Type": "application/json" },
-  //       });
-  //       const data = await res.json();
-  //       console.log(data);
-        
-  //     } catch (err) {
-  //       console.log(err);
-  //     }}
-  //     fetch()
-  // },[])
-
-    // useEffect(() => {
-
-    //   const fetchData = async () => {
-    //     try {
-    //       const response = await fetch(`/user/${userId[0]}`);
-    //       const json = await response.json();
-    //       console.log(json);
-    //     } catch (error) {
-    //       console.log("error", error);
-    //     }
-    //   };
-
-  //     fetchData();
-  // }, []);
-
-  // useEffect(() => {
-  //   const dataFetch = async () => {
-  //     const data = await (await fetch(`user/${userId[0]}`)).json();
-
-  //     setData(data);
-  //   };
-
-  //   dataFetch();
-  // }, userId);
-
-  useEffect(() => {
-    // const fetchData = async () => {
-    //    try {
-    //          const response = await fetch('https://mangisiteserver.onrender.com/');
-    //        const json = await response.json();
-    //         console.log(json);
-    //       } catch (error) {
-    //        console.log("error", error);
-    //        }
-    //      };
   
-    //      fetchData();
+  useEffect(() => {
+    
 
     fetch('http://localhost:5000/')
     .then(response => response.json())

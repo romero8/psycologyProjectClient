@@ -20,13 +20,13 @@ import Accordion from "react-bootstrap/Accordion";
 import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import AccordionBody from "react-bootstrap/AccordionBody";
 import AccordionButton from "react-bootstrap/AccordionButton";
-import { therapistTypesData } from "../../helpers/data";
+// import { therapistTypesData } from "../../helpers/data";
 import { useNavigate } from "react-router-dom";
 
 export function SearchForSpecialistComp({ eventKey }) {
   const [noneState, setNoneState] = useState(false);
 
-  const therapistTypes = therapistTypesData;
+
 
   const [nameSearch, setNameSearch] = useState("");
   const [professionSearch, setProfessionSearch] = useState("");

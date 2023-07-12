@@ -19,8 +19,11 @@ import {
   Radio,
   RadioGroup,
   OutlinedInput,
+  FormGroup,
 } from "@mui/material";
 import { multiply } from "lodash";
+
+import { cities } from "../../helpers/data";
 
 export function TherapistRegistration() {
   const professions = [
@@ -235,26 +238,28 @@ export function TherapistRegistration() {
           </div>
 
           <div className="flex">
-            {/* <InputGroup>
+            <InputGroup>
             <FormControl>
               <Autocomplete
                 // onChange={handleChange}
                 disablePortal
                 id="combo-box-demo"
-                options={citiesData.map((city) => city.english_name)}
+                options={cities.map((city) => city.City)}
                 renderInput={(params) => (
                   <TextField
                     {...params}
                     label={"placeHolder"}
                     variant="standard"
-                    sx={{ width: 600 }}
+                    sx={{ width: 300 }}
                   />
                 )}
               />
             </FormControl>
-          </InputGroup> */}
+          </InputGroup>
+<Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicName">
+</Form.Group>
+            {/* <Form.Group className="mb-3" controlId="formBasicName">
               <Form.Label>City</Form.Label>
               <Form.Control
                 required
@@ -276,7 +281,7 @@ export function TherapistRegistration() {
                   City is required
                 </Form.Control.Feedback>
               )}
-            </Form.Group>
+            </Form.Group> */}
 
             <Form.Group className="mb-3" controlId="formBasicName">
               <Form.Label>Street</Form.Label>

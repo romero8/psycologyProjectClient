@@ -1,20 +1,33 @@
 import { useParams } from "react-router-dom";
-import { therapistTypesData } from "../../helpers/data";
+// import { therapistTypesData } from "../../helpers/data";
 import "../TherapistInfo/TherapistInfo.css";
 import { Header } from "../../components/Header/Header";
 import logo from "../../icons/AnimatedLogo.png";
 import { MainBtn } from "../../components/MainBtn/MainBtn";
 import { faLocationDot, faVideo } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {useEffect,useState} from "react";
 
 export function TherapistInfo() {
   let { therapistName } = useParams();
   let { specialty } = useParams();
 
-  const therapistTypes = therapistTypesData;
+  const [allTherapists,setAllTherapists] = useState([])
 
-  const findSpecialty = therapistTypes.find((specailty) => {
-    return specailty.typeName === specialty;
+  useEffect(() => {
+   
+    fetch('http://localhost:5000/allTherapists')
+    .then(response => response.json())
+    .then(data => setAllTherapists([data.data]))
+    .catch(err => console.log(err))
+  
+   
+  }, []);
+
+
+
+  const findSpecialty = allTherapists.find((user) => {
+    return user.profession === specialty;
   });
 
   const therapistData = findSpecialty.users.find((therapist) => {
