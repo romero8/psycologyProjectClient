@@ -92,7 +92,7 @@ setSearch.setRangeSearch(e.target.value)
 
   {
     if (specialistUserSearchType === "name") {
-      let usersParam = allTherapists.map((user) => user.name);
+      let usersParam = allTherapists.map((user) => `${user.name} ${user.lastName}`);
       let newUsersName = [...new Set(usersParam)];
       return (
         <div className="searchInputContainer short">

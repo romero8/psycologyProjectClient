@@ -10,16 +10,15 @@ import { getData } from "../../helpers/fetchHelper";
 // import { therapistTypesData } from "../../helpers/data";
 import { Link, useParams } from "react-router-dom";
 import { professions } from "../../helpers/data";
-import Cookies from "universal-cookie"
-import {jwt} from "jwt-decode"
+import Cookies from "universal-cookie";
+import { jwt } from "jwt-decode";
 
 export function Header(props) {
   const [data, setData] = useState([]);
   const userLoggedIn = props.userLoggedIn;
   const setLoggedIn = props.setLoggedIn;
 
-  const cookies = new Cookies()
-
+  const cookies = new Cookies();
 
   // useEffect(() => {
   //   getData("users").then((info) => {
@@ -41,14 +40,26 @@ export function Header(props) {
   //   dataFetch();
   // }, []);
 
+  let clientLoggedIn;
+  let therapistLoggedIn;
+
+  if(userLoggedIn){
+    if (userLoggedIn.profession) {
+      therapistLoggedIn = userLoggedIn;
+    } else {
+      clientLoggedIn = userLoggedIn;
+    }
+  }
+
+  
+
   let { clientName } = useParams();
   let { therapistName } = useParams();
 
-  function logOut(){
-  setLoggedIn(null)
-  window.localStorage.removeItem("token");
+  function logOut() {
+    setLoggedIn(null);
+    window.localStorage.removeItem("token");
   }
-
 
   return (
     <Navbar bg="light" expand="lg">
@@ -60,9 +71,7 @@ export function Header(props) {
             <NavDropdown title="Proffesions" id="basic-nav-dropdown">
               {professions.map((profession) => {
                 return (
-                  <NavDropdown.Item
-                    href={`/searchBySpecialties/${profession}`}
-                  >
+                  <NavDropdown.Item href={`/searchBySpecialties/${profession}`}>
                     {profession}
                   </NavDropdown.Item>
                 );
@@ -82,9 +91,22 @@ export function Header(props) {
             ) : (
               ""
             )} */}
-            {userLoggedIn ? <Nav.Link href="#link">Inquiries</Nav.Link>: ""}
-            {userLoggedIn ? <Nav.Link href="#link">Profile</Nav.Link>: ""}
-            
+
+           
+
+            {clientLoggedIn ? (
+              <Nav.Link href="#link">Favorites</Nav.Link>
+            ) : (
+              ""
+            )}
+            {therapistLoggedIn ? (
+              <Nav.Link href="#link">Inquiries</Nav.Link>
+            ) : (
+              ""
+            )}
+
+            {userLoggedIn ? <Nav.Link href="#link">Profile</Nav.Link> : ""}
+
             <Nav.Link href="#link">
               <FontAwesomeIcon
                 icon={faMagnifyingGlass}
@@ -93,9 +115,17 @@ export function Header(props) {
             </Nav.Link>
           </Nav>
           <Nav>
-          {userLoggedIn ? <Navbar.Text>Hello {userLoggedIn.name}</Navbar.Text>: ""}
-          {userLoggedIn ? <Nav.Link onClick={()=>logOut()}>Log-Out</Nav.Link>: ""}
-          {!userLoggedIn ? <Nav.Link href="/logIn">Log-In</Nav.Link> : ''}
+            {userLoggedIn ? (
+              <Navbar.Text>Hello {userLoggedIn.name}</Navbar.Text>
+            ) : (
+              ""
+            )}
+            {userLoggedIn ? (
+              <Nav.Link onClick={() => logOut()}>Log-Out</Nav.Link>
+            ) : (
+              ""
+            )}
+            {!userLoggedIn ? <Nav.Link href="/logIn">Log-In</Nav.Link> : ""}
             <Nav.Link eventKey={2} href="/signUp">
               Sign-Up
             </Nav.Link>

@@ -30,9 +30,9 @@ function App() {
     .catch(err => console.log(err))
 
     const token = JSON.parse(window.localStorage.getItem("token"));
-    const therapist = JSON.parse(window.localStorage.getItem("therapist"));
+    const user = JSON.parse(window.localStorage.getItem("user"));
     if (token) {
-      setLoggedIn(therapist);
+      setLoggedIn(user);
     }
   }, []);
 

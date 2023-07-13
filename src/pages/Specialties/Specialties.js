@@ -61,11 +61,13 @@ export function Specialties() {
   return arr
  })
 
- 
+ let nameAndLastName = name ? name.split(' ') : ''
+
 
   const therapistObj = {
-    name: name,
-    typeName: profession,
+    name: nameAndLastName[0],
+    lastName:nameAndLastName[1],
+    profession: profession,
     address: {
       city: city,
     },
@@ -91,8 +93,8 @@ export function Specialties() {
     if (obj.name === "all") {
       delete obj.name;
     }
-    if (obj.typeName === "all") {
-      delete obj.typeName;
+    if (obj.profession === "all") {
+      delete obj.profession;
     }
     if (obj.address.city === "all") {
       delete obj.address.city;

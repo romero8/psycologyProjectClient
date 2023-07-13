@@ -30,13 +30,13 @@ export function LogIn(props) {
       setErrors(data.errors);
       if (data.therapist) {
         await window.localStorage.setItem("token", JSON.stringify(data.token));
-        await window.localStorage.setItem("user", JSON.stringify(data.user));
+        await window.localStorage.setItem("user", JSON.stringify(data.therapist));
         setLoggedIn(data.therapist);
         navigate(`/`);
       }
       if (data.client) {
         await window.localStorage.setItem("token", JSON.stringify(data.token));
-        await window.localStorage.setItem("user", JSON.stringify(data.user));
+        await window.localStorage.setItem("user", JSON.stringify(data.client));
         setLoggedIn(data.client);
         navigate(`/`);
       }
