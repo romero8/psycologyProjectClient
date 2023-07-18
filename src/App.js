@@ -20,14 +20,11 @@ function App() {
   const [data, setData] = useState({});
   const [userLoggedIn, setLoggedIn] = useState(null);
 
-  
   useEffect(() => {
-    
-
-    fetch('http://localhost:5000/')
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(err => console.log(err))
+    fetch("http://localhost:5000/")
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err));
 
     const token = JSON.parse(window.localStorage.getItem("token"));
     const user = JSON.parse(window.localStorage.getItem("user"));
@@ -38,6 +35,16 @@ function App() {
 
   console.log(userLoggedIn);
 
+  const [allTherapists, setAllTherapists] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/allTherapists")
+      .then((response) => response.json())
+      .then((data) => setAllTherapists(data.data))
+      .catch((err) => console.log(err));
+  }, []);
+  console.log(allTherapists);
+
   return (
     <div className="App">
       <Header userLoggedIn={userLoggedIn} setLoggedIn={setLoggedIn} />
@@ -46,9 +53,20 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/:userId" element={<Home />} />
           <Route path="/signUp" element={<SignUp />} />
-          <Route path="/signUp/clientRegistration" element={<ClientRegistration/>} />
-          <Route path="/signUp/therapistRegistration" element={<TherapistRegistration/>} />
-          <Route path="/logIn" element={<LogIn userLoggedIn={userLoggedIn} setLoggedIn={setLoggedIn} />} />
+          <Route
+            path="/signUp/clientRegistration"
+            element={<ClientRegistration />}
+          />
+          <Route
+            path="/signUp/therapistRegistration"
+            element={<TherapistRegistration />}
+          />
+          <Route
+            path="/logIn"
+            element={
+              <LogIn userLoggedIn={userLoggedIn} setLoggedIn={setLoggedIn} />
+            }
+          />
           <Route path="/client/:clientName" element={<Client />} />
           <Route path="/therapist/:therapistName" element={<Therapist />} />
           <Route
@@ -57,11 +75,11 @@ function App() {
           />
           <Route
             path="/:searchBySpecialties/:specialty/:therapistName"
-            element={<TherapistInfo />}
+            element={<TherapistInfo allTherapists={allTherapists} />}
           />
           <Route
             path="/:searchByTherapist/:name/:profession/:city/:range/:language/:experience/:gender/:lgbtq"
-            element={<Specialties />}
+            element={<Specialties userLoggedIn={userLoggedIn}/>}
           />
         </Routes>
       </Router>

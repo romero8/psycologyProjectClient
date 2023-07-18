@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import { useState,useEffect } from "react";
 var _ = require("lodash");
 
-export function Specialties() {
+export function Specialties(props) {
   let { searchBySpecialties } = useParams();
   let { searchByTherapist } = useParams();
   let { specialty } = useParams();
@@ -21,6 +21,20 @@ export function Specialties() {
   let { experience } = useParams();
   let { gender } = useParams();
   let { lgbtq } = useParams();
+
+  const userLoggedIn = props.userLoggedIn
+
+  let therapistLoggedIn
+  let clientLoggedIn
+
+
+  if(userLoggedIn){
+    if (userLoggedIn.profession) {
+      therapistLoggedIn = userLoggedIn;
+    } else {
+      clientLoggedIn = userLoggedIn;
+    }
+  }
 
   const [allTherapists,setAllTherapists] = useState([])
 
@@ -166,7 +180,7 @@ export function Specialties() {
                   <div className="cardInfo">
                     <Link
                       className="specalistName"
-                      to={`/specialties/${specialty}/${user.name}`}
+                      to={`/specialties/${specialty}/${user.name} ${user.lastName}`}
                     >
                       <h3>{user.name}</h3>
                     </Link>
@@ -207,12 +221,12 @@ export function Specialties() {
                 <div className="cardInfo">
                   <Link
                     className="specalistName"
-                    to={`/specialties/${user.typeName}/${user.name}`}
+                    to={`/specialties/${user.profession}/${user.name} ${user.lastName}`}
                   >
                     <h3>{user.name}</h3>
                   </Link>
-                  <span className="specalistAbility">{user.typeName}</span>
-                  <span className="specalistAbout">{`Best ${user.typeName} Ever`}</span>
+                  <span className="specalistAbility">{user.profession}</span>
+                  <span className="specalistAbout">{`Best ${user.profession} Ever`}</span>
                   <div className="specalistAvailabilityBox">
                     <div className="iconBox">
                       <FontAwesomeIcon
@@ -230,6 +244,7 @@ export function Specialties() {
                   </div>
                 </div>
                 <div className="cardActions">
+                  {clientLoggedIn ? <MainBtn value="Add To Favorties"/> : ''}
                   <MainBtn value="Call" />
                   <MainBtn value="Appointment" />
                 </div>

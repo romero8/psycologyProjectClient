@@ -28,7 +28,6 @@ export function Header(props) {
 
   let { userId } = useParams();
 
-  console.log(userLoggedIn);
 
   // useEffect(() => {
   //   const dataFetch = async () => {

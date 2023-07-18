@@ -27,7 +27,7 @@ export function SearchInput(props) {
   
    
   }, []);
-console.log(allTherapists)
+
   
   const placeHolder = props.placeHolder;
   const icon = props.icon;
