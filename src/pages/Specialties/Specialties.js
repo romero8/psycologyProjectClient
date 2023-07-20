@@ -244,7 +244,7 @@ export function Specialties(props) {
                   </div>
                 </div>
                 <div className="cardActions">
-                  {clientLoggedIn ? <MainBtn value="Add To Favorties"/> : ''}
+                  {clientLoggedIn ? <MainBtn value="Add To Favorties" userToAdd = {user}/> : ''}
                   <MainBtn value="Call" />
                   <MainBtn value="Appointment" />
                 </div>
