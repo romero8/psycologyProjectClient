@@ -33,7 +33,7 @@ function App() {
     }
   }, []);
 
-  console.log(userLoggedIn);
+  
 
   const [allTherapists, setAllTherapists] = useState([]);
 
@@ -43,7 +43,7 @@ function App() {
       .then((data) => setAllTherapists(data.data))
       .catch((err) => console.log(err));
   }, []);
-  console.log(allTherapists);
+
 
   return (
     <div className="App">
@@ -79,7 +79,7 @@ function App() {
           />
           <Route
             path="/:searchByTherapist/:name/:profession/:city/:range/:language/:experience/:gender/:lgbtq"
-            element={<Specialties userLoggedIn={userLoggedIn}/>}
+            element={<Specialties userLoggedIn={userLoggedIn} />}
           />
         </Routes>
       </Router>

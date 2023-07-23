@@ -22,10 +22,22 @@ export function Specialties(props) {
   let { gender } = useParams();
   let { lgbtq } = useParams();
 
-  const userLoggedIn = props.userLoggedIn
+  // const userLoggedIn = props.userLoggedIn
 
   let therapistLoggedIn
   let clientLoggedIn
+
+
+
+  const [userLoggedIn, setLoggedIn] = useState(null);
+
+  useEffect(() => {
+    const token = JSON.parse(window.localStorage.getItem("token"));
+    const user = JSON.parse(window.localStorage.getItem("user"));
+    if (token) {
+      setLoggedIn(user);
+    }
+  }, []);
 
 
   if(userLoggedIn){
@@ -47,6 +59,9 @@ export function Specialties(props) {
   
    
   }, []);
+
+
+  
 
 
   const therapistInfoArr = [
@@ -90,7 +105,7 @@ export function Specialties(props) {
     experience: experience,
    
   };
-
+  
   const filterUserPrice = allTherapists.filter((user)=>{
       if(user.price >= rangeArr[0] && user.price <= rangeArr[rangeArr.length-1]){
         return user.price
@@ -104,8 +119,12 @@ export function Specialties(props) {
     const objKeys = Object.keys(obj);
     // for(let objLoop of objKeys)
 
+
     if (obj.name === "all") {
       delete obj.name;
+    }
+    if (!obj.lastName) {
+      delete obj.lastName;
     }
     if (obj.profession === "all") {
       delete obj.profession;
@@ -134,11 +153,12 @@ export function Specialties(props) {
       });
     }
     return obj;
-  }
+  } 
+  
 
   const filterUsers = _.filter(filterUserPrice, newObj(therapistObj));
 
-  console.log(filterUsers);
+ 
 
   const checkArr = [];
 
@@ -155,7 +175,7 @@ export function Specialties(props) {
       checkArr.push(therapistInfoArr[i]);
     }
   }
-
+ 
   return (
     <div className="cardsContainer">
       <div className="cardsTitle">
@@ -205,6 +225,7 @@ export function Specialties(props) {
                     </div>
                   </div>
                   <div className="cardActions">
+                  {clientLoggedIn ? <MainBtn value="Add To Favorties" userToAdd = {user}/> : ''}
                     <MainBtn value="Call" />
                     <MainBtn value="Appointment" />
                   </div>

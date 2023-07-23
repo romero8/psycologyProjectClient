@@ -5,8 +5,9 @@ export function MainBtn(props) {
   const value = props.value;
   const color = props.color;
   const userToAdd = props.userToAdd;
-  const userLoggedIn = JSON.parse(window.localStorage.getItem("user"));
-
+  const [userLoggedIn, setUserLoggedIn] = useState(
+    JSON.parse(window.localStorage.getItem("user"))
+  );
 
   const [updateData, setUpdateData] = useState({
     userToAdd: userLoggedIn.favorites,
@@ -16,9 +17,27 @@ export function MainBtn(props) {
   async function handle(e) {
     e.preventDefault();
 
+    try {
+      const res = await fetch("http://localhost:5000/userLoggedIn", {
+        method: "POST",
+        body: JSON.stringify(userLoggedIn),
+        headers: { "Content-Type": "application/json" },
+      });
+      const data = await res.json();
+      setUserLoggedIn(data.clientLoggedIn);
+      console.log(userLoggedIn);
+    } catch (err) {
+      console.log(err);
+    }
+
+   
+
     if (value === "Add To Favorties") {
-      setUpdateData({...updateData,userToAdd:[...userLoggedIn.favorites,userToAdd]});
-console.log(updateData)
+      setUpdateData({
+        ...updateData,
+        userToAdd: [...userLoggedIn.favorites, userToAdd],
+      });
+      
       try {
         const res = await fetch("http://localhost:5000/update/client", {
           method: "POST",
