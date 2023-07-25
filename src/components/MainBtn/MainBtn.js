@@ -4,52 +4,42 @@ import { useState } from "react";
 export function MainBtn(props) {
   const value = props.value;
   const color = props.color;
-  const userToAdd = props.userToAdd;
-  const [userLoggedIn, setUserLoggedIn] = useState(
-    JSON.parse(window.localStorage.getItem("user"))
-  );
+  let userToAdd = props.userToAdd;
+  const usersAdded = props.usersAdded
+  const setUsersAdded = props.setUsersAdded
+  const updateData = props.updateData
+  const setUpdateData = props.setUpdateData
+  const setCheck = props.setCheck
+  const check = props.check
+  const userLoggedIn = props.userLoggedIn
+ 
+  // const [updateData, setUpdateData] = useState({
+  //   userToAdd: userLoggedIn.favorites,
+  //   userLoggedIn: userLoggedIn,
+  // });
 
-  const [updateData, setUpdateData] = useState({
-    userToAdd: userLoggedIn.favorites,
-    userLoggedIn: userLoggedIn,
-  });
+  
 
   async function handle(e) {
     e.preventDefault();
 
-    try {
-      const res = await fetch("http://localhost:5000/userLoggedIn", {
-        method: "POST",
-        body: JSON.stringify(userLoggedIn),
-        headers: { "Content-Type": "application/json" },
-      });
-      const data = await res.json();
-      setUserLoggedIn(data.clientLoggedIn);
-      console.log(userLoggedIn);
-    } catch (err) {
-      console.log(err);
-    }
-
-   
-
     if (value === "Add To Favorties") {
-      setUpdateData({
-        ...updateData,
-        userToAdd: [...userLoggedIn.favorites, userToAdd],
-      });
+
+      // setUsersAdded([...usersAdded,userToAdd])
+    userToAdd.addedToFavorites = true
+      setUpdateData(prevState => ({ ...prevState, favoritesToUpdate: [...prevState.favoritesToUpdate,userToAdd]}));
       
-      try {
-        const res = await fetch("http://localhost:5000/update/client", {
-          method: "POST",
-          body: JSON.stringify(updateData),
-          headers: { "Content-Type": "application/json" },
-        });
-        const data = await res.json();
-        console.log(data);
-      } catch (err) {
-        console.log(err);
-      }
+      
+      setCheck((check)=>{
+        return [check+1]
+      })
+      console.log(updateData)
     }
+    // {
+    //   ...updateData,
+    //   favoritesToUpdate: [...userLoggedIn.favorites, userToAdd]
+    // }
+    
   }
 
   return (
@@ -63,3 +53,39 @@ export function MainBtn(props) {
     />
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+ // try {
+      //   const res = await fetch("http://localhost:5000/update/client", {
+      //     method: "POST",
+      //     body: JSON.stringify(updateData),
+      //     headers: { "Content-Type": "application/json" },
+      //   });
+      //   const data = await res.json();
+      //   console.log(data);
+      // } catch (err) {
+      //   console.log(err);
+      // }
+
+
+ // try {
+    //   const res = await fetch("http://localhost:5000/userLoggedIn", {
+    //     method: "POST",
+    //     body: JSON.stringify(userLoggedIn),
+    //     headers: { "Content-Type": "application/json" },
+    //   });
+    //   const data = await res.json();
+    //   setUserLoggedIn(data.clientLoggedIn);
+    //   console.log(userLoggedIn);
+    // } catch (err) {
+    //   console.log(err);
+    // }

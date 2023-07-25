@@ -6,7 +6,7 @@ import { faLocationDot, faVideo } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { therapistTypesData, allUsers } from "../../helpers/data";
 import { Link } from "react-router-dom";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 var _ = require("lodash");
 
 export function Specialties(props) {
@@ -24,45 +24,74 @@ export function Specialties(props) {
 
   // const userLoggedIn = props.userLoggedIn
 
-  let therapistLoggedIn
-  let clientLoggedIn
+  const [therapistLoggedIn, setTherapistLoggedIn] = useState();
+  const [clientLoggedIn, setClientLoggedIn] = useState();
 
+  const [usersAdded, setUsersAdded] = useState([]);
+  const [check, setCheck] = useState([1]);
 
+  let userLocalStorage = JSON.parse(window.localStorage.getItem("user"));
 
-  const [userLoggedIn, setLoggedIn] = useState(null);
+  const [userLoggedIn, setUserLoggedIn] = useState(userLocalStorage);
 
-  useEffect(() => {
-    const token = JSON.parse(window.localStorage.getItem("token"));
-    const user = JSON.parse(window.localStorage.getItem("user"));
-    if (token) {
-      setLoggedIn(user);
-    }
-  }, []);
-
-
-  if(userLoggedIn){
-    if (userLoggedIn.profession) {
-      therapistLoggedIn = userLoggedIn;
-    } else {
-      clientLoggedIn = userLoggedIn;
-    }
-  }
-
-  const [allTherapists,setAllTherapists] = useState([])
+  const [updateData, setUpdateData] = useState({
+    userLoggedIn: userLocalStorage,
+    favoritesToUpdate: userLocalStorage.favorites,
+  });
 
   useEffect(() => {
-   
-    fetch('http://localhost:5000/allTherapists')
-    .then(response => response.json())
-    .then(data => setAllTherapists(data.data))
-    .catch(err => console.log(err))
-  
-   
+    fetch("http://localhost:5000/userLoggedIn", {
+      method: "POST",
+      body: JSON.stringify(userLoggedIn),
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((response) => response.json())
+      .then((data) => setUserLoggedIn(data.clientLoggedIn))
+      .catch((err) => console.log(err));
+  }, check);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/update/client", {
+      method: "POST",
+      body: JSON.stringify(updateData),
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((response) => response.json())
+      .then((data) => setClientLoggedIn(data.clientLoggedIn))
+      .catch((err) => console.log(err));
+  }, check);
+
+  // if (updateData.userLoggedIn) {
+  //   if (updateData.userLoggedIn.profession) {
+  //     setTherapistLoggedIn(updateData.userLoggedIn)
+
+  //   } else {
+  //     setClientLoggedIn(updateData.userLoggedIn)
+  //   }
+  // }
+
+  // useEffect(() => {
+  //   try {
+  //       const res = await fetch("http://localhost:5000/update/client", {
+  //         method: "POST",
+  //         body: JSON.stringify(updateData),
+  //         headers: { "Content-Type": "application/json" },
+  //       });
+  //       const data = await res.json();
+  //       console.log(data);
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+  // }, []);
+
+  const [allTherapists, setAllTherapists] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/allTherapists")
+      .then((response) => response.json())
+      .then((data) => setAllTherapists(data.data))
+      .catch((err) => console.log(err));
   }, []);
-
-
-  
-
 
   const therapistInfoArr = [
     specialty,
@@ -74,11 +103,8 @@ export function Specialties(props) {
     experience,
     gender,
   ];
-  
-  
-  let rangeSplit = range ? range.split(",") : ''
 
-  
+  let rangeSplit = range ? range.split(",") : "";
 
   let rangeArr = [];
 
@@ -86,16 +112,15 @@ export function Specialties(props) {
     rangeArr.push(x);
   }
 
- let rangePrice = rangeArr.map((arr)=>{
-  return arr
- })
+  let rangePrice = rangeArr.map((arr) => {
+    return arr;
+  });
 
- let nameAndLastName = name ? name.split(' ') : ''
-
+  let nameAndLastName = name ? name.split(" ") : "";
 
   const therapistObj = {
     name: nameAndLastName[0],
-    lastName:nameAndLastName[1],
+    lastName: nameAndLastName[1],
     profession: profession,
     address: {
       city: city,
@@ -103,22 +128,20 @@ export function Specialties(props) {
     gender: gender,
     language: [language],
     experience: experience,
-   
   };
-  
-  const filterUserPrice = allTherapists.filter((user)=>{
-      if(user.price >= rangeArr[0] && user.price <= rangeArr[rangeArr.length-1]){
-        return user.price
-      }
-  })
 
-  
-
+  const filterUserPrice = allTherapists.filter((user) => {
+    if (
+      user.price >= rangeArr[0] &&
+      user.price <= rangeArr[rangeArr.length - 1]
+    ) {
+      return user.price;
+    }
+  });
 
   function newObj(obj) {
     const objKeys = Object.keys(obj);
     // for(let objLoop of objKeys)
-
 
     if (obj.name === "all") {
       delete obj.name;
@@ -132,13 +155,12 @@ export function Specialties(props) {
     if (obj.address.city === "all") {
       delete obj.address.city;
     }
-    if(obj.price){
-    
+    if (obj.price) {
       if (obj.price === "all") {
         delete obj.price;
       }
     }
-    
+
     if (obj.gender === "all") {
       delete obj.gender;
     }
@@ -153,12 +175,9 @@ export function Specialties(props) {
       });
     }
     return obj;
-  } 
-  
+  }
 
   const filterUsers = _.filter(filterUserPrice, newObj(therapistObj));
-
- 
 
   const checkArr = [];
 
@@ -168,14 +187,12 @@ export function Specialties(props) {
     }
   });
 
-
-
   for (let i = 0; i < therapistInfoArr.length; i++) {
     if (therapistInfoArr[i] === "all") {
       checkArr.push(therapistInfoArr[i]);
     }
   }
- 
+
   return (
     <div className="cardsContainer">
       <div className="cardsTitle">
@@ -225,7 +242,18 @@ export function Specialties(props) {
                     </div>
                   </div>
                   <div className="cardActions">
-                  {clientLoggedIn ? <MainBtn value="Add To Favorties" userToAdd = {user}/> : ''}
+                    {clientLoggedIn ? (
+                      <MainBtn
+                        value="Add To Favorties"
+                        userToAdd={user}
+                        usersAdded={usersAdded}
+                        setUsersAdded={setUsersAdded}
+                        updateData={updateData}
+                        setUpdateData={setUpdateData}
+                      />
+                    ) : (
+                      ""
+                    )}
                     <MainBtn value="Call" />
                     <MainBtn value="Appointment" />
                   </div>
@@ -265,7 +293,27 @@ export function Specialties(props) {
                   </div>
                 </div>
                 <div className="cardActions">
-                  {clientLoggedIn ? <MainBtn value="Add To Favorties" userToAdd = {user}/> : ''}
+                  {clientLoggedIn ? (
+                    <MainBtn
+                      value="Add To Favorties"
+                      userToAdd={user}
+                      usersAdded={usersAdded}
+                      setUsersAdded={setUsersAdded}
+                      updateData={updateData}
+                      setUpdateData={setUpdateData}
+                      check={check}
+                      setCheck={setCheck}
+                      userLoggedIn={userLoggedIn}
+                    />
+                  ) : (
+                    ""
+                  )}
+                  {user.addedToFavorites ? (
+                    <MainBtn value="Remove From Favorites" />
+                  ) : (
+                    ""
+                  )}
+
                   <MainBtn value="Call" />
                   <MainBtn value="Appointment" />
                 </div>
