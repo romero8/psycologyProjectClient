@@ -1,34 +1,30 @@
 import Button from "react-bootstrap/Button";
 import "../MainBtn/MainBtn.css";
 import { useState } from "react";
+import { Specialties } from "../../pages/Specialties/Specialties";
 export function MainBtn(props) {
-  const value = props.value;
+  let value = props.value;
   const color = props.color;
   let userToAdd = props.userToAdd;
   const usersAdded = props.usersAdded;
   const setUsersAdded = props.setUsersAdded;
   const updateData = props.updateData;
   const setUpdateData = props.setUpdateData;
+  const therapistToUpdate = props.therapistToUpdate;
+  const setTherapistToUpdate = props.setTherapistToUpdate;
   const setCheck = props.setCheck;
   const check = props.check;
   const userLoggedIn = props.userLoggedIn;
+ 
+  
 
-  // const [updateData, setUpdateData] = useState({
-  //   userToAdd: userLoggedIn.favorites,
-  //   userLoggedIn: userLoggedIn,
-  // });
-
-  const [therapistToUpdate, setTherapistToUpdate] = useState({
-    id: '',
-    addedToFavorites: [],
-  });
-
-  // therapistToUpdate: { id: userToAdd._id , addedToFavorites:[...prevState.therapistToUpdate.addedToFavorites,userLoggedIn]}
-  // userToAdd.addedToFavorites = true;
 
   async function handle(e) {
     e.preventDefault();
-
+    
+    
+  if (value === "Add To Favorties") {
+    
     setTherapistToUpdate(()=>({
       id: userToAdd._id,
       addedToFavorites: [...therapistToUpdate.addedToFavorites, userLoggedIn],
@@ -38,24 +34,12 @@ export function MainBtn(props) {
       ...prevState,
       favoritesToUpdate: [...prevState.favoritesToUpdate, userToAdd],
     }));
-  
-  if (value === "Add To Favorties") {
         
-    fetch("http://localhost:5000/update/therapist", {
-      method: "POST",
-      body: JSON.stringify(therapistToUpdate),
-      headers: { "Content-Type": "application/json" },
-    })
-      .then((response) => response.json())
-      .then((data) => console.log(data))
-      .catch((err) => console.log(err));
+    setCheck((check) => {
+      return [check + 1];
+    });
   }
-
-  setCheck((check) => {
-    return [check + 1];
-  });
-
-    return
+    
   }
 
   return (
