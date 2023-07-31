@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { therapistTypesData, allUsers } from "../../helpers/data";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+
 var _ = require("lodash");
 
 export function Specialties(props) {
@@ -29,7 +30,6 @@ export function Specialties(props) {
 
   const [usersAdded, setUsersAdded] = useState([]);
   const [check, setCheck] = useState([1]);
- 
 
   let userLocalStorage = JSON.parse(window.localStorage.getItem("user"));
 
@@ -41,7 +41,7 @@ export function Specialties(props) {
   });
 
   const [therapistToUpdate, setTherapistToUpdate] = useState({
-    id: '',
+    id: "",
     addedToFavorites: [],
   });
 
@@ -66,7 +66,7 @@ export function Specialties(props) {
       .then((data) => console.log(data))
       .catch((err) => console.log(err));
   }, check);
-  
+
   useEffect(() => {
     fetch("http://localhost:5000/update/client", {
       method: "POST",
@@ -77,8 +77,6 @@ export function Specialties(props) {
       .then((data) => setClientLoggedIn(data.clientLoggedIn))
       .catch((err) => console.log(err));
   }, check);
-
-  
 
   // if (updateData.userLoggedIn) {
   //   if (updateData.userLoggedIn.profession) {
@@ -113,8 +111,6 @@ export function Specialties(props) {
       .then((data) => setAllTherapists(data.data))
       .catch((err) => console.log(err));
   }, []);
-
-
 
   const therapistInfoArr = [
     specialty,
@@ -161,8 +157,6 @@ export function Specialties(props) {
       return user.price;
     }
   });
-
-  
 
   function newObj(obj) {
     const objKeys = Object.keys(obj);
@@ -275,8 +269,8 @@ export function Specialties(props) {
                         setUsersAdded={setUsersAdded}
                         updateData={updateData}
                         setUpdateData={setUpdateData}
-                        therapistToUpdate = {therapistToUpdate}
-                        setTherapistToUpdate = {setTherapistToUpdate}
+                        therapistToUpdate={therapistToUpdate}
+                        setTherapistToUpdate={setTherapistToUpdate}
                       />
                     ) : (
                       ""
@@ -289,14 +283,12 @@ export function Specialties(props) {
             }
           })
         : filterUsers.map((user) => {
+            function added() {
+              for (let i = 0; i < user.addedToFavorites.length; i++) {
+                return user.addedToFavorites[i]._id;
+              }
+            }
 
-         function added(){
-          for(let i = 0; i < user.addedToFavorites.length; i++){
-            return user.addedToFavorites[i]._id
-          }
-         } 
-
-         console.log(added())
             return (
               <div className="cardContainer">
                 <div className="cardPhotoBox">
@@ -328,32 +320,41 @@ export function Specialties(props) {
                   </div>
                 </div>
                 <div className="cardActions">
-                  {clientLoggedIn && added() !== userLoggedIn._id? (
+                  {clientLoggedIn && added() !== userLoggedIn._id ? (
                     <MainBtn
-                      value="Add To Favorties"
+                      value="Add To Favorites"
                       userToAdd={user}
                       usersAdded={usersAdded}
                       setUsersAdded={setUsersAdded}
                       updateData={updateData}
                       setUpdateData={setUpdateData}
-                      therapistToUpdate = {therapistToUpdate}
-                      setTherapistToUpdate = {setTherapistToUpdate}
+                      therapistToUpdate={therapistToUpdate}
+                      setTherapistToUpdate={setTherapistToUpdate}
                       check={check}
                       setCheck={setCheck}
                       userLoggedIn={userLoggedIn}
-                      
                     />
                   ) : (
                     ""
                   )}
                   {added() === userLoggedIn._id ? (
-                    <MainBtn value="Remove From Favorites" />
+                    <MainBtn
+                      value="Remove From Favorites"
+                      userToAdd={user}
+                      usersAdded={usersAdded}
+                      setUsersAdded={setUsersAdded}
+                      updateData={updateData}
+                      setUpdateData={setUpdateData}
+                      therapistToUpdate={therapistToUpdate}
+                      setTherapistToUpdate={setTherapistToUpdate}
+                      check={check}
+                      setCheck={setCheck}
+                      userLoggedIn={userLoggedIn}
+                    />
                   ) : (
                     ""
                   )}
 
-                
-                
                   <MainBtn value="Call" />
                   <MainBtn value="Appointment" />
                 </div>
