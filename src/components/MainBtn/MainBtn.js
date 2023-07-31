@@ -23,9 +23,12 @@ export function MainBtn(props) {
   async function handle(e) {
     e.preventDefault();
 
-    if (e.target.innerHTML === "Add To Favorites") {
-      console.log(therapistToUpdate);
+    // await setCheck((check) => {
+    //   return [check + 1];
+    // });
 
+    if (e.target.innerHTML === "Add To Favorites") {
+      
       await setTherapistToUpdate(() => ({
         id: userToAdd._id,
         addedToFavorites: [...therapistToUpdate.addedToFavorites, userLoggedIn],
@@ -46,37 +49,48 @@ export function MainBtn(props) {
 
 
 
+
     if (e.target.innerHTML === "Remove From Favorites") {
 
       await setTherapistToUpdate((prevState) => {
 
-        const newAddedToFavorites = prevState.addedToFavorites.splice(userLoggedIn,0)
+        const objWithIdIndex = prevState.addedToFavorites.findIndex(
+          (obj) => obj._id === userLoggedIn._id
+        );
+        const newAddedToFavorites = prevState.addedToFavorites.splice(
+          objWithIdIndex,
+          1
+        );
+
         return {
           id: userToAdd._id,
           addedToFavorites:newAddedToFavorites
-          
+
         };
       });
 
+      
       await setUpdateData((prevState) => {
+        const objWithIdIndex = prevState.favoritesToUpdate.findIndex(
+          (obj) => obj._id === userToAdd._id
+        );
+        const newFavoritesToUpdate = prevState.favoritesToUpdate.splice(
+          objWithIdIndex,
+          1
+        );
 
-        const newFavoritesToUpdate = prevState.favoritesToUpdate.splice(userToAdd,0)
         return {
           ...prevState,
-          favoritesToUpdate: newFavoritesToUpdate
+          favoritesToUpdate: newFavoritesToUpdate,
         };
       });
-      
-     
-      
 
       setCheck((check) => {
         return [check + 1];
       });
 
       e.target.innerHTML = "Add To Favorites";
-      return
-
+      return;
     }
   }
 
