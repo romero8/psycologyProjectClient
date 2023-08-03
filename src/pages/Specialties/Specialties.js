@@ -36,8 +36,8 @@ export function Specialties(props) {
   const [userLoggedIn, setUserLoggedIn] = useState(userLocalStorage);
 
   const [updateData, setUpdateData] = useState({
-    userLoggedIn: userLocalStorage,
-    favoritesToUpdate: userLocalStorage.favorites,
+    userLoggedIn: userLoggedIn,
+    favoritesToUpdate: userLoggedIn.favorites,
   });
 
   const [therapistToUpdate, setTherapistToUpdate] = useState({
@@ -52,11 +52,11 @@ export function Specialties(props) {
       headers: { "Content-Type": "application/json" },
     })
       .then((response) => response.json())
-      .then((data) => setUserLoggedIn(data.clientLoggedIn))
+      .then((data) => {
+        setUserLoggedIn(data.clientLoggedIn)
+      })
       .catch((err) => console.log(err));
-  }, check);
 
-  useEffect(() => {
     fetch("http://localhost:5000/update/therapist", {
       method: "POST",
       body: JSON.stringify(therapistToUpdate),
@@ -65,9 +65,7 @@ export function Specialties(props) {
       .then((response) => response.json())
       .then((data) => console.log(data))
       .catch((err) => console.log(err));
-  }, check);
 
-  useEffect(() => {
     fetch("http://localhost:5000/update/client", {
       method: "POST",
       body: JSON.stringify(updateData),
@@ -283,7 +281,11 @@ export function Specialties(props) {
             }
           })
         : filterUsers.map((user) => {
-            function added() {
+            function added(loggedIn) {
+              // user.addedToFavorites.filter((user)=>{
+
+              // })
+
               for (let i = 0; i < user.addedToFavorites.length; i++) {
                 return user.addedToFavorites[i]._id;
               }
@@ -337,7 +339,7 @@ export function Specialties(props) {
                   ) : (
                     ""
                   )}
-                  {added() === userLoggedIn._id ? (
+                  {clientLoggedIn && added() === userLoggedIn._id ? (
                     <MainBtn
                       value="Remove From Favorites"
                       userToAdd={user}
