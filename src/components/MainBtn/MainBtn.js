@@ -37,6 +37,8 @@ export function MainBtn(props) {
     if (e.target.innerHTML === "Add To Favorites") {
 
       userLocalStorage.favorites.push(userToAdd)
+      let newFavorites = [...new Set(userLocalStorage.favorites)];
+      userLocalStorage.favorites=newFavorites
 
        localStorage.setItem("user", JSON.stringify(userLocalStorage));
       
@@ -63,7 +65,13 @@ export function MainBtn(props) {
 
     if (e.target.innerHTML === "Remove From Favorites") {
 
-      // userLocalStorage.favorites.splice()
+      const objIdIndex = userToAdd.addedToFavorites.findIndex(
+          (obj) => obj._id === userLoggedIn._id
+        );
+
+      userLocalStorage.favorites.splice(objIdIndex,1)
+      let newFavorites = [...new Set(userLocalStorage.favorites)];
+      userLocalStorage.favorites=newFavorites
 
        localStorage.setItem("user", JSON.stringify(userLocalStorage));
 

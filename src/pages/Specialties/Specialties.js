@@ -281,14 +281,22 @@ export function Specialties(props) {
             }
           })
         : filterUsers.map((user) => {
-            function added(loggedIn) {
-              // user.addedToFavorites.filter((user)=>{
+            function added() {
 
-              // })
+              const objIdIndex = user.addedToFavorites.findIndex(
+                (obj) => obj._id === userLoggedIn._id
+              );
+                if(objIdIndex === -1){
+                  return false
+                }
 
-              for (let i = 0; i < user.addedToFavorites.length; i++) {
-                return user.addedToFavorites[i]._id;
-              }
+                else{
+                  return true
+                }
+              
+              // for (let i = 0; i < user.addedToFavorites.length; i++) {
+              //   return user.addedToFavorites[i]._id;
+              // }
             }
 
             return (
@@ -322,7 +330,7 @@ export function Specialties(props) {
                   </div>
                 </div>
                 <div className="cardActions">
-                  {clientLoggedIn && added() !== userLoggedIn._id ? (
+                  {clientLoggedIn && !added()  ? (
                     <MainBtn
                       value="Add To Favorites"
                       userToAdd={user}
@@ -339,7 +347,7 @@ export function Specialties(props) {
                   ) : (
                     ""
                   )}
-                  {clientLoggedIn && added() === userLoggedIn._id ? (
+                  {clientLoggedIn && added() ? (
                     <MainBtn
                       value="Remove From Favorites"
                       userToAdd={user}
