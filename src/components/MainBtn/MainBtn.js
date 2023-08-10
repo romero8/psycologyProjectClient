@@ -17,6 +17,7 @@ export function MainBtn(props) {
   const setCheck = props.setCheck;
   const check = props.check;
   const userLoggedIn = props.userLoggedIn;
+ 
 
   let userLocalStorage = JSON.parse(window.localStorage.getItem("user"));
 
@@ -33,21 +34,29 @@ export function MainBtn(props) {
       (obj) => obj._id === userToAdd._id
     );
 
-
     if (e.target.innerHTML === "Add To Favorites") {
-
-      userLocalStorage.favorites.push(userToAdd)
+      userLocalStorage.favorites.push(userToAdd);
       let newFavorites = [...new Set(userLocalStorage.favorites)];
-      userLocalStorage.favorites=newFavorites
+      userLocalStorage.favorites = newFavorites;
 
-       localStorage.setItem("user", JSON.stringify(userLocalStorage));
-      
-      await setTherapistToUpdate(() => ({
-        id: userToAdd._id,
-        addedToFavorites: [...userToAdd.addedToFavorites, userLoggedIn],
-      }));
+      localStorage.setItem("user", JSON.stringify(userLocalStorage));
 
-      await setUpdateData((prevState) => ({
+      // await setTherapistToUpdate(() => ({
+      //   id: userToAdd._id,
+      //   addedToFavorites: [...userToAdd.addedToFavorites, userLoggedIn],
+      // }));
+
+       setTherapistToUpdate(() => {
+        // let addedToFavoriets = [...userToAdd.addedToFavorites, userLoggedIn]
+        userToAdd.addedToFavorites.push(userLoggedIn)
+        let newAddedToFavorites = [...new Set(userToAdd.addedToFavorites)]
+        return {
+          id: userToAdd._id,
+          addedToFavorites: newAddedToFavorites,
+        };
+      });
+
+       setUpdateData((prevState) => ({
         ...prevState,
         favoritesToUpdate: [...prevState.favoritesToUpdate, userToAdd],
       }));
@@ -60,22 +69,30 @@ export function MainBtn(props) {
       return;
     }
 
-
-
-
     if (e.target.innerHTML === "Remove From Favorites") {
+      // const objIdIndex = userToAdd.addedToFavorites.findIndex(
+      //   (obj) => obj._id === userLoggedIn._id
+      // );
 
-      const objIdIndex = userToAdd.addedToFavorites.findIndex(
-          (obj) => obj._id === userLoggedIn._id
-        );
+      
 
-      userLocalStorage.favorites.splice(objIdIndex,1)
+      const objIdIndex = userLocalStorage.favorites.findIndex(
+        (obj) => obj._id === userToAdd._id
+      );
+
+     
+
+      userLocalStorage.favorites.splice(objIdIndex, 1);
       let newFavorites = [...new Set(userLocalStorage.favorites)];
-      userLocalStorage.favorites=newFavorites
+      userLocalStorage.favorites = newFavorites;
 
-       localStorage.setItem("user", JSON.stringify(userLocalStorage));
+      localStorage.setItem("user", JSON.stringify(userLocalStorage));
 
-      await setTherapistToUpdate((prevState) => {
+      
+
+       setTherapistToUpdate((prevState) => {
+
+       
 
         const objWithIdIndex = prevState.addedToFavorites.findIndex(
           (obj) => obj._id === userLoggedIn._id
@@ -85,21 +102,19 @@ export function MainBtn(props) {
           1
         );
 
+        userToAdd.addedToFavorites.splice(objWithIdIndex,1)
         return {
           id: userToAdd._id,
-          addedToFavorites:newAddedToFavorites
-
+          addedToFavorites: newAddedToFavorites,
         };
       });
 
-      
-
-      await setUpdateData((prevState) => {
-        const objWithIdIndex = prevState.favoritesToUpdate.findIndex(
-          (obj) => obj._id === userToAdd._id
-        );
+       setUpdateData((prevState) => {
+        // const objWithIdIndex = prevState.favoritesToUpdate.findIndex(
+        //   (obj) => obj._id === userToAdd._id
+        // );
         const newFavoritesToUpdate = prevState.favoritesToUpdate.splice(
-          objWithIdIndex,
+          objIdIndex,
           1
         );
 
