@@ -45,14 +45,17 @@ export function MainBtn(props) {
       //   id: userToAdd._id,
       //   addedToFavorites: [...userToAdd.addedToFavorites, userLoggedIn],
       // }));
+      let addedToFavoriets = [...userToAdd.addedToFavorites, userLoggedIn]
+      userToAdd.addedToFavorites = addedToFavoriets
+
+      
 
        setTherapistToUpdate(() => {
-        // let addedToFavoriets = [...userToAdd.addedToFavorites, userLoggedIn]
-        userToAdd.addedToFavorites.push(userLoggedIn)
-        let newAddedToFavorites = [...new Set(userToAdd.addedToFavorites)]
+       
+        // let newAddedToFavorites = [...new Set(userToAdd.addedToFavorites)]
         return {
           id: userToAdd._id,
-          addedToFavorites: newAddedToFavorites,
+          addedToFavorites: addedToFavoriets,
         };
       });
 
@@ -69,17 +72,17 @@ export function MainBtn(props) {
       return;
     }
 
+
+
+
     if (e.target.innerHTML === "Remove From Favorites") {
       // const objIdIndex = userToAdd.addedToFavorites.findIndex(
       //   (obj) => obj._id === userLoggedIn._id
       // );
-
       
-
       const objIdIndex = userLocalStorage.favorites.findIndex(
         (obj) => obj._id === userToAdd._id
       );
-
      
 
       userLocalStorage.favorites.splice(objIdIndex, 1);
@@ -88,26 +91,28 @@ export function MainBtn(props) {
 
       localStorage.setItem("user", JSON.stringify(userLocalStorage));
 
-      
+      const objWithIdIndex = userToAdd.addedToFavorites.findIndex(
+        (obj) => obj._id === userLoggedIn._id
+      );
+      userToAdd.addedToFavorites.splice(
+        objWithIdIndex,
+        1
+      );
 
+      console.log(userToAdd.addedToFavorites)
+
+      userToAdd.addedToFavorites.splice(objWithIdIndex,1)
        setTherapistToUpdate((prevState) => {
+        
 
-       
-
-        const objWithIdIndex = prevState.addedToFavorites.findIndex(
-          (obj) => obj._id === userLoggedIn._id
-        );
-        const newAddedToFavorites = prevState.addedToFavorites.splice(
-          objWithIdIndex,
-          1
-        );
-
-        userToAdd.addedToFavorites.splice(objWithIdIndex,1)
+        
         return {
           id: userToAdd._id,
-          addedToFavorites: newAddedToFavorites,
+          addedToFavorites: userToAdd.addedToFavorites,
         };
       });
+
+
 
        setUpdateData((prevState) => {
         // const objWithIdIndex = prevState.favoritesToUpdate.findIndex(
@@ -120,7 +125,7 @@ export function MainBtn(props) {
 
         return {
           ...prevState,
-          favoritesToUpdate: newFavoritesToUpdate,
+          favoritesToUpdate: userLocalStorage.favorites,
         };
       });
 
