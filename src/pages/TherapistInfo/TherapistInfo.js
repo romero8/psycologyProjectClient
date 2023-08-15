@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 // import { therapistTypesData } from "../../helpers/data";
 import "../TherapistInfo/TherapistInfo.css";
-import { Header } from "../../components/Header/Header";
 import logo from "../../icons/AnimatedLogo.png";
 import { MainBtn } from "../../components/MainBtn/MainBtn";
 import { faLocationDot, faVideo } from "@fortawesome/free-solid-svg-icons";

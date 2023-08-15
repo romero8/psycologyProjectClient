@@ -236,7 +236,7 @@ export function Specialties(props) {
                       className="specalistName"
                       to={`/specialties/${specialty}/${user.name} ${user.lastName}`}
                     >
-                      <h3>{user.name}</h3>
+                      <h3>{`${user.name} ${user.lastName}`}</h3>
                     </Link>
                     <span className="specalistAbility">{specialty}</span>
                     <span className="specalistAbout">{`Best ${specialty} Ever`}</span>
@@ -282,21 +282,15 @@ export function Specialties(props) {
           })
         : filterUsers.map((user) => {
             function added() {
-
               const objIdIndex = user.addedToFavorites.findIndex(
                 (obj) => obj._id === userLoggedIn._id
               );
                 if(objIdIndex === -1){
                   return false
                 }
-
                 else{
                   return true
                 }
-              
-              // for (let i = 0; i < user.addedToFavorites.length; i++) {
-              //   return user.addedToFavorites[i]._id;
-              // }
             }
 
             return (
@@ -309,7 +303,7 @@ export function Specialties(props) {
                     className="specalistName"
                     to={`/specialties/${user.profession}/${user.name} ${user.lastName}`}
                   >
-                    <h3>{user.name}</h3>
+                    <h3>{`${user.name} ${user.lastName}`}</h3>
                   </Link>
                   <span className="specalistAbility">{user.profession}</span>
                   <span className="specalistAbout">{`Best ${user.profession} Ever`}</span>

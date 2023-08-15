@@ -13,6 +13,7 @@ import { SignUp } from "./pages/SignUp/SignUp";
 import { LogIn } from "./pages/LogIn/LogIn";
 import { ClientRegistration } from "./pages/ClientRegistration/ClientRegistration";
 import { TherapistRegistration } from "./pages/TherapistRegistration/TherapistRegistration";
+import { Favorites } from "./pages/Favorites/Favorites";
 
 function App() {
   console.log();
@@ -69,6 +70,7 @@ function App() {
           />
           <Route path="/client/:clientName" element={<Client />} />
           <Route path="/therapist/:therapistName" element={<Therapist />} />
+          <Route path="/favorites" element={<Favorites/>} />
           <Route
             path="/:searchBySpecialties/:specialty"
             element={<Specialties />}

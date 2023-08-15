@@ -94,7 +94,7 @@ export function Header(props) {
            
 
             {clientLoggedIn ? (
-              <Nav.Link href="#link">Favorites</Nav.Link>
+              <Nav.Link href="/favorites">Favorites</Nav.Link>
             ) : (
               ""
             )}
