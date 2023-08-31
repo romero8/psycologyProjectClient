@@ -282,15 +282,27 @@ export function Specialties(props) {
           })
         : filterUsers.map((user) => {
             function added() {
-              const objIdIndex = user.addedToFavorites.findIndex(
-                (obj) => obj._id === userLoggedIn._id
+              // const objIdIndex = user.addedToFavorites.findIndex(
+              //   (obj) => obj._id === userLoggedIn._id
+              // );
+              //   if(objIdIndex === -1){
+              //     return false
+              //   }
+              //   else{
+              //     return true
+              //   }
+
+              const objIdIndex = userLocalStorage.favorites.findIndex(
+                (obj) => obj._id === user._id
               );
-                if(objIdIndex === -1){
-                  return false
-                }
-                else{
-                  return true
-                }
+
+              if(objIdIndex === -1){
+                return false
+              }
+
+              else{
+                return true
+              }
             }
 
             return (

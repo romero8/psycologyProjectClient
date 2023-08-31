@@ -48,19 +48,19 @@ export function MainBtn(props) {
         //   id: userToAdd._id,
         //   addedToFavorites: [...userToAdd.addedToFavorites, userLoggedIn],
         // }));
-        let addedToFavoriets = [...userToAdd.addedToFavorites, userLoggedIn]
-        userToAdd.addedToFavorites = addedToFavoriets
+        // let addedToFavoriets = [...userToAdd.addedToFavorites, userLoggedIn]
+        // userToAdd.addedToFavorites = addedToFavoriets
   
         
   
-         setTherapistToUpdate(() => {
+        //  setTherapistToUpdate(() => {
          
-          // let newAddedToFavorites = [...new Set(userToAdd.addedToFavorites)]
-          return {
-            id: userToAdd._id,
-            addedToFavorites: addedToFavoriets,
-          };
-        });
+        //   // let newAddedToFavorites = [...new Set(userToAdd.addedToFavorites)]
+        //   return {
+        //     id: userToAdd._id,
+        //     addedToFavorites: addedToFavoriets,
+        //   };
+        // });
   
          setUpdateData((prevState) => ({
           ...prevState,
@@ -97,23 +97,21 @@ export function MainBtn(props) {
         const objWithIdIndex = userToAdd.addedToFavorites.findIndex(
           (obj) => obj._id === userLoggedIn._id
         );
-        userToAdd.addedToFavorites.splice(
-          objWithIdIndex,
-          1
-        );
-  
+
+
+        // userToAdd.addedToFavorites.splice(
+        //   objWithIdIndex,
+        //   1
+        // );
    
-  
-        userToAdd.addedToFavorites.splice(objWithIdIndex,1)
-         setTherapistToUpdate((prevState) => {
+        // userToAdd.addedToFavorites.splice(objWithIdIndex,1)
+        //  setTherapistToUpdate((prevState) => {
           
-  
-          
-          return {
-            id: userToAdd._id,
-            addedToFavorites: userToAdd.addedToFavorites,
-          };
-        });
+        //   return {
+        //     id: userToAdd._id,
+        //     addedToFavorites: userToAdd.addedToFavorites,
+        //   };
+        // });
   
   
          setUpdateData((prevState) => {
@@ -145,56 +143,80 @@ export function MainBtn(props) {
 
     if(therapistToRemove){
 
-      const objIdIndex = userLocalStorage.favorites.findIndex(
-        (obj) => obj._id === therapistToRemove._id
-      );
-     
-      userLocalStorage.favorites.splice(objIdIndex, 1);
-      let newFavorites = [...new Set(userLocalStorage.favorites)];
-      userLocalStorage.favorites = newFavorites;
-
-      localStorage.setItem("user", JSON.stringify(userLocalStorage));
-
-      const objWithIdIndex = therapistToRemove.addedToFavorites.findIndex(
-        (obj) => obj._id === userLoggedIn._id
-      );
-      therapistToRemove.addedToFavorites.splice(
-        objWithIdIndex,
-        1
-      );
-
-      therapistToRemove.addedToFavorites.splice(objWithIdIndex,1)
-       setTherapistToUpdate((prevState) => {
-              
-        return {
-          id: therapistToRemove._id,
-          addedToFavorites: therapistToRemove.addedToFavorites,
-        };
-      });
-
-
-       setUpdateData((prevState) => {
-        // const objWithIdIndex = prevState.favoritesToUpdate.findIndex(
-        //   (obj) => obj._id === userToAdd._id
-        // );
-        const newFavoritesToUpdate = prevState.favoritesToUpdate.splice(
-          objIdIndex,
-          1
+      if(e.target.innerHTML === "Remove From Favorites"){
+        const objIdIndex = userLocalStorage.favorites.findIndex(
+          (obj) => obj._id === therapistToRemove._id
         );
+       
+        userLocalStorage.favorites.splice(objIdIndex, 1);
+        let newFavorites = [...new Set(userLocalStorage.favorites)];
+        userLocalStorage.favorites = newFavorites;
+  
+        localStorage.setItem("user", JSON.stringify(userLocalStorage));
+  
+        const objWithIdIndex = therapistToRemove.addedToFavorites.findIndex(
+          (obj) => obj._id === userLoggedIn._id
+        );
+  
+        // therapistToRemove.addedToFavorites.splice(
+        //   objWithIdIndex,
+        //   1
+        // );
+  
+        // therapistToRemove.addedToFavorites.splice(objWithIdIndex,1)
+  
+         setTherapistToUpdate((prevState) => {
+                
+          return {
+            id: therapistToRemove._id,
+            addedToFavorites: therapistToRemove.addedToFavorites,
+          };
+        });
+  
+         setUpdateData((prevState) => {
+          // const objWithIdIndex = prevState.favoritesToUpdate.findIndex(
+          //   (obj) => obj._id === userToAdd._id
+          // );
+          const newFavoritesToUpdate = prevState.favoritesToUpdate.splice(
+            objIdIndex,
+            1
+          );
+  
+          return {
+            ...prevState,
+            favoritesToUpdate: userLocalStorage.favorites,
+          };
+        });
+  
+      }
 
-        return {
-          ...prevState,
-          favoritesToUpdate: userLocalStorage.favorites,
-        };
-      });
+      
+     
 
-      setCheck((check) => {
+
+      if(e.target.innerHTML === 'Send Info'){
+
+        let addedToFavoriets = [...therapistToRemove.addedToFavorites, userLoggedIn]
+
+         setTherapistToUpdate(() => ({
+          id: therapistToRemove._id,
+          addedToFavorites: addedToFavoriets,
+        }));
+        
+        therapistToRemove.addedToFavorites = addedToFavoriets
+
+        e.target.innerHTML='sent'
+      }
+
+      
+    }
+
+
+
+ setCheck((check) => {
         return [check + 1];
       });
-
-     
-
-    }
+    
 
 
 

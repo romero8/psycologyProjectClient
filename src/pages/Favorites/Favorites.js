@@ -68,12 +68,15 @@ export function Favorites() {
           const objIdIndex = therapist.addedToFavorites.findIndex(
             (obj) => obj._id === userLoggedIn._id
           );
+
           if (objIdIndex === -1) {
             return false;
           } else {
             return true;
           }
         }
+
+        
 
         return (
           <div className="cardContainer">
@@ -119,6 +122,23 @@ export function Favorites() {
                   setCheck={setCheck}
                   userLoggedIn={userLoggedIn}
                 />
+
+              {
+                !added() ?  <MainBtn
+                value="Send Info"
+                therapistToRemove={therapist}
+                usersAdded={usersAdded}
+                setUsersAdded={setUsersAdded}
+                updateData={updateData}
+                setUpdateData={setUpdateData}
+                therapistToUpdate={therapistToUpdate}
+                setTherapistToUpdate={setTherapistToUpdate}
+                check={check}
+                setCheck={setCheck}
+                userLoggedIn={userLoggedIn}
+              /> : ''
+              }
+               
              
 
               <MainBtn value="Call" />
