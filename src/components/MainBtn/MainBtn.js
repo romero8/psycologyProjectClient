@@ -196,22 +196,32 @@ export function MainBtn(props) {
 
       if(e.target.innerHTML === 'Send Info'){
 
-        let addedToFavoriets = [...therapistToRemove.addedToFavorites, userLoggedIn]
+        const objIdIndex = userLocalStorage.favorites.findIndex(
+          (obj) => obj._id === therapistToRemove._id
+        );
+
+        
+
+        let newAddedToFavorites = [...therapistToRemove.addedToFavorites, userLoggedIn]
+        userLocalStorage.favorites[objIdIndex].addedToFavorites=newAddedToFavorites
+        console.log(userLocalStorage)
+        localStorage.setItem("user", JSON.stringify(userLocalStorage));
 
          setTherapistToUpdate(() => ({
           id: therapistToRemove._id,
-          addedToFavorites: addedToFavoriets,
+          addedToFavorites: newAddedToFavorites,
         }));
         
-        therapistToRemove.addedToFavorites = addedToFavoriets
+        // therapistToRemove.addedToFavorites = addedToFavoriets
+       
 
-        e.target.innerHTML='sent'
+        // e.target.innerHTML='sent'
       }
 
       
     }
 
-
+    
 
  setCheck((check) => {
         return [check + 1];
