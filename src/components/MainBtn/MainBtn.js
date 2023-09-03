@@ -31,8 +31,7 @@ export function MainBtn(props) {
     //   return [check + 1];
     // });
 
-  
-
+  if(userLocalStorage.favorites){
     if(userToAdd){
       const objWithIdIndex = updateData.favoritesToUpdate.findIndex(
         (obj) => obj._id === userToAdd._id
@@ -195,13 +194,10 @@ export function MainBtn(props) {
 
 
       if(e.target.innerHTML === 'Send Info'){
-
         const objIdIndex = userLocalStorage.favorites.findIndex(
           (obj) => obj._id === therapistToRemove._id
         );
-
         
-
         let newAddedToFavorites = [...therapistToRemove.addedToFavorites, userLoggedIn]
         userLocalStorage.favorites[objIdIndex].addedToFavorites=newAddedToFavorites
         console.log(userLocalStorage)
@@ -213,22 +209,27 @@ export function MainBtn(props) {
         }));
         
         // therapistToRemove.addedToFavorites = addedToFavoriets
-       
-
         // e.target.innerHTML='sent'
       }
 
       
+
+      
     }
+    setCheck((check) => {
+      return [check + 1];
+    });
+  }
 
-    
-
- setCheck((check) => {
-        return [check + 1];
-      });
-    
+   
 
 
+    if(userLocalStorage.addedToFavorites){
+      if(e.target.innerHTML === 'I Called'){
+        console.log(userLocalStorage)
+      }
+    }
+   
 
   }
 

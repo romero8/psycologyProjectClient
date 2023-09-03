@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { getData } from "../../helpers/fetchHelper";
 // import { therapistTypesData } from "../../helpers/data";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams ,useNavigate} from "react-router-dom";
 import { professions } from "../../helpers/data";
 import Cookies from "universal-cookie";
 import { jwt } from "jwt-decode";
@@ -17,6 +17,7 @@ export function Header(props) {
   const [data, setData] = useState([]);
   const userLoggedIn = props.userLoggedIn;
   const setLoggedIn = props.setLoggedIn;
+  
 
   const cookies = new Cookies();
 
@@ -58,6 +59,7 @@ export function Header(props) {
   function logOut() {
     setLoggedIn(null);
     window.localStorage.removeItem("token");
+    window.localStorage.removeItem("user");
   }
 
   return (
@@ -99,7 +101,7 @@ export function Header(props) {
               ""
             )}
             {therapistLoggedIn ? (
-              <Nav.Link href="#link">Inquiries</Nav.Link>
+              <Nav.Link href="/notifications">Notifications</Nav.Link>
             ) : (
               ""
             )}
@@ -120,7 +122,7 @@ export function Header(props) {
               ""
             )}
             {userLoggedIn ? (
-              <Nav.Link onClick={() => logOut()}>Log-Out</Nav.Link>
+              <Nav.Link href="/" onClick={() => logOut()} >Log-Out</Nav.Link>
             ) : (
               ""
             )}

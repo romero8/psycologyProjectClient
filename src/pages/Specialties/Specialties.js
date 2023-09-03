@@ -32,13 +32,17 @@ export function Specialties(props) {
   const [check, setCheck] = useState([1]);
 
   let userLocalStorage = JSON.parse(window.localStorage.getItem("user"));
+  let userLocalStorageFavorites = userLocalStorage ? userLocalStorage.favorites : ''
 
   const [userLoggedIn, setUserLoggedIn] = useState(userLocalStorage);
 
+  
   const [updateData, setUpdateData] = useState({
     userLoggedIn: userLoggedIn,
-    favoritesToUpdate: userLoggedIn.favorites,
+    favoritesToUpdate: userLocalStorageFavorites,
   });
+
+  
 
   const [therapistToUpdate, setTherapistToUpdate] = useState({
     id: "",
@@ -291,18 +295,21 @@ export function Specialties(props) {
               //   else{
               //     return true
               //   }
-
-              const objIdIndex = userLocalStorage.favorites.findIndex(
-                (obj) => obj._id === user._id
-              );
-
-              if(objIdIndex === -1){
-                return false
+              if(userLocalStorage){
+                const objIdIndex = userLocalStorage.favorites.findIndex(
+                  (obj) => obj._id === user._id
+                );
+  
+                if(objIdIndex === -1){
+                  return false
+                }
+  
+                else{
+                  return true
+                }
               }
 
-              else{
-                return true
-              }
+              
             }
 
             return (
