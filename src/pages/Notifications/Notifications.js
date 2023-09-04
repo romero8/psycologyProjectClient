@@ -13,7 +13,10 @@ export function Notifications() {
   const [usersAdded, setUsersAdded] = useState([]);
   const [check, setCheck] = useState([1]);
 
+ 
+
   let userLocalStorage = JSON.parse(window.localStorage.getItem("user"));
+  const [userLocalStorageAddedToFavArr,setUserLocalStorageAddedToFavArr] = useState(userLocalStorage.addedToFavorites)
 
   const [userLoggedIn, setUserLoggedIn] = useState(userLocalStorage);
 
@@ -63,7 +66,7 @@ export function Notifications() {
       <div className="cardsTitle">
         <h2>Notifications</h2>
       </div>
-      {userLocalStorage.addedToFavorites.map((client) => {
+      {userLocalStorageAddedToFavArr.map((client) => {
         // function added() {
         //   const objIdIndex = therapist.addedToFavorites.findIndex(
         //     (obj) => obj._id === userLoggedIn._id
@@ -122,7 +125,7 @@ export function Notifications() {
                   userLoggedIn={userLoggedIn}
                 /> */}
 
-              <MainBtn value="I Called" />
+              <MainBtn value="I Called" clientToArrange = {client} setUserLocalStorageAddedToFavArr={setUserLocalStorageAddedToFavArr}/>
               <MainBtn value="Appointment" />
             </div>
           </div>
