@@ -199,9 +199,7 @@ export function MainBtn(props) {
           // e.target.innerHTML='sent'
         }
       }
-      setCheck((check) => {
-        return [check + 1];
-      });
+      
     }
 
     if (userLocalStorage.addedToFavorites) {
@@ -231,10 +229,15 @@ export function MainBtn(props) {
         userLocalStorage.addedToFavorites = newAddedToFavoritesArr
         localStorage.setItem("user", JSON.stringify(userLocalStorage));
         setUserLocalStorageAddedToFavArr(newAddedToFavoritesArr)
-
-
+        setTherapistToUpdate(() => ({
+          id: userLocalStorage._id,
+          addedToFavorites: userLocalStorage.addedToFavorites,
+        }));
       }
     }
+    setCheck((check) => {
+      return [check + 1];
+    });
   }
 
   return (

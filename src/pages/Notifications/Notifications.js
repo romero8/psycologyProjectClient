@@ -13,17 +13,16 @@ export function Notifications() {
   const [usersAdded, setUsersAdded] = useState([]);
   const [check, setCheck] = useState([1]);
 
- 
-
   let userLocalStorage = JSON.parse(window.localStorage.getItem("user"));
-  const [userLocalStorageAddedToFavArr,setUserLocalStorageAddedToFavArr] = useState(userLocalStorage.addedToFavorites)
+  const [userLocalStorageAddedToFavArr, setUserLocalStorageAddedToFavArr] =
+    useState(userLocalStorage.addedToFavorites);
 
   const [userLoggedIn, setUserLoggedIn] = useState(userLocalStorage);
 
-//   const [updateData, setUpdateData] = useState({
-//     userLoggedIn: userLoggedIn,
-//     favoritesToUpdate: userLoggedIn.favorites,
-//   });
+  //   const [updateData, setUpdateData] = useState({
+  //     userLoggedIn: userLoggedIn,
+  //     favoritesToUpdate: userLoggedIn.favorites,
+  //   });
 
   const [therapistToUpdate, setTherapistToUpdate] = useState({
     id: "",
@@ -79,8 +78,6 @@ export function Notifications() {
         //   }
         // }
 
-        
-
         return (
           <div className="cardContainer">
             <div className="cardPhotoBox">
@@ -98,9 +95,7 @@ export function Notifications() {
                 <div className="iconBox">
                   <FontAwesomeIcon icon={faLocationDot} className="cardIcon" />
                 </div>
-                <p className="specalistAvailability">
-                  {client.address.city}
-                </p>
+                <p className="specalistAvailability">{client.address.city}</p>
               </div>
               <div className="specalistAvailabilityBox">
                 <div className="iconBox">
@@ -110,8 +105,7 @@ export function Notifications() {
               </div>
             </div>
             <div className="cardActions">
-              
-                {/* <MainBtn
+              {/* <MainBtn
                   value="Remove From Favorites"
                   therapistToRemove={therapist}
                   usersAdded={usersAdded}
@@ -125,7 +119,15 @@ export function Notifications() {
                   userLoggedIn={userLoggedIn}
                 /> */}
 
-              <MainBtn value="I Called" clientToArrange = {client} setUserLocalStorageAddedToFavArr={setUserLocalStorageAddedToFavArr}/>
+              <MainBtn
+                value="I Called"
+                clientToArrange={client}
+                setUserLocalStorageAddedToFavArr={
+                  setUserLocalStorageAddedToFavArr
+                }
+                setTherapistToUpdate={setTherapistToUpdate}
+                setCheck = {setCheck}
+              />
               <MainBtn value="Appointment" />
             </div>
           </div>
