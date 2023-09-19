@@ -1,5 +1,5 @@
 .SearchForSpecialistContainer {
-  background-color: #eaf5fa;
+  /* background-color: #eaf5fa; */
   padding: 20px;
   height: 260px;
 }
@@ -28,7 +28,7 @@
   height: 50px;
   width: 150px;
   font-weight: bold;
-  background-color: #eaf5fa;
+  /* background-color: #eaf5fa; */
 }
 
 .accordionBtn:hover {

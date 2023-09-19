@@ -6,13 +6,17 @@ import { MainBtn } from "../../components/MainBtn/MainBtn";
 import { faLocationDot, faVideo } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function TherapistInfo(props) {
   const allTherapists = props.allTherapists;
   let { therapistName } = useParams();
   let { specialty } = useParams();
+  const navigate = useNavigate();
 
-  console.log(allTherapists);
+  if (allTherapists.length === 0) {
+    window.location.assign("/");
+  }
 
   let nameAndLastName = therapistName ? therapistName.split(" ") : "";
 

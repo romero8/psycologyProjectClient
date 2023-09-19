@@ -11,6 +11,7 @@ export function TherapistTypesComp() {
  
 
   const [allTherapists,setAllTherapists] = useState([])
+  // const [therapistsAbout,setTherapistsAbout] = useState([])
 
   useEffect(() => {
    
@@ -23,12 +24,72 @@ export function TherapistTypesComp() {
   }, []);
   
 
+  const therapistsAbout = allTherapists.filter((therapist)=>{
+    if(therapist.about !== ''){
+     return therapist
+    }
+  })
+
+  const [therapistsAboutSum,setTherapistsAboutSum] = useState([])
+  
+    const shuffledTherapistsAbout = [];
+    let usedIndexes = [];
+
+    let i = 0;
+
+    while (i< therapistsAbout.length) {
+      let randomNumber = Math.floor(Math.random() * therapistsAbout.length);
+      if(!usedIndexes.includes(randomNumber)){
+        shuffledTherapistsAbout.push(therapistsAbout[randomNumber]);
+        usedIndexes.push(randomNumber);
+        i++;
+      }
+    }
+
+    
+    
+  
+  console.log(therapistsAboutSum)
+  
+
+  
+  
   return (
     <div className="therapistTypesContainer">
       <h2 className="therapistTitle">General Therapists</h2>
 
       <Carousel variant="dark" indicators={false}>
-        <Carousel.Item>
+      {
+        shuffledTherapistsAbout.map((therapist)=>{
+          return(
+        
+            <Carousel.Item>
+              <Link className="therapistTypeBox" to={`/searchBySpecialties/${therapist.profession}/${therapist.name} ${therapist.lastName}`}>
+              <div className="therapistTypeBox">
+                <h3>{`"${therapist.about}"`}</h3>
+                <p>{`${therapist.name} ${therapist.lastName} lives in ${therapist.address.city} (${therapist.profession})`}</p> 
+              </div>
+              </Link>
+              </Carousel.Item>
+          )
+        })
+      }
+      </Carousel>
+      {/* <br/>
+      <MainBtn value="Click For More" color="outline-info"/> */}
+    </div>
+  );
+}
+
+
+
+
+
+
+
+
+
+{/* <Carousel.Item>
           <div className="therapistTypesBody">
             {allTherapists.slice(0, 6).map((therapist, index) => {
               return (
@@ -78,10 +139,4 @@ export function TherapistTypesComp() {
               );
             })}
           </div>
-        </Carousel.Item>
-      </Carousel>
-      {/* <br/>
-      <MainBtn value="Click For More" color="outline-info"/> */}
-    </div>
-  );
-}
+        </Carousel.Item> */}

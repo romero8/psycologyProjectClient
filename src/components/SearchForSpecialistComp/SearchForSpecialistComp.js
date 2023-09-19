@@ -26,18 +26,15 @@ import { useNavigate } from "react-router-dom";
 export function SearchForSpecialistComp({ eventKey }) {
   const [noneState, setNoneState] = useState(false);
 
-
-
   const [nameSearch, setNameSearch] = useState("");
   const [professionSearch, setProfessionSearch] = useState("");
   const [citySearch, setCitySearch] = useState("");
-  const [rangeSearch, setRangeSearch] = useState([0,1000])
+  const [rangeSearch, setRangeSearch] = useState([0, 1000]);
   const [languageSearch, setLanguageSearch] = useState("");
   const [experienceSearch, setExperienceSearch] = useState("");
   const [genderSearch, setGenderSearch] = useState("");
   const [expertiesSearch, setExpertiesSearch] = useState("");
   const [lgbtqSearch, setLGBTQSearch] = useState("");
-  
 
   const navigate = useNavigate();
 
@@ -121,7 +118,22 @@ export function SearchForSpecialistComp({ eventKey }) {
       icon: <FontAwesomeIcon icon={faBook} />,
       type: "text",
       searchType: "select",
-      options: ["blablabla", "blablabla", "blablabla", "blablabla"],
+      options: [
+        "Creative Arts Therapy",
+        "Psychodrama Therapy",
+        "Bibliotherapist",
+        "Psycho Therapy",
+        "CBT Therapy",
+        "DBT",
+        "NLP",
+        "EMDR",
+        "Coacher",
+        "Animal-Assisted Therapy",
+        "Neurofeedback",
+        "Psychoanaliest",
+        "Family Therapy",
+        "Caple Therapy",
+      ],
       specialistUserSearchType: "experties",
     },
 
@@ -135,14 +147,14 @@ export function SearchForSpecialistComp({ eventKey }) {
       specialistUserSearchType: "gender",
     },
 
-    {
-      placeHolder: "LGBTQ friendly",
-      icon: <FontAwesomeIcon icon={faPersonHalfDress} />,
-      type: "number",
-      searchType: "checkBox",
-      options: ["yes", "no"],
-      specialistUserSearchType: "LGBTQ",
-    },
+    // {
+    //   placeHolder: "LGBTQ friendly",
+    //   icon: <FontAwesomeIcon icon={faPersonHalfDress} />,
+    //   type: "number",
+    //   searchType: "checkBox",
+    //   options: ["yes", "no"],
+    //   specialistUserSearchType: "LGBTQ",
+    // },
   ];
 
   function none() {
@@ -182,7 +194,7 @@ export function SearchForSpecialistComp({ eventKey }) {
                   setExpertiesSearch,
                   setLGBTQSearch,
                 }}
-                value={{ genderSearch, expertiesSearch ,rangeSearch}}
+                value={{ genderSearch, expertiesSearch, rangeSearch }}
               />
             );
           })}
@@ -210,7 +222,7 @@ export function SearchForSpecialistComp({ eventKey }) {
                   setExpertiesSearch,
                   setLGBTQSearch,
                 }}
-                value={{ genderSearch, expertiesSearch,rangeSearch }}
+                value={{ genderSearch, expertiesSearch, rangeSearch }}
               />
             );
           })}

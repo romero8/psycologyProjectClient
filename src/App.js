@@ -21,6 +21,8 @@ function App() {
 
   const [data, setData] = useState({});
   const [userLoggedIn, setLoggedIn] = useState(null);
+  const [allTherapists, setAllTherapists] = useState([]);
+  const [allClients, setAllClients] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:5000/")
@@ -33,18 +35,24 @@ function App() {
     if (token) {
       setLoggedIn(user);
     }
-  }, []);
 
-  
-
-  const [allTherapists, setAllTherapists] = useState([]);
-
-  useEffect(() => {
     fetch("http://localhost:5000/allTherapists")
       .then((response) => response.json())
       .then((data) => setAllTherapists(data.data))
       .catch((err) => console.log(err));
+
+    fetch("http://localhost:5000/allClients")
+      .then((response) => response.json())
+      .then((data) => setAllClients(data.data))
+      .catch((err) => console.log(err));
+
   }, []);
+
+  
+
+  
+
+  
 
 
   return (
@@ -52,7 +60,7 @@ function App() {
       <Header userLoggedIn={userLoggedIn} setLoggedIn={setLoggedIn} />
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home/>} />
           <Route path="/:userId" element={<Home />} />
           <Route path="/signUp" element={<SignUp />} />
           <Route

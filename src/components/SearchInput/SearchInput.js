@@ -85,9 +85,9 @@ setSearch.setRangeSearch(e.target.value)
     if (placeHolder === "Gender") {
       setSearch.setGenderSearch(innerHTML);
     }
-    if (placeHolder === "LGBTQ friendly") {
-      setSearch.setCitySearch(innerHTML);
-    }
+    // if (placeHolder === "LGBTQ friendly") {
+    //   setSearch.setCitySearch(innerHTML);
+    // }
   }
 
   {
@@ -314,45 +314,45 @@ setSearch.setRangeSearch(e.target.value)
       );
     }
 
-    if (searchType === "checkBox") {
-      return (
-        <div className="searchInputContainer short">
-          <Form>
-            {["radio"].map((type) => (
-              <div
-                key={`inline-${type}`}
-                className={
-                  inputSize ? `searchInput ${inputSize}` : "searchInput"
-                }
-              >
-                {/* <Form.Check
-                inline
-                label="1"
-                name="group1"
-                type={type}
-                id={`inline-${type}-1`}
-              /> */}
+    // if (searchType === "checkBox") {
+    //   return (
+    //     <div className="searchInputContainer short">
+    //       <Form>
+    //         {["radio"].map((type) => (
+    //           <div
+    //             key={`inline-${type}`}
+    //             className={
+    //               inputSize ? `searchInput ${inputSize}` : "searchInput"
+    //             }
+    //           >
+    //             {/* <Form.Check
+    //             inline
+    //             label="1"
+    //             name="group1"
+    //             type={type}
+    //             id={`inline-${type}-1`}
+    //           /> */}
 
-                <label>{placeHolder}</label>
-                <br />
-                {options.map((option) => {
-                  return (
-                    <Form.Check
-                      inline
-                      label={option}
-                      name="group1"
-                      type={type}
-                      id={`inline-${type}-1`}
-                    />
-                  );
-                })}
-              </div>
-            ))}
-          </Form>
-          <div className="iconContainer">{icon}</div>
-        </div>
-      );
-    }
+    //             <label>{placeHolder}</label>
+    //             <br />
+    //             {options.map((option) => {
+    //               return (
+    //                 <Form.Check
+    //                   inline
+    //                   label={option}
+    //                   name="group1"
+    //                   type={type}
+    //                   id={`inline-${type}-1`}
+    //                 />
+    //               );
+    //             })}
+    //           </div>
+    //         ))}
+    //       </Form>
+    //       <div className="iconContainer">{icon}</div>
+    //     </div>
+    //   );
+    // }
   }
 
   //   return (
