@@ -22,6 +22,7 @@ import AccordionBody from "react-bootstrap/AccordionBody";
 import AccordionButton from "react-bootstrap/AccordionButton";
 // import { therapistTypesData } from "../../helpers/data";
 import { useNavigate } from "react-router-dom";
+import { experties } from "../../helpers/data";
 
 export function SearchForSpecialistComp({ eventKey }) {
   const [noneState, setNoneState] = useState(false);
@@ -118,22 +119,7 @@ export function SearchForSpecialistComp({ eventKey }) {
       icon: <FontAwesomeIcon icon={faBook} />,
       type: "text",
       searchType: "select",
-      options: [
-        "Creative Arts Therapy",
-        "Psychodrama Therapy",
-        "Bibliotherapist",
-        "Psycho Therapy",
-        "CBT Therapy",
-        "DBT",
-        "NLP",
-        "EMDR",
-        "Coacher",
-        "Animal-Assisted Therapy",
-        "Neurofeedback",
-        "Psychoanaliest",
-        "Family Therapy",
-        "Caple Therapy",
-      ],
+      options: experties,
       specialistUserSearchType: "experties",
     },
 
