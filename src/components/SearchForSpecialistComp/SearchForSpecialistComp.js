@@ -80,6 +80,14 @@ export function SearchForSpecialistComp({ eventKey }) {
       specialistUserSearchType: "typeName",
     },
     {
+      placeHolder: "Experties",
+      icon: <FontAwesomeIcon icon={faBook} />,
+      type: "text",
+      searchType: "select",
+      options: experties,
+      specialistUserSearchType: "experties",
+    },
+    {
       placeHolder: "City",
       icon: <FontAwesomeIcon icon={faTreeCity} />,
       type: "text",
@@ -88,16 +96,15 @@ export function SearchForSpecialistComp({ eventKey }) {
       specialistUserSearchType: "address.city",
     },
     {
-      placeHolder: "Price Range",
-      icon: <FontAwesomeIcon icon={faSackDollar} />,
-      type: "number",
-      searchType: "range",
-      inputSize: "long",
-      specialistUserSearchType: "price",
+      placeHolder: "Gender",
+      icon: <FontAwesomeIcon icon={faTransgender} />,
+      type: "text",
+      searchType: "select",
+      options: ["male", "female", "other"],
+      inputSize: "short",
+      specialistUserSearchType: "gender",
     },
-  ];
-
-  const specialistUserAdvencedSearch = [
+    
     {
       placeHolder: "Language",
       icon: <FontAwesomeIcon icon={faGlobe} />,
@@ -114,34 +121,63 @@ export function SearchForSpecialistComp({ eventKey }) {
       inputSize: "short",
       specialistUserSearchType: "experience",
     },
+    
     {
-      placeHolder: "Experties",
-      icon: <FontAwesomeIcon icon={faBook} />,
-      type: "text",
-      searchType: "select",
-      options: experties,
-      specialistUserSearchType: "experties",
+      placeHolder: "Price Range",
+      icon: <FontAwesomeIcon icon={faSackDollar} />,
+      type: "number",
+      searchType: "range",
+      inputSize: "long",
+      specialistUserSearchType: "price",
     },
-
-    {
-      placeHolder: "Gender",
-      icon: <FontAwesomeIcon icon={faTransgender} />,
-      type: "text",
-      searchType: "select",
-      options: ["male", "female", "other"],
-      inputSize: "short",
-      specialistUserSearchType: "gender",
-    },
-
-    // {
-    //   placeHolder: "LGBTQ friendly",
-    //   icon: <FontAwesomeIcon icon={faPersonHalfDress} />,
-    //   type: "number",
-    //   searchType: "checkBox",
-    //   options: ["yes", "no"],
-    //   specialistUserSearchType: "LGBTQ",
-    // },
+   
   ];
+
+  // const specialistUserAdvencedSearch = [
+  //   {
+  //     placeHolder: "Language",
+  //     icon: <FontAwesomeIcon icon={faGlobe} />,
+  //     type: "text",
+  //     searchType: "input",
+  //     inputSize: "short",
+  //     specialistUserSearchType: "language",
+  //   },
+  //   {
+  //     placeHolder: "Experience",
+  //     icon: <FontAwesomeIcon icon={faListOl} />,
+  //     type: "number",
+  //     searchType: "input",
+  //     inputSize: "short",
+  //     specialistUserSearchType: "experience",
+  //   },
+  //   {
+  //     placeHolder: "Experties",
+  //     icon: <FontAwesomeIcon icon={faBook} />,
+  //     type: "text",
+  //     searchType: "select",
+  //     options: experties,
+  //     specialistUserSearchType: "experties",
+  //   },
+
+  //   {
+  //     placeHolder: "Gender",
+  //     icon: <FontAwesomeIcon icon={faTransgender} />,
+  //     type: "text",
+  //     searchType: "select",
+  //     options: ["male", "female", "other"],
+  //     inputSize: "short",
+  //     specialistUserSearchType: "gender",
+  //   },
+
+  //   // {
+  //   //   placeHolder: "LGBTQ friendly",
+  //   //   icon: <FontAwesomeIcon icon={faPersonHalfDress} />,
+  //   //   type: "number",
+  //   //   searchType: "checkBox",
+  //   //   options: ["yes", "no"],
+  //   //   specialistUserSearchType: "LGBTQ",
+  //   // },
+  // ];
 
   function none() {
     if (noneState) {
@@ -153,76 +189,44 @@ export function SearchForSpecialistComp({ eventKey }) {
 
   return (
     <div className="SearchForSpecialistContainer">
-      <Accordion
-        as="form"
-        className="accordion"
-        onSubmit={(e) => searchForTherapist(e)}
-      >
-        <AccordionBody as="div" className="SearchForSpecialistBody">
-          {specialistUserAdvencedSearch.map((user) => {
-            return (
-              <SearchInput
-                placeHolder={user.placeHolder}
-                icon={user.icon}
-                type={user.type}
-                searchType={user.searchType}
-                options={user.options}
-                inputSize={user.inputSize}
-                specialistUserSearchType={user.specialistUserSearchType}
-                setSearch={{
-                  setNameSearch,
-                  setProfessionSearch,
-                  setCitySearch,
-                  setRangeSearch,
-                  setLanguageSearch,
-                  setExperienceSearch,
-                  setGenderSearch,
-                  setExpertiesSearch,
-                  setLGBTQSearch,
-                }}
-                value={{ genderSearch, expertiesSearch, rangeSearch }}
-              />
-            );
-          })}
-        </AccordionBody>
-
-        <div className="SearchForSpecialistBody">
-          {specialistUserSearch.map((user) => {
-            return (
-              <SearchInput
-                placeHolder={user.placeHolder}
-                icon={user.icon}
-                type={user.type}
-                searchType={user.searchType}
-                options={user.options}
-                inputSize={user.inputSize}
-                specialistUserSearchType={user.specialistUserSearchType}
-                setSearch={{
-                  setNameSearch,
-                  setProfessionSearch,
-                  setCitySearch,
-                  setRangeSearch,
-                  setLanguageSearch,
-                  setExperienceSearch,
-                  setGenderSearch,
-                  setExpertiesSearch,
-                  setLGBTQSearch,
-                }}
-                value={{ genderSearch, expertiesSearch, rangeSearch }}
-              />
-            );
-          })}
-          {/* <MainBtn value="Search" color="outline-secondary"/> */}
-          <button className="inputBtn">Search</button>
-          <AccordionButton
-            as="div"
-            onClick={() => setNoneState(true)}
-            className={`accordionBtn${none()}`}
-          >
-            Advenced Filter
-          </AccordionButton>
+      <div className="SearchForSpecialistBody">
+      <div className="SearchForSpecialistTitleBox">
+        <h3 className="SearchForSpecialistTitle">
+          What type of therapy are you looking for?
+        </h3>
+      </div>
+        {specialistUserSearch.map((user) => {
+          return (
+            <SearchInput
+              placeHolder={user.placeHolder}
+              icon={user.icon}
+              type={user.type}
+              searchType={user.searchType}
+              options={user.options}
+              inputSize={user.inputSize}
+              specialistUserSearchType={user.specialistUserSearchType}
+              setSearch={{
+                setNameSearch,
+                setProfessionSearch,
+                setCitySearch,
+                setRangeSearch,
+                setLanguageSearch,
+                setExperienceSearch,
+                setGenderSearch,
+                setExpertiesSearch,
+                setLGBTQSearch,
+              }}
+              value={{ genderSearch, expertiesSearch, rangeSearch }}
+            />
+          );
+        })}
+        {/* <MainBtn value="Search" color="outline-secondary"/> */}
+        <div className="inputBtnBox">
+          <button className="inputBtn" onClick={searchForTherapist}>
+            Search
+          </button>
         </div>
-      </Accordion>
+      </div>
     </div>
   );
 }

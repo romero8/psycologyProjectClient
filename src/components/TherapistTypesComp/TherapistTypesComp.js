@@ -56,8 +56,6 @@ export function TherapistTypesComp() {
   
   return (
     <div className="therapistTypesContainer">
-      <h2 className="therapistTitle">General Therapists</h2>
-
       <Carousel variant="dark" indicators={false}>
       {
         shuffledTherapistsAbout.map((therapist)=>{

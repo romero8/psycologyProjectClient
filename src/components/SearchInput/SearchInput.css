@@ -21,7 +21,8 @@
     width: 220px;
 }
 .iconContainer{
-    margin: 10px;
+    margin: 15px;
+    margin-top: 25px;
     display: flex;
     justify-content: center;
     align-items: center;

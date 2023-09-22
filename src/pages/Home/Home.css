@@ -1,0 +1,18 @@
+.homePageContainer{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.titleContainer{
+    margin: 50px;
+}
+
+.title{
+    font-size: 50px;
+}
+
+.logoName{
+    color:#7fd9e9;
+}

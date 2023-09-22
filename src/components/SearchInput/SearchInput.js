@@ -205,6 +205,55 @@ setSearch.setRangeSearch(e.target.value)
         </div>
       );
     }
+    if (specialistUserSearchType === "gender") {
+     
+      return (
+        <div className="searchInputContainer short">
+          <Autocomplete
+          onChange={handleChange}
+            style={{ border: "none", boxShadow: "none" }}
+            disablePortal
+            id="country"
+            options={options.map((user) => user)}
+            sx={{ width: 300 }}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                label={placeHolder}
+                style={{ border: "none", boxShadow: "none" }}
+                variant="standard"
+              />
+            )}
+          />
+          <div className="iconContainer">{icon}</div>
+        </div>
+      );
+    }
+
+    if (specialistUserSearchType === "experties") {
+     
+      return (
+        <div className="searchInputContainer short">
+          <Autocomplete
+          onChange={handleChange}
+            style={{ border: "none", boxShadow: "none" }}
+            disablePortal
+            id="country"
+            options={options.map((user) => user)}
+            sx={{ width: 300 }}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                label={placeHolder}
+                style={{ border: "none", boxShadow: "none" }}
+                variant="standard"
+              />
+            )}
+          />
+          <div className="iconContainer">{icon}</div>
+        </div>
+      );
+    }
 
     // if (searchType === "select") {
     //   return (
@@ -226,30 +275,30 @@ setSearch.setRangeSearch(e.target.value)
 
     
     
-    if (specialistUserSearchType === "gender") {
-      return (
-        <div className="searchInputContainer short">
-          <FormControl fullWidth className="searchInputContainer">
-            <InputLabel>{placeHolder}</InputLabel>
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              label={placeHolder}
-              value={value.genderSearch}
-              onChange={handleGenderSelected}
-            >
-              <MenuItem value="">
-                <em>None</em>
-              </MenuItem>
-              {options.map((option) => {
-                return <MenuItem value={option}>{option}</MenuItem>;
-              })}
-            </Select>
-          </FormControl>
-          <div className="iconContainer">{icon}</div>
-        </div>
-      );
-    }
+    // if (specialistUserSearchType === "gender") {
+    //   return (
+    //     <div className="searchInputContainer short">
+    //       <FormControl fullWidth className="searchInputContainer">
+    //         <InputLabel>{placeHolder}</InputLabel>
+    //         <Select
+    //           labelId="demo-simple-select-label"
+    //           id="demo-simple-select"
+    //           label={placeHolder}
+    //           value={value.genderSearch}
+    //           onChange={handleGenderSelected}
+    //         >
+    //           <MenuItem value="">
+    //             <em>None</em>
+    //           </MenuItem>
+    //           {options.map((option) => {
+    //             return <MenuItem value={option}>{option}</MenuItem>;
+    //           })}
+    //         </Select>
+    //       </FormControl>
+    //       <div className="iconContainer">{icon}</div>
+    //     </div>
+    //   );
+    // }
     if (specialistUserSearchType === "experties") {
       return (
         <div className="searchInputContainer short">
@@ -305,7 +354,7 @@ setSearch.setRangeSearch(e.target.value)
              value={value.rangeSearch}
              onChange={handleRange}
              valueLabelDisplay="auto"
-             sx={{ width: 200 }}
+             sx={{ width: 156 }}
             />
           </div>
 

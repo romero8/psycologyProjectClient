@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
 import { SearchForSpecialistComp } from "./components/SearchForSpecialistComp/SearchForSpecialistComp";
-import { Home } from "./pages/Home";
+import { Home } from "./pages/Home/Home";
 import { Client } from "./pages/Client";
 import { Therapist } from "./pages/Therapist";
 import { Specialties } from "./pages/Specialties/Specialties";
