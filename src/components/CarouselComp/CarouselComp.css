@@ -1,0 +1,53 @@
+.carouselContainer {
+  /* background: #fff; */
+  padding: 10px;
+  margin: 4%;
+  width: 70%;
+ 
+  border-radius: 5px;
+}
+
+
+.carouselBox{
+}
+
+.carouselItem{
+  height: 40%;
+}
+
+.carouselItemLink {
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+}
+
+.carouselImg{
+  width: 10%;
+  background: #eaf5fa;
+  margin: 15px;
+}
+
+.therapistTitle {
+  padding: 40px;
+}
+
+.therapistTypeBox:hover{
+    color: #16aff6;
+}
+
+.therapistTypeSpan {
+    font-size: larger;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+}
+
+@media(max-width:692px){
+  .therapistTypesBody{
+    grid-template-columns: repeat(1, auto);
+  }
+}
