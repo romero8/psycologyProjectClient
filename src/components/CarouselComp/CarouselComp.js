@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getData } from "../../helpers/fetchHelper";
 import { MainBtn } from "../MainBtn/MainBtn";
-import logo from "../../icons/AnimatedLogo.png";
+import defaultPhoto from "../../icons/defaultPhoto2.png";
 import "./CarouselComp.css";
 import Carousel from "react-bootstrap/Carousel";
 import Image from 'react-bootstrap/Image';
@@ -65,7 +65,7 @@ export function CarouselComp() {
             <Carousel.Item className="carouselItem">
               <Link className="carouselItemLink" to={`/searchBySpecialties/${therapist.profession}/${therapist.name} ${therapist.lastName}`}>
               <div className="therapistTypeBox">
-              <Image src={logo} roundedCircle className="carouselImg"/>
+              <Image src={defaultPhoto} roundedCircle className="carouselImg"/>
                 <h3>{`"${therapist.about}"`}</h3>
                 <p>{`${therapist.name} ${therapist.lastName} lives in ${therapist.address.city} (${therapist.profession})`}</p> 
               </div>

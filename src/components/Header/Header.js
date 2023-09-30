@@ -12,6 +12,8 @@ import { Link, useParams ,useNavigate} from "react-router-dom";
 import { professions } from "../../helpers/data";
 import Cookies from "universal-cookie";
 import { jwt } from "jwt-decode";
+import Image from 'react-bootstrap/Image';
+import psyProjectLogo from '../../icons/psyProjectLogo2.png'
 
 export function Header(props) {
   const [data, setData] = useState([]);
@@ -65,7 +67,8 @@ export function Header(props) {
   return (
     <Navbar expand="lg" className="headerContainer">
       <Container className="headerBox">
-        <Navbar.Brand className="navBarLogo" href="/">EzPsy</Navbar.Brand>
+      
+        <Navbar.Brand className="navBarLogo" href="/"><img className="psyProjectLogo" src={psyProjectLogo}/></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

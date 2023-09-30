@@ -18,12 +18,12 @@
 .carouselItemLink {
   cursor: pointer;
   text-decoration: none;
-  color: var(--specialColor);
+  color: var(--logoColor);
 }
 
 .carouselImg{
-  width: 10%;
-  /* background: var(--specialColor); */
+  width: 200px;
+  background: var(--secondBackGround);
   margin: 15px;
 }
 
