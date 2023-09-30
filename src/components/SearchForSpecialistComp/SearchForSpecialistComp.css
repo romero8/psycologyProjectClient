@@ -5,8 +5,7 @@
   align-items: center;
   /* padding: 20px; */
   height: 240px;
-  color: #145c69;
-  background-color: #fff;
+  background-color:var(--secondBackGround);
   margin: 20px;
   width: 35%;
 }
@@ -20,13 +19,13 @@
   grid-column-end: -1;
 }
 .SearchForSpecialistTitle {
-  color: #145c69;
+  color: var(--spanColor);
 }
 
 .SearchForSpecialistBody {
   padding: 20px;
-  border-radius: 5px;
-  background-color: #fff;
+  border-radius: 20px;
+  background-color:var(--secondBackGround);
   display: grid;
   grid-template-columns: repeat(4, auto);
   gap: 15px 65px;
@@ -66,15 +65,15 @@
   max-width: 80px;
   padding: 10px;
   /* margin-left: 50px; */
-  background-color: #eaf5fa;
+  background-color: var(--secondBackGround);
   font-size: large;
-  font-weight: 500;
+  font-weight: bold;
   border-radius: 5px;
   border: none;
 }
 
 .inputBtn:hover {
-  color: rgb(55, 0, 255);
+  color: var(--specialColor)
 }
 
 @media (max-width: 1650px) {

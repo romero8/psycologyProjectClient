@@ -63,9 +63,9 @@ export function Header(props) {
   }
 
   return (
-    <Navbar bg="light" expand="lg">
-      <Container className="headerContainer">
-        <Navbar.Brand href="/">EzPsy</Navbar.Brand>
+    <Navbar expand="lg" className="headerContainer">
+      <Container className="headerBox">
+        <Navbar.Brand className="navBarLogo" href="/">EzPsy</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -117,7 +117,7 @@ export function Header(props) {
           </Nav>
           <Nav>
             {userLoggedIn ? (
-              <Navbar.Text>Hello {userLoggedIn.name}</Navbar.Text>
+              <Navbar.Text className="navBarText">Hello {userLoggedIn.name}</Navbar.Text>
             ) : (
               ""
             )}

@@ -7,12 +7,14 @@ align-items: center;
 
 .titleContainer{
     margin: 50px;
+    padding-top: 40px;
 }
 
 .title{
     font-size: 50px;
+    font-weight: bolder;
 }
 
 .logoName{
-    color:#7fd9e9;
+    color:var(--specialColor);
 }

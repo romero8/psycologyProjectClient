@@ -32,17 +32,16 @@ export function Specialties(props) {
   const [check, setCheck] = useState([1]);
 
   let userLocalStorage = JSON.parse(window.localStorage.getItem("user"));
-  let userLocalStorageFavorites = userLocalStorage ? userLocalStorage.favorites : ''
+  let userLocalStorageFavorites = userLocalStorage
+    ? userLocalStorage.favorites
+    : "";
 
   const [userLoggedIn, setUserLoggedIn] = useState(userLocalStorage);
 
-  
   const [updateData, setUpdateData] = useState({
     userLoggedIn: userLoggedIn,
     favoritesToUpdate: userLocalStorageFavorites,
   });
-
-  
 
   const [therapistToUpdate, setTherapistToUpdate] = useState({
     id: "",
@@ -57,7 +56,7 @@ export function Specialties(props) {
     })
       .then((response) => response.json())
       .then((data) => {
-        setUserLoggedIn(data.clientLoggedIn)
+        setUserLoggedIn(data.clientLoggedIn);
       })
       .catch((err) => console.log(err));
 
@@ -229,6 +228,19 @@ export function Specialties(props) {
 
       {searchBySpecialties
         ? allTherapists.map((user) => {
+          function added() {
+            if (userLocalStorage) {
+              const objIdIndex = userLocalStorage.favorites.findIndex(
+                (obj) => obj._id === user._id
+              );
+
+              if (objIdIndex === -1) {
+                return false;
+              } else {
+                return true;
+              }
+            }
+          }
             if (user.profession === specialty) {
               return (
                 <div className="cardContainer">
@@ -263,9 +275,9 @@ export function Specialties(props) {
                     </div>
                   </div>
                   <div className="cardActions">
-                    {clientLoggedIn ? (
+                    {clientLoggedIn && !added() ? (
                       <MainBtn
-                        value="Add To Favorties"
+                        value="Add To Favorites"
                         userToAdd={user}
                         usersAdded={usersAdded}
                         setUsersAdded={setUsersAdded}
@@ -273,6 +285,26 @@ export function Specialties(props) {
                         setUpdateData={setUpdateData}
                         therapistToUpdate={therapistToUpdate}
                         setTherapistToUpdate={setTherapistToUpdate}
+                        check={check}
+                        setCheck={setCheck}
+                        userLoggedIn={userLoggedIn}
+                      />
+                    ) : (
+                      ""
+                    )}
+                    {clientLoggedIn && added() ? (
+                      <MainBtn
+                        value="Remove From Favorites"
+                        userToAdd={user}
+                        usersAdded={usersAdded}
+                        setUsersAdded={setUsersAdded}
+                        updateData={updateData}
+                        setUpdateData={setUpdateData}
+                        therapistToUpdate={therapistToUpdate}
+                        setTherapistToUpdate={setTherapistToUpdate}
+                        check={check}
+                        setCheck={setCheck}
+                        userLoggedIn={userLoggedIn}
                       />
                     ) : (
                       ""
@@ -295,21 +327,17 @@ export function Specialties(props) {
               //   else{
               //     return true
               //   }
-              if(userLocalStorage){
+              if (userLocalStorage) {
                 const objIdIndex = userLocalStorage.favorites.findIndex(
                   (obj) => obj._id === user._id
                 );
-  
-                if(objIdIndex === -1){
-                  return false
-                }
-  
-                else{
-                  return true
+
+                if (objIdIndex === -1) {
+                  return false;
+                } else {
+                  return true;
                 }
               }
-
-              
             }
 
             return (
@@ -343,7 +371,7 @@ export function Specialties(props) {
                   </div>
                 </div>
                 <div className="cardActions">
-                  {clientLoggedIn && !added()  ? (
+                  {clientLoggedIn && !added() ? (
                     <MainBtn
                       value="Add To Favorites"
                       userToAdd={user}

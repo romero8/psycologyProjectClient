@@ -6,7 +6,8 @@
     /* justify-content: space-between; */
     /* background: #fff;; */
     margin: 10px;
-    outline-color: rgba(40, 170, 170, 0.356);
+    /* outline-color: rgba(40, 170, 170, 0.356); */
+    outline-color: var(--logoColor);
 }
 .searchInput{
     border: none;
