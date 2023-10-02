@@ -57,7 +57,7 @@ export function CarouselComp() {
   
   return (
     <div className="carouselContainer">
-      <Carousel indicators={false} className="carouselBox">
+      <Carousel variant="dark" indicators={false} className="carouselBox">
       {
         shuffledTherapistsAbout.map((therapist)=>{
           console.log(therapist.about.length)

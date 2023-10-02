@@ -11,8 +11,8 @@
   text-align: center;
   font-family: 'Nunito Sans', sans-serif;
   background-color: var(--mainBackGround);
-  color:var(--spanColor)
- 
+  color:var(--spanColor);
+ background-image: url('./icons/backGround3.png');
 }
 
 .App-logo {

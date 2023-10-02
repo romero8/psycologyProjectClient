@@ -13,34 +13,27 @@ import { professions } from "../../helpers/data";
 import Cookies from "universal-cookie";
 import { jwt } from "jwt-decode";
 import Image from 'react-bootstrap/Image';
-import psyProjectLogo from '../../icons/psyProjectLogo2.png'
+import psyProjectLogo from '../../icons/logo.png'
 
 export function Header(props) {
   const [data, setData] = useState([]);
   const userLoggedIn = props.userLoggedIn;
   const setLoggedIn = props.setLoggedIn;
-  
-
   const cookies = new Cookies();
-
-  // useEffect(() => {
-  //   getData("users").then((info) => {
-  //     setData(info);
-  //   });
-  // }, []);
-
   let { userId } = useParams();
 
+const [color,setColor] = useState(false)
 
-  // useEffect(() => {
-  //   const dataFetch = async () => {
-  //     const data = await (await fetch(`user/${userId}`)).json();
+  function changeColor(){
+    if(window.scrollY >=90){
+      setColor(true)
+    } else{
+      setColor(false)
+    }
+  }
 
-  //     setData(data);
-  //   };
-
-  //   dataFetch();
-  // }, []);
+  window.addEventListener('scroll',changeColor)
+ 
 
   let clientLoggedIn;
   let therapistLoggedIn;
@@ -65,14 +58,14 @@ export function Header(props) {
   }
 
   return (
-    <Navbar expand="lg" className="headerContainer">
+    <Navbar expand="lg" className={color ? "headerContainer bg" : "headerContainer"}>
       <Container className="headerBox">
       
         <Navbar.Brand className="navBarLogo" href="/"><img className="psyProjectLogo" src={psyProjectLogo}/></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <NavDropdown title="Proffesions" id="basic-nav-dropdown">
+            <NavDropdown className="bold" title="Proffesions" id="basic-nav-dropdown">
               {professions.map((profession) => {
                 return (
                   <NavDropdown.Item href={`/searchBySpecialties/${profession}`}>
@@ -99,17 +92,17 @@ export function Header(props) {
            
 
             {clientLoggedIn ? (
-              <Nav.Link href="/favorites">Favorites</Nav.Link>
+              <Nav.Link href="/favorites" className="bold">Favorites</Nav.Link>
             ) : (
               ""
             )}
             {therapistLoggedIn ? (
-              <Nav.Link href="/notifications">Notifications</Nav.Link>
+              <Nav.Link href="/notifications" className="bold">Notifications</Nav.Link>
             ) : (
               ""
             )}
 
-            {userLoggedIn ? <Nav.Link href="#link">Profile</Nav.Link> : ""}
+            {userLoggedIn ? <Nav.Link href="#link" className="bold">Profile</Nav.Link> : ""}
 
             <Nav.Link href="#link">
               <FontAwesomeIcon
@@ -125,12 +118,12 @@ export function Header(props) {
               ""
             )}
             {userLoggedIn ? (
-              <Nav.Link href="/" onClick={() => logOut()} >Log-Out</Nav.Link>
+              <Nav.Link href="/" className={color ? "navBarLink logOutBg" : "navBarLink"} onClick={() => logOut()} >Log-Out</Nav.Link>
             ) : (
               ""
             )}
-            {!userLoggedIn ? <Nav.Link href="/logIn">Log-In</Nav.Link> : ""}
-            <Nav.Link eventKey={2} href="/signUp">
+            {!userLoggedIn ? <Nav.Link href="/logIn" className="navBarLink">Log-In</Nav.Link> : ""}
+            <Nav.Link eventKey={2} href="/signUp" className={color ? "navBarLink signUp signUpBg" : "navBarLink signUp"}>
               Sign-Up
             </Nav.Link>
           </Nav>

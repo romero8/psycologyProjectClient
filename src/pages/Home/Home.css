@@ -11,10 +11,13 @@ align-items: center;
 }
 
 .title{
-    font-size: 50px;
+    font-size: 53px;
     font-weight: bolder;
+    color: var(--secondBackGround);
 }
 
 .logoName{
     color:var(--specialColor);
 }
+
+

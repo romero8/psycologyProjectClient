@@ -1,14 +1,17 @@
 .carouselContainer {
   padding: 10px;
   margin: 4%;
-  width: 70%;
-  border-radius: 5px;
+  width: 50%;
   font-weight: bold;
 }
 
 
 .carouselBox{
-  height: 250px;
+/* border-top-right-radius: 30%;
+border-top-left-radius: 30%; */
+  height: 380px;
+  background: var(--secondBackGround);
+  border-radius: 30px;
 }
 
 .carouselItem{
@@ -18,12 +21,11 @@
 .carouselItemLink {
   cursor: pointer;
   text-decoration: none;
-  color: var(--logoColor);
+  color: var(--spanColor);
 }
 
 .carouselImg{
   width: 200px;
-  background: var(--secondBackGround);
   margin: 15px;
 }
 
@@ -32,7 +34,7 @@
 }
 
 .therapistTypeBox:hover{
-    color: var(--spanColor);
+    color: var(--specialColor);
 }
 
 .therapistTypeSpan {

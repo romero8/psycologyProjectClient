@@ -26,6 +26,7 @@ export function CounterComp(props) {
       
       <Alert className="countersBox">
         <h1 className="counterTitle">Stay Tuned With Us...</h1>
+        <div className="counterFlex">
         <Alert variant="light" className="counterBox">
           <CountUp className="counter" start={0} end={allTherapists.length} duration={3} delay={0} />
           <label className="labelCounter">Therapists On Site</label>
@@ -35,6 +36,7 @@ export function CounterComp(props) {
           <CountUp className="counter" start={0} end={allClients.length} duration={3} delay={0} />
           <label className="labelCounter">Clients On Site</label>
         </Alert>
+        </div>
       </Alert>
     </div>
   );
