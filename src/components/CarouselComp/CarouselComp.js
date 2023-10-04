@@ -60,7 +60,6 @@ export function CarouselComp() {
       <Carousel variant="dark" indicators={false} className="carouselBox">
       {
         shuffledTherapistsAbout.map((therapist)=>{
-          console.log(therapist.about.length)
           return(
             <Carousel.Item className="carouselItem">
               <Link className="carouselItemLink" to={`/searchBySpecialties/${therapist.profession}/${therapist.name} ${therapist.lastName}`}>

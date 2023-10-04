@@ -65,7 +65,7 @@ const [color,setColor] = useState(false)
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <NavDropdown className="bold" title="Proffesions" id="basic-nav-dropdown">
+            <NavDropdown id="bold" title="Proffesions" >
               {professions.map((profession) => {
                 return (
                   <NavDropdown.Item href={`/searchBySpecialties/${profession}`}>

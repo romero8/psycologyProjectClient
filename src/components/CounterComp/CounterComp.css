@@ -1,16 +1,16 @@
 .counterCompContainer{
-    background-color: var(--secondBackGround);
+    background-color: var(--specialWhite);
     width: 100%;
-    border-top-right-radius: 20%;
-    border-top-left-radius: 20%;
+    border-top-right-radius: 50%;
+    border-top-left-radius:  50%;
 }
 .counterTitle{
-    color: var(--specialColor);
+    color: var(--spanColor);
 }
 .countersBox{
-    border-top-right-radius: 20%;
-    border-top-left-radius: 20%;
-    background-color: var(--secondBackGround);
+    border-top-right-radius:  50%;
+    border-top-left-radius:  50%;
+    background-color: var(--specialWhite);
     margin: 30px;
     padding: 30px;
     display: flex;
@@ -26,8 +26,8 @@
 .counterBox{
 display: flex;
 flex-direction: column;
-background: var(--secondBackGround);
 color: var(--spanColor);
+border-bottom: 2px solid var(--logoColor);
 }
 .counter{
 font-size: 35px;

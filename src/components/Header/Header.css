@@ -15,8 +15,23 @@
 }
 
 .navBarLink:hover{
-    border-color: var(--spanColor);
+    border-color: var(--specialColor);
 }
+
+.bold {
+  font-weight: bold;
+  color: var(--secondBackGround);
+}
+
+.bold:hover{
+  color: var(--specialColor);
+}
+
+#bold {
+  font-weight: bold;
+  color: var(--secondBackGround);
+}
+
 
 .logOutBg{
     color: var(--spanColor);
@@ -50,15 +65,15 @@
 
 .magnifying-glass-icon {
   cursor: pointer;
+  color: var(--secondBackGround);
 }
 
 .psyProjectLogo {
-  width: 100px;
+  width: 140px;
+  margin: 4px;
 }
 
-.bold {
-  font-weight: bold;
-}
+
 
 /* .navBarLogo {
     color: var(--logoColor);

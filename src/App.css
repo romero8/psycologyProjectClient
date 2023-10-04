@@ -4,7 +4,7 @@
   --spanColor:#093426;
   --specialColor:#FDBA12;
   --logoColor:#9F1473;
-  --footerBackGround:#093426
+  --specialWhite:#f7f0e6;
 }
 
 .App {
@@ -12,7 +12,7 @@
   font-family: 'Nunito Sans', sans-serif;
   background-color: var(--mainBackGround);
   color:var(--spanColor);
- background-image: url('./icons/backGround3.png');
+ background-image: url('./icons/backGround26.png');
 }
 
 .App-logo {
