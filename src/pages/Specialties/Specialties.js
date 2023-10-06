@@ -1,12 +1,14 @@
 import "../Specialties/Specialties.css";
 import { useParams } from "react-router-dom";
-import logo from "../../icons/AnimatedLogo.png";
+import defaultPhoto from "../../icons/defaultPhoto2.png";
+import logo from "../../icons/defaultPhoto2.png";
 import { MainBtn } from "../../components/MainBtn/MainBtn";
 import { faLocationDot, faVideo } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { therapistTypesData, allUsers } from "../../helpers/data";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import Image from "react-bootstrap/Image";
 
 var _ = require("lodash");
 
@@ -216,36 +218,57 @@ export function Specialties(props) {
   return (
     <div className="cardsContainer">
       <div className="cardsTitle">
-        <h2>
-          Queue For:{" "}
+        {/* Queue For:{" "}
           {therapistInfoArr.map((therapist) => {
-            if (therapist !== "all") {
-              return <h3>{therapist}</h3>;
+            if (therapist.profession) {
+              return <h3>{therapist.profession}</h3>;
             }
-          })}
-        </h2>
+            else{
+              return <h3>Therapists</h3>
+            }
+           
+          })} */}
+        {therapistInfoArr[2] !== "all" || therapistInfoArr[0] ? (
+          <h2>{`Therapists whose profession is ${
+            therapistInfoArr[2] ? therapistInfoArr[2] : therapistInfoArr[0]
+          }`}</h2>
+        ) : (
+          <h2>Therapists</h2>
+        )}
       </div>
 
       {searchBySpecialties
         ? allTherapists.map((user) => {
-          function added() {
-            if (userLocalStorage) {
-              const objIdIndex = userLocalStorage.favorites.findIndex(
-                (obj) => obj._id === user._id
-              );
+            function added() {
+              if (userLocalStorage) {
+                const objIdIndex = userLocalStorage.favorites.findIndex(
+                  (obj) => obj._id === user._id
+                );
 
-              if (objIdIndex === -1) {
-                return false;
-              } else {
-                return true;
+                if (objIdIndex === -1) {
+                  return false;
+                } else {
+                  return true;
+                }
               }
             }
-          }
             if (user.profession === specialty) {
               return (
                 <div className="cardContainer">
-                  <div className="cardPhotoBox">
-                    <img className="img" src={logo} />
+                  <div className="cardLeftSideBox">
+                    <div className="cardPhotoBox">
+                      <Image
+                        src={defaultPhoto}
+                        roundedCircle
+                        className="carouselImg"
+                      />
+                    </div>
+                    <Link
+                      className="specalistName"
+                      to={`/specialties/${user.profession}/${user.name} ${user.lastName}`}
+                    >
+                      View Profile
+                    </Link>
                   </div>
                   <div className="cardInfo">
                     <Link
@@ -342,8 +365,20 @@ export function Specialties(props) {
 
             return (
               <div className="cardContainer">
-                <div className="cardPhotoBox">
-                  <img className="img" src={logo} />
+                <div className="cardLeftSideBox">
+                  <div className="cardPhotoBox">
+                    <Image
+                      src={defaultPhoto}
+                      roundedCircle
+                      className="carouselImg"
+                    />
+                  </div>
+                  <Link
+                    className="specalistName"
+                    to={`/specialties/${user.profession}/${user.name} ${user.lastName}`}
+                  >
+                    View Profile
+                  </Link>
                 </div>
                 <div className="cardInfo">
                   <Link
@@ -353,7 +388,7 @@ export function Specialties(props) {
                     <h3>{`${user.name} ${user.lastName}`}</h3>
                   </Link>
                   <span className="specalistAbility">{user.profession}</span>
-                  <span className="specalistAbout">{`Best ${user.profession} Ever`}</span>
+                  <span className="specalistAbout">{user.about}</span>
                   <div className="specalistAvailabilityBox">
                     <div className="iconBox">
                       <FontAwesomeIcon
@@ -361,14 +396,16 @@ export function Specialties(props) {
                         className="cardIcon"
                       />
                     </div>
-                    <p className="specalistAvailability">{user.address.city}</p>
+                    <p className="specalistAvailability">
+                      Lives in {user.address.city}
+                    </p>
                   </div>
-                  <div className="specalistAvailabilityBox">
+                  {/* <div className="specalistAvailabilityBox">
                     <div className="iconBox">
                       <FontAwesomeIcon icon={faVideo} className="cardIcon" />{" "}
                     </div>
                     <p className="specalistAvailability">Video Call</p>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="cardActions">
                   {clientLoggedIn && !added() ? (
