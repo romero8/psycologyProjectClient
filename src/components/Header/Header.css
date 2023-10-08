@@ -74,7 +74,9 @@
 }
 
 
-
-/* .navBarLogo {
-    color: var(--logoColor);
+@media (max-width: 992px) {
+  /* .headerContainer{
+    background-color: var(--secondBackGround);
   } */
+}
+

@@ -6,8 +6,8 @@
   /* padding: 20px; */
   height: 240px;
   background-color:var(--secondBackGround);
-  margin: 20px;
-  width: 35%;
+  margin: 15px;
+  width: 30%;
 }
 
 /* .accordion {
@@ -76,18 +76,15 @@
   color: var(--specialColor)
 }
 
-@media (max-width: 1650px) {
-  .SearchForSpecialistBody{
-    
-    
-  }
-}
 @media (max-width: 992px) {
-  /* .SearchForSpecialistContainer {
-    height: 1050px;
-  } */
+  .SearchForSpecialistContainer {
+    height: 900px;
+    border-radius: 5px;
+  }
   .SearchForSpecialistBody {
+    height: 900px;
     display: flex;
     flex-direction: column;
+    border-radius: 5px;
   }
 }

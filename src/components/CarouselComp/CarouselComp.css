@@ -9,7 +9,7 @@
 .carouselBox{
 /* border-top-right-radius: 30%;
 border-top-left-radius: 30%; */
-  height: 380px;
+  min-height: 380px;
   background: var(--secondBackGround);
   border-radius: 30px;
 }
@@ -49,7 +49,5 @@ border-top-left-radius: 30%; */
 }
 
 @media(max-width:692px){
-  .therapistTypesBody{
-    grid-template-columns: repeat(1, auto);
-  }
+ 
 }
