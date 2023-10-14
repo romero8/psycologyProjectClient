@@ -1,4 +1,5 @@
 .mainBtn{
     height: 50px;
     font-weight: bold;
+    border-radius: 5px;
 }

@@ -1,28 +1,57 @@
 .therapistInfoContainer {
-  background-color: #fff;
-  
+  background-color: var(--specialWhite);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 
 
 .cardInformation {
-  margin: 0;
+  background-color: var(--secondBackGround);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  min-height: 250px;
-  background-color: #505764;
-  color: #fff;
-  padding: 20px 10%;
-  border-radius: 0;
+  margin: 100px 
 }
 
-.cardPhotoBoxInformation {
+.specalistNameInfo {
+  color: var(--mainBackGround);
+  text-decoration: none;
+}
+
+/* .cardPhotoBoxInformation {
   width: 15%;
   padding: 50px;
+} */
+
+.cardPhotoBox{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 50%;
 }
 
-.imgInformation {
-  width: 150px;
-  height: 150px;
+.specalistProfession{
+  display: flex;
+}
+
+.specalistExperties{
+  display: flex;
+  gap: 10px;
+}
+
+.experty{
+  background:#fff;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.thrapistInfoImg{
+  height: 250px;
+  width: 250px;
 }
 
 
@@ -31,10 +60,12 @@
 }
 
 .cardActionInformation{
-    background: #fff;
-    padding: 40px;
-    width: 20%;
-    border-radius: 5px;
+    width: 10%;
+}
+
+.specalistAvailabilityContainer{
+  display: flex;
+  gap: 25px;
 }
 
 

@@ -7,6 +7,8 @@ import { faLocationDot, faVideo } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Image from "react-bootstrap/Image";
+import defaultPhoto from "../../icons/defaultPhoto2.png";
 
 export function TherapistInfo(props) {
   const allTherapists = props.allTherapists;
@@ -28,36 +30,43 @@ export function TherapistInfo(props) {
     return therapist.name === nameAndLastName[0];
   });
 
-  console.log(nameAndLastName[0]);
+  console.log(findSpecialty.experties);
 
   return (
     <div className="therapistInfoContainer">
-      <div className="cardContainer cardInformation">
-        <div className="cardPhotoBox cardPhotoBoxInformation">
-          <img className="img" src={logo} />
-        </div>
-        <div className="cardInfo">
-          <h3 className="specalistName">{therapistData.name}</h3>
-          <span className="specalistAbility">{findSpecialty.typeName}</span>
-          <span className="specalistAbout">{`Best ${findSpecialty.profession} Ever`}</span>
-          <div className="specalistAvailabilityBox">
-            <div className="iconBox">
-              <FontAwesomeIcon icon={faLocationDot} className="cardIcon" />
+      <div className="cardInformation">
+        <div className="cardPhotoBox">
+          <Image src={defaultPhoto} roundedCircle className="thrapistInfoImg" />
+          <div className="cardInfo">
+            <h3 className="specalistNameInfo">
+              {therapistData.name} {therapistData.lastName}, {findSpecialty.profession}
+            </h3>
+            <span className="specalistExperties">
+              {findSpecialty.experties.map((experty) => {
+                return <p className="experty">{experty}</p>;
+              })}
+            </span>
+            <div className="specalistAvailabilityContainer">
+              <div className="specalistAvailabilityBox">
+                <div className="iconBox">
+                  <FontAwesomeIcon icon={faLocationDot} className="cardIcon" />
+                </div>
+                <p className="specalistAvailability">
+                  {therapistData.address.city}
+                </p>
+              </div>
+              <div className="specalistAvailabilityBox">
+                <div className="iconBox">
+                  <FontAwesomeIcon icon={faVideo} className="cardIcon" />{" "}
+                </div>
+                <p className="specalistAvailability">Video Call</p>
+              </div>
             </div>
-            <p className="specalistAvailability">
-              {therapistData.address.city}
-            </p>
-          </div>
-          <div className="specalistAvailabilityBox">
-            <div className="iconBox">
-              <FontAwesomeIcon icon={faVideo} className="cardIcon" />{" "}
-            </div>
-            <p className="specalistAvailability">Video Call</p>
           </div>
         </div>
+
         <div className="cardActions cardActionInformation">
-          <MainBtn value="Call" />
-          <MainBtn value="Appointment" />
+          <MainBtn value="Call Me!" />
         </div>
       </div>
 

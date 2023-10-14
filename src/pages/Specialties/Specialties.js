@@ -379,35 +379,6 @@ export function Specialties(props) {
                   >
                     View Profile
                   </Link>
-                </div>
-                <div className="cardInfo">
-                  <Link
-                    className="specalistName"
-                    to={`/specialties/${user.profession}/${user.name} ${user.lastName}`}
-                  >
-                    <h3>{`${user.name} ${user.lastName}`}</h3>
-                  </Link>
-                  <span className="specalistAbility">{user.profession}</span>
-                  <span className="specalistAbout">{user.about}</span>
-                  <div className="specalistAvailabilityBox">
-                    <div className="iconBox">
-                      <FontAwesomeIcon
-                        icon={faLocationDot}
-                        className="cardIcon"
-                      />
-                    </div>
-                    <p className="specalistAvailability">
-                      Lives in {user.address.city}
-                    </p>
-                  </div>
-                  {/* <div className="specalistAvailabilityBox">
-                    <div className="iconBox">
-                      <FontAwesomeIcon icon={faVideo} className="cardIcon" />{" "}
-                    </div>
-                    <p className="specalistAvailability">Video Call</p>
-                  </div> */}
-                </div>
-                <div className="cardActions">
                   {clientLoggedIn && !added() ? (
                     <MainBtn
                       value="Add To Favorites"
@@ -441,11 +412,37 @@ export function Specialties(props) {
                     />
                   ) : (
                     ""
-                  )}
-
-                  <MainBtn value="Call" />
-                  <MainBtn value="Appointment" />
+                  )}                 
                 </div>
+                <div className="cardRightSideBox">
+                  <div className="cardInfo">
+                  <Link
+                    className="specalistName"
+                    to={`/specialties/${user.profession}/${user.name} ${user.lastName}`}
+                  >
+                    <h3>{`${user.name} ${user.lastName}`}</h3>
+                  </Link>
+                  <span className="specalistAbility">{user.profession}</span>
+                  <span className="specalistAbout">{user.about}</span>
+                  </div>    
+                  <div className="specalistAvailabilityBox">
+                    <div className="iconBox">
+                      <FontAwesomeIcon
+                        icon={faLocationDot}
+                        className="cardIcon"
+                      />
+                    </div>
+                    <p className="specalistAvailability">
+                      Lives in {user.address.city}
+                    </p>
+                  </div>
+                  {/* <div className="specalistAvailabilityBox">
+                    <div className="iconBox">
+                      <FontAwesomeIcon icon={faVideo} className="cardIcon" />{" "}
+                    </div>
+                    <p className="specalistAvailability">Video Call</p>
+                  </div> */}
+                </div>                          
               </div>
             );
           })}

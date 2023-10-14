@@ -249,7 +249,7 @@ export function MainBtn(props) {
     //   value={value}
     //   onClick={handle}
     // />
-    <button type="submit" onClick={handle}>
+    <button type="submit" onClick={handle} className="mainBtn">
       {value}
     </button>
   );
