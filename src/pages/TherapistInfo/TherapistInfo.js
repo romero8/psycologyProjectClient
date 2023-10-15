@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Image from "react-bootstrap/Image";
 import defaultPhoto from "../../icons/defaultPhoto2.png";
+import { Header } from "../../components/Header/Header";
 
 export function TherapistInfo(props) {
   const allTherapists = props.allTherapists;
@@ -21,6 +22,7 @@ export function TherapistInfo(props) {
   }
 
   let nameAndLastName = therapistName ? therapistName.split(" ") : "";
+  let userLocalStorage = JSON.parse(window.localStorage.getItem("user"));
 
   const findSpecialty = allTherapists.find((user) => {
     return user.profession === specialty;
@@ -34,6 +36,7 @@ export function TherapistInfo(props) {
 
   return (
     <div className="therapistInfoContainer">
+      <Header userLoggedIn={userLocalStorage} specialties={"Therpais Info Page"}/>
       <div className="cardInformation">
         <div className="cardPhotoBox">
           <Image src={defaultPhoto} roundedCircle className="thrapistInfoImg" />
@@ -66,17 +69,22 @@ export function TherapistInfo(props) {
         </div>
 
         <div className="cardActions cardActionInformation">
-          <MainBtn value="Call Me!" />
+          <button className="callMeBtn">Call Me!</button>
         </div>
       </div>
 
-      <div className="aboutContainer">
+      {/* <div className="aboutContainer">
         <div className="about">
           <h3>About Myself</h3>
           <p className="therapistAbout">
             {`My name is ${therapistData.name} but u can call me ${therapistData.lastName}, I live in ${therapistData.address.city}. My phone number is ${therapistData.phone}, But u can also visit my website ${therapistData.website}, or send me a mail ${therapistData.email}.`}
           </p>
         </div>
+      </div> */}
+
+      <div className="aboutTherapistInfoContainer">
+        <h2>About me</h2>
+<div className="aboutTherapistInfo">{therapistData.about}</div>
       </div>
     </div>
   );

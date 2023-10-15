@@ -4,6 +4,8 @@
   justify-content: center;
   align-items: center;
   background-color: var(--secondBackGround);
+  background-image: url('../../icons/backGround52.png');
+  margin-top: 40px;
 }
 
 .cardsTitle {
@@ -12,9 +14,14 @@
   align-items: center;
   margin-top: 90px;
   width: 100%;
-  height: 100px;
-  background-color: var(--mainBackGround);
-  color: var(--specialWhite);
+  height: 90px;
+  /* background-color: var(--mainBackGround); */
+}
+
+.titleTherapist{
+  color: var(--logoColor);
+  font-weight: bolder;
+  font-size: 53px;
 }
 
 .cardContainer {
@@ -27,7 +34,7 @@
   background-color: #fff;
   margin: 25px;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 17px;
 }
 
 .cardPhotoBox {
@@ -63,7 +70,7 @@
 .specalistName:hover {
   color: var(--specialColor);
 }
-:hover
+
 
 .specalistAbility {
   font-weight: bolder;

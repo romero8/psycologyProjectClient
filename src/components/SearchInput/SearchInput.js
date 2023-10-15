@@ -347,6 +347,8 @@ setSearch.setRangeSearch(e.target.value)
           <div>
             <label>{placeHolder}</label>
             <Slider
+            
+            color="secondary"
             step={10}
             min={0}
             max={1000}

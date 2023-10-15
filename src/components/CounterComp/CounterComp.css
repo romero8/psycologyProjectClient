@@ -1,5 +1,5 @@
 .counterCompContainer{
-    background-color: var(--specialWhite);
+    background-color: var(--secondBackGround);
     width: 100%;
     border-top-right-radius: 50%;
     border-top-left-radius:  50%;
@@ -10,7 +10,7 @@
 .countersBox{
     border-top-right-radius:  50%;
     border-top-left-radius:  50%;
-    background-color: var(--specialWhite);
+    background-color: var(--secondBackGround);
     margin: 30px;
     padding: 30px;
     display: flex;

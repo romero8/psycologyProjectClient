@@ -19,6 +19,7 @@ export function Header(props) {
   const [data, setData] = useState([]);
   const userLoggedIn = props.userLoggedIn;
   const setLoggedIn = props.setLoggedIn;
+  const specialties = props.specialties;
   const cookies = new Cookies();
   let { userId } = useParams();
 
@@ -58,25 +59,22 @@ const [color,setColor] = useState(false)
   }
 
   return (
-    <Navbar expand="lg" className={color ? "headerContainer bg" : "headerContainer"}>
+    <Navbar expand="lg" className={color || specialties ? "headerContainer bg" : "headerContainer"}>
       <Container className="headerBox">
       
         <Navbar.Brand className="navBarLogo" href="/"><img className="psyProjectLogo" src={psyProjectLogo}/></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <NavDropdown id="bold" title="Proffesions" >
+            <NavDropdown id={color || specialties ? "boldBg" : "bold"} title="Proffesions">
               {professions.map((profession) => {
                 return (
-                  <NavDropdown.Item href={`/searchBySpecialties/${profession}`}>
+                  <NavDropdown.Item className="dropDownLink" href={`/searchBySpecialties/${profession}`}>
                     {profession}
                   </NavDropdown.Item>
                 );
               })}
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
+             
             </NavDropdown>
             {/* {window.location.pathname === `/client/${clientName}` ? (
               <Nav.Link href="#link">Favorites</Nav.Link>
@@ -92,38 +90,38 @@ const [color,setColor] = useState(false)
            
 
             {clientLoggedIn ? (
-              <Nav.Link href="/favorites" className="bold">Favorites</Nav.Link>
+              <Nav.Link href="/favorites" className={color || specialties ? "boldBg" : "bold"}>Favorites</Nav.Link>
             ) : (
               ""
             )}
             {therapistLoggedIn ? (
-              <Nav.Link href="/notifications" className="bold">Notifications</Nav.Link>
+              <Nav.Link href="/notifications" className={color || specialties ? "boldBg" : "bold"}>Notifications</Nav.Link>
             ) : (
               ""
             )}
 
-            {userLoggedIn ? <Nav.Link href="#link" className="bold">Profile</Nav.Link> : ""}
+            {userLoggedIn ? <Nav.Link href="#link"className={color || specialties ? "boldBg" : "bold"}>Profile</Nav.Link> : ""}
 
             <Nav.Link href="#link">
               <FontAwesomeIcon
                 icon={faMagnifyingGlass}
-                className="magnifying-glass-icon"
+                className={color || specialties ? "magnifying-glass-iconBd" : "magnifying-glass-icon"}
               />
             </Nav.Link>
           </Nav>
           <Nav>
             {userLoggedIn ? (
-              <Navbar.Text className="navBarText">Hello {userLoggedIn.name}</Navbar.Text>
+              <Navbar.Text className={color || specialties ? "navBarTextBg" : "navBarText"}>Hello {userLoggedIn.name}</Navbar.Text>
             ) : (
               ""
             )}
             {userLoggedIn ? (
-              <Nav.Link href="/" className={color ? "navBarLink logOutBg" : "navBarLink"} onClick={() => logOut()} >Log-Out</Nav.Link>
+              <Nav.Link href="/" className={color || specialties ? "navBarLink logOutBg" : "navBarLink"} onClick={() => logOut()} >Log-Out</Nav.Link>
             ) : (
               ""
             )}
             {!userLoggedIn ? <Nav.Link href="/logIn" className="navBarLink">Log-In</Nav.Link> : ""}
-            <Nav.Link eventKey={2} href="/signUp" className={color ? "navBarLink signUp signUpBg" : "navBarLink signUp"}>
+            <Nav.Link eventKey={2} href="/signUp" className={color || specialties ? "navBarLink signUp signUpBg" : "navBarLink signUp"}>
               Sign-Up
             </Nav.Link>
           </Nav>

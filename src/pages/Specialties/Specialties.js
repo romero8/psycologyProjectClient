@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Image from "react-bootstrap/Image";
+import { Header } from "../../components/Header/Header";
 
 var _ = require("lodash");
 
@@ -216,27 +217,11 @@ export function Specialties(props) {
   }
 
   return (
-    <div className="cardsContainer">
-      <div className="cardsTitle">
-        {/* Queue For:{" "}
-          {therapistInfoArr.map((therapist) => {
-            if (therapist.profession) {
-              return <h3>{therapist.profession}</h3>;
-            }
-            else{
-              return <h3>Therapists</h3>
-            }
-           
-          })} */}
-        {therapistInfoArr[2] !== "all" || therapistInfoArr[0] ? (
-          <h2>{`Therapists whose profession is ${
-            therapistInfoArr[2] ? therapistInfoArr[2] : therapistInfoArr[0]
-          }`}</h2>
-        ) : (
-          <h2>Therapists</h2>
-        )}
-      </div>
-
+    <div className="cardsContainer">     
+        <Header userLoggedIn={userLocalStorage} setLoggedIn={setUserLoggedIn} specialties ={"specialties page"}/>
+        <div className="cardsTitle">
+          <h1 className="titleTherapist">Therapists just for you!</h1>
+        </div>
       {searchBySpecialties
         ? allTherapists.map((user) => {
             function added() {
@@ -433,8 +418,12 @@ export function Specialties(props) {
                       />
                     </div>
                     <p className="specalistAvailability">
-                      Lives in {user.address.city}
+                      {user.address.city}
                     </p>
+                    <div className="iconBox">
+                  <FontAwesomeIcon icon={faVideo} className="cardIcon" />{" "}
+                </div>
+                <p className="specalistAvailability">Video Call</p>
                   </div>
                   {/* <div className="specalistAvailabilityBox">
                     <div className="iconBox">

@@ -57,10 +57,10 @@ function App() {
 
   return (
     <div className="App">
-      <Header userLoggedIn={userLoggedIn} setLoggedIn={setLoggedIn} />
+      {/* <Header userLoggedIn={userLoggedIn} setLoggedIn={setLoggedIn} /> */}
       <Router>
         <Routes>
-          <Route path="/" element={<Home/>} />
+          <Route path="/" element={<Home userLoggedIn={userLoggedIn} setLoggedIn={setLoggedIn}/>} />
           <Route path="/:userId" element={<Home />} />
           <Route path="/signUp" element={<SignUp />} />
           <Route

@@ -4,6 +4,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: var(--secondBackGround);
+  background-image: url('../../icons/backGround52.png');
 }
 
 
@@ -13,8 +15,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  margin: 100px 
+  width: 52%;
+  margin: 100px ;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 17px;
 }
 
 .specalistNameInfo {
@@ -27,11 +32,21 @@
   padding: 50px;
 } */
 
+.callMeBtn{
+  background-color: #fff;
+  color: var(--logoColor);
+  height: 50px;
+  font-weight: bold;
+  border-radius: 100px;
+  border-color: var(--logoColor);
+}
+
 .cardPhotoBox{
   display: flex;
   justify-content: start;
   align-items: center;
-  width: 50%;
+  width: 90%;
+  
 }
 
 .specalistProfession{
@@ -44,7 +59,7 @@
 }
 
 .experty{
-  background:#fff;
+  background:var(--secondBackGround);
   padding: 3px;
   border-radius: 5px;
 }
@@ -61,11 +76,29 @@
 
 .cardActionInformation{
     width: 10%;
+    margin-right: 30px;
 }
 
 .specalistAvailabilityContainer{
   display: flex;
   gap: 25px;
+}
+
+
+.aboutTherapistInfoContainer{
+  border-top-right-radius: 50%;
+  border-top-left-radius:  50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 50px;
+  width: 100%;
+  flex-direction: column;
+}
+
+.aboutTherapistInfo{
+  width: 60%;
 }
 
 
