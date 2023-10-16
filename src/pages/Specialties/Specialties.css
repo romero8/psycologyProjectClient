@@ -35,6 +35,9 @@
   margin: 25px;
   padding: 20px;
   border-radius: 17px;
+  box-shadow:
+    /* 0 0 0 2px var(--spanColor), */
+    0.3em 0.3em 1em var(--spanColor);
 }
 
 .cardPhotoBox {
@@ -66,6 +69,7 @@
 .specalistName {
   color: var(--mainBackGround);
   text-decoration: none;
+  font-size: 20px;
 }
 .specalistName:hover {
   color: var(--specialColor);
@@ -82,7 +86,7 @@
 
 .specalistAvailabilityBox {
   display: flex;
-  gap: 6px;
+  gap: 7px;
 }
 
 .specalistAvailability {
@@ -97,6 +101,46 @@
 
 .cardIcon {
   color: var(--mainBackGround);
+}
+
+.loadingBox{
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  display: grid;
+  place-items: center;
+  height: 700px;
+}
+
+.spinnerLoading{
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%); */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto auto;
+  padding: 140px;
+  font-size: 30px;
+  color: var(--mainBackGround);
+}
+
+.logoLoading{
+  position: absolute;
+  top: 0;
+  bottom: 290px;
+  right: 0;
+  left: 0;
+  margin: auto auto ;
+  width: 230px;
+  margin-bottom: 50px;
+}
+
+.checkedIcon{
+  font-size: 50px;
 }
 
 @media (max-width: 950px) {

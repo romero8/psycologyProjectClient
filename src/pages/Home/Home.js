@@ -15,7 +15,6 @@ export function Home(props){
         <div className="titleContainer">
         <h1 className="title">Easy to find therapy with <span className="logoName">EzPsy</span>.</h1>
         </div>
-        
         <SearchForSpecialistComp/>
         <CarouselComp/>
         <CounterComp />

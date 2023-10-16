@@ -133,60 +133,6 @@ export function SearchForSpecialistComp({ eventKey }) {
    
   ];
 
-  // const specialistUserAdvencedSearch = [
-  //   {
-  //     placeHolder: "Language",
-  //     icon: <FontAwesomeIcon icon={faGlobe} />,
-  //     type: "text",
-  //     searchType: "input",
-  //     inputSize: "short",
-  //     specialistUserSearchType: "language",
-  //   },
-  //   {
-  //     placeHolder: "Experience",
-  //     icon: <FontAwesomeIcon icon={faListOl} />,
-  //     type: "number",
-  //     searchType: "input",
-  //     inputSize: "short",
-  //     specialistUserSearchType: "experience",
-  //   },
-  //   {
-  //     placeHolder: "Experties",
-  //     icon: <FontAwesomeIcon icon={faBook} />,
-  //     type: "text",
-  //     searchType: "select",
-  //     options: experties,
-  //     specialistUserSearchType: "experties",
-  //   },
-
-  //   {
-  //     placeHolder: "Gender",
-  //     icon: <FontAwesomeIcon icon={faTransgender} />,
-  //     type: "text",
-  //     searchType: "select",
-  //     options: ["male", "female", "other"],
-  //     inputSize: "short",
-  //     specialistUserSearchType: "gender",
-  //   },
-
-  //   // {
-  //   //   placeHolder: "LGBTQ friendly",
-  //   //   icon: <FontAwesomeIcon icon={faPersonHalfDress} />,
-  //   //   type: "number",
-  //   //   searchType: "checkBox",
-  //   //   options: ["yes", "no"],
-  //   //   specialistUserSearchType: "LGBTQ",
-  //   // },
-  // ];
-
-  function none() {
-    if (noneState) {
-      return "None";
-    } else {
-      return "";
-    }
-  }
-
   return (
     <div className="SearchForSpecialistContainer">
       <div className="SearchForSpecialistBody">

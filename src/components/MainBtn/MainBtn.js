@@ -28,9 +28,6 @@ export function MainBtn(props) {
   async function handle(e) {
     e.preventDefault();
 
-    // await setCheck((check) => {
-    //   return [check + 1];
-    // });
 
     if (userLocalStorage.favorites) {
       if (userToAdd) {
@@ -44,21 +41,6 @@ export function MainBtn(props) {
 
           localStorage.setItem("user", JSON.stringify(userLocalStorage));
 
-          // await setTherapistToUpdate(() => ({
-          //   id: userToAdd._id,
-          //   addedToFavorites: [...userToAdd.addedToFavorites, userLoggedIn],
-          // }));
-          // let addedToFavoriets = [...userToAdd.addedToFavorites, userLoggedIn]
-          // userToAdd.addedToFavorites = addedToFavoriets
-
-          //  setTherapistToUpdate(() => {
-
-          //   // let newAddedToFavorites = [...new Set(userToAdd.addedToFavorites)]
-          //   return {
-          //     id: userToAdd._id,
-          //     addedToFavorites: addedToFavoriets,
-          //   };
-          // });
 
           setUpdateData((prevState) => ({
             ...prevState,
@@ -74,10 +56,7 @@ export function MainBtn(props) {
         }
 
         if (e.target.innerHTML === "Remove From Favorites") {
-          // const objIdIndex = userToAdd.addedToFavorites.findIndex(
-          //   (obj) => obj._id === userLoggedIn._id
-          // );
-
+         
           const objIdIndex = userLocalStorage.favorites.findIndex(
             (obj) => obj._id === userToAdd._id
           );
@@ -90,26 +69,10 @@ export function MainBtn(props) {
 
           const objWithIdIndex = userToAdd.addedToFavorites.findIndex(
             (obj) => obj._id === userLoggedIn._id
-          );
-
-          // userToAdd.addedToFavorites.splice(
-          //   objWithIdIndex,
-          //   1
-          // );
-
-          // userToAdd.addedToFavorites.splice(objWithIdIndex,1)
-          //  setTherapistToUpdate((prevState) => {
-
-          //   return {
-          //     id: userToAdd._id,
-          //     addedToFavorites: userToAdd.addedToFavorites,
-          //   };
-          // });
+          ); 
 
           setUpdateData((prevState) => {
-            // const objWithIdIndex = prevState.favoritesToUpdate.findIndex(
-            //   (obj) => obj._id === userToAdd._id
-            // );
+           
             const newFavoritesToUpdate = prevState.favoritesToUpdate.splice(
               objIdIndex,
               1
@@ -146,13 +109,7 @@ export function MainBtn(props) {
             (obj) => obj._id === userLoggedIn._id
           );
 
-          // therapistToRemove.addedToFavorites.splice(
-          //   objWithIdIndex,
-          //   1
-          // );
-
-          // therapistToRemove.addedToFavorites.splice(objWithIdIndex,1)
-
+        
           setTherapistToUpdate((prevState) => {
             return {
               id: therapistToRemove._id,
@@ -161,9 +118,7 @@ export function MainBtn(props) {
           });
 
           setUpdateData((prevState) => {
-            // const objWithIdIndex = prevState.favoritesToUpdate.findIndex(
-            //   (obj) => obj._id === userToAdd._id
-            // );
+           
             const newFavoritesToUpdate = prevState.favoritesToUpdate.splice(
               objIdIndex,
               1
@@ -195,8 +150,6 @@ export function MainBtn(props) {
             addedToFavorites: newAddedToFavorites,
           }));
 
-          // therapistToRemove.addedToFavorites = addedToFavoriets
-          // e.target.innerHTML='sent'
         }
       }
       
@@ -216,7 +169,6 @@ export function MainBtn(props) {
 
         let fixedArr = sliceArr.map((client) => {
           let arrangeArr = sliceArr.indexOf(client) - 1;
-          
           sliceArr[arrangeArr] = client;
           sliceArr.push(clientToArrange);
           let jsonObject = sliceArr.map(JSON.stringify);
@@ -227,11 +179,13 @@ export function MainBtn(props) {
         });
         let newAddedToFavoritesArr = sliceArrEnd.concat(fixedArr[fixedArr.length - 1])
         userLocalStorage.addedToFavorites = newAddedToFavoritesArr
+        userLocalStorage.clientsIcalled.push(clientToArrange)
         localStorage.setItem("user", JSON.stringify(userLocalStorage));
         setUserLocalStorageAddedToFavArr(newAddedToFavoritesArr)
         setTherapistToUpdate(() => ({
           id: userLocalStorage._id,
           addedToFavorites: userLocalStorage.addedToFavorites,
+          clientsIcalled: userLocalStorage.clientsIcalled
         }));
       }
     }
@@ -241,41 +195,10 @@ export function MainBtn(props) {
   }
 
   return (
-    // <Button
-    //   className="mainBtn"
-    //   variant={color}
-    //   as="input"
-    //   type="submit"
-    //   value={value}
-    //   onClick={handle}
-    // />
     <button type="submit" onClick={handle} className="mainBtn">
       {value}
     </button>
   );
 }
 
-// try {
-//   const res = await fetch("http://localhost:5000/update/client", {
-//     method: "POST",
-//     body: JSON.stringify(updateData),
-//     headers: { "Content-Type": "application/json" },
-//   });
-//   const data = await res.json();
-//   console.log(data);
-// } catch (err) {
-//   console.log(err);
-// }
 
-// try {
-//   const res = await fetch("http://localhost:5000/userLoggedIn", {
-//     method: "POST",
-//     body: JSON.stringify(userLoggedIn),
-//     headers: { "Content-Type": "application/json" },
-//   });
-//   const data = await res.json();
-//   setUserLoggedIn(data.clientLoggedIn);
-//   console.log(userLoggedIn);
-// } catch (err) {
-//   console.log(err);
-// }

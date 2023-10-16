@@ -13,34 +13,33 @@ import { Header } from "../../components/Header/Header";
 import Overlay from 'react-bootstrap/Overlay';
 import Button from 'react-bootstrap/Button';
 
-
-export function TherapistInfo(props) {
-  const allTherapists = props.allTherapists;
+export function ClientInfo(props) {
+  const allClients = props.allClients;
   let { therapistName } = useParams();
+  let { clientName } = useParams();
   let { specialty } = useParams();
   const navigate = useNavigate();
 
-  
+ 
   const [show, setShow] = useState(false);
   const target = useRef(null);
 
-  if (allTherapists.length === 0) {
+  if (allClients.length === 0) {
     window.location.assign("/");
   }
 
-  let nameAndLastName = therapistName ? therapistName.split(" ") : "";
+  let nameAndLastName = clientName ? clientName.split(" ") : "";
   let userLocalStorage = JSON.parse(window.localStorage.getItem("user"));
 
-  const findSpecialty = allTherapists.find((user) => {
+  const findSpecialty = allClients.find((user) => {
     return user.profession === specialty;
   });
 
-  const therapistData = allTherapists.find((therapist) => {
-    return therapist.name === nameAndLastName[0];
+  const clientData = allClients.find((client) => {
+    return client.name === nameAndLastName[0];
   });
 
-  console.log(findSpecialty.experties);
-
+  console.log(allClients);
   return (
     <div className="therapistInfoContainer">
       <Header
@@ -52,28 +51,16 @@ export function TherapistInfo(props) {
           <Image src={defaultPhoto} roundedCircle className="thrapistInfoImg" />
           <div className="cardInfo">
             <h3 className="specalistNameInfo">
-              {therapistData.name} {therapistData.lastName},{" "}
-              {findSpecialty.profession}
+              {clientData.name} {clientData.lastName}
             </h3>
-            <span className="specalistExperties">
-              {findSpecialty.experties.map((experty) => {
-                return <p className="experty">{experty}</p>;
-              })}
-            </span>
             <div className="specalistAvailabilityContainer">
               <div className="specalistAvailabilityBox">
                 <div className="iconBox">
                   <FontAwesomeIcon icon={faLocationDot} className="cardIcon" />
                 </div>
                 <p className="specalistAvailability">
-                  {therapistData.address.city}
+                  {clientData.address.city}
                 </p>
-              </div>
-              <div className="specalistAvailabilityBox">
-                <div className="iconBox">
-                  <FontAwesomeIcon icon={faVideo} className="cardIcon" />{" "}
-                </div>
-                <p className="specalistAvailability">Video Call</p>
               </div>
             </div>
           </div>
@@ -102,7 +89,7 @@ export function TherapistInfo(props) {
               ...props.style,
             }}
           >
-            {therapistData.phone}
+            {clientData.phone}
           </div>
         )}
       </Overlay>
@@ -120,9 +107,7 @@ export function TherapistInfo(props) {
 
       <div className="aboutTherapistInfoContainer">
         <h2>About me</h2>
-        <div className="aboutTherapistInfo">
-          <p className="userInfoAbout">{therapistData.about}</p>
-        </div>
+        <div className="aboutTherapistInfo"><p className="userInfoAbout">{clientData.about}</p></div>
       </div>
     </div>
   );

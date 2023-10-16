@@ -2,10 +2,14 @@ import logo from "../../icons/AnimatedLogo.png";
 import "../Specialties/Specialties.css";
 import React, { useState, useEffect } from "react";
 import { MainBtn } from "../../components/MainBtn/MainBtn";
-import { faLocationDot, faVideo } from "@fortawesome/free-solid-svg-icons";
+import { faLocationDot, faVideo,faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { therapistTypesData } from "../../helpers/data";
 import { Link } from "react-router-dom";
+import defaultPhoto from "../../icons/defaultPhoto2.png";
+import Image from "react-bootstrap/Image";
+import { Header } from "../../components/Header/Header";
+
 
 export function Notifications() {
   const [clientLoggedIn, setClientLoggedIn] = useState();
@@ -18,11 +22,6 @@ export function Notifications() {
     useState(userLocalStorage.addedToFavorites);
 
   const [userLoggedIn, setUserLoggedIn] = useState(userLocalStorage);
-
-  //   const [updateData, setUpdateData] = useState({
-  //     userLoggedIn: userLoggedIn,
-  //     favoritesToUpdate: userLoggedIn.favorites,
-  //   });
 
   const [therapistToUpdate, setTherapistToUpdate] = useState({
     id: "",
@@ -50,85 +49,69 @@ export function Notifications() {
       .then((data) => console.log(data))
       .catch((err) => console.log(err));
 
-    // fetch("http://localhost:5000/update/client", {
-    //   method: "POST",
-    //   body: JSON.stringify(updateData),
-    //   headers: { "Content-Type": "application/json" },
-    // })
-    //   .then((response) => response.json())
-    //   .then((data) => setClientLoggedIn(data.clientLoggedIn))
-    //   .catch((err) => console.log(err));
   }, check);
 
   return (
     <div className="cardsContainer">
+      <Header userLoggedIn={userLocalStorage} setLoggedIn={setUserLoggedIn} setClientLoggedIn specialties ={"notifcation page"}/>
       <div className="cardsTitle">
-        <h2>Notifications</h2>
-      </div>
+          <h1 className="titleTherapist">Notifications</h1>
+        </div>
       {userLocalStorageAddedToFavArr.map((client) => {
-        // function added() {
-        //   const objIdIndex = therapist.addedToFavorites.findIndex(
-        //     (obj) => obj._id === userLoggedIn._id
-        //   );
 
-        //   if (objIdIndex === -1) {
-        //     return false;
-        //   } else {
-        //     return true;
-        //   }
-        // }
+        function added() {
+          if (userLocalStorage) {
+            const objIdIndex = userLocalStorage.clientsIcalled.findIndex(
+              (obj) => obj._id === client._id
+            );
 
+            if (objIdIndex === -1) {
+              return false;
+            } else {
+              return true;
+            }
+          }
+        }
+       
         return (
           <div className="cardContainer">
-            <div className="cardPhotoBox">
-              <img className="img" src={logo} />
-            </div>
-            <div className="cardInfo">
-              <Link
-                className="specalistName"
-                to={`/specialties/${client.profession}/${client.name}`}
-              >
-                <h3>{`${client.name} ${client.lastName}`}</h3>
-              </Link>
-              <span className="specalistAbout">{`${client.name} ${client.lastName} is waiting for a call`}</span>
-              <div className="specalistAvailabilityBox">
-                <div className="iconBox">
-                  <FontAwesomeIcon icon={faLocationDot} className="cardIcon" />
-                </div>
-                <p className="specalistAvailability">{client.address.city}</p>
+            <div className="cardLeftSideBox">
+              <div className="cardPhotoBox">
+                <Image
+                  src={defaultPhoto}
+                  roundedCircle
+                  className="carouselImg"
+                />
               </div>
-              <div className="specalistAvailabilityBox">
-                <div className="iconBox">
-                  <FontAwesomeIcon icon={faVideo} className="cardIcon" />{" "}
-                </div>
-                <p className="specalistAvailability">Video Call</p>
-              </div>
-            </div>
-            <div className="cardActions">
-              {/* <MainBtn
-                  value="Remove From Favorites"
-                  therapistToRemove={therapist}
-                  usersAdded={usersAdded}
-                  setUsersAdded={setUsersAdded}
-                  updateData={updateData}
-                  setUpdateData={setUpdateData}
-                  therapistToUpdate={therapistToUpdate}
-                  setTherapistToUpdate={setTherapistToUpdate}
-                  check={check}
-                  setCheck={setCheck}
-                  userLoggedIn={userLoggedIn}
-                /> */}
-
-              <MainBtn
+              {
+                !added() ? (<MainBtn
                 value="I Called"
                 clientToArrange={client}
                 setUserLocalStorageAddedToFavArr={
                   setUserLocalStorageAddedToFavArr
                 }
                 setTherapistToUpdate={setTherapistToUpdate}
-                setCheck = {setCheck}
-              />
-              <MainBtn value="Appointment" />
+                setCheck={setCheck}
+              /> ):<FontAwesomeIcon icon={faCircleCheck} className="checkedIcon"/>
+              }
+              
+            </div>
+            <div className="cardRightSideBox">
+              <div className="cardInfo">
+                <Link
+                  className="specalistName"
+                  to={`/notifications/${client.name} ${client.lastName}`}
+                >
+                  <h3>{`${client.name} ${client.lastName}`}</h3>
+                </Link>
+                <span className="specalistAbout">{`${client.name} ${client.lastName} is waiting for a call`}</span>
+              </div>
+              <div className="specalistAvailabilityBox">
+                <div className="iconBox">
+                  <FontAwesomeIcon icon={faLocationDot} className="cardIcon" />
+                </div>
+                <p className="specalistAvailability">{client.address.city}</p>
+              </div>
             </div>
           </div>
         );

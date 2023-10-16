@@ -3,10 +3,13 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { Header } from "../../components/Header/Header";
 
 export function LogIn(props) {
   const setLoggedIn = props.setLoggedIn;
   const navigate = useNavigate();
+
+  let userLocalStorage = JSON.parse(window.localStorage.getItem("user"));
 
   const [inputData, setInputData] = useState({
     email: "",
@@ -44,25 +47,6 @@ export function LogIn(props) {
       console.log(err);
     }
 
-    // console.log(inputData)
-    // fetch("/logIn", {
-    //   mode: "cors",
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type":"application/json"
-    //   },
-    //   body:JSON.stringify(inputData)
-    // })
-
-    // .then((response) => response.json())
-    //   .then((data) => {
-    //     console.log(data)
-    //     alert("Data Posted successfully!");
-
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
   }
 
   function handleEmail(e) {
@@ -72,6 +56,7 @@ export function LogIn(props) {
 
   return (
     <div className="signInContainer">
+      <Header userLoggedIn={userLocalStorage} specialties={"logIn Page"}/>
       <Form className="signInForm" onSubmit={handle} validated={validated}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>

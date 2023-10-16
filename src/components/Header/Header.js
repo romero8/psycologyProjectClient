@@ -59,7 +59,7 @@ const [color,setColor] = useState(false)
   }
 
   return (
-    <Navbar expand="lg" className={color || specialties ? "headerContainer bg" : "headerContainer"}>
+    <Navbar  fixed="top"  className={color || specialties ? "headerContainer bg" : "headerContainer"}>
       <Container className="headerBox">
       
         <Navbar.Brand className="navBarLogo" href="/"><img className="psyProjectLogo" src={psyProjectLogo}/></Navbar.Brand>
@@ -69,25 +69,14 @@ const [color,setColor] = useState(false)
             <NavDropdown id={color || specialties ? "boldBg" : "bold"} title="Proffesions">
               {professions.map((profession) => {
                 return (
-                  <NavDropdown.Item className="dropDownLink" href={`/searchBySpecialties/${profession}`}>
+                  <NavDropdown.Item className="dropDownLink" href={`/searchByTherapist/all/${profession}/all/0,1000/all/all/all/all`}>
                     {profession}
                   </NavDropdown.Item>
                 );
               })}
              
             </NavDropdown>
-            {/* {window.location.pathname === `/client/${clientName}` ? (
-              <Nav.Link href="#link">Favorites</Nav.Link>
-            ) : (
-              ""
-            )}
-            {window.location.pathname === `/therapist/${therapistName}` ? (
-              <Nav.Link href="#link">Inquiries</Nav.Link>
-            ) : (
-              ""
-            )} */}
-
-           
+            
 
             {clientLoggedIn ? (
               <Nav.Link href="/favorites" className={color || specialties ? "boldBg" : "bold"}>Favorites</Nav.Link>
@@ -100,14 +89,14 @@ const [color,setColor] = useState(false)
               ""
             )}
 
-            {userLoggedIn ? <Nav.Link href="#link"className={color || specialties ? "boldBg" : "bold"}>Profile</Nav.Link> : ""}
+            {userLoggedIn ? <Nav.Link href="/profile"className={color || specialties ? "boldBg" : "bold"}>Profile</Nav.Link> : ""}
 
-            <Nav.Link href="#link">
+            {/* <Nav.Link href="#link">
               <FontAwesomeIcon
                 icon={faMagnifyingGlass}
                 className={color || specialties ? "magnifying-glass-iconBd" : "magnifying-glass-icon"}
               />
-            </Nav.Link>
+            </Nav.Link> */}
           </Nav>
           <Nav>
             {userLoggedIn ? (
@@ -120,7 +109,7 @@ const [color,setColor] = useState(false)
             ) : (
               ""
             )}
-            {!userLoggedIn ? <Nav.Link href="/logIn" className="navBarLink">Log-In</Nav.Link> : ""}
+            {!userLoggedIn ? <Nav.Link href="/logIn" className={color || specialties ? "navBarLink logOutBg" : "navBarLink"}>Log-In</Nav.Link> : ""}
             <Nav.Link eventKey={2} href="/signUp" className={color || specialties ? "navBarLink signUp signUpBg" : "navBarLink signUp"}>
               Sign-Up
             </Nav.Link>

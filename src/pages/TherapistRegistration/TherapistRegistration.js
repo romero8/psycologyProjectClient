@@ -24,8 +24,12 @@ import {
 import { multiply } from "lodash";
 
 import { cities } from "../../helpers/data";
+import { Header } from "../../components/Header/Header";
 
 export function TherapistRegistration() {
+
+  let userLocalStorage = JSON.parse(window.localStorage.getItem("user"));
+
   const professions = [
     "Psychology",
     "Social Worker",
@@ -147,6 +151,7 @@ export function TherapistRegistration() {
 
   return (
     <div className="signInContainer">
+      <Header userLoggedIn={userLocalStorage} specialties={"logIn Page"}/>
       <Form className="signInForm" onSubmit={handleForm} validated={validated}>
         <div className="flex">
           <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -248,7 +253,7 @@ export function TherapistRegistration() {
                 renderInput={(params) => (
                   <TextField
                     {...params}
-                    label={"placeHolder"}
+                    label={"City"}
                     variant="standard"
                     sx={{ width: 300 }}
                   />

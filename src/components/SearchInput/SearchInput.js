@@ -356,7 +356,7 @@ setSearch.setRangeSearch(e.target.value)
              value={value.rangeSearch}
              onChange={handleRange}
              valueLabelDisplay="auto"
-             sx={{ width: 156 }}
+             sx={{ width: 155 }}
             />
           </div>
 

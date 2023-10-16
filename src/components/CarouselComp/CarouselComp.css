@@ -3,12 +3,19 @@
   margin: 4%;
   width: 50%;
   font-weight: bold;
+  box-shadow:
+  /* 0 0 0 2px var(--spanColor), */
+  0.3em 0.3em 1em var(--spanColor);
+  border-radius: 30px;
 }
 
 
 .carouselBox{
 /* border-top-right-radius: 30%;
 border-top-left-radius: 30%; */
+box-shadow:
+  /* 0 0 0 2px var(--spanColor), */
+  0.3em 0.3em 1em var(--spanColor);
   min-height: 380px;
   background: var(--secondBackGround);
   border-radius: 30px;

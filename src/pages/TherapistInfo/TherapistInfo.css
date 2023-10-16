@@ -6,9 +6,12 @@
   justify-content: center;
   background-color: var(--secondBackGround);
   background-image: url('../../icons/backGround52.png');
+  
 }
 
-
+.userInfoAbout{
+  font-size: 20px;
+}
 
 .cardInformation {
   background-color: var(--secondBackGround);
@@ -20,6 +23,9 @@
   background-color: #fff;
   padding: 10px;
   border-radius: 17px;
+  box-shadow:
+  /* 0 0 0 2px var(--spanColor), */
+  0.3em 0.3em 1em var(--spanColor);
 }
 
 .specalistNameInfo {
@@ -95,6 +101,9 @@
   padding: 50px;
   width: 100%;
   flex-direction: column;
+  box-shadow:
+  /* 0 0 0 2px var(--spanColor), */
+  0.3em 0.3em 1em var(--spanColor);
 }
 
 .aboutTherapistInfo{
@@ -107,6 +116,7 @@
   }
 
   .about{
+    
     max-width: 50%;
     background: #f9f9f9;
     border: 1px solid #dedfe0;

@@ -21,8 +21,12 @@ import {
   OutlinedInput,
 } from "@mui/material";
 import { multiply } from "lodash";
+import { Header } from "../../components/Header/Header";
 
 export function ClientRegistration() {
+
+  let userLocalStorage = JSON.parse(window.localStorage.getItem("user"));
+
   const professions = [
     "Psychology",
     "Social Worker",
@@ -144,6 +148,7 @@ export function ClientRegistration() {
 
   return (
     <div className="signInContainer">
+      <Header userLoggedIn={userLocalStorage} specialties={"logIn Page"}/>
       <Form className="signInForm" onSubmit={handleForm} validated={validated}>
         <div className="flex">
           <Form.Group className="mb-3" controlId="formBasicEmail">

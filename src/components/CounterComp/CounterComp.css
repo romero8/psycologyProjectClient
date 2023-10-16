@@ -3,7 +3,11 @@
     width: 100%;
     border-top-right-radius: 50%;
     border-top-left-radius:  50%;
+    box-shadow:
+  /* 0 0 0 2px var(--spanColor), */
+  0.1em 0.01em 3em var(--spanColor);
 }
+
 .counterTitle{
     color: var(--spanColor);
 }

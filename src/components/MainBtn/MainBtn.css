@@ -2,4 +2,13 @@
     height: 50px;
     font-weight: bold;
     border-radius: 5px;
+    margin: 5px;
+    font-size: 20px;
+    background-color: #fff;
+    color: var(--spanColor);
+    border: none;
+}
+
+.mainBtn:hover{
+    color: var(--specialColor);
 }

@@ -4,10 +4,9 @@ import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
 import { SearchForSpecialistComp } from "./components/SearchForSpecialistComp/SearchForSpecialistComp";
 import { Home } from "./pages/Home/Home";
-import { Client } from "./pages/Client";
-import { Therapist } from "./pages/Therapist";
 import { Specialties } from "./pages/Specialties/Specialties";
 import { TherapistInfo } from "./pages/TherapistInfo/TherapistInfo";
+import { ClientInfo } from "./pages/ClientInfo/ClientInfo";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { SignUp } from "./pages/SignUp/SignUp";
 import { LogIn } from "./pages/LogIn/LogIn";
@@ -15,9 +14,9 @@ import { ClientRegistration } from "./pages/ClientRegistration/ClientRegistratio
 import { TherapistRegistration } from "./pages/TherapistRegistration/TherapistRegistration";
 import { Favorites } from "./pages/Favorites/Favorites";
 import { Notifications } from "./pages/Notifications/Notifications";
+import { Profile } from "./pages/Profile/Profile";
 
 function App() {
-  console.log();
 
   const [data, setData] = useState({});
   const [userLoggedIn, setLoggedIn] = useState(null);
@@ -77,17 +76,16 @@ function App() {
               <LogIn userLoggedIn={userLoggedIn} setLoggedIn={setLoggedIn} />
             }
           />
-          <Route path="/client/:clientName" element={<Client />} />
-          <Route path="/therapist/:therapistName" element={<Therapist />} />
           <Route path="/favorites" element={<Favorites/>} />
           <Route path="/notifications" element={<Notifications/>} />
-          <Route
-            path="/:searchBySpecialties/:specialty"
-            element={<Specialties />}
-          />
+          <Route path="/profile" element={<Profile/>} />
           <Route
             path="/:searchBySpecialties/:specialty/:therapistName"
             element={<TherapistInfo allTherapists={allTherapists} />}
+          />
+          <Route
+            path="/notifications/:clientName"
+            element={<ClientInfo allClients={allClients} />}
           />
           <Route
             path="/:searchByTherapist/:name/:profession/:city/:range/:language/:experience/:gender/:lgbtq"

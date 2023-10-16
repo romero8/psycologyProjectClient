@@ -3,16 +3,20 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
+  height: 800px;
+  background-color: var(--secondBackGround);
+  background-image: url('../../icons/backGround52.png');
 }
 
 .signUpContainer {
-  height: 700px;
+  height: 800px;
   display: flex;
   justify-content: center;
 }
 
 .signUpBox {
   display: flex;
+  flex-direction: column;
   gap: 100px;
   margin-top: 50px;
 }
@@ -33,6 +37,26 @@
 
 .checkBoxContainer {
   justify-content: start;
+}
+
+.clientRegistration{
+background-color: var(--mainBackGround);
+border: none;
+font-size: 60px;
+}
+
+.clientRegistration:hover{
+  background-color: var(--logoColor);
+}
+
+.thrapistRegistration{
+  background-color: var(--specialColor);
+  border: none;
+  font-size: 60px;
+}
+
+.thrapistRegistration:hover{
+  background-color: var(--logoColor);
 }
 
 .errorMessage {
