@@ -109,7 +109,7 @@ export function ClientRegistration() {
     const form = e.currentTarget;
     setErrors({});
     try {
-      const res = await fetch("http://localhost:5000/signUp/client", {
+      const res = await fetch("https://mangisiteserver.onrender.com/signUp/client", {
         method: "POST",
         body: JSON.stringify(inputData),
         headers: { "Content-Type": "application/json" },

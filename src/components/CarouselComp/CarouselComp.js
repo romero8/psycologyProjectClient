@@ -16,7 +16,7 @@ export function CarouselComp() {
 
   useEffect(() => {
    
-    fetch('http://localhost:5000/allTherapists')
+    fetch('https://mangisiteserver.onrender.com/allTherapists')
     .then(response => response.json())
     .then(data => setAllTherapists(data.data))
     .catch(err => console.log(err))

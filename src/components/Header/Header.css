@@ -1,12 +1,13 @@
 .headerContainer {
   /* background-color: var(--secondBackGround); */
   z-index: 9999;
-  width: 100%;
+  /* width: 100%; */
   height: 7%;
 }
+
 .bg {
   background-color: var(--secondBackGround);
-  box-shadow:0.1px 2px 1px 1px var(--specialWhite);
+  box-shadow: 0.1px 2px 1px 1px var(--specialWhite);
 }
 
 .navBarLink {
@@ -17,13 +18,12 @@
   color: var(--secondBackGround);
 }
 
-
-.dropDownLink{
+.dropDownLink {
   color: var(--logoColor);
 }
 
-.navBarLink:hover{
-    border-color: var(--specialColor);
+.navBarLink:hover {
+  border-color: var(--specialColor);
 }
 
 .bold {
@@ -31,12 +31,12 @@
   color: var(--secondBackGround);
 }
 
-.boldBg{
+.boldBg {
   font-weight: bold;
   color: var(--spanColor);
 }
 
-.bold:hover{
+.bold:hover {
   color: var(--specialColor);
 }
 
@@ -46,32 +46,33 @@
   transition: 0.3s;
 }
 
-#boldBg{
+#boldBg {
   font-weight: bold;
   color: var(--spanColor);
 }
 
-
-.logOutBg{
-    color: var(--spanColor);
-    border-color: var(--spanColor);
+.logOutBg {
+  color: var(--spanColor);
+  border-color: var(--spanColor);
 }
 
-
+.canvasHeader {
+  background-color: var(--mainBackGround);
+}
 
 .signUp {
   background-color: var(--secondBackGround);
   color: var(--spanColor);
 }
 
-.signUpBg{
-    color: var(--logoColor);
-    border-color: var(--logoColor);
+.signUpBg {
+  color: var(--logoColor);
+  border-color: var(--logoColor);
 }
 
-.signUp:hover{
-    background-color: var(--specialColor);
-    border-color: var(--specialColor);
+.signUp:hover {
+  background-color: var(--specialColor);
+  border-color: var(--specialColor);
 }
 
 .navBarText {
@@ -79,10 +80,9 @@
   margin-right: 10px;
   margin-top: 1px;
   font-weight: bold;
-  
 }
 
-.navBarTextBg{
+.navBarTextBg {
   color: var(--spanColor);
   margin-right: 10px;
   margin-top: 1px;
@@ -100,14 +100,50 @@
 }
 
 .psyProjectLogo {
-  width: 140px;
-  margin: 4px;
+  width: 130px;
+  /* margin: 4px; */
 }
 
-
-@media (max-width: 992px) {
-  /* .headerContainer{
-    background-color: var(--secondBackGround);
-  } */
+.psyProjectLogoCanvas {
+  width: 250px;
+  margin-top: 25%;
 }
 
+@media (max-width: 993px) {
+
+  .bg{
+background: none;
+  }
+
+  .bold {
+    color: var(--specialWhite);
+  }
+  .boldBg {
+    color: var(--specialWhite);
+  }
+  #bold {
+    color: var(--specialWhite);
+  }
+
+  #boldBg {
+    color: var(--specialWhite);
+  }
+
+  .navBarText {
+    color: var(--specialWhite);
+  }
+
+  .navBarTextBg {
+    color: var(--specialWhite);
+  }
+
+  .navBarLink{
+    border: none;
+    background-color: var(--mainBackGround);
+  }
+
+  .navBarLink:hover{
+    background-color: var(--mainBackGround);
+  }
+  
+}

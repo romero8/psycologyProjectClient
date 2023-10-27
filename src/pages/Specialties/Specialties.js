@@ -53,7 +53,7 @@ export function Specialties(props) {
   });
 
   useEffect(() => {
-    fetch("http://localhost:5000/userLoggedIn", {
+    fetch("https://mangisiteserver.onrender.com/userLoggedIn", {
       method: "POST",
       body: JSON.stringify(userLoggedIn),
       headers: { "Content-Type": "application/json" },
@@ -64,7 +64,7 @@ export function Specialties(props) {
       })
       .catch((err) => console.log(err));
 
-    fetch("http://localhost:5000/update/therapist", {
+    fetch("https://mangisiteserver.onrender.com/update/therapist", {
       method: "POST",
       body: JSON.stringify(therapistToUpdate),
       headers: { "Content-Type": "application/json" },
@@ -73,7 +73,7 @@ export function Specialties(props) {
       .then((data) => console.log(data))
       .catch((err) => console.log(err));
 
-    fetch("http://localhost:5000/update/client", {
+    fetch("https://mangisiteserver.onrender.com/update/client", {
       method: "POST",
       body: JSON.stringify(updateData),
       headers: { "Content-Type": "application/json" },
@@ -86,7 +86,7 @@ export function Specialties(props) {
   const [allTherapists, setAllTherapists] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/allTherapists")
+    fetch("https://mangisiteserver.onrender.com/allTherapists")
       .then((response) => response.json())
       .then((data) => setAllTherapists(data.data))
       .catch((err) => console.log(err));

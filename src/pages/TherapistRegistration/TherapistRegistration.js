@@ -112,7 +112,7 @@ export function TherapistRegistration() {
     const form = e.currentTarget;
     setErrors({});
     try {
-      const res = await fetch("http://localhost:5000/signUp/therapist", {
+      const res = await fetch("https://mangisiteserver.onrender.com/signUp/therapist", {
         method: "POST",
         body: JSON.stringify(inputData),
         headers: { "Content-Type": "application/json" },

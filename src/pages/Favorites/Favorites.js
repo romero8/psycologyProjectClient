@@ -32,7 +32,7 @@ export function Favorites() {
   });
 
   useEffect(() => {
-    fetch("http://localhost:5000/userLoggedIn", {
+    fetch("https://mangisiteserver.onrender.com/userLoggedIn", {
       method: "POST",
       body: JSON.stringify(userLoggedIn),
       headers: { "Content-Type": "application/json" },
@@ -43,7 +43,7 @@ export function Favorites() {
       })
       .catch((err) => console.log(err));
 
-    fetch("http://localhost:5000/update/therapist", {
+    fetch("https://mangisiteserver.onrender.com/update/therapist", {
       method: "POST",
       body: JSON.stringify(therapistToUpdate),
       headers: { "Content-Type": "application/json" },
@@ -52,7 +52,7 @@ export function Favorites() {
       .then((data) => console.log(data))
       .catch((err) => console.log(err));
 
-    fetch("http://localhost:5000/update/client", {
+    fetch("https://mangisiteserver.onrender.com/update/client", {
       method: "POST",
       body: JSON.stringify(updateData),
       headers: { "Content-Type": "application/json" },
