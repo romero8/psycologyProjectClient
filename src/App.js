@@ -15,6 +15,7 @@ import { TherapistRegistration } from "./pages/TherapistRegistration/TherapistRe
 import { Favorites } from "./pages/Favorites/Favorites";
 import { Notifications } from "./pages/Notifications/Notifications";
 import { Profile } from "./pages/Profile/Profile";
+import { LoadingLogo } from "./components/LoadingLogo/LoadingLogo";
 
 function App() {
 

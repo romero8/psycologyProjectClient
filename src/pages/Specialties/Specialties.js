@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Image from "react-bootstrap/Image";
 import { Header } from "../../components/Header/Header";
+import { LoadingLogo } from "../../components/LoadingLogo/LoadingLogo";
 
 var _ = require("lodash");
 
@@ -191,6 +192,7 @@ export function Specialties(props) {
       checkArr.push(therapistInfoArr[i]);
     }
   }
+  
   return (
     <div className="cardsContainer">
       <Header
@@ -298,10 +300,7 @@ export function Specialties(props) {
           );
         })
       ) : (
-        <div className="loadingBox">
-          <Spinner animation="grow" className="spinnerLoading"/>
-          <Image src={logo} roundedCircle className="logoLoading" />
-        </div>
+        <LoadingLogo/>
       )}
     </div>
   );

@@ -21,6 +21,15 @@
   margin-top: 50px;
 }
 
+.submitForm{
+  background-color: #9c27b0;
+  border: none;
+}
+
+.submitForm:hover{
+  background-color: var(--logoColor);
+}
+
 .signInForm{
   margin-top: 70px;
 }

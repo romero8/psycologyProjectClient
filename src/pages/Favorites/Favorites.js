@@ -10,6 +10,7 @@ import Image from "react-bootstrap/Image";
 import Spinner from "react-bootstrap/Spinner";
 import defaultPhoto from "../../icons/defaultPhoto2.png";
 import { Header } from "../../components/Header/Header";
+import { LoadingLogo } from "../../components/LoadingLogo/LoadingLogo";
 
 export function Favorites() {
   const [clientLoggedIn, setClientLoggedIn] = useState();
@@ -166,10 +167,7 @@ export function Favorites() {
           );
         })
       ) : (
-        <div className="loadingBox">
-          <Spinner animation="grow" className="spinnerLoading"/>
-          <Image src={logo} roundedCircle className="logoLoading" />
-        </div>
+        <LoadingLogo/>
       )}
     </div>
 

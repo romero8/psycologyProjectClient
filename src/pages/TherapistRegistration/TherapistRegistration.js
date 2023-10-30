@@ -23,37 +23,15 @@ import {
 } from "@mui/material";
 import { multiply } from "lodash";
 
-import { cities } from "../../helpers/data";
+import { cities,experties,professions } from "../../helpers/data";
 import { Header } from "../../components/Header/Header";
 
 export function TherapistRegistration() {
 
   let userLocalStorage = JSON.parse(window.localStorage.getItem("user"));
 
-  const professions = [
-    "Psychology",
-    "Social Worker",
-    "Occupational Therapist",
-    "Speach Therapist",
-  ];
   const languages = ["Hebrew", "English", "Arabic", "Russian"];
-
-  const experties = [
-    "Creative Arts Therapy",
-    "Psychodrama Therapy",
-    "Bibliotherapist",
-    "Psycho Therapy",
-    "CBT Therapy",
-    "DBT",
-    "NLP",
-    "EMDR",
-    "Coacher",
-    "Animal-Assisted Therapy",
-    "Neurofeedback",
-    "Psychoanaliest",
-    "Family Therapy",
-    "Caple Therapy",
-  ];
+  
 
   const navigate = useNavigate();
   const [citiesData, setCitiesData] = useState([]);
@@ -433,6 +411,7 @@ export function TherapistRegistration() {
                 <Box>
                   <Typography gutterBottom>Price</Typography>
                   <Slider
+                  color="secondary"
                     className="slider"
                     defaultValue={0}
                     valueLabelDisplay="auto"
@@ -461,6 +440,7 @@ export function TherapistRegistration() {
                   Experience
                 </Typography>
                 <Slider
+                color="secondary"
                   className="slider"
                   defaultValue={0}
                   valueLabelDisplay="auto"
@@ -544,7 +524,7 @@ export function TherapistRegistration() {
             )}
           </Form.Group>
 
-          <Button variant="primary" type="submit">
+          <Button className="submitForm" type="submit">
             Submit
           </Button>
         </>

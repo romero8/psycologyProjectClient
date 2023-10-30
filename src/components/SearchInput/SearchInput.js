@@ -2,7 +2,7 @@ import "../SearchInput/SearchInput.css";
 import Form from "react-bootstrap/Form";
 import MultiRangeSlider from "multi-range-slider-react";
 import React, { useState,useEffect } from "react";
-// import { allUsers, therapistTypesData } from "../../helpers/data";
+
 import {
   Autocomplete,
   InputLabel,
@@ -73,9 +73,7 @@ setSearch.setRangeSearch(e.target.value)
     if (placeHolder === "City") {
       setSearch.setCitySearch(innerHTML);
     }
-    // if(placeHolder==='Price Range'){
-    //   setSearch.setCitySearch(value)
-    // }
+   
     if (placeHolder === "Language") {
       setSearch.setLanguageSearch(innerHTML);
     }
@@ -85,9 +83,7 @@ setSearch.setRangeSearch(e.target.value)
     if (placeHolder === "Gender") {
       setSearch.setGenderSearch(innerHTML);
     }
-    // if (placeHolder === "LGBTQ friendly") {
-    //   setSearch.setCitySearch(innerHTML);
-    // }
+   
   }
 
   {
@@ -106,7 +102,7 @@ setSearch.setRangeSearch(e.target.value)
               <TextField {...params} label={placeHolder} variant="standard" />
               
             )}
-            // onChange={(e)=>handleChange(e)}
+           
           />
           <div className="iconContainer">{icon}</div>
         </div>
@@ -151,18 +147,11 @@ setSearch.setRangeSearch(e.target.value)
       );
     }
     if (specialistUserSearchType === "language") {
-      // let arr = []
-      // let usersParam = allTherapists.map((user) => user.language);
-      // let newUsersName = [...new Set(usersParam)];
-      // newUsersName.map((user)=>{
-      //   return user.map((language)=>{
-      //     arr.push(language)
-      //   })
-      // })
+      
 
       const languages = ['Hebrew','English','Arab','Russian']
 
-      // let newArr = [...new Set(arr)]
+     
 
       return (
         <div className="searchInputContainer short">
@@ -255,50 +244,10 @@ setSearch.setRangeSearch(e.target.value)
       );
     }
 
-    // if (searchType === "select") {
-    //   return (
-    //     <div className="searchInputContainer">
-    //       <select
-    //         className={inputSize ? `searchInput ${inputSize}` : "searchInput"}
-    //       >
-    //         <option selected disabled>
-    //           {placeHolder}
-    //         </option>
-    //         {options.map((option) => {
-    //           return <option>{option}</option>;
-    //         })}
-    //       </select>
-    //       <div className="iconContainer">{icon}</div>
-    //     </div>
-    //   );
-    // }
-
+  
     
     
-    // if (specialistUserSearchType === "gender") {
-    //   return (
-    //     <div className="searchInputContainer short">
-    //       <FormControl fullWidth className="searchInputContainer">
-    //         <InputLabel>{placeHolder}</InputLabel>
-    //         <Select
-    //           labelId="demo-simple-select-label"
-    //           id="demo-simple-select"
-    //           label={placeHolder}
-    //           value={value.genderSearch}
-    //           onChange={handleGenderSelected}
-    //         >
-    //           <MenuItem value="">
-    //             <em>None</em>
-    //           </MenuItem>
-    //           {options.map((option) => {
-    //             return <MenuItem value={option}>{option}</MenuItem>;
-    //           })}
-    //         </Select>
-    //       </FormControl>
-    //       <div className="iconContainer">{icon}</div>
-    //     </div>
-    //   );
-    // }
+    
     if (specialistUserSearchType === "experties") {
       return (
         <div className="searchInputContainer short">
@@ -323,24 +272,7 @@ setSearch.setRangeSearch(e.target.value)
         </div>
       );
     }
-    // if (searchType === "select") {
-    //   return (
-    //     <div className="searchInputContainer">
-    //       <Select
-    //         labelId="demo-simple-select-label"
-    //         id="demo-simple-select"
-    //         label={placeHolder}
-    //         variant="standard"
-    //         onChange={handleSelected}
-    //       >
-    //         {options.map((option) => {
-    //           return <MenuItem>{option}</MenuItem>;
-    //         })}
-    //       </Select>
-    //       <div className="iconContainer">{icon}</div>
-    //     </div>
-    //   );
-    // }
+   
     if (searchType === "range") {
       return (
         <div className="searchInputContainer">
@@ -365,173 +297,7 @@ setSearch.setRangeSearch(e.target.value)
       );
     }
 
-    // if (searchType === "checkBox") {
-    //   return (
-    //     <div className="searchInputContainer short">
-    //       <Form>
-    //         {["radio"].map((type) => (
-    //           <div
-    //             key={`inline-${type}`}
-    //             className={
-    //               inputSize ? `searchInput ${inputSize}` : "searchInput"
-    //             }
-    //           >
-    //             {/* <Form.Check
-    //             inline
-    //             label="1"
-    //             name="group1"
-    //             type={type}
-    //             id={`inline-${type}-1`}
-    //           /> */}
-
-    //             <label>{placeHolder}</label>
-    //             <br />
-    //             {options.map((option) => {
-    //               return (
-    //                 <Form.Check
-    //                   inline
-    //                   label={option}
-    //                   name="group1"
-    //                   type={type}
-    //                   id={`inline-${type}-1`}
-    //                 />
-    //               );
-    //             })}
-    //           </div>
-    //         ))}
-    //       </Form>
-    //       <div className="iconContainer">{icon}</div>
-    //     </div>
-    //   );
-    // }
+    
   }
 
-  //   return (
-
-  // <div className= 'searchInputContainer'>
-  //         {searchType == "input" ? (
-  //           <input
-  //             type={type}
-  //             className={inputSize ? `searchInput ${inputSize}` : "searchInput"}
-  //             placeholder={placeHolder}
-  //           ></input>
-  //         ) : (
-  //           <select className={inputSize ? `searchInput ${inputSize}` : "searchInput"}>
-  //             <option selected disabled>
-  //               {placeHolder}
-  //             </option>
-  //             {options.map((option) => {
-  //               return <option>{option}</option>;
-  //             })}
-  //           </select>
-  //         )}
-
-  //         <div className="iconContainer">{icon}</div>
-  //       </div>
-
-  //   );
-}
-
-// if (searchType === "input") {
-//   return (
-//     <div className="searchInputContainer">
-//       <Autocomplete
-//         className={inputSize ? `searchInput ${inputSize}` : "searchInput"}
-//         disablePortal
-//         id="combo-box-demo"
-//         options={allUsers.map((user) => {
-//           if (placeHolder === "Name") {
-//             console.log(user.specialistUserSearchType);
-//             return user.name;
-//           }
-
-//           if (placeHolder === "Profession") {
-//             return user.typeName;
-//           }
-//           if (placeHolder === "City") {
-//             return user.address.city;
-//           }
-//           if (placeHolder === "Language") {
-//             return user.language ? user.language : null;
-//           }
-//           if (placeHolder === "Name") {
-//             return user.name;
-//           }
-//           if (placeHolder === "Experience") {
-//             return user.experience;
-//           }
-//         })}
-//         sx={{ width: 300, border: "none", boxShadow: "none" }}
-//         style={{ border: "none", boxShadow: "none" }}
-//         renderInput={(params) => (
-//           <TextField {...params} label={placeHolder} />
-//         )}
-//       />
-
-//       <div className="iconContainer">{icon}</div>
-
-//       {/* <div className="dropDown">
-//         {therapistTypesData.map((dropDownRow) => {
-//           return dropDownRow.users.map((user) => {
-//             if(placeHolder === 'Name'){
-//               return(
-//                 <div>{user.name}</div>
-//               )
-//             }
-//           });
-//         })}
-//       </div> */}
-//     </div>
-//   );
-// }
-
-
-// if (searchType === "range") {
-//   return (
-//     <div className="searchInputContainer range long">
-//       <div>
-//         <label>{placeHolder}</label>
-//         <MultiRangeSlider
-//           min={0}
-//           max={500}
-//           step={5}
-//           minValue={minValue}
-//           maxValue={maxValue}
-//           ruler={false}
-//           label={true}
-//           style={{ border: "none", boxShadow: "none", height: "5px" }}
-//           onInput={(e) => {
-//             handleInput(e);
-//           }}
-//           barInnerColor="#fff"
-//           thumbLeftColor="#fff"
-//           thumbRightColor="#eaf5fa"
-//           className="rangeInput long"
-//         />
-//       </div>
-
-//       <div className="iconContainer">{icon}</div>
-//     </div>
-//   );
-// }
-
-
-
-
-{/* <MultiRangeSlider
-              min={0}
-              max={500}
-              step={5}
-              minValue={minValue}
-              maxValue={maxValue}
-              ruler={false}
-              label={true}
-              style={{ border: "none", boxShadow: "none", height: "5px" }}
-              onInput={(e) => {
-                handleInput(e);
-              }}
-              barInnerColor="#fff"
-              thumbLeftColor="#fff"
-              thumbRightColor="#eaf5fa"
-              className="rangeInput long"
-            /> */}
+ }

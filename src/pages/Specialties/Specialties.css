@@ -131,17 +131,25 @@
 .logoLoading{
   position: absolute;
   top: 0;
-  bottom: 290px;
+  bottom: 0;
   right: 0;
   left: 0;
   margin: auto auto ;
   width: 230px;
-  margin-bottom: 50px;
+}
+
+.noResultsContainer{
+height: 800px;
+}
+
+.notResultTitle{
+
 }
 
 .checkedIcon{
   font-size: 50px;
 }
+
 
 @media (max-width: 950px) {
   .cardContainer {

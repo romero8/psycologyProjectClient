@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { useNavigate } from "react-router-dom";
+import { cities } from "../../helpers/data";
 import {
   Select,
   MenuItem,
@@ -241,7 +242,7 @@ export function ClientRegistration() {
 
           <div className="flex">
            
-            <Form.Group className="mb-3" controlId="formBasicName">
+            {/* <Form.Group className="mb-3" controlId="formBasicName">
               <Form.Label>City</Form.Label>
               <Form.Control
                 type="name"
@@ -262,7 +263,25 @@ export function ClientRegistration() {
                   City is required
                 </Form.Control.Feedback>
               )}
-            </Form.Group>
+            </Form.Group> */}
+            <InputGroup>
+            <FormControl>
+              <Autocomplete
+                // onChange={handleChange}
+                disablePortal
+                id="combo-box-demo"
+                options={cities.map((city) => city.City)}
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    label={"City"}
+                    variant="standard"
+                    sx={{ width: 300 }}
+                  />
+                )}
+              />
+            </FormControl>
+          </InputGroup>
 
             <Form.Group className="mb-3" controlId="formBasicName">
               <Form.Label>Street</Form.Label>
