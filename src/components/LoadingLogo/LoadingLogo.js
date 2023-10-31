@@ -23,7 +23,7 @@ export function LoadingLogo() {
     return (
       <div className="noResultsContainer">
         <h1 className="notResultTitle">
-          There are no results for your request.. you can try again later or not.
+          There are no results for your request...
         </h1>
       </div>
     );

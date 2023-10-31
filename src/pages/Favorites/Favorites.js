@@ -2,7 +2,7 @@ import logo from "../../icons/logo.png";
 import "../Specialties/Specialties.css";
 import React, { useState, useEffect } from "react";
 import { MainBtn } from "../../components/MainBtn/MainBtn";
-import { faLocationDot, faVideo ,faCircleCheck} from "@fortawesome/free-solid-svg-icons";
+import { faLocationDot, faVideo ,faCircleCheck,faCheck} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { therapistTypesData } from "../../helpers/data";
 import { Link } from "react-router-dom";
@@ -135,7 +135,7 @@ export function Favorites() {
                 check={check}
                 setCheck={setCheck}
                 userLoggedIn={userLoggedIn}
-              /> : <FontAwesomeIcon icon={faCircleCheck} className="checkedIcon"/>
+              /> : <FontAwesomeIcon icon={faCheck} className="checkedIcon"/>
               }
               </div>
               <div className="cardRightSideBox">

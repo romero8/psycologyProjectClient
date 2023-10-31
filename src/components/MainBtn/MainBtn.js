@@ -136,13 +136,12 @@ export function MainBtn(props) {
             (obj) => obj._id === therapistToRemove._id
           );
 
-          let newAddedToFavorites = [
-            ...therapistToRemove.addedToFavorites,
-            userLoggedIn,
+          let newAddedToFavorites = [userLoggedIn,
+            ...therapistToRemove.addedToFavorites
           ];
           userLocalStorage.favorites[objIdIndex].addedToFavorites =
             newAddedToFavorites;
-          console.log(userLocalStorage);
+          
           localStorage.setItem("user", JSON.stringify(userLocalStorage));
 
           setTherapistToUpdate(() => ({

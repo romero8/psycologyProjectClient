@@ -268,6 +268,13 @@ export function ClientRegistration() {
             <FormControl>
               <Autocomplete
                 // onChange={handleChange}
+                onChange={(e) =>
+                  setInputData({
+                    ...inputData,
+                    address: { ...inputData.address, city: e.target.value },
+                  })
+                }
+                size="small"
                 disablePortal
                 id="combo-box-demo"
                 options={cities.map((city) => city.City)}
@@ -275,8 +282,8 @@ export function ClientRegistration() {
                   <TextField
                     {...params}
                     label={"City"}
-                    variant="standard"
                     sx={{ width: 300 }}
+                    color="secondary"
                   />
                 )}
               />
@@ -340,7 +347,7 @@ export function ClientRegistration() {
                   setInputData({ ...inputData, gender: e.target.value })
                 }
               >
-                <FormLabel id="demo-radio-buttons-group-label">
+                <FormLabel id="demo-radio-buttons-group-label" color="secondary">
                   Gender
                 </FormLabel>
                 <RadioGroup
@@ -349,17 +356,17 @@ export function ClientRegistration() {
                 >
                   <FormControlLabel
                     value="female"
-                    control={<Radio />}
+                    control={<Radio color="secondary"/>}
                     label="Female"
                   />
                   <FormControlLabel
                     value="male"
-                    control={<Radio />}
+                    control={<Radio color="secondary"/>}
                     label="Male"
                   />
                   <FormControlLabel
                     value="other"
-                    control={<Radio />}
+                    control={<Radio color="secondary"/>}
                     label="Other"
                   />
                 </RadioGroup>
@@ -394,7 +401,7 @@ export function ClientRegistration() {
             )}
           </Form.Group>
 
-          <Button variant="primary" type="submit">
+          <Button className="submitForm" type="submit">
             Submit
           </Button>
         </>

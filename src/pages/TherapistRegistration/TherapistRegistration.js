@@ -224,16 +224,22 @@ export function TherapistRegistration() {
             <InputGroup>
             <FormControl>
               <Autocomplete
-                // onChange={handleChange}
+                 onChange={(e) =>
+                  setInputData({
+                    ...inputData,
+                    address: { ...inputData.address, city: e.target.value },
+                  })
+                }
+                size="small"
                 disablePortal
-                id="combo-box-demo"
+                id="highlights-demo"
                 options={cities.map((city) => city.City)}
                 renderInput={(params) => (
                   <TextField
                     {...params}
                     label={"City"}
-                    variant="standard"
-                    sx={{ width: 300 }}
+                    color="secondary"
+                    sx={{ width: 225 }}
                   />
                 )}
               />
@@ -294,6 +300,7 @@ export function TherapistRegistration() {
               <Form.Label>Phone Number</Form.Label>
               <Form.Control
                 required
+                className="phoneRegistration"
                 type="number"
                 placeholder="Phone"
                 onChange={(e) =>
@@ -315,7 +322,7 @@ export function TherapistRegistration() {
           <div className="flex">
             <InputGroup className="mb-3">
               <FormControl required fullWidth>
-                <InputLabel id="demo-simple-select-label">
+                <InputLabel id="demo-simple-select-label" color="secondary">
                   Profession
                 </InputLabel>
                 <Select
@@ -323,8 +330,9 @@ export function TherapistRegistration() {
                   id="demo-simple-select"
                   value={inputData.profession}
                   label="Profession"
-                  input={<OutlinedInput label="Profession" />}
+                  input={<OutlinedInput label="Profession"/>}
                   onChange={handleProffesion}
+                  color="secondary"
                 >
                   {professions.map((profession) => (
                     <MenuItem key={profession} value={profession}>
@@ -346,15 +354,18 @@ export function TherapistRegistration() {
 
             <InputGroup className="mb-3">
               <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label">Experties</InputLabel>
+                <InputLabel id="demo-simple-select-label" color="secondary">Experties</InputLabel>
                 <Select
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
                   value={inputData.experties}
                   label="Experties"
                   multiple
+                  limitTags={2}
                   input={<OutlinedInput label="Experties" />}
                   onChange={handleExperties}
+                  color="secondary"
+                  sx={{ width: '220px' }}
                 >
                   {experties.map((experty) => (
                     <MenuItem key={experty} value={experty}>
@@ -376,7 +387,7 @@ export function TherapistRegistration() {
 
             <InputGroup className="mb-3">
               <FormControl fullWidth required>
-                <InputLabel id="demo-simple-select-label">Language</InputLabel>
+                <InputLabel id="demo-simple-select-label" color="secondary">Language</InputLabel>
                 <Select
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
@@ -385,6 +396,7 @@ export function TherapistRegistration() {
                   multiple
                   input={<OutlinedInput label="Experties" />}
                   onChange={handleLanguages}
+                  color="secondary"
                 >
                   {languages.map((language) => (
                     <MenuItem key={language} value={language}>
@@ -470,7 +482,7 @@ export function TherapistRegistration() {
                   setInputData({ ...inputData, gender: e.target.value })
                 }
               >
-                <FormLabel id="demo-radio-buttons-group-label">
+                <FormLabel id="demo-radio-buttons-group-label" color="secondary">
                   Gender
                 </FormLabel>
                 <RadioGroup
@@ -479,17 +491,17 @@ export function TherapistRegistration() {
                 >
                   <FormControlLabel
                     value="female"
-                    control={<Radio />}
+                    control={<Radio color="secondary" />}
                     label="Female"
                   />
                   <FormControlLabel
                     value="male"
-                    control={<Radio />}
+                    control={<Radio color="secondary"/>}
                     label="Male"
                   />
                   <FormControlLabel
                     value="other"
-                    control={<Radio />}
+                    control={<Radio color="secondary"/>}
                     label="Other"
                   />
                 </RadioGroup>
