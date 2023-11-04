@@ -6,7 +6,7 @@
   justify-content: center;
   background-color: var(--secondBackGround);
   background-image: url('../../icons/backGround52.png');
-  
+  min-height: 655px;
 }
 
 .userInfoAbout{
@@ -61,6 +61,7 @@
 
 .specalistExperties{
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -123,4 +124,24 @@
     margin: 40px;
     padding: 50px;
     border-radius: 5px;
+  }
+
+  @media (max-width: 1350px){
+    .cardInformation{
+      flex-direction: column;
+      align-items: start;
+    }
+    .cardPhotoBox{
+      flex-direction: column;
+    }
+    .cardActions{
+      width: 40%;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .cardInformation {
+      flex-direction: column;
+      width: 80%;
+    }
   }

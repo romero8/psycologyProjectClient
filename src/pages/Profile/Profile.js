@@ -27,11 +27,11 @@ export function Profile() {
               {userLocalStorage.name} {userLocalStorage.lastName}
               {userLocalStorage.profession ?`, ${userLocalStorage.profession}` : ''}
             </h3>
-            <span className="specalistExperties">
+            <div className="specalistExperties">
               {userLocalStorage.experties ? userLocalStorage.experties.map((experty) => {
                 return <p className="experty">{experty}</p>;
               }): ''}
-            </span>
+            </div>
             <div className="specalistAvailabilityContainer">
               <div className="specalistAvailabilityBox">
                 <div className="iconBox">

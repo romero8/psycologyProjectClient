@@ -36,7 +36,7 @@ export function Favorites() {
     fetch("https://mangisiteserver.onrender.com/userLoggedIn", {
       method: "POST",
       body: JSON.stringify(userLoggedIn),
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json" }
     })
       .then((response) => response.json())
       .then((data) => {
@@ -47,27 +47,25 @@ export function Favorites() {
     fetch("https://mangisiteserver.onrender.com/update/therapist", {
       method: "POST",
       body: JSON.stringify(therapistToUpdate),
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json" }
     })
       .then((response) => response.json())
       .then((data) => console.log(data))
       .catch((err) => console.log(err));
 
     fetch("https://mangisiteserver.onrender.com/update/client", {
-      method: "POST",
+      method: "POST",   
       body: JSON.stringify(updateData),
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json" }
     })
       .then((response) => response.json())
       .then((data) => setClientLoggedIn(data.clientLoggedIn))
       .catch((err) => console.log(err));
   }, check);
 
+  
+
   return (
-
-
-
-
 
     <div className="cardsContainer">
       <Header
@@ -82,15 +80,18 @@ export function Favorites() {
       {userLocalStorage.favorites.length > 0 ? (
         userLocalStorage.favorites.map((therapist) => {
           function added() {
-            const objIdIndex = therapist.addedToFavorites.findIndex(
-              (obj) => obj._id === userLoggedIn._id
-           );
-   
-            if (objIdIndex === -1) {
-             return false;
-           } else {
-             return true;
-           }
+            
+              const objIdIndex = therapist.addedToFavorites.findIndex(
+                (obj) => obj._id === userLoggedIn._id
+             );
+     
+              if (objIdIndex === -1) {
+               return false;
+             } else {
+               return true;
+             }
+            
+            
          }       
 
           return (

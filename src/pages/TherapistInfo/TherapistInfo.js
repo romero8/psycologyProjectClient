@@ -39,7 +39,7 @@ export function TherapistInfo(props) {
     return therapist.name === nameAndLastName[0];
   });
 
-  console.log(findSpecialty.experties);
+  console.log(therapistData);
 
   return (
     <div className="therapistInfoContainer">
@@ -53,10 +53,10 @@ export function TherapistInfo(props) {
           <div className="cardInfo">
             <h3 className="specalistNameInfo">
               {therapistData.name} {therapistData.lastName},{" "}
-              {findSpecialty.profession}
+              {therapistData.profession}
             </h3>
             <span className="specalistExperties">
-              {findSpecialty.experties.map((experty) => {
+              {therapistData.experties.map((experty) => {
                 return <p className="experty">{experty}</p>;
               })}
             </span>
@@ -82,7 +82,7 @@ export function TherapistInfo(props) {
         <div className="cardActions cardActionInformation">
           <button ref={target} className="callMeBtn" onClick={() => setShow(!show)}>Call Me!</button>
           {/* <Button ref={target} className="callMeBtn" onClick={() => setShow(!show)}>Call Me!</Button> */}
-          <Overlay target={target.current} show={show} placement="left">
+          <Overlay target={target.current} show={show} placement="right">
         {({
           placement: _placement,
           arrowProps: _arrowProps,

@@ -271,7 +271,7 @@ export function ClientRegistration() {
                 onChange={(e) =>
                   setInputData({
                     ...inputData,
-                    address: { ...inputData.address, city: e.target.value },
+                    address: { ...inputData.address, city: e.target.innerHTML},
                   })
                 }
                 size="small"

@@ -87,25 +87,25 @@ export function TherapistRegistration() {
   async function handleForm(e) {
     e.preventDefault();
     console.log(inputData);
-    const form = e.currentTarget;
-    setErrors({});
-    try {
-      const res = await fetch("https://mangisiteserver.onrender.com/signUp/therapist", {
-        method: "POST",
-        body: JSON.stringify(inputData),
-        headers: { "Content-Type": "application/json" },
-      });
-      const data = await res.json();
-      console.log(data.errors);
-      setErrors(data.errors);
-      if (data.therapist) {
-        navigate("/logIn");
-      }
-    } catch (err) {
-      console.log(err);
-    }
-    console.log(errors);
-    setValidated(true);
+    // const form = e.currentTarget;
+    // setErrors({});
+    // try {
+    //   const res = await fetch("https://mangisiteserver.onrender.com/signUp/therapist", {
+    //     method: "POST",
+    //     body: JSON.stringify(inputData),
+    //     headers: { "Content-Type": "application/json" },
+    //   });
+    //   const data = await res.json();
+    //   console.log(data.errors);
+    //   setErrors(data.errors);
+    //   if (data.therapist) {
+    //     navigate("/logIn");
+    //   }
+    // } catch (err) {
+    //   console.log(err);
+    // }
+    // console.log(errors);
+    // setValidated(true);
   }
 
   function handleExperties(e) {
@@ -227,7 +227,7 @@ export function TherapistRegistration() {
                  onChange={(e) =>
                   setInputData({
                     ...inputData,
-                    address: { ...inputData.address, city: e.target.value },
+                    address: { ...inputData.address, city: e.target.innerHTML},
                   })
                 }
                 size="small"
@@ -365,7 +365,7 @@ export function TherapistRegistration() {
                   input={<OutlinedInput label="Experties" />}
                   onChange={handleExperties}
                   color="secondary"
-                  sx={{ width: '220px' }}
+                  sx={{ width: '227px' }}
                 >
                   {experties.map((experty) => (
                     <MenuItem key={experty} value={experty}>
@@ -397,6 +397,7 @@ export function TherapistRegistration() {
                   input={<OutlinedInput label="Experties" />}
                   onChange={handleLanguages}
                   color="secondary"
+                  sx={{ width: '227px'}}
                 >
                   {languages.map((language) => (
                     <MenuItem key={language} value={language}>

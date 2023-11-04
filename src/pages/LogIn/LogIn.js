@@ -29,7 +29,6 @@ export function LogIn(props) {
         headers: { "Content-Type": "application/json" },
       });
       const data = await res.json();
-      console.log(data);
       setErrors(data.errors);
       if (data.therapist) {
         await window.localStorage.setItem("token", JSON.stringify(data.token));
@@ -98,7 +97,7 @@ export function LogIn(props) {
             </Form.Control.Feedback>
           )}
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button  type="submit" className="submitForm">
           Submit
         </Button>
       </Form>

@@ -44,7 +44,10 @@ color: var(--logoColor);
 }
 
 @media(max-width:692px){
-    .countersBox{
+    .counterCompContainer{    
+        padding: 15px;
+    }
+    .countersBox{       
         display: flex;
         flex-direction: column;
     }

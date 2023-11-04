@@ -53,7 +53,9 @@ export function Header(props) {
   let { therapistName } = useParams();
 
   function logOut() {
-    setLoggedIn(null);
+    if(setLoggedIn){
+      setLoggedIn(null);
+    }
     window.localStorage.removeItem("token");
     window.localStorage.removeItem("user");
   }

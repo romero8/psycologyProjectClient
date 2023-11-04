@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import defaultPhoto from "../../icons/defaultPhoto2.png";
 import Image from "react-bootstrap/Image";
 import { Header } from "../../components/Header/Header";
+import { LoadingLogo } from "../../components/LoadingLogo/LoadingLogo";
 
 
 export function Notifications() {
@@ -52,70 +53,75 @@ export function Notifications() {
   }, check);
 
   return (
+    
     <div className="cardsContainer">
       <Header userLoggedIn={userLocalStorage} setLoggedIn={setUserLoggedIn} setClientLoggedIn specialties ={"notifcation page"}/>
       <div className="cardsTitle">
           <h1 className="titleTherapist">Notifications</h1>
         </div>
-      {userLocalStorageAddedToFavArr.map((client) => {
 
-        function added() {
-          if (userLocalStorage) {
-            const objIdIndex = userLocalStorage.clientsIcalled.findIndex(
-              (obj) => obj._id === client._id
-            );
+               
+       {userLocalStorage.addedToFavorites.length > 0 ? userLocalStorageAddedToFavArr.map((client) => {
 
-            if (objIdIndex === -1) {
-              return false;
-            } else {
-              return true;
-            }
-          }
+function added() {
+  if (userLocalStorage) {
+    const objIdIndex = userLocalStorage.clientsIcalled.findIndex(
+      (obj) => obj._id === client._id
+    );
+
+    if (objIdIndex === -1) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+}
+
+return (
+  <div className="cardContainer">
+    <div className="cardLeftSideBox">
+      <div className="cardPhotoBox">
+        <Image
+          src={defaultPhoto}
+          roundedCircle
+          className="carouselImg"
+        />
+      </div>
+      {
+        !added() ? (<MainBtn
+        value="I Called"
+        clientToArrange={client}
+        setUserLocalStorageAddedToFavArr={
+          setUserLocalStorageAddedToFavArr
         }
-       
-        return (
-          <div className="cardContainer">
-            <div className="cardLeftSideBox">
-              <div className="cardPhotoBox">
-                <Image
-                  src={defaultPhoto}
-                  roundedCircle
-                  className="carouselImg"
-                />
-              </div>
-              {
-                !added() ? (<MainBtn
-                value="I Called"
-                clientToArrange={client}
-                setUserLocalStorageAddedToFavArr={
-                  setUserLocalStorageAddedToFavArr
-                }
-                setTherapistToUpdate={setTherapistToUpdate}
-                setCheck={setCheck}
-              /> ):<FontAwesomeIcon  icon={faCheck} className="checkedIcon"/>
-              }
-              
-            </div>
-            <div className="cardRightSideBox">
-              <div className="cardInfo">
-                <Link
-                  className="specalistName"
-                  to={`/notifications/${client.name} ${client.lastName}`}
-                >
-                  <h3>{`${client.name} ${client.lastName}`}</h3>
-                </Link>
-                <span className="specalistAbout">{`${client.name} ${client.lastName} is waiting for a call`}</span>
-              </div>
-              <div className="specalistAvailabilityBox">
-                <div className="iconBox">
-                  <FontAwesomeIcon icon={faLocationDot} className="cardIcon" />
-                </div>
-                <p className="specalistAvailability">{client.address.city}</p>
-              </div>
-            </div>
-          </div>
-        );
-      })}
+        setTherapistToUpdate={setTherapistToUpdate}
+        setCheck={setCheck}
+      /> ):<FontAwesomeIcon  icon={faCheck} className="checkedIcon"/>
+      }
+      
+    </div>
+    <div className="cardRightSideBox">
+      <div className="cardInfo">
+        <Link
+          className="specalistName"
+          to={`/notifications/${client.name} ${client.lastName}`}
+        >
+          <h3>{`${client.name} ${client.lastName}`}</h3>
+        </Link>
+        <span className="specalistAbout">{`${client.name} ${client.lastName} is waiting for a call`}</span>
+      </div>
+      <div className="specalistAvailabilityBox">
+        <div className="iconBox">
+          <FontAwesomeIcon icon={faLocationDot} className="cardIcon" />
+        </div>
+        <p className="specalistAvailability">{client.address.city}</p>
+      </div>
+    </div>
+  </div>
+) 
+}): <LoadingLogo/>}
+        
+      {}
     </div>
   );
 }

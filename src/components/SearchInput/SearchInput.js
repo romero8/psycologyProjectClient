@@ -99,7 +99,7 @@ setSearch.setRangeSearch(e.target.value)
             options={newUsersName.map((user) => user)}
             sx={{ width: 300 }}
             renderInput={(params) => (
-              <TextField {...params} label={placeHolder} variant="standard" />
+              <TextField {...params} label={placeHolder} variant="standard" color="secondary"/>
               
             )}
            
@@ -120,7 +120,7 @@ setSearch.setRangeSearch(e.target.value)
             options={newUsersName.map((user) => user)}
             sx={{ width: 300 }}
             renderInput={(params) => (
-              <TextField {...params} label={placeHolder} variant="standard" />
+              <TextField {...params} label={placeHolder} variant="standard" color="secondary"/>
             )}
           />
           <div className="iconContainer">{icon}</div>
@@ -133,13 +133,14 @@ setSearch.setRangeSearch(e.target.value)
       return (
         <div className="searchInputContainer short">
           <Autocomplete
+          
           onChange={handleChange}
             disablePortal
             id="combo-box-demo"
             options={newUsersName.map((user) => user)}
             sx={{ width: 300 }}
             renderInput={(params) => (
-              <TextField {...params} label={placeHolder} variant="standard" />
+              <TextField {...params} label={placeHolder} variant="standard" color="secondary"/>
             )}
           />
           <div className="iconContainer">{icon}</div>
@@ -162,7 +163,7 @@ setSearch.setRangeSearch(e.target.value)
             options={languages.map((user) => user)}
             sx={{ width: 300 }}
             renderInput={(params) => (
-              <TextField {...params} label={placeHolder} variant="standard" />
+              <TextField {...params} label={placeHolder} variant="standard" color="secondary"/>
             )}
           />
           <div className="iconContainer">{icon}</div>
@@ -187,6 +188,7 @@ setSearch.setRangeSearch(e.target.value)
                 label={placeHolder}
                 style={{ border: "none", boxShadow: "none" }}
                 variant="standard"
+                color="secondary"
               />
             )}
           />
@@ -207,6 +209,7 @@ setSearch.setRangeSearch(e.target.value)
             sx={{ width: 300 }}
             renderInput={(params) => (
               <TextField
+              color="secondary"
                 {...params}
                 label={placeHolder}
                 style={{ border: "none", boxShadow: "none" }}
@@ -232,6 +235,7 @@ setSearch.setRangeSearch(e.target.value)
             sx={{ width: 300 }}
             renderInput={(params) => (
               <TextField
+              color="secondary"
                 {...params}
                 label={placeHolder}
                 style={{ border: "none", boxShadow: "none" }}

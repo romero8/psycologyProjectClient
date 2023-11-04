@@ -55,6 +55,8 @@ box-shadow:
   height: 70px;
 }
 
-@media(max-width:692px){
- 
+@media(max-width:992px){
+  .carouselContainer{
+    width: 99%;
+  }
 }

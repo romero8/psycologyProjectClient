@@ -28,7 +28,7 @@ export function MainBtn(props) {
   async function handle(e) {
     e.preventDefault();
 
-
+   
     if (userLocalStorage.favorites) {
       if (userToAdd) {
         const objWithIdIndex = updateData.favoritesToUpdate.findIndex(
@@ -136,23 +136,28 @@ export function MainBtn(props) {
             (obj) => obj._id === therapistToRemove._id
           );
 
-          let newAddedToFavorites = [userLoggedIn,
-            ...therapistToRemove.addedToFavorites
-          ];
+        
+          // let newAddedToFavorites = [
+          //   ...therapistToRemove.addedToFavorites,userLoggedIn
+          // ];
+
+         therapistToRemove.addedToFavorites.splice(0,0,userLoggedIn)
+
           userLocalStorage.favorites[objIdIndex].addedToFavorites =
-            newAddedToFavorites;
+          therapistToRemove.addedToFavorites;
           
           localStorage.setItem("user", JSON.stringify(userLocalStorage));
 
           setTherapistToUpdate(() => ({
             id: therapistToRemove._id,
-            addedToFavorites: newAddedToFavorites,
+            addedToFavorites: therapistToRemove.addedToFavorites
           }));
-
+          
         }
       }
       
     }
+   
 
     if (userLocalStorage.addedToFavorites) {
       if (e.target.innerHTML === "I Called") {

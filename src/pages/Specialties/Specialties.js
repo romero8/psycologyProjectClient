@@ -236,7 +236,7 @@ export function Specialties(props) {
                 >
                   View Profile
                 </Link>
-                {userLocalStorage.favorites && !added() ? (
+                {userLocalStorage && userLocalStorage.favorites && !added() ? (
                   <MainBtn
                     value="Add To Favorites"
                     userToAdd={user}
@@ -253,7 +253,7 @@ export function Specialties(props) {
                 ) : (
                   ""
                 )}
-                {userLocalStorage.favorites && added() ? (
+                {userLocalStorage && userLocalStorage.favorites && added() ? (
                   <MainBtn
                     value="Remove From Favorites"
                     userToAdd={user}
