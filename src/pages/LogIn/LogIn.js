@@ -23,7 +23,7 @@ export function LogIn(props) {
     e.preventDefault();
     setErrors({});
     try {
-      const res = await fetch("https://mangisiteserver.onrender.com/logIn", {
+      const res = await fetch("http://localhost:5000/logIn", {
         method: "POST",
         body: JSON.stringify(inputData),
         headers: { "Content-Type": "application/json" },

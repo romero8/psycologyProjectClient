@@ -57,18 +57,7 @@ export function ClientRegistration() {
   const [citiesData, setCitiesData] = useState([]);
 
   useEffect(() => {
-    // const fetchData = async () => {
-    //    try {
-    //          const response = await fetch('https://mangisiteserver.onrender.com/');
-    //        const json = await response.json();
-    //         console.log(json);
-    //       } catch (error) {
-    //        console.log("error", error);
-    //        }
-    //      };
-
-    //      fetchData();
-
+  
     fetch(
       "https://raw.githubusercontent.com/royts/israel-cities/master/israel-cities.json"
     )
@@ -110,7 +99,7 @@ export function ClientRegistration() {
     const form = e.currentTarget;
     setErrors({});
     try {
-      const res = await fetch("https://mangisiteserver.onrender.com/signUp/client", {
+      const res = await fetch("http://localhost:5000/signUp/client", {
         method: "POST",
         body: JSON.stringify(inputData),
         headers: { "Content-Type": "application/json" },

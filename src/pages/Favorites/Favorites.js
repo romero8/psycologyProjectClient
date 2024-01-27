@@ -23,8 +23,8 @@ export function Favorites() {
   const [userLoggedIn, setUserLoggedIn] = useState(userLocalStorage);
 
   const [updateData, setUpdateData] = useState({
-    userLoggedIn: userLoggedIn,
-    favoritesToUpdate: userLoggedIn.favorites,
+    userLoggedIn: userLocalStorage,
+    favoritesToUpdate: userLocalStorage.favorites,
   });
 
   const [therapistToUpdate, setTherapistToUpdate] = useState({
@@ -33,7 +33,7 @@ export function Favorites() {
   });
 
   useEffect(() => {
-    fetch("https://mangisiteserver.onrender.com/userLoggedIn", {
+    fetch("http://localhost:5000/userLoggedIn", {
       method: "POST",
       body: JSON.stringify(userLoggedIn),
       headers: { "Content-Type": "application/json" }
@@ -44,7 +44,7 @@ export function Favorites() {
       })
       .catch((err) => console.log(err));
 
-    fetch("https://mangisiteserver.onrender.com/update/therapist", {
+    fetch("http://localhost:5000/update/therapist", {
       method: "POST",
       body: JSON.stringify(therapistToUpdate),
       headers: { "Content-Type": "application/json" }
@@ -53,7 +53,7 @@ export function Favorites() {
       .then((data) => console.log(data))
       .catch((err) => console.log(err));
 
-    fetch("https://mangisiteserver.onrender.com/update/client", {
+    fetch("http://localhost:5000/update/client", {
       method: "POST",   
       body: JSON.stringify(updateData),
       headers: { "Content-Type": "application/json" }

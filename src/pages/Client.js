@@ -1,13 +1,13 @@
 import { CounterComp } from "../components/CounterComp/CounterComp";
 import { SearchForSpecialistComp } from "../components/SearchForSpecialistComp/SearchForSpecialistComp";
-import {CarouselComp} from '../components/CarouselComp/CarouselComp'
+import {TherapistTypesComp} from '../components/TherapistTypesComp/TherapistTypesComp'
 import { Header } from "../components/Header/Header";
 
 export function Client(){
     return(
         <>
         <SearchForSpecialistComp/>
-        <CarouselComp/>
+        <TherapistTypesComp/>
         <CounterComp/>
         </>
         

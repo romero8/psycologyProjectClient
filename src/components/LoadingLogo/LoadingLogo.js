@@ -8,7 +8,7 @@ export function LoadingLogo() {
 
   setTimeout(() => {
     setValue(true);
-  }, 6000);
+  }, 10000);
 
   if (!value) {
     return (

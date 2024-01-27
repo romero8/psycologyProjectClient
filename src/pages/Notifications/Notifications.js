@@ -30,7 +30,7 @@ export function Notifications() {
   });
 
   useEffect(() => {
-    fetch("https://mangisiteserver.onrender.com/userLoggedIn", {
+    fetch("http://localhost:5000/userLoggedIn", {
       method: "POST",
       body: JSON.stringify(userLoggedIn),
       headers: { "Content-Type": "application/json" },
@@ -41,7 +41,7 @@ export function Notifications() {
       })
       .catch((err) => console.log(err));
 
-    fetch("https://mangisiteserver.onrender.com/update/therapist", {
+    fetch("http://localhost:5000/update/therapist", {
       method: "POST",
       body: JSON.stringify(therapistToUpdate),
       headers: { "Content-Type": "application/json" },

@@ -10,12 +10,12 @@ export function CounterComp(props) {
   const [allClients, setAllClients] = useState([]);
 
   useEffect(() => {
-    fetch("https://mangisiteserver.onrender.com/allTherapists")
+    fetch("http://localhost:5000/allTherapists")
       .then((response) => response.json())
       .then((data) => setAllTherapists(data.data))
       .catch((err) => console.log(err));
 
-    fetch("https://mangisiteserver.onrender.com/allClients")
+    fetch("http://localhost:5000/allClients")
       .then((response) => response.json())
       .then((data) => setAllClients(data.data))
       .catch((err) => console.log(err));

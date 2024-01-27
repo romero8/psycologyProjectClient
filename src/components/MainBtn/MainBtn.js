@@ -148,11 +148,16 @@ export function MainBtn(props) {
           
           localStorage.setItem("user", JSON.stringify(userLocalStorage));
 
+          
+
           setTherapistToUpdate(() => ({
             id: therapistToRemove._id,
             addedToFavorites: therapistToRemove.addedToFavorites
           }));
-          
+
+          setCheck((check) => {
+            return [check + 1];
+          });
         }
       }
       
@@ -191,11 +196,12 @@ export function MainBtn(props) {
           addedToFavorites: userLocalStorage.addedToFavorites,
           clientsIcalled: userLocalStorage.clientsIcalled
         }));
+        setCheck((check) => {
+          return [check + 1];
+        });
       }
     }
-    setCheck((check) => {
-      return [check + 1];
-    });
+   
   }
 
   return (

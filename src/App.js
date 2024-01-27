@@ -16,6 +16,8 @@ import { Favorites } from "./pages/Favorites/Favorites";
 import { Notifications } from "./pages/Notifications/Notifications";
 import { Profile } from "./pages/Profile/Profile";
 import { LoadingLogo } from "./components/LoadingLogo/LoadingLogo";
+const serverUrl = "https://mangisiteserver.onrender.com/"
+const localHostUrl = "http://localhost:5000/"
 
 function App() {
 
@@ -23,9 +25,10 @@ function App() {
   const [userLoggedIn, setLoggedIn] = useState(null);
   const [allTherapists, setAllTherapists] = useState([]);
   const [allClients, setAllClients] = useState([]);
+    
 
   useEffect(() => {
-    fetch("https://mangisiteserver.onrender.com/")
+    fetch("http://localhost:5000/")
       .then((response) => response.json())
       .then((data) => console.log(data))
       .catch((err) => console.log(err));
@@ -36,12 +39,12 @@ function App() {
       setLoggedIn(user);
     }
 
-    fetch("https://mangisiteserver.onrender.com/allTherapists")
+    fetch("http://localhost:5000/allTherapists")
       .then((response) => response.json())
       .then((data) => setAllTherapists(data.data))
       .catch((err) => console.log(err));
 
-    fetch("https://mangisiteserver.onrender.com/allClients")
+    fetch("http://localhost:5000/allClients")
       .then((response) => response.json())
       .then((data) => setAllClients(data.data))
       .catch((err) => console.log(err));

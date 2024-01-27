@@ -37,17 +37,7 @@ export function TherapistRegistration() {
   const [citiesData, setCitiesData] = useState([]);
 
   useEffect(() => {
-    // const fetchData = async () => {
-    //    try {
-    //          const response = await fetch('https://mangisiteserver.onrender.com/');
-    //        const json = await response.json();
-    //         console.log(json);
-    //       } catch (error) {
-    //        console.log("error", error);
-    //        }
-    //      };
-
-    //      fetchData();
+   
 
     fetch(
       "https://raw.githubusercontent.com/royts/israel-cities/master/israel-cities.json"
@@ -86,26 +76,26 @@ export function TherapistRegistration() {
 
   async function handleForm(e) {
     e.preventDefault();
-    console.log(inputData);
-    // const form = e.currentTarget;
-    // setErrors({});
-    // try {
-    //   const res = await fetch("https://mangisiteserver.onrender.com/signUp/therapist", {
-    //     method: "POST",
-    //     body: JSON.stringify(inputData),
-    //     headers: { "Content-Type": "application/json" },
-    //   });
-    //   const data = await res.json();
-    //   console.log(data.errors);
-    //   setErrors(data.errors);
-    //   if (data.therapist) {
-    //     navigate("/logIn");
-    //   }
-    // } catch (err) {
-    //   console.log(err);
-    // }
-    // console.log(errors);
-    // setValidated(true);
+    
+    const form = e.currentTarget;
+    setErrors({});
+    try {
+      const res = await fetch("http://localhost:5000/signUp/therapist", {
+        method: "POST",
+        body: JSON.stringify(inputData),
+        headers: { "Content-Type": "application/json" },
+      });
+      const data = await res.json();
+      console.log(data.errors);
+      setErrors(data.errors);
+      if (data.therapist) {
+        navigate("/logIn");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+    console.log(errors);
+    setValidated(true);
   }
 
   function handleExperties(e) {
